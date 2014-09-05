@@ -1,6 +1,6 @@
 csulb-ff
 ========
-
+test
 This is a tentative repo for the CSULB Friend Finder app. All high-level communication (not contained in a specific code file or a Wiki page) should go here. - Tan
 
 So far looks like we’re leaning towards a “friend finder” app that will update in regular intervals to locate your friends and implement a pathfinding system to quickly meet up with them.
