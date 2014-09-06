@@ -23,9 +23,8 @@ September 2, 2014 - Armondo, David, Gustavo, Nick, Tan present.
 - 	Gustavo: Scrum Project Owner. As Armondo, David, and Nick design the app, Gustavo guides them with comments and makes decisions in case of deadlock. At the end of each sprint's design process, he is the final person to approve or disapprove of them.
 -	Kane: Chief Software Architect. All of us have little to no iOS development experience. Whether Kane does or not, he will have the final authority on software architecture and programming convention: the classes, the objects, the functions, the data flows, etc.
 -	Tan: Scrum master. Tan will set goals for Scrum sprints and coordinate timely delivery of promised features for each sprint.
--	
 
-Septembe 4, 2014 - Armondo, David, Gustavo, Kane, Nick, Tan, Miguel present
+September 4, 2014 - Armondo, David, Gustavo, Kane, Nick, Tan, Miguel present
 - We got our idea informally approved by Mr. Boctor.
 - We built upon the proposal draft written by Armando.
 - The proposal is now open for online editing. It's on the wiki.
