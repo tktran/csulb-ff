@@ -28,3 +28,7 @@ September 4, 2014 - Armondo, David, Gustavo, Kane, Nick, Tan, Miguel present
 - We got our idea informally approved by Mr. Boctor.
 - We built upon the proposal draft written by Armando.
 - The proposal is now open for online editing. It's on the wiki.
+
+September 9, 2014 - All present
+- We met to start the XCode project and launch the AWS instance.
+- Tan distributed materials.
