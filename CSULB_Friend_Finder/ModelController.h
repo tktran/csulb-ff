@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FacebookSDK/FacebookSDK.h>
+#import <AWSiOSSDKv2/AWSCore.h>
+#import <AWSCognitoSync/Cognito.h>
 
 @class DataViewController;
 
 @interface ModelController : NSObject <UIPageViewControllerDataSource>
+
+
+@property (weak, nonatomic) IBOutlet FBLoginView *loginView;
 
 - (DataViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard;
 - (NSUInteger)indexOfViewController:(DataViewController *)viewController;

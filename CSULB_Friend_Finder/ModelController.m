@@ -21,9 +21,15 @@
 
 @interface ModelController()
 @property (readonly, strong, nonatomic) NSArray *pageData;
+
 @end
 
 @implementation ModelController
+
+- (void)viewDidLoad
+{
+    self.loginView.readPermissions = @[@"public_profile", @"email", @"user_friends"];
+}
 
 - (id)init
 {
