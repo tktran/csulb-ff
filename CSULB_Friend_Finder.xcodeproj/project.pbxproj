@@ -7,6 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		271AD72419CBDFB9009DDF9B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD72319CBDFB9009DDF9B /* FacebookSDK.framework */; };
+		271AD72619CBDFFD009DDF9B /* AWSiOSSDKv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD72519CBDFFD009DDF9B /* AWSiOSSDKv2.framework */; };
+		271AD73119CBE541009DDF9B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD73019CBE541009DDF9B /* libz.dylib */; };
+		271AD73B19CBE5B0009DDF9B /* GZIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD73419CBE5B0009DDF9B /* GZIP.framework */; };
+		271AD73C19CBE5B0009DDF9B /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD73519CBE5B0009DDF9B /* Mantle.framework */; };
+		271AD73D19CBE5B0009DDF9B /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD73619CBE5B0009DDF9B /* Reachability.framework */; };
+		271AD73E19CBE5B0009DDF9B /* TMCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD73719CBE5B0009DDF9B /* TMCache.framework */; };
+		271AD73F19CBE5B0009DDF9B /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD73819CBE5B0009DDF9B /* UICKeyChainStore.framework */; };
+		271AD74019CBE5B0009DDF9B /* XMLDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD73919CBE5B0009DDF9B /* XMLDictionary.framework */; };
+		271AD74219CBE5EC009DDF9B /* AWSCognitoSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD74119CBE5EC009DDF9B /* AWSCognitoSync.framework */; };
+		271AD75319CBE676009DDF9B /* autoscaling-2011-01-01.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74419CBE676009DDF9B /* autoscaling-2011-01-01.json */; };
+		271AD75419CBE676009DDF9B /* cib-2014-06-30.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74519CBE676009DDF9B /* cib-2014-06-30.json */; };
+		271AD75519CBE676009DDF9B /* css-2014-06-30.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74619CBE676009DDF9B /* css-2014-06-30.json */; };
+		271AD75619CBE676009DDF9B /* dynamodb-2012-08-10.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74719CBE676009DDF9B /* dynamodb-2012-08-10.json */; };
+		271AD75719CBE676009DDF9B /* ec2-2014-06-15.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74819CBE676009DDF9B /* ec2-2014-06-15.json */; };
+		271AD75819CBE676009DDF9B /* elasticloadbalancing-2012-06-01.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74919CBE676009DDF9B /* elasticloadbalancing-2012-06-01.json */; };
+		271AD75919CBE676009DDF9B /* email-2010-12-01.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74A19CBE676009DDF9B /* email-2010-12-01.json */; };
+		271AD75A19CBE676009DDF9B /* kinesis-2013-12-02.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74B19CBE676009DDF9B /* kinesis-2013-12-02.json */; };
+		271AD75B19CBE676009DDF9B /* mobileanalytics-2014-06-30.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74C19CBE676009DDF9B /* mobileanalytics-2014-06-30.json */; };
+		271AD75C19CBE676009DDF9B /* monitoring-2010-08-01.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74D19CBE676009DDF9B /* monitoring-2010-08-01.json */; };
+		271AD75D19CBE676009DDF9B /* s3-2006-03-01.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74E19CBE676009DDF9B /* s3-2006-03-01.json */; };
+		271AD75E19CBE676009DDF9B /* sdb-2009-04-15.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74F19CBE676009DDF9B /* sdb-2009-04-15.json */; };
+		271AD75F19CBE676009DDF9B /* sns-2010-03-31.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD75019CBE676009DDF9B /* sns-2010-03-31.json */; };
+		271AD76019CBE676009DDF9B /* sqs-2012-11-05.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD75119CBE676009DDF9B /* sqs-2012-11-05.json */; };
+		271AD76119CBE676009DDF9B /* sts-2011-06-15.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD75219CBE676009DDF9B /* sts-2011-06-15.json */; };
+		271AD76319CBE7E7009DDF9B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD76219CBE7E7009DDF9B /* Bolts.framework */; };
+		271AD76519CBEB2D009DDF9B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD76419CBEB2D009DDF9B /* SystemConfiguration.framework */; };
 		27894CA819CBD48F0009D9DE /* autoscaling-2011-01-01.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894C9919CBD48F0009D9DE /* autoscaling-2011-01-01.json */; };
 		27894CA919CBD48F0009D9DE /* cib-2014-06-30.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894C9A19CBD48F0009D9DE /* cib-2014-06-30.json */; };
 		27894CAA19CBD48F0009D9DE /* css-2014-06-30.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894C9B19CBD48F0009D9DE /* css-2014-06-30.json */; };
@@ -22,17 +49,7 @@
 		27894CB419CBD48F0009D9DE /* sns-2010-03-31.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894CA519CBD48F0009D9DE /* sns-2010-03-31.json */; };
 		27894CB519CBD48F0009D9DE /* sqs-2012-11-05.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894CA619CBD48F0009D9DE /* sqs-2012-11-05.json */; };
 		27894CB619CBD48F0009D9DE /* sts-2011-06-15.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894CA719CBD48F0009D9DE /* sts-2011-06-15.json */; };
-		5998E57719C91BAD00A336AD /* FacebookSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = 5998E57619C91BAD00A336AD /* FacebookSDK */; };
 		5998E5C719C9294400A336AD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5998E5C619C9294400A336AD /* libsqlite3.dylib */; };
-		5998E5C919C9294E00A336AD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5998E5C819C9294E00A336AD /* libz.dylib */; };
-		5998E5F719C92B3D00A336AD /* aws-ios-sdk-2.0.7 in Frameworks */ = {isa = PBXBuildFile; fileRef = 5998E5F619C92B3D00A336AD /* aws-ios-sdk-2.0.7 */; };
-		59E4760319CBD6E4007B70B6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E475FC19CBD6E4007B70B6 /* Bolts.framework */; };
-		59E4760419CBD6E4007B70B6 /* GZIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E475FD19CBD6E4007B70B6 /* GZIP.framework */; };
-		59E4760519CBD6E4007B70B6 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E475FE19CBD6E4007B70B6 /* Mantle.framework */; };
-		59E4760619CBD6E4007B70B6 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E475FF19CBD6E4007B70B6 /* Reachability.framework */; };
-		59E4760719CBD6E4007B70B6 /* TMCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E4760019CBD6E4007B70B6 /* TMCache.framework */; };
-		59E4760819CBD6E4007B70B6 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E4760119CBD6E4007B70B6 /* UICKeyChainStore.framework */; };
-		59E4760919CBD6E4007B70B6 /* XMLDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E4760219CBD6E4007B70B6 /* XMLDictionary.framework */; };
 		E4EC19ED19BFDF1600E94487 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EC19EC19BFDF1600E94487 /* Foundation.framework */; };
 		E4EC19EF19BFDF1600E94487 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EC19EE19BFDF1600E94487 /* CoreGraphics.framework */; };
 		E4EC19F119BFDF1600E94487 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EC19F019BFDF1600E94487 /* UIKit.framework */; };
@@ -62,6 +79,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		271AD72319CBDFB9009DDF9B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		271AD72519CBDFFD009DDF9B /* AWSiOSSDKv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSiOSSDKv2.framework; path = "/Users/tan/Desktop/csulb-ff/AWSiOSSDKv2.framework"; sourceTree = "<absolute>"; };
+		271AD73019CBE541009DDF9B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		271AD73419CBE5B0009DDF9B /* GZIP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GZIP.framework; sourceTree = "<group>"; };
+		271AD73519CBE5B0009DDF9B /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mantle.framework; sourceTree = "<group>"; };
+		271AD73619CBE5B0009DDF9B /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reachability.framework; sourceTree = "<group>"; };
+		271AD73719CBE5B0009DDF9B /* TMCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TMCache.framework; sourceTree = "<group>"; };
+		271AD73819CBE5B0009DDF9B /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UICKeyChainStore.framework; sourceTree = "<group>"; };
+		271AD73919CBE5B0009DDF9B /* XMLDictionary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XMLDictionary.framework; sourceTree = "<group>"; };
+		271AD74119CBE5EC009DDF9B /* AWSCognitoSync.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCognitoSync.framework; sourceTree = "<group>"; };
+		271AD74419CBE676009DDF9B /* autoscaling-2011-01-01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "autoscaling-2011-01-01.json"; sourceTree = "<group>"; };
+		271AD74519CBE676009DDF9B /* cib-2014-06-30.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "cib-2014-06-30.json"; sourceTree = "<group>"; };
+		271AD74619CBE676009DDF9B /* css-2014-06-30.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "css-2014-06-30.json"; sourceTree = "<group>"; };
+		271AD74719CBE676009DDF9B /* dynamodb-2012-08-10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "dynamodb-2012-08-10.json"; sourceTree = "<group>"; };
+		271AD74819CBE676009DDF9B /* ec2-2014-06-15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "ec2-2014-06-15.json"; sourceTree = "<group>"; };
+		271AD74919CBE676009DDF9B /* elasticloadbalancing-2012-06-01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "elasticloadbalancing-2012-06-01.json"; sourceTree = "<group>"; };
+		271AD74A19CBE676009DDF9B /* email-2010-12-01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "email-2010-12-01.json"; sourceTree = "<group>"; };
+		271AD74B19CBE676009DDF9B /* kinesis-2013-12-02.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "kinesis-2013-12-02.json"; sourceTree = "<group>"; };
+		271AD74C19CBE676009DDF9B /* mobileanalytics-2014-06-30.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mobileanalytics-2014-06-30.json"; sourceTree = "<group>"; };
+		271AD74D19CBE676009DDF9B /* monitoring-2010-08-01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "monitoring-2010-08-01.json"; sourceTree = "<group>"; };
+		271AD74E19CBE676009DDF9B /* s3-2006-03-01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "s3-2006-03-01.json"; sourceTree = "<group>"; };
+		271AD74F19CBE676009DDF9B /* sdb-2009-04-15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sdb-2009-04-15.json"; sourceTree = "<group>"; };
+		271AD75019CBE676009DDF9B /* sns-2010-03-31.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sns-2010-03-31.json"; sourceTree = "<group>"; };
+		271AD75119CBE676009DDF9B /* sqs-2012-11-05.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sqs-2012-11-05.json"; sourceTree = "<group>"; };
+		271AD75219CBE676009DDF9B /* sts-2011-06-15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sts-2011-06-15.json"; sourceTree = "<group>"; };
+		271AD76219CBE7E7009DDF9B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		271AD76419CBEB2D009DDF9B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		27894C9919CBD48F0009D9DE /* autoscaling-2011-01-01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "autoscaling-2011-01-01.json"; sourceTree = "<group>"; };
 		27894C9A19CBD48F0009D9DE /* cib-2014-06-30.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "cib-2014-06-30.json"; sourceTree = "<group>"; };
 		27894C9B19CBD48F0009D9DE /* css-2014-06-30.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "css-2014-06-30.json"; sourceTree = "<group>"; };
@@ -77,17 +121,7 @@
 		27894CA519CBD48F0009D9DE /* sns-2010-03-31.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sns-2010-03-31.json"; sourceTree = "<group>"; };
 		27894CA619CBD48F0009D9DE /* sqs-2012-11-05.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sqs-2012-11-05.json"; sourceTree = "<group>"; };
 		27894CA719CBD48F0009D9DE /* sts-2011-06-15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sts-2011-06-15.json"; sourceTree = "<group>"; };
-		5998E57619C91BAD00A336AD /* FacebookSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FacebookSDK; sourceTree = "<group>"; };
 		5998E5C619C9294400A336AD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		5998E5C819C9294E00A336AD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		5998E5F619C92B3D00A336AD /* aws-ios-sdk-2.0.7 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "aws-ios-sdk-2.0.7"; sourceTree = "<group>"; };
-		59E475FC19CBD6E4007B70B6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "aws-ios-sdk-2.0.7/third-party/Bolts.framework"; sourceTree = "<group>"; };
-		59E475FD19CBD6E4007B70B6 /* GZIP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GZIP.framework; path = "aws-ios-sdk-2.0.7/third-party/GZIP.framework"; sourceTree = "<group>"; };
-		59E475FE19CBD6E4007B70B6 /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mantle.framework; path = "aws-ios-sdk-2.0.7/third-party/Mantle.framework"; sourceTree = "<group>"; };
-		59E475FF19CBD6E4007B70B6 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = "aws-ios-sdk-2.0.7/third-party/Reachability.framework"; sourceTree = "<group>"; };
-		59E4760019CBD6E4007B70B6 /* TMCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TMCache.framework; path = "aws-ios-sdk-2.0.7/third-party/TMCache.framework"; sourceTree = "<group>"; };
-		59E4760119CBD6E4007B70B6 /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = "aws-ios-sdk-2.0.7/third-party/UICKeyChainStore.framework"; sourceTree = "<group>"; };
-		59E4760219CBD6E4007B70B6 /* XMLDictionary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XMLDictionary.framework; path = "aws-ios-sdk-2.0.7/third-party/XMLDictionary.framework"; sourceTree = "<group>"; };
 		E4EC19E919BFDF1600E94487 /* CSULB_Friend_Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSULB_Friend_Finder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4EC19EC19BFDF1600E94487 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E4EC19EE19BFDF1600E94487 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -118,20 +152,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5998E5C919C9294E00A336AD /* libz.dylib in Frameworks */,
-				59E4760819CBD6E4007B70B6 /* UICKeyChainStore.framework in Frameworks */,
-				59E4760519CBD6E4007B70B6 /* Mantle.framework in Frameworks */,
-				59E4760719CBD6E4007B70B6 /* TMCache.framework in Frameworks */,
-				59E4760419CBD6E4007B70B6 /* GZIP.framework in Frameworks */,
-				5998E5F719C92B3D00A336AD /* aws-ios-sdk-2.0.7 in Frameworks */,
-				59E4760919CBD6E4007B70B6 /* XMLDictionary.framework in Frameworks */,
-				59E4760619CBD6E4007B70B6 /* Reachability.framework in Frameworks */,
+				271AD76519CBEB2D009DDF9B /* SystemConfiguration.framework in Frameworks */,
+				271AD76319CBE7E7009DDF9B /* Bolts.framework in Frameworks */,
+				271AD73E19CBE5B0009DDF9B /* TMCache.framework in Frameworks */,
+				271AD73119CBE541009DDF9B /* libz.dylib in Frameworks */,
 				5998E5C719C9294400A336AD /* libsqlite3.dylib in Frameworks */,
+				271AD73B19CBE5B0009DDF9B /* GZIP.framework in Frameworks */,
 				E4EC19EF19BFDF1600E94487 /* CoreGraphics.framework in Frameworks */,
-				5998E57719C91BAD00A336AD /* FacebookSDK in Frameworks */,
+				271AD74219CBE5EC009DDF9B /* AWSCognitoSync.framework in Frameworks */,
 				E4EC19F119BFDF1600E94487 /* UIKit.framework in Frameworks */,
+				271AD73C19CBE5B0009DDF9B /* Mantle.framework in Frameworks */,
 				E4EC19ED19BFDF1600E94487 /* Foundation.framework in Frameworks */,
-				59E4760319CBD6E4007B70B6 /* Bolts.framework in Frameworks */,
+				271AD73D19CBE5B0009DDF9B /* Reachability.framework in Frameworks */,
+				271AD72419CBDFB9009DDF9B /* FacebookSDK.framework in Frameworks */,
+				271AD73F19CBE5B0009DDF9B /* UICKeyChainStore.framework in Frameworks */,
+				271AD74019CBE5B0009DDF9B /* XMLDictionary.framework in Frameworks */,
+				271AD72619CBDFFD009DDF9B /* AWSiOSSDKv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,9 +184,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		271AD73219CBE5B0009DDF9B /* third-party */ = {
+			isa = PBXGroup;
+			children = (
+				271AD76219CBE7E7009DDF9B /* Bolts.framework */,
+				271AD73419CBE5B0009DDF9B /* GZIP.framework */,
+				271AD73519CBE5B0009DDF9B /* Mantle.framework */,
+				271AD73619CBE5B0009DDF9B /* Reachability.framework */,
+				271AD73719CBE5B0009DDF9B /* TMCache.framework */,
+				271AD73819CBE5B0009DDF9B /* UICKeyChainStore.framework */,
+				271AD73919CBE5B0009DDF9B /* XMLDictionary.framework */,
+			);
+			path = "third-party";
+			sourceTree = "<group>";
+		};
+		271AD74319CBE676009DDF9B /* service-definitions */ = {
+			isa = PBXGroup;
+			children = (
+				271AD74419CBE676009DDF9B /* autoscaling-2011-01-01.json */,
+				271AD74519CBE676009DDF9B /* cib-2014-06-30.json */,
+				271AD74619CBE676009DDF9B /* css-2014-06-30.json */,
+				271AD74719CBE676009DDF9B /* dynamodb-2012-08-10.json */,
+				271AD74819CBE676009DDF9B /* ec2-2014-06-15.json */,
+				271AD74919CBE676009DDF9B /* elasticloadbalancing-2012-06-01.json */,
+				271AD74A19CBE676009DDF9B /* email-2010-12-01.json */,
+				271AD74B19CBE676009DDF9B /* kinesis-2013-12-02.json */,
+				271AD74C19CBE676009DDF9B /* mobileanalytics-2014-06-30.json */,
+				271AD74D19CBE676009DDF9B /* monitoring-2010-08-01.json */,
+				271AD74E19CBE676009DDF9B /* s3-2006-03-01.json */,
+				271AD74F19CBE676009DDF9B /* sdb-2009-04-15.json */,
+				271AD75019CBE676009DDF9B /* sns-2010-03-31.json */,
+				271AD75119CBE676009DDF9B /* sqs-2012-11-05.json */,
+				271AD75219CBE676009DDF9B /* sts-2011-06-15.json */,
+			);
+			path = "service-definitions";
+			sourceTree = "<group>";
+		};
 		E4EC19E019BFDF1600E94487 = {
 			isa = PBXGroup;
 			children = (
+				271AD74319CBE676009DDF9B /* service-definitions */,
 				27894C9919CBD48F0009D9DE /* autoscaling-2011-01-01.json */,
 				27894C9A19CBD48F0009D9DE /* cib-2014-06-30.json */,
 				27894C9B19CBD48F0009D9DE /* css-2014-06-30.json */,
@@ -185,17 +258,13 @@
 		E4EC19EB19BFDF1600E94487 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				59E475FC19CBD6E4007B70B6 /* Bolts.framework */,
-				59E475FD19CBD6E4007B70B6 /* GZIP.framework */,
-				59E475FE19CBD6E4007B70B6 /* Mantle.framework */,
-				59E475FF19CBD6E4007B70B6 /* Reachability.framework */,
-				59E4760019CBD6E4007B70B6 /* TMCache.framework */,
-				59E4760119CBD6E4007B70B6 /* UICKeyChainStore.framework */,
-				59E4760219CBD6E4007B70B6 /* XMLDictionary.framework */,
-				5998E5F619C92B3D00A336AD /* aws-ios-sdk-2.0.7 */,
-				5998E5C819C9294E00A336AD /* libz.dylib */,
+				271AD76419CBEB2D009DDF9B /* SystemConfiguration.framework */,
+				271AD74119CBE5EC009DDF9B /* AWSCognitoSync.framework */,
+				271AD73219CBE5B0009DDF9B /* third-party */,
+				271AD73019CBE541009DDF9B /* libz.dylib */,
+				271AD72519CBDFFD009DDF9B /* AWSiOSSDKv2.framework */,
+				271AD72319CBDFB9009DDF9B /* FacebookSDK.framework */,
 				5998E5C619C9294400A336AD /* libsqlite3.dylib */,
-				5998E57619C91BAD00A336AD /* FacebookSDK */,
 				E4EC19EC19BFDF1600E94487 /* Foundation.framework */,
 				E4EC19EE19BFDF1600E94487 /* CoreGraphics.framework */,
 				E4EC19F019BFDF1600E94487 /* UIKit.framework */,
@@ -310,6 +379,7 @@
 			knownRegions = (
 				en,
 				Base,
+				he,
 			);
 			mainGroup = E4EC19E019BFDF1600E94487;
 			productRefGroup = E4EC19EA19BFDF1600E94487 /* Products */;
@@ -327,24 +397,39 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				271AD75419CBE676009DDF9B /* cib-2014-06-30.json in Resources */,
 				27894CB419CBD48F0009D9DE /* sns-2010-03-31.json in Resources */,
 				27894CA919CBD48F0009D9DE /* cib-2014-06-30.json in Resources */,
+				271AD75319CBE676009DDF9B /* autoscaling-2011-01-01.json in Resources */,
 				27894CAD19CBD48F0009D9DE /* elasticloadbalancing-2012-06-01.json in Resources */,
+				271AD76019CBE676009DDF9B /* sqs-2012-11-05.json in Resources */,
 				27894CB019CBD48F0009D9DE /* mobileanalytics-2014-06-30.json in Resources */,
 				E4EC1A0B19BFDF1600E94487 /* Images.xcassets in Resources */,
 				27894CAE19CBD48F0009D9DE /* email-2010-12-01.json in Resources */,
+				271AD75519CBE676009DDF9B /* css-2014-06-30.json in Resources */,
 				27894CB619CBD48F0009D9DE /* sts-2011-06-15.json in Resources */,
 				27894CAF19CBD48F0009D9DE /* kinesis-2013-12-02.json in Resources */,
+				271AD76119CBE676009DDF9B /* sts-2011-06-15.json in Resources */,
+				271AD75619CBE676009DDF9B /* dynamodb-2012-08-10.json in Resources */,
 				27894CB519CBD48F0009D9DE /* sqs-2012-11-05.json in Resources */,
 				E4EC19F719BFDF1600E94487 /* InfoPlist.strings in Resources */,
 				27894CB219CBD48F0009D9DE /* s3-2006-03-01.json in Resources */,
 				27894CA819CBD48F0009D9DE /* autoscaling-2011-01-01.json in Resources */,
+				271AD75719CBE676009DDF9B /* ec2-2014-06-15.json in Resources */,
+				271AD75D19CBE676009DDF9B /* s3-2006-03-01.json in Resources */,
 				27894CB319CBD48F0009D9DE /* sdb-2009-04-15.json in Resources */,
 				E4EC1A0919BFDF1600E94487 /* Main.storyboard in Resources */,
+				271AD75819CBE676009DDF9B /* elasticloadbalancing-2012-06-01.json in Resources */,
+				271AD75F19CBE676009DDF9B /* sns-2010-03-31.json in Resources */,
 				27894CAA19CBD48F0009D9DE /* css-2014-06-30.json in Resources */,
 				27894CAB19CBD48F0009D9DE /* dynamodb-2012-08-10.json in Resources */,
 				27894CB119CBD48F0009D9DE /* monitoring-2010-08-01.json in Resources */,
+				271AD75E19CBE676009DDF9B /* sdb-2009-04-15.json in Resources */,
+				271AD75A19CBE676009DDF9B /* kinesis-2013-12-02.json in Resources */,
+				271AD75919CBE676009DDF9B /* email-2010-12-01.json in Resources */,
 				27894CAC19CBD48F0009D9DE /* ec2-2014-06-15.json in Resources */,
+				271AD75B19CBE676009DDF9B /* mobileanalytics-2014-06-30.json in Resources */,
+				271AD75C19CBE676009DDF9B /* monitoring-2010-08-01.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,22 +575,25 @@
 		E4EC1A2219BFDF1600E94487 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
-					/Users/Mando/Documents/FacebookSDK,
-					"/Users/Mando/Desktop/aws-ios-sdk-2.0.7/frameworks",
-					"/Users/Mando/Desktop/aws-ios-sdk-2.0.7/frameworks/AWSiOSSDKv2.framework/",
-					"/Users/Mando/Desktop/aws-ios-sdk-2.0.7/third-party",
-					"/Users/Mando/Desktop/aws-ios-sdk-2.0.7/frameworks/extras",
 					"$(PROJECT_DIR)/aws-ios-sdk-2.0.7/third-party",
+					"$(PROJECT_DIR)/FacebookSDK",
+					"$(PROJECT_DIR)/FacebookSDK/FBAudienceNetwork",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Bolts",
+					"$(PROJECT_DIR)/third-party",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CSULB_Friend_Finder/CSULB_Friend_Finder-Prefix.pch";
 				INFOPLIST_FILE = "CSULB_Friend_Finder/CSULB_Friend_Finder-Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(SOURCE_ROOT)/FacebookSDK.framework/Versions/A/FacebookSDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -514,22 +602,25 @@
 		E4EC1A2319BFDF1600E94487 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
-					/Users/Mando/Documents/FacebookSDK,
-					"/Users/Mando/Desktop/aws-ios-sdk-2.0.7/frameworks",
-					"/Users/Mando/Desktop/aws-ios-sdk-2.0.7/frameworks/AWSiOSSDKv2.framework/",
-					"/Users/Mando/Desktop/aws-ios-sdk-2.0.7/third-party",
-					"/Users/Mando/Desktop/aws-ios-sdk-2.0.7/frameworks/extras",
 					"$(PROJECT_DIR)/aws-ios-sdk-2.0.7/third-party",
+					"$(PROJECT_DIR)/FacebookSDK",
+					"$(PROJECT_DIR)/FacebookSDK/FBAudienceNetwork",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Bolts",
+					"$(PROJECT_DIR)/third-party",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CSULB_Friend_Finder/CSULB_Friend_Finder-Prefix.pch";
 				INFOPLIST_FILE = "CSULB_Friend_Finder/CSULB_Friend_Finder-Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(SOURCE_ROOT)/FacebookSDK.framework/Versions/A/FacebookSDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

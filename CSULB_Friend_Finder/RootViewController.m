@@ -74,7 +74,7 @@
     AWSServiceConfiguration *configurationDB = [AWSServiceConfiguration configurationWithRegion:AWSRegionUSEast1 credentialsProvider:credentialsProvider];
     // get a client with the specified config
     AWSDynamoDB *dynamoDB = [[AWSDynamoDB new] initWithConfiguration:configurationDB];
-    
+}
     
     
 - (void)didReceiveMemoryWarning

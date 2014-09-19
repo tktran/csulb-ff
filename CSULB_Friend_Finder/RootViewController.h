@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AWSiOSSDKv2/DynamoDB.h>
+
 
 @interface RootViewController : UIViewController <UIPageViewControllerDelegate>
 
