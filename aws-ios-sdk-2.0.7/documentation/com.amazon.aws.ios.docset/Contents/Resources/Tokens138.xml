@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AWSDynamoDBDeleteItemInput.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AWSDynamoDBDeleteItemInput</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;Represents the input of a &lt;i&gt;DeleteItem&lt;/i&gt; operation.&lt;/p&gt;
+Required parameters: [TableName, Key]</Abstract>
+			<DeclaredIn>AWSDynamoDBModel.h</DeclaredIn>
+            
+			
+			<NodeRef refid="138"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSDynamoDBDeleteItemInput/setConditionalOperator:</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;A logical operator to apply to the conditions in the &lt;i&gt;Expected&lt;/i&gt; map:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;AND&lt;/code&gt; - If &lt;i&gt;all&lt;/i&gt; of the conditions evaluate to true, then the entire map evaluates to true.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;OR&lt;/code&gt; - If &lt;i&gt;at least one&lt;/i&gt; of the conditions evaluate to true, then the entire map evaluates to true.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;If you omit &lt;i&gt;ConditionalOperator&lt;/i&gt;, then &lt;code&gt;AND&lt;/code&gt; is the default.&lt;/p&gt;&lt;p&gt;The operation will succeed only if the entire map evaluates to true.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSDynamoDBModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) AWSDynamoDBConditionalOperator conditionalOperator</Declaration>
+			
+			
+			<Anchor>//api/name/conditionalOperator</Anchor>
+            <NodeRef refid="138"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSDynamoDBDeleteItemInput/conditionalOperator</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;A logical operator to apply to the conditions in the &lt;i&gt;Expected&lt;/i&gt; map:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;AND&lt;/code&gt; - If &lt;i&gt;all&lt;/i&gt; of the conditions evaluate to true, then the entire map evaluates to true.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;OR&lt;/code&gt; - If &lt;i&gt;at least one&lt;/i&gt; of the conditions evaluate to true, then the entire map evaluates to true.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;If you omit &lt;i&gt;ConditionalOperator&lt;/i&gt;, then &lt;code&gt;AND&lt;/code&gt; is the default.&lt;/p&gt;&lt;p&gt;The operation will succeed only if the entire map evaluates to true.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSDynamoDBModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) AWSDynamoDBConditionalOperator conditionalOperator</Declaration>
+			
+			
+			<Anchor>//api/name/conditionalOperator</Anchor>
+            <NodeRef refid="138"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSDynamoDBDeleteItemInput/conditionalOperator</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;A logical operator to apply to the conditions in the &lt;i&gt;Expected&lt;/i&gt; map:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;AND&lt;/code&gt; - If &lt;i&gt;all&lt;/i&gt; of the conditions evaluate to true, then the entire map evaluates to true.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;OR&lt;/code&gt; - If &lt;i&gt;at least one&lt;/i&gt; of the conditions evaluate to true, then the entire map evaluates to true.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;If you omit &lt;i&gt;ConditionalOperator&lt;/i&gt;, then &lt;code&gt;AND&lt;/code&gt; is the default.&lt;/p&gt;&lt;p&gt;The operation will succeed only if the entire map evaluates to true.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSDynamoDBModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) AWSDynamoDBConditionalOperator conditionalOperator</Declaration>
+			
+			
+			<Anchor>//api/name/conditionalOperator</Anchor>
+            <NodeRef refid="138"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSDynamoDBDeleteItemInput/setExpected:</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;A map of attribute/condition pairs. This is the conditional block for the &lt;i&gt;DeleteItem&lt;/i&gt; operation.&lt;/p&gt;&lt;p&gt;Each element of &lt;i&gt;Expected&lt;/i&gt; consists of an attribute name, a comparison operator, and one or more values. DynamoDB compares the attribute with the value(s) you supplied, using the comparison operator. For each &lt;i&gt;Expected&lt;/i&gt; element, the result of the evaluation is either true or false.&lt;/p&gt;&lt;p&gt;If you specify more than one element in the &lt;i&gt;Expected&lt;/i&gt; map, then by default all of the conditions must evaluate to true. In other words, the conditions are ANDed together. (You can use the &lt;i&gt;ConditionalOperator&lt;/i&gt; parameter to OR the conditions instead. If you do this, then at least one of the conditions must evaluate to true, rather than all of them.)&lt;/p&gt;&lt;p&gt;If the &lt;i&gt;Expected&lt;/i&gt; map evaluates to true, then the conditional operation succeeds; otherwise, it fails.&lt;/p&gt;&lt;p&gt;Each item in &lt;i&gt;Expected&lt;/i&gt; represents an attribute name for DynamoDB to check, along with an &lt;i&gt;AttributeValueList&lt;/i&gt; and a &lt;i&gt;ComparisonOperator&lt;/i&gt;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; - One or more values to evaluate against the supplied attribute. The number of values in the list depends on the &lt;i&gt;ComparisonOperator&lt;/i&gt; being used.&lt;/p&gt;&lt;p&gt;For type Number, value comparisons are numeric.&lt;/p&gt;&lt;p&gt;String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, &lt;code&gt;a&lt;/code&gt; is greater than &lt;code&gt;A&lt;/code&gt;, and &lt;code&gt;aa&lt;/code&gt; is greater than &lt;code&gt;B&lt;/code&gt;. For a list of code values, see http://en.wikipedia.org/wiki/ASCII#ASCIIprintablecharacters.&lt;/p&gt;&lt;p&gt;For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values, for example when evaluating query expressions.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;i&gt;ComparisonOperator&lt;/i&gt; - A comparator for evaluating attributes in the &lt;i&gt;AttributeValueList&lt;/i&gt;. When performing the comparison, DynamoDB uses strongly consistent reads.&lt;/p&gt;&lt;p&gt;The following comparison operators are available:&lt;/p&gt;&lt;p&gt;&lt;code&gt;EQ | NE | LE | LT | GE | GT | NOTNULL | NULL | CONTAINS | NOTCONTAINS | BEGINSWITH | IN | BETWEEN&lt;/code&gt;&lt;/p&gt;&lt;p&gt;The following are descriptions of each comparison operator.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;EQ&lt;/code&gt; : Equal. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, Binary, String Set, Number Set, or Binary Set. If an item contains an &lt;i&gt;AttributeValue&lt;/i&gt; of a different type than the one specified in the request, the value does not match. For example, &lt;code&gt;{&quot;S&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt;. Also, &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}&lt;/code&gt;.&lt;/p&gt;&lt;p/&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;NE&lt;/code&gt; : Not equal. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, Binary, String Set, Number Set, or Binary Set. If an item contains an &lt;i&gt;AttributeValue&lt;/i&gt; of a different type than the one specified in the request, the value does not match. For example, &lt;code&gt;{&quot;S&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt;. Also, &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}&lt;/code&gt;.&lt;/p&gt;&lt;p/&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;LE&lt;/code&gt; : Less than or equal. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, or Binary (not a set). If an item contains an &lt;i&gt;AttributeValue&lt;/i&gt; of a different type than the one specified in the request, the value does not match. For example, &lt;code&gt;{&quot;S&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt;. Also, &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt; does not compare to &lt;code&gt;{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}&lt;/code&gt;.&lt;/p&gt;&lt;p/&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;LT&lt;/code&gt; : Less than. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, or Binary (not a set). If an item contains an &lt;i&gt;AttributeValue&lt;/i&gt; of a different type than the one specified in the request, the value does not match. For example, &lt;code&gt;{&quot;S&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt;. Also, &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt; does not compare to &lt;code&gt;{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}&lt;/code&gt;.&lt;/p&gt;&lt;p/&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;GE&lt;/code&gt; : Greater than or equal. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, or Binary (not a set). If an item contains an &lt;i&gt;AttributeValue&lt;/i&gt; of a different type than the one specified in the request, the value does not match. For example, &lt;code&gt;{&quot;S&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt;. Also, &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt; does not compare to &lt;code&gt;{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}&lt;/code&gt;.&lt;/p&gt;&lt;p/&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;GT&lt;/code&gt; : Greater than. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, or Binary (not a set). If an item contains an &lt;i&gt;AttributeValue&lt;/i&gt; of a different type than the one specified in the request, the value does not match. For example, &lt;code&gt;{&quot;S&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt;. Also, &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt; does not compare to &lt;code&gt;{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}&lt;/code&gt;.&lt;/p&gt;&lt;p/&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;NOTNULL&lt;/code&gt; : The attribute exists. &lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;NULL&lt;/code&gt; : The attribute does not exist. &lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;CONTAINS&lt;/code&gt; : checks for a subsequence, or value in a set.&lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, or Binary (not a set). If the target attribute of the comparison is a String, then the operation checks for a substring match. If the target attribute of the comparison is Binary, then the operation looks for a subsequence of the target that matches the input. If the target attribute of the comparison is a set (&quot;SS&quot;, &quot;NS&quot;, or &quot;BS&quot;), then the operation checks for a member of the set (not as a substring).&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;NOTCONTAINS&lt;/code&gt; : checks for absence of a subsequence, or absence of a value in a set.&lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, or Binary (not a set). If the target attribute of the comparison is a String, then the operation checks for the absence of a substring match. If the target attribute of the comparison is Binary, then the operation checks for the absence of a subsequence of the target that matches the input. If the target attribute of the comparison is a set (&quot;SS&quot;, &quot;NS&quot;, or &quot;BS&quot;), then the operation checks for the absence of a member of the set (not as a substring).&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;BEGINSWITH&lt;/code&gt; : checks for a prefix. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String or Binary (not a Number or a set). The target attribute of the comparison must be a String or Binary (not a Number or a set).&lt;/p&gt;&lt;p/&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;IN&lt;/code&gt; : checks for exact matches.&lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain more than one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, or Binary (not a set). The target attribute of the comparison must be of the same type and exact value to match. A String never matches a String set.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;BETWEEN&lt;/code&gt; : Greater than or equal to the first value, and less than or equal to the second value. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; must contain two &lt;i&gt;AttributeValue&lt;/i&gt; elements of the same type, either String, Number, or Binary (not a set). A target attribute matches if the target value is greater than, or equal to, the first element and less than, or equal to, the second element. If an item contains an &lt;i&gt;AttributeValue&lt;/i&gt; of a different type than the one specified in the request, the value does not match. For example, &lt;code&gt;{&quot;S&quot;:&quot;6&quot;}&lt;/code&gt; does not compare to &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt;. Also, &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt; does not compare to &lt;code&gt;{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;For usage examples of &lt;i&gt;AttributeValueList&lt;/i&gt; and &lt;i&gt;ComparisonOperator&lt;/i&gt;, see Conditional Expressions in the Amazon DynamoDB Developer Guide.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSDynamoDBModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSDictionary *expected</Declaration>
+			
+			
+			<Anchor>//api/name/expected</Anchor>
+            <NodeRef refid="138"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSDynamoDBDeleteItemInput/expected</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;A map of attribute/condition pairs. This is the conditional block for the &lt;i&gt;DeleteItem&lt;/i&gt; operation.&lt;/p&gt;&lt;p&gt;Each element of &lt;i&gt;Expected&lt;/i&gt; consists of an attribute name, a comparison operator, and one or more values. DynamoDB compares the attribute with the value(s) you supplied, using the comparison operator. For each &lt;i&gt;Expected&lt;/i&gt; element, the result of the evaluation is either true or false.&lt;/p&gt;&lt;p&gt;If you specify more than one element in the &lt;i&gt;Expected&lt;/i&gt; map, then by default all of the conditions must evaluate to true. In other words, the conditions are ANDed together. (You can use the &lt;i&gt;ConditionalOperator&lt;/i&gt; parameter to OR the conditions instead. If you do this, then at least one of the conditions must evaluate to true, rather than all of them.)&lt;/p&gt;&lt;p&gt;If the &lt;i&gt;Expected&lt;/i&gt; map evaluates to true, then the conditional operation succeeds; otherwise, it fails.&lt;/p&gt;&lt;p&gt;Each item in &lt;i&gt;Expected&lt;/i&gt; represents an attribute name for DynamoDB to check, along with an &lt;i&gt;AttributeValueList&lt;/i&gt; and a &lt;i&gt;ComparisonOperator&lt;/i&gt;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; - One or more values to evaluate against the supplied attribute. The number of values in the list depends on the &lt;i&gt;ComparisonOperator&lt;/i&gt; being used.&lt;/p&gt;&lt;p&gt;For type Number, value comparisons are numeric.&lt;/p&gt;&lt;p&gt;String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, &lt;code&gt;a&lt;/code&gt; is greater than &lt;code&gt;A&lt;/code&gt;, and &lt;code&gt;aa&lt;/code&gt; is greater than &lt;code&gt;B&lt;/code&gt;. For a list of code values, see http://en.wikipedia.org/wiki/ASCII#ASCIIprintablecharacters.&lt;/p&gt;&lt;p&gt;For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values, for example when evaluating query expressions.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;i&gt;ComparisonOperator&lt;/i&gt; - A comparator for evaluating attributes in the &lt;i&gt;AttributeValueList&lt;/i&gt;. When performing the comparison, DynamoDB uses strongly consistent reads.&lt;/p&gt;&lt;p&gt;The following comparison operators are available:&lt;/p&gt;&lt;p&gt;&lt;code&gt;EQ | NE | LE | LT | GE | GT | NOTNULL | NULL | CONTAINS | NOTCONTAINS | BEGINSWITH | IN | BETWEEN&lt;/code&gt;&lt;/p&gt;&lt;p&gt;The following are descriptions of each comparison operator.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;EQ&lt;/code&gt; : Equal. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, Binary, String Set, Number Set, or Binary Set. If an item contains an &lt;i&gt;AttributeValue&lt;/i&gt; of a different type than the one specified in the request, the value does not match. For example, &lt;code&gt;{&quot;S&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt;. Also, &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}&lt;/code&gt;.&lt;/p&gt;&lt;p/&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;NE&lt;/code&gt; : Not equal. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, Binary, String Set, Number Set, or Binary Set. If an item contains an &lt;i&gt;AttributeValue&lt;/i&gt; of a different type than the one specified in the request, the value does not match. For example, &lt;code&gt;{&quot;S&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt;. Also, &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}&lt;/code&gt;.&lt;/p&gt;&lt;p/&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;LE&lt;/code&gt; : Less than or equal. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, or Binary (not a set). If an item contains an &lt;i&gt;AttributeValue&lt;/i&gt; of a different type than the one specified in the request, the value does not match. For example, &lt;code&gt;{&quot;S&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt;. Also, &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt; does not compare to &lt;code&gt;{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}&lt;/code&gt;.&lt;/p&gt;&lt;p/&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;LT&lt;/code&gt; : Less than. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, or Binary (not a set). If an item contains an &lt;i&gt;AttributeValue&lt;/i&gt; of a different type than the one specified in the request, the value does not match. For example, &lt;code&gt;{&quot;S&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt;. Also, &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt; does not compare to &lt;code&gt;{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}&lt;/code&gt;.&lt;/p&gt;&lt;p/&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;GE&lt;/code&gt; : Greater than or equal. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, or Binary (not a set). If an item contains an &lt;i&gt;AttributeValue&lt;/i&gt; of a different type than the one specified in the request, the value does not match. For example, &lt;code&gt;{&quot;S&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt;. Also, &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt; does not compare to &lt;code&gt;{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}&lt;/code&gt;.&lt;/p&gt;&lt;p/&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;GT&lt;/code&gt; : Greater than. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, or Binary (not a set). If an item contains an &lt;i&gt;AttributeValue&lt;/i&gt; of a different type than the one specified in the request, the value does not match. For example, &lt;code&gt;{&quot;S&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt;. Also, &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt; does not compare to &lt;code&gt;{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}&lt;/code&gt;.&lt;/p&gt;&lt;p/&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;NOTNULL&lt;/code&gt; : The attribute exists. &lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;NULL&lt;/code&gt; : The attribute does not exist. &lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;CONTAINS&lt;/code&gt; : checks for a subsequence, or value in a set.&lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, or Binary (not a set). If the target attribute of the comparison is a String, then the operation checks for a substring match. If the target attribute of the comparison is Binary, then the operation looks for a subsequence of the target that matches the input. If the target attribute of the comparison is a set (&quot;SS&quot;, &quot;NS&quot;, or &quot;BS&quot;), then the operation checks for a member of the set (not as a substring).&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;NOTCONTAINS&lt;/code&gt; : checks for absence of a subsequence, or absence of a value in a set.&lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, or Binary (not a set). If the target attribute of the comparison is a String, then the operation checks for the absence of a substring match. If the target attribute of the comparison is Binary, then the operation checks for the absence of a subsequence of the target that matches the input. If the target attribute of the comparison is a set (&quot;SS&quot;, &quot;NS&quot;, or &quot;BS&quot;), then the operation checks for the absence of a member of the set (not as a substring).&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;BEGINSWITH&lt;/code&gt; : checks for a prefix. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String or Binary (not a Number or a set). The target attribute of the comparison must be a String or Binary (not a Number or a set).&lt;/p&gt;&lt;p/&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;IN&lt;/code&gt; : checks for exact matches.&lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain more than one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, or Binary (not a set). The target attribute of the comparison must be of the same type and exact value to match. A String never matches a String set.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;BETWEEN&lt;/code&gt; : Greater than or equal to the first value, and less than or equal to the second value. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; must contain two &lt;i&gt;AttributeValue&lt;/i&gt; elements of the same type, either String, Number, or Binary (not a set). A target attribute matches if the target value is greater than, or equal to, the first element and less than, or equal to, the second element. If an item contains an &lt;i&gt;AttributeValue&lt;/i&gt; of a different type than the one specified in the request, the value does not match. For example, &lt;code&gt;{&quot;S&quot;:&quot;6&quot;}&lt;/code&gt; does not compare to &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt;. Also, &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt; does not compare to &lt;code&gt;{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;For usage examples of &lt;i&gt;AttributeValueList&lt;/i&gt; and &lt;i&gt;ComparisonOperator&lt;/i&gt;, see Conditional Expressions in the Amazon DynamoDB Developer Guide.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSDynamoDBModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSDictionary *expected</Declaration>
+			
+			
+			<Anchor>//api/name/expected</Anchor>
+            <NodeRef refid="138"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSDynamoDBDeleteItemInput/expected</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;A map of attribute/condition pairs. This is the conditional block for the &lt;i&gt;DeleteItem&lt;/i&gt; operation.&lt;/p&gt;&lt;p&gt;Each element of &lt;i&gt;Expected&lt;/i&gt; consists of an attribute name, a comparison operator, and one or more values. DynamoDB compares the attribute with the value(s) you supplied, using the comparison operator. For each &lt;i&gt;Expected&lt;/i&gt; element, the result of the evaluation is either true or false.&lt;/p&gt;&lt;p&gt;If you specify more than one element in the &lt;i&gt;Expected&lt;/i&gt; map, then by default all of the conditions must evaluate to true. In other words, the conditions are ANDed together. (You can use the &lt;i&gt;ConditionalOperator&lt;/i&gt; parameter to OR the conditions instead. If you do this, then at least one of the conditions must evaluate to true, rather than all of them.)&lt;/p&gt;&lt;p&gt;If the &lt;i&gt;Expected&lt;/i&gt; map evaluates to true, then the conditional operation succeeds; otherwise, it fails.&lt;/p&gt;&lt;p&gt;Each item in &lt;i&gt;Expected&lt;/i&gt; represents an attribute name for DynamoDB to check, along with an &lt;i&gt;AttributeValueList&lt;/i&gt; and a &lt;i&gt;ComparisonOperator&lt;/i&gt;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; - One or more values to evaluate against the supplied attribute. The number of values in the list depends on the &lt;i&gt;ComparisonOperator&lt;/i&gt; being used.&lt;/p&gt;&lt;p&gt;For type Number, value comparisons are numeric.&lt;/p&gt;&lt;p&gt;String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, &lt;code&gt;a&lt;/code&gt; is greater than &lt;code&gt;A&lt;/code&gt;, and &lt;code&gt;aa&lt;/code&gt; is greater than &lt;code&gt;B&lt;/code&gt;. For a list of code values, see http://en.wikipedia.org/wiki/ASCII#ASCIIprintablecharacters.&lt;/p&gt;&lt;p&gt;For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values, for example when evaluating query expressions.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;i&gt;ComparisonOperator&lt;/i&gt; - A comparator for evaluating attributes in the &lt;i&gt;AttributeValueList&lt;/i&gt;. When performing the comparison, DynamoDB uses strongly consistent reads.&lt;/p&gt;&lt;p&gt;The following comparison operators are available:&lt;/p&gt;&lt;p&gt;&lt;code&gt;EQ | NE | LE | LT | GE | GT | NOTNULL | NULL | CONTAINS | NOTCONTAINS | BEGINSWITH | IN | BETWEEN&lt;/code&gt;&lt;/p&gt;&lt;p&gt;The following are descriptions of each comparison operator.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;EQ&lt;/code&gt; : Equal. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, Binary, String Set, Number Set, or Binary Set. If an item contains an &lt;i&gt;AttributeValue&lt;/i&gt; of a different type than the one specified in the request, the value does not match. For example, &lt;code&gt;{&quot;S&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt;. Also, &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}&lt;/code&gt;.&lt;/p&gt;&lt;p/&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;NE&lt;/code&gt; : Not equal. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, Binary, String Set, Number Set, or Binary Set. If an item contains an &lt;i&gt;AttributeValue&lt;/i&gt; of a different type than the one specified in the request, the value does not match. For example, &lt;code&gt;{&quot;S&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt;. Also, &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}&lt;/code&gt;.&lt;/p&gt;&lt;p/&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;LE&lt;/code&gt; : Less than or equal. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, or Binary (not a set). If an item contains an &lt;i&gt;AttributeValue&lt;/i&gt; of a different type than the one specified in the request, the value does not match. For example, &lt;code&gt;{&quot;S&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt;. Also, &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt; does not compare to &lt;code&gt;{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}&lt;/code&gt;.&lt;/p&gt;&lt;p/&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;LT&lt;/code&gt; : Less than. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, or Binary (not a set). If an item contains an &lt;i&gt;AttributeValue&lt;/i&gt; of a different type than the one specified in the request, the value does not match. For example, &lt;code&gt;{&quot;S&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt;. Also, &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt; does not compare to &lt;code&gt;{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}&lt;/code&gt;.&lt;/p&gt;&lt;p/&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;GE&lt;/code&gt; : Greater than or equal. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, or Binary (not a set). If an item contains an &lt;i&gt;AttributeValue&lt;/i&gt; of a different type than the one specified in the request, the value does not match. For example, &lt;code&gt;{&quot;S&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt;. Also, &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt; does not compare to &lt;code&gt;{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}&lt;/code&gt;.&lt;/p&gt;&lt;p/&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;GT&lt;/code&gt; : Greater than. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, or Binary (not a set). If an item contains an &lt;i&gt;AttributeValue&lt;/i&gt; of a different type than the one specified in the request, the value does not match. For example, &lt;code&gt;{&quot;S&quot;:&quot;6&quot;}&lt;/code&gt; does not equal &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt;. Also, &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt; does not compare to &lt;code&gt;{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}&lt;/code&gt;.&lt;/p&gt;&lt;p/&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;NOTNULL&lt;/code&gt; : The attribute exists. &lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;NULL&lt;/code&gt; : The attribute does not exist. &lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;CONTAINS&lt;/code&gt; : checks for a subsequence, or value in a set.&lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, or Binary (not a set). If the target attribute of the comparison is a String, then the operation checks for a substring match. If the target attribute of the comparison is Binary, then the operation looks for a subsequence of the target that matches the input. If the target attribute of the comparison is a set (&quot;SS&quot;, &quot;NS&quot;, or &quot;BS&quot;), then the operation checks for a member of the set (not as a substring).&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;NOTCONTAINS&lt;/code&gt; : checks for absence of a subsequence, or absence of a value in a set.&lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, or Binary (not a set). If the target attribute of the comparison is a String, then the operation checks for the absence of a substring match. If the target attribute of the comparison is Binary, then the operation checks for the absence of a subsequence of the target that matches the input. If the target attribute of the comparison is a set (&quot;SS&quot;, &quot;NS&quot;, or &quot;BS&quot;), then the operation checks for the absence of a member of the set (not as a substring).&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;BEGINSWITH&lt;/code&gt; : checks for a prefix. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain only one &lt;i&gt;AttributeValue&lt;/i&gt; of type String or Binary (not a Number or a set). The target attribute of the comparison must be a String or Binary (not a Number or a set).&lt;/p&gt;&lt;p/&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;IN&lt;/code&gt; : checks for exact matches.&lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; can contain more than one &lt;i&gt;AttributeValue&lt;/i&gt; of type String, Number, or Binary (not a set). The target attribute of the comparison must be of the same type and exact value to match. A String never matches a String set.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;BETWEEN&lt;/code&gt; : Greater than or equal to the first value, and less than or equal to the second value. &lt;/p&gt;&lt;p&gt;&lt;i&gt;AttributeValueList&lt;/i&gt; must contain two &lt;i&gt;AttributeValue&lt;/i&gt; elements of the same type, either String, Number, or Binary (not a set). A target attribute matches if the target value is greater than, or equal to, the first element and less than, or equal to, the second element. If an item contains an &lt;i&gt;AttributeValue&lt;/i&gt; of a different type than the one specified in the request, the value does not match. For example, &lt;code&gt;{&quot;S&quot;:&quot;6&quot;}&lt;/code&gt; does not compare to &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt;. Also, &lt;code&gt;{&quot;N&quot;:&quot;6&quot;}&lt;/code&gt; does not compare to &lt;code&gt;{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;For usage examples of &lt;i&gt;AttributeValueList&lt;/i&gt; and &lt;i&gt;ComparisonOperator&lt;/i&gt;, see Conditional Expressions in the Amazon DynamoDB Developer Guide.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSDynamoDBModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSDictionary *expected</Declaration>
+			
+			
+			<Anchor>//api/name/expected</Anchor>
+            <NodeRef refid="138"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSDynamoDBDeleteItemInput/setKey:</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;A map of attribute names to &lt;i&gt;AttributeValue&lt;/i&gt; objects, representing the primary key of the item to delete.&lt;/p&gt;&lt;p&gt;For the primary key, you must provide &lt;i&gt;all&lt;/i&gt; of the attributes. For example, with a hash type primary key, you only need to specify the hash attribute. For a hash-and-range type primary key, you must specify &lt;i&gt;both&lt;/i&gt; the hash attribute and the range attribute.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSDynamoDBModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSDictionary *key</Declaration>
+			
+			
+			<Anchor>//api/name/key</Anchor>
+            <NodeRef refid="138"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSDynamoDBDeleteItemInput/key</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;A map of attribute names to &lt;i&gt;AttributeValue&lt;/i&gt; objects, representing the primary key of the item to delete.&lt;/p&gt;&lt;p&gt;For the primary key, you must provide &lt;i&gt;all&lt;/i&gt; of the attributes. For example, with a hash type primary key, you only need to specify the hash attribute. For a hash-and-range type primary key, you must specify &lt;i&gt;both&lt;/i&gt; the hash attribute and the range attribute.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSDynamoDBModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSDictionary *key</Declaration>
+			
+			
+			<Anchor>//api/name/key</Anchor>
+            <NodeRef refid="138"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSDynamoDBDeleteItemInput/key</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;A map of attribute names to &lt;i&gt;AttributeValue&lt;/i&gt; objects, representing the primary key of the item to delete.&lt;/p&gt;&lt;p&gt;For the primary key, you must provide &lt;i&gt;all&lt;/i&gt; of the attributes. For example, with a hash type primary key, you only need to specify the hash attribute. For a hash-and-range type primary key, you must specify &lt;i&gt;both&lt;/i&gt; the hash attribute and the range attribute.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSDynamoDBModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSDictionary *key</Declaration>
+			
+			
+			<Anchor>//api/name/key</Anchor>
+            <NodeRef refid="138"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSDynamoDBDeleteItemInput/setReturnConsumedCapacity:</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;If set to &lt;code&gt;TOTAL&lt;/code&gt;, the response includes &lt;i&gt;ConsumedCapacity&lt;/i&gt; data for tables and indexes. If set to &lt;code&gt;INDEXES&lt;/code&gt;, the response includes &lt;i&gt;ConsumedCapacity&lt;/i&gt; for indexes. If set to &lt;code&gt;NONE&lt;/code&gt; (the default), &lt;i&gt;ConsumedCapacity&lt;/i&gt; is not included in the response.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSDynamoDBModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) AWSDynamoDBReturnConsumedCapacity returnConsumedCapacity</Declaration>
+			
+			
+			<Anchor>//api/name/returnConsumedCapacity</Anchor>
+            <NodeRef refid="138"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSDynamoDBDeleteItemInput/returnConsumedCapacity</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;If set to &lt;code&gt;TOTAL&lt;/code&gt;, the response includes &lt;i&gt;ConsumedCapacity&lt;/i&gt; data for tables and indexes. If set to &lt;code&gt;INDEXES&lt;/code&gt;, the response includes &lt;i&gt;ConsumedCapacity&lt;/i&gt; for indexes. If set to &lt;code&gt;NONE&lt;/code&gt; (the default), &lt;i&gt;ConsumedCapacity&lt;/i&gt; is not included in the response.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSDynamoDBModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) AWSDynamoDBReturnConsumedCapacity returnConsumedCapacity</Declaration>
+			
+			
+			<Anchor>//api/name/returnConsumedCapacity</Anchor>
+            <NodeRef refid="138"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSDynamoDBDeleteItemInput/returnConsumedCapacity</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;If set to &lt;code&gt;TOTAL&lt;/code&gt;, the response includes &lt;i&gt;ConsumedCapacity&lt;/i&gt; data for tables and indexes. If set to &lt;code&gt;INDEXES&lt;/code&gt;, the response includes &lt;i&gt;ConsumedCapacity&lt;/i&gt; for indexes. If set to &lt;code&gt;NONE&lt;/code&gt; (the default), &lt;i&gt;ConsumedCapacity&lt;/i&gt; is not included in the response.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSDynamoDBModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) AWSDynamoDBReturnConsumedCapacity returnConsumedCapacity</Declaration>
+			
+			
+			<Anchor>//api/name/returnConsumedCapacity</Anchor>
+            <NodeRef refid="138"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSDynamoDBDeleteItemInput/setReturnItemCollectionMetrics:</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;If set to &lt;code&gt;SIZE&lt;/code&gt;, statistics about item collections, if any, that were modified during the operation are returned in the response. If set to &lt;code&gt;NONE&lt;/code&gt; (the default), no statistics are returned.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSDynamoDBModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) AWSDynamoDBReturnItemCollectionMetrics returnItemCollectionMetrics</Declaration>
+			
+			
+			<Anchor>//api/name/returnItemCollectionMetrics</Anchor>
+            <NodeRef refid="138"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSDynamoDBDeleteItemInput/returnItemCollectionMetrics</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;If set to &lt;code&gt;SIZE&lt;/code&gt;, statistics about item collections, if any, that were modified during the operation are returned in the response. If set to &lt;code&gt;NONE&lt;/code&gt; (the default), no statistics are returned.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSDynamoDBModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) AWSDynamoDBReturnItemCollectionMetrics returnItemCollectionMetrics</Declaration>
+			
+			
+			<Anchor>//api/name/returnItemCollectionMetrics</Anchor>
+            <NodeRef refid="138"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSDynamoDBDeleteItemInput/returnItemCollectionMetrics</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;If set to &lt;code&gt;SIZE&lt;/code&gt;, statistics about item collections, if any, that were modified during the operation are returned in the response. If set to &lt;code&gt;NONE&lt;/code&gt; (the default), no statistics are returned.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSDynamoDBModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) AWSDynamoDBReturnItemCollectionMetrics returnItemCollectionMetrics</Declaration>
+			
+			
+			<Anchor>//api/name/returnItemCollectionMetrics</Anchor>
+            <NodeRef refid="138"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSDynamoDBDeleteItemInput/setReturnValues:</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;Use &lt;i&gt;ReturnValues&lt;/i&gt; if you want to get the item attributes as they appeared before they were deleted. For &lt;i&gt;DeleteItem&lt;/i&gt;, the valid values are:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;NONE&lt;/code&gt; - If &lt;i&gt;ReturnValues&lt;/i&gt; is not specified, or if its value is &lt;code&gt;NONE&lt;/code&gt;, then nothing is returned. (This is the default for &lt;i&gt;ReturnValues&lt;/i&gt;.)&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;ALL_OLD&lt;/code&gt; - The content of the old item is returned.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</Abstract>
+			<DeclaredIn>AWSDynamoDBModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) AWSDynamoDBReturnValue returnValues</Declaration>
+			
+			
+			<Anchor>//api/name/returnValues</Anchor>
+            <NodeRef refid="138"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSDynamoDBDeleteItemInput/returnValues</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;Use &lt;i&gt;ReturnValues&lt;/i&gt; if you want to get the item attributes as they appeared before they were deleted. For &lt;i&gt;DeleteItem&lt;/i&gt;, the valid values are:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;NONE&lt;/code&gt; - If &lt;i&gt;ReturnValues&lt;/i&gt; is not specified, or if its value is &lt;code&gt;NONE&lt;/code&gt;, then nothing is returned. (This is the default for &lt;i&gt;ReturnValues&lt;/i&gt;.)&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;ALL_OLD&lt;/code&gt; - The content of the old item is returned.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</Abstract>
+			<DeclaredIn>AWSDynamoDBModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) AWSDynamoDBReturnValue returnValues</Declaration>
+			
+			
+			<Anchor>//api/name/returnValues</Anchor>
+            <NodeRef refid="138"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSDynamoDBDeleteItemInput/returnValues</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;Use &lt;i&gt;ReturnValues&lt;/i&gt; if you want to get the item attributes as they appeared before they were deleted. For &lt;i&gt;DeleteItem&lt;/i&gt;, the valid values are:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;NONE&lt;/code&gt; - If &lt;i&gt;ReturnValues&lt;/i&gt; is not specified, or if its value is &lt;code&gt;NONE&lt;/code&gt;, then nothing is returned. (This is the default for &lt;i&gt;ReturnValues&lt;/i&gt;.)&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;ALL_OLD&lt;/code&gt; - The content of the old item is returned.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</Abstract>
+			<DeclaredIn>AWSDynamoDBModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) AWSDynamoDBReturnValue returnValues</Declaration>
+			
+			
+			<Anchor>//api/name/returnValues</Anchor>
+            <NodeRef refid="138"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSDynamoDBDeleteItemInput/setTableName:</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;The name of the table from which to delete the item.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSDynamoDBModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *tableName</Declaration>
+			
+			
+			<Anchor>//api/name/tableName</Anchor>
+            <NodeRef refid="138"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSDynamoDBDeleteItemInput/tableName</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;The name of the table from which to delete the item.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSDynamoDBModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *tableName</Declaration>
+			
+			
+			<Anchor>//api/name/tableName</Anchor>
+            <NodeRef refid="138"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSDynamoDBDeleteItemInput/tableName</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;The name of the table from which to delete the item.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSDynamoDBModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *tableName</Declaration>
+			
+			
+			<Anchor>//api/name/tableName</Anchor>
+            <NodeRef refid="138"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

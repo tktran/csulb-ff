@@ -22,17 +22,17 @@
 		27894CB419CBD48F0009D9DE /* sns-2010-03-31.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894CA519CBD48F0009D9DE /* sns-2010-03-31.json */; };
 		27894CB519CBD48F0009D9DE /* sqs-2012-11-05.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894CA619CBD48F0009D9DE /* sqs-2012-11-05.json */; };
 		27894CB619CBD48F0009D9DE /* sts-2011-06-15.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894CA719CBD48F0009D9DE /* sts-2011-06-15.json */; };
-		5998E57719C91BAD00A336AD /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5998E57619C91BAD00A336AD /* FacebookSDK.framework */; };
-		5998E57B19C927E300A336AD /* AWSiOSSDKv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5998E57A19C927E300A336AD /* AWSiOSSDKv2.framework */; };
+		5998E57719C91BAD00A336AD /* FacebookSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = 5998E57619C91BAD00A336AD /* FacebookSDK */; };
 		5998E5C719C9294400A336AD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5998E5C619C9294400A336AD /* libsqlite3.dylib */; };
 		5998E5C919C9294E00A336AD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5998E5C819C9294E00A336AD /* libz.dylib */; };
-		5998E5D219C929A300A336AD /* GZIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5998E5CB19C929A300A336AD /* GZIP.framework */; };
-		5998E5D319C929A300A336AD /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5998E5CC19C929A300A336AD /* Mantle.framework */; };
-		5998E5D419C929A300A336AD /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5998E5CD19C929A300A336AD /* Reachability.framework */; };
-		5998E5D519C929A300A336AD /* TMCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5998E5CE19C929A300A336AD /* TMCache.framework */; };
-		5998E5D619C929A300A336AD /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5998E5CF19C929A300A336AD /* UICKeyChainStore.framework */; };
-		5998E5D719C929A300A336AD /* XMLDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5998E5D019C929A300A336AD /* XMLDictionary.framework */; };
-		5998E5F719C92B3D00A336AD /* AWSCognitoSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5998E5F619C92B3D00A336AD /* AWSCognitoSync.framework */; };
+		5998E5F719C92B3D00A336AD /* aws-ios-sdk-2.0.7 in Frameworks */ = {isa = PBXBuildFile; fileRef = 5998E5F619C92B3D00A336AD /* aws-ios-sdk-2.0.7 */; };
+		59E4760319CBD6E4007B70B6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E475FC19CBD6E4007B70B6 /* Bolts.framework */; };
+		59E4760419CBD6E4007B70B6 /* GZIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E475FD19CBD6E4007B70B6 /* GZIP.framework */; };
+		59E4760519CBD6E4007B70B6 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E475FE19CBD6E4007B70B6 /* Mantle.framework */; };
+		59E4760619CBD6E4007B70B6 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E475FF19CBD6E4007B70B6 /* Reachability.framework */; };
+		59E4760719CBD6E4007B70B6 /* TMCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E4760019CBD6E4007B70B6 /* TMCache.framework */; };
+		59E4760819CBD6E4007B70B6 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E4760119CBD6E4007B70B6 /* UICKeyChainStore.framework */; };
+		59E4760919CBD6E4007B70B6 /* XMLDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E4760219CBD6E4007B70B6 /* XMLDictionary.framework */; };
 		E4EC19ED19BFDF1600E94487 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EC19EC19BFDF1600E94487 /* Foundation.framework */; };
 		E4EC19EF19BFDF1600E94487 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EC19EE19BFDF1600E94487 /* CoreGraphics.framework */; };
 		E4EC19F119BFDF1600E94487 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EC19F019BFDF1600E94487 /* UIKit.framework */; };
@@ -77,17 +77,17 @@
 		27894CA519CBD48F0009D9DE /* sns-2010-03-31.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sns-2010-03-31.json"; sourceTree = "<group>"; };
 		27894CA619CBD48F0009D9DE /* sqs-2012-11-05.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sqs-2012-11-05.json"; sourceTree = "<group>"; };
 		27894CA719CBD48F0009D9DE /* sts-2011-06-15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sts-2011-06-15.json"; sourceTree = "<group>"; };
-		5998E57619C91BAD00A336AD /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
-		5998E57A19C927E300A336AD /* AWSiOSSDKv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSiOSSDKv2.framework; path = "../aws-ios-sdk-2.0.7/frameworks/AWSiOSSDKv2.framework"; sourceTree = "<group>"; };
+		5998E57619C91BAD00A336AD /* FacebookSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FacebookSDK; sourceTree = "<group>"; };
 		5998E5C619C9294400A336AD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		5998E5C819C9294E00A336AD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		5998E5CB19C929A300A336AD /* GZIP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GZIP.framework; path = "../aws-ios-sdk-2.0.7/third-party/GZIP.framework"; sourceTree = "<group>"; };
-		5998E5CC19C929A300A336AD /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mantle.framework; path = "../aws-ios-sdk-2.0.7/third-party/Mantle.framework"; sourceTree = "<group>"; };
-		5998E5CD19C929A300A336AD /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = "../aws-ios-sdk-2.0.7/third-party/Reachability.framework"; sourceTree = "<group>"; };
-		5998E5CE19C929A300A336AD /* TMCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TMCache.framework; path = "../aws-ios-sdk-2.0.7/third-party/TMCache.framework"; sourceTree = "<group>"; };
-		5998E5CF19C929A300A336AD /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = "../aws-ios-sdk-2.0.7/third-party/UICKeyChainStore.framework"; sourceTree = "<group>"; };
-		5998E5D019C929A300A336AD /* XMLDictionary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XMLDictionary.framework; path = "../aws-ios-sdk-2.0.7/third-party/XMLDictionary.framework"; sourceTree = "<group>"; };
-		5998E5F619C92B3D00A336AD /* AWSCognitoSync.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCognitoSync.framework; path = "../aws-ios-sdk-2.0.7/frameworks/extras/AWSCognitoSync.framework"; sourceTree = "<group>"; };
+		5998E5F619C92B3D00A336AD /* aws-ios-sdk-2.0.7 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "aws-ios-sdk-2.0.7"; sourceTree = "<group>"; };
+		59E475FC19CBD6E4007B70B6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "aws-ios-sdk-2.0.7/third-party/Bolts.framework"; sourceTree = "<group>"; };
+		59E475FD19CBD6E4007B70B6 /* GZIP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GZIP.framework; path = "aws-ios-sdk-2.0.7/third-party/GZIP.framework"; sourceTree = "<group>"; };
+		59E475FE19CBD6E4007B70B6 /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mantle.framework; path = "aws-ios-sdk-2.0.7/third-party/Mantle.framework"; sourceTree = "<group>"; };
+		59E475FF19CBD6E4007B70B6 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = "aws-ios-sdk-2.0.7/third-party/Reachability.framework"; sourceTree = "<group>"; };
+		59E4760019CBD6E4007B70B6 /* TMCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TMCache.framework; path = "aws-ios-sdk-2.0.7/third-party/TMCache.framework"; sourceTree = "<group>"; };
+		59E4760119CBD6E4007B70B6 /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = "aws-ios-sdk-2.0.7/third-party/UICKeyChainStore.framework"; sourceTree = "<group>"; };
+		59E4760219CBD6E4007B70B6 /* XMLDictionary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XMLDictionary.framework; path = "aws-ios-sdk-2.0.7/third-party/XMLDictionary.framework"; sourceTree = "<group>"; };
 		E4EC19E919BFDF1600E94487 /* CSULB_Friend_Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSULB_Friend_Finder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4EC19EC19BFDF1600E94487 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E4EC19EE19BFDF1600E94487 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -119,19 +119,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				5998E5C919C9294E00A336AD /* libz.dylib in Frameworks */,
-				5998E5D619C929A300A336AD /* UICKeyChainStore.framework in Frameworks */,
-				5998E5D319C929A300A336AD /* Mantle.framework in Frameworks */,
-				5998E5F719C92B3D00A336AD /* AWSCognitoSync.framework in Frameworks */,
-				5998E5D519C929A300A336AD /* TMCache.framework in Frameworks */,
-				5998E5D219C929A300A336AD /* GZIP.framework in Frameworks */,
+				59E4760819CBD6E4007B70B6 /* UICKeyChainStore.framework in Frameworks */,
+				59E4760519CBD6E4007B70B6 /* Mantle.framework in Frameworks */,
+				59E4760719CBD6E4007B70B6 /* TMCache.framework in Frameworks */,
+				59E4760419CBD6E4007B70B6 /* GZIP.framework in Frameworks */,
+				5998E5F719C92B3D00A336AD /* aws-ios-sdk-2.0.7 in Frameworks */,
+				59E4760919CBD6E4007B70B6 /* XMLDictionary.framework in Frameworks */,
+				59E4760619CBD6E4007B70B6 /* Reachability.framework in Frameworks */,
 				5998E5C719C9294400A336AD /* libsqlite3.dylib in Frameworks */,
-				5998E5D719C929A300A336AD /* XMLDictionary.framework in Frameworks */,
-				5998E5D419C929A300A336AD /* Reachability.framework in Frameworks */,
 				E4EC19EF19BFDF1600E94487 /* CoreGraphics.framework in Frameworks */,
-				5998E57719C91BAD00A336AD /* FacebookSDK.framework in Frameworks */,
+				5998E57719C91BAD00A336AD /* FacebookSDK in Frameworks */,
 				E4EC19F119BFDF1600E94487 /* UIKit.framework in Frameworks */,
 				E4EC19ED19BFDF1600E94487 /* Foundation.framework in Frameworks */,
-				5998E57B19C927E300A336AD /* AWSiOSSDKv2.framework in Frameworks */,
+				59E4760319CBD6E4007B70B6 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,17 +185,17 @@
 		E4EC19EB19BFDF1600E94487 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5998E5F619C92B3D00A336AD /* AWSCognitoSync.framework */,
-				5998E5CB19C929A300A336AD /* GZIP.framework */,
-				5998E5CC19C929A300A336AD /* Mantle.framework */,
-				5998E5CD19C929A300A336AD /* Reachability.framework */,
-				5998E5CE19C929A300A336AD /* TMCache.framework */,
-				5998E5CF19C929A300A336AD /* UICKeyChainStore.framework */,
-				5998E5D019C929A300A336AD /* XMLDictionary.framework */,
+				59E475FC19CBD6E4007B70B6 /* Bolts.framework */,
+				59E475FD19CBD6E4007B70B6 /* GZIP.framework */,
+				59E475FE19CBD6E4007B70B6 /* Mantle.framework */,
+				59E475FF19CBD6E4007B70B6 /* Reachability.framework */,
+				59E4760019CBD6E4007B70B6 /* TMCache.framework */,
+				59E4760119CBD6E4007B70B6 /* UICKeyChainStore.framework */,
+				59E4760219CBD6E4007B70B6 /* XMLDictionary.framework */,
+				5998E5F619C92B3D00A336AD /* aws-ios-sdk-2.0.7 */,
 				5998E5C819C9294E00A336AD /* libz.dylib */,
 				5998E5C619C9294400A336AD /* libsqlite3.dylib */,
-				5998E57A19C927E300A336AD /* AWSiOSSDKv2.framework */,
-				5998E57619C91BAD00A336AD /* FacebookSDK.framework */,
+				5998E57619C91BAD00A336AD /* FacebookSDK */,
 				E4EC19EC19BFDF1600E94487 /* Foundation.framework */,
 				E4EC19EE19BFDF1600E94487 /* CoreGraphics.framework */,
 				E4EC19F019BFDF1600E94487 /* UIKit.framework */,
@@ -499,6 +499,7 @@
 					"/Users/Mando/Desktop/aws-ios-sdk-2.0.7/frameworks/AWSiOSSDKv2.framework/",
 					"/Users/Mando/Desktop/aws-ios-sdk-2.0.7/third-party",
 					"/Users/Mando/Desktop/aws-ios-sdk-2.0.7/frameworks/extras",
+					"$(PROJECT_DIR)/aws-ios-sdk-2.0.7/third-party",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CSULB_Friend_Finder/CSULB_Friend_Finder-Prefix.pch";
@@ -522,6 +523,7 @@
 					"/Users/Mando/Desktop/aws-ios-sdk-2.0.7/frameworks/AWSiOSSDKv2.framework/",
 					"/Users/Mando/Desktop/aws-ios-sdk-2.0.7/third-party",
 					"/Users/Mando/Desktop/aws-ios-sdk-2.0.7/frameworks/extras",
+					"$(PROJECT_DIR)/aws-ios-sdk-2.0.7/third-party",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CSULB_Friend_Finder/CSULB_Friend_Finder-Prefix.pch";

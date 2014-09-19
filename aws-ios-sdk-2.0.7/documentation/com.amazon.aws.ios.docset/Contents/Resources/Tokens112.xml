@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AWSCognitoCredentialsProvider.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoCredentialsProvider</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCredentialsProvider.h</DeclaredIn>
+            
+			
+			<NodeRef refid="112"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoCredentialsProvider/refresh</TokenIdentifier>
+			<Abstract type="html">Refreshes the locally stored credentials. The SDK automatically calls this method when necessary, and you do not need to call this method manually.</Abstract>
+			<DeclaredIn>AWSCredentialsProvider.h</DeclaredIn>
+			
+			<Declaration>- (BFTask *)refresh</Declaration>
+			
+			<ReturnValue><Abstract type="html">BFTask</Abstract></ReturnValue>
+			<Anchor>//api/name/refresh</Anchor>
+            <NodeRef refid="112"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

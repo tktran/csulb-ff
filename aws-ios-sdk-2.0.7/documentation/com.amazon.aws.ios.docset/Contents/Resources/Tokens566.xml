@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AWSMobileAnalyticsERS.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AWSMobileAnalyticsERS</TokenIdentifier>
+			<Abstract type="html">A service which is used to record Amazon Mobile Analytics events</Abstract>
+			<DeclaredIn>AWSMobileAnalyticsERS.h</DeclaredIn>
+            
+			
+			<NodeRef refid="566"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSMobileAnalyticsERS/putEvents:</TokenIdentifier>
+			<Abstract type="html">Record a batch of events</Abstract>
+			<DeclaredIn>AWSMobileAnalyticsERS.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSMobileAnalyticsERSPutEventsInput</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (BFTask *)putEvents:(AWSMobileAnalyticsERSPutEventsInput *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the PutEvents service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of BFTask. On successful execution, task.result will be nil. On failed execution, task.error may contain an NSError with AWSMobileAnalyticsERSErrorDomain domian and the following error code: AWSMobileAnalyticsERSErrorBadRequest.</Abstract></ReturnValue>
+			<Anchor>//api/name/putEvents:</Anchor>
+            <NodeRef refid="566"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

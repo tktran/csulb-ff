@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AWSCognitoIdentityResponseSerializer.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityResponseSerializer</TokenIdentifier>
+			<Abstract type="html">Copyright 2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.</Abstract>
+			<DeclaredIn>AWSCognitoIdentity.m</DeclaredIn>
+            
+			
+			<NodeRef refid="116"/>
+		</Token>
+		
+		
+        
+	</File>
+</Tokens>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AWSKinesisStreamDescription.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AWSKinesisStreamDescription</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;Represents the output of a &lt;code&gt;DescribeStream&lt;/code&gt; operation.&lt;/p&gt;
+Required parameters: [StreamName, StreamARN, StreamStatus, Shards, HasMoreShards]</Abstract>
+			<DeclaredIn>AWSKinesisModel.h</DeclaredIn>
+            
+			
+			<NodeRef refid="562"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSKinesisStreamDescription/setHasMoreShards:</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;If set to &lt;code&gt;true&lt;/code&gt; there are more shards in the stream available to describe.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSKinesisModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSNumber *hasMoreShards</Declaration>
+			
+			
+			<Anchor>//api/name/hasMoreShards</Anchor>
+            <NodeRef refid="562"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSKinesisStreamDescription/hasMoreShards</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;If set to &lt;code&gt;true&lt;/code&gt; there are more shards in the stream available to describe.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSKinesisModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSNumber *hasMoreShards</Declaration>
+			
+			
+			<Anchor>//api/name/hasMoreShards</Anchor>
+            <NodeRef refid="562"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSKinesisStreamDescription/hasMoreShards</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;If set to &lt;code&gt;true&lt;/code&gt; there are more shards in the stream available to describe.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSKinesisModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSNumber *hasMoreShards</Declaration>
+			
+			
+			<Anchor>//api/name/hasMoreShards</Anchor>
+            <NodeRef refid="562"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSKinesisStreamDescription/setShards:</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;The shards that comprise the stream.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSKinesisModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray *shards</Declaration>
+			
+			
+			<Anchor>//api/name/shards</Anchor>
+            <NodeRef refid="562"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSKinesisStreamDescription/shards</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;The shards that comprise the stream.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSKinesisModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray *shards</Declaration>
+			
+			
+			<Anchor>//api/name/shards</Anchor>
+            <NodeRef refid="562"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSKinesisStreamDescription/shards</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;The shards that comprise the stream.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSKinesisModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray *shards</Declaration>
+			
+			
+			<Anchor>//api/name/shards</Anchor>
+            <NodeRef refid="562"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSKinesisStreamDescription/setStreamARN:</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;The Amazon Resource Name (ARN) for the stream being described.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSKinesisModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *streamARN</Declaration>
+			
+			
+			<Anchor>//api/name/streamARN</Anchor>
+            <NodeRef refid="562"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSKinesisStreamDescription/streamARN</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;The Amazon Resource Name (ARN) for the stream being described.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSKinesisModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *streamARN</Declaration>
+			
+			
+			<Anchor>//api/name/streamARN</Anchor>
+            <NodeRef refid="562"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSKinesisStreamDescription/streamARN</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;The Amazon Resource Name (ARN) for the stream being described.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSKinesisModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *streamARN</Declaration>
+			
+			
+			<Anchor>//api/name/streamARN</Anchor>
+            <NodeRef refid="562"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSKinesisStreamDescription/setStreamName:</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;The name of the stream being described.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSKinesisModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *streamName</Declaration>
+			
+			
+			<Anchor>//api/name/streamName</Anchor>
+            <NodeRef refid="562"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSKinesisStreamDescription/streamName</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;The name of the stream being described.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSKinesisModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *streamName</Declaration>
+			
+			
+			<Anchor>//api/name/streamName</Anchor>
+            <NodeRef refid="562"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSKinesisStreamDescription/streamName</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;The name of the stream being described.&lt;/p&gt;</Abstract>
+			<DeclaredIn>AWSKinesisModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *streamName</Declaration>
+			
+			
+			<Anchor>//api/name/streamName</Anchor>
+            <NodeRef refid="562"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSKinesisStreamDescription/setStreamStatus:</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;The current status of the stream being described.&lt;/p&gt;&lt;p&gt;The stream status is one of the following states:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;CREATING - The stream is being created. Upon receiving a &lt;a&gt;CreateStream&lt;/a&gt; request, Amazon Kinesis immediately returns and sets &lt;code&gt;StreamStatus&lt;/code&gt; to CREATING.&lt;/li&gt;&lt;li&gt;DELETING - The stream is being deleted. After a &lt;a&gt;DeleteStream&lt;/a&gt; request, the specified stream is in the DELETING state until Amazon Kinesis completes the deletion.&lt;/li&gt;&lt;li&gt;ACTIVE - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an ACTIVE stream.&lt;/li&gt;&lt;li&gt;UPDATING - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the UPDATING state.&lt;/li&gt;&lt;/ul&gt;</Abstract>
+			<DeclaredIn>AWSKinesisModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) AWSKinesisStreamStatus streamStatus</Declaration>
+			
+			
+			<Anchor>//api/name/streamStatus</Anchor>
+            <NodeRef refid="562"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSKinesisStreamDescription/streamStatus</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;The current status of the stream being described.&lt;/p&gt;&lt;p&gt;The stream status is one of the following states:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;CREATING - The stream is being created. Upon receiving a &lt;a&gt;CreateStream&lt;/a&gt; request, Amazon Kinesis immediately returns and sets &lt;code&gt;StreamStatus&lt;/code&gt; to CREATING.&lt;/li&gt;&lt;li&gt;DELETING - The stream is being deleted. After a &lt;a&gt;DeleteStream&lt;/a&gt; request, the specified stream is in the DELETING state until Amazon Kinesis completes the deletion.&lt;/li&gt;&lt;li&gt;ACTIVE - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an ACTIVE stream.&lt;/li&gt;&lt;li&gt;UPDATING - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the UPDATING state.&lt;/li&gt;&lt;/ul&gt;</Abstract>
+			<DeclaredIn>AWSKinesisModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) AWSKinesisStreamStatus streamStatus</Declaration>
+			
+			
+			<Anchor>//api/name/streamStatus</Anchor>
+            <NodeRef refid="562"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSKinesisStreamDescription/streamStatus</TokenIdentifier>
+			<Abstract type="html">&lt;p&gt;The current status of the stream being described.&lt;/p&gt;&lt;p&gt;The stream status is one of the following states:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;CREATING - The stream is being created. Upon receiving a &lt;a&gt;CreateStream&lt;/a&gt; request, Amazon Kinesis immediately returns and sets &lt;code&gt;StreamStatus&lt;/code&gt; to CREATING.&lt;/li&gt;&lt;li&gt;DELETING - The stream is being deleted. After a &lt;a&gt;DeleteStream&lt;/a&gt; request, the specified stream is in the DELETING state until Amazon Kinesis completes the deletion.&lt;/li&gt;&lt;li&gt;ACTIVE - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an ACTIVE stream.&lt;/li&gt;&lt;li&gt;UPDATING - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the UPDATING state.&lt;/li&gt;&lt;/ul&gt;</Abstract>
+			<DeclaredIn>AWSKinesisModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) AWSKinesisStreamStatus streamStatus</Declaration>
+			
+			
+			<Anchor>//api/name/streamStatus</Anchor>
+            <NodeRef refid="562"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>
