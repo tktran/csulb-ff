@@ -8,47 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		271AD72419CBDFB9009DDF9B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD72319CBDFB9009DDF9B /* FacebookSDK.framework */; };
-		271AD72619CBDFFD009DDF9B /* AWSiOSSDKv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD72519CBDFFD009DDF9B /* AWSiOSSDKv2.framework */; };
 		271AD73119CBE541009DDF9B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD73019CBE541009DDF9B /* libz.dylib */; };
-		271AD73B19CBE5B0009DDF9B /* GZIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD73419CBE5B0009DDF9B /* GZIP.framework */; };
-		271AD73C19CBE5B0009DDF9B /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD73519CBE5B0009DDF9B /* Mantle.framework */; };
-		271AD73D19CBE5B0009DDF9B /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD73619CBE5B0009DDF9B /* Reachability.framework */; };
-		271AD73E19CBE5B0009DDF9B /* TMCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD73719CBE5B0009DDF9B /* TMCache.framework */; };
-		271AD73F19CBE5B0009DDF9B /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD73819CBE5B0009DDF9B /* UICKeyChainStore.framework */; };
-		271AD74019CBE5B0009DDF9B /* XMLDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD73919CBE5B0009DDF9B /* XMLDictionary.framework */; };
-		271AD74219CBE5EC009DDF9B /* AWSCognitoSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD74119CBE5EC009DDF9B /* AWSCognitoSync.framework */; };
-		271AD75319CBE676009DDF9B /* autoscaling-2011-01-01.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74419CBE676009DDF9B /* autoscaling-2011-01-01.json */; };
-		271AD75419CBE676009DDF9B /* cib-2014-06-30.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74519CBE676009DDF9B /* cib-2014-06-30.json */; };
-		271AD75519CBE676009DDF9B /* css-2014-06-30.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74619CBE676009DDF9B /* css-2014-06-30.json */; };
-		271AD75619CBE676009DDF9B /* dynamodb-2012-08-10.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74719CBE676009DDF9B /* dynamodb-2012-08-10.json */; };
-		271AD75719CBE676009DDF9B /* ec2-2014-06-15.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74819CBE676009DDF9B /* ec2-2014-06-15.json */; };
-		271AD75819CBE676009DDF9B /* elasticloadbalancing-2012-06-01.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74919CBE676009DDF9B /* elasticloadbalancing-2012-06-01.json */; };
-		271AD75919CBE676009DDF9B /* email-2010-12-01.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74A19CBE676009DDF9B /* email-2010-12-01.json */; };
-		271AD75A19CBE676009DDF9B /* kinesis-2013-12-02.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74B19CBE676009DDF9B /* kinesis-2013-12-02.json */; };
-		271AD75B19CBE676009DDF9B /* mobileanalytics-2014-06-30.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74C19CBE676009DDF9B /* mobileanalytics-2014-06-30.json */; };
-		271AD75C19CBE676009DDF9B /* monitoring-2010-08-01.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74D19CBE676009DDF9B /* monitoring-2010-08-01.json */; };
-		271AD75D19CBE676009DDF9B /* s3-2006-03-01.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74E19CBE676009DDF9B /* s3-2006-03-01.json */; };
-		271AD75E19CBE676009DDF9B /* sdb-2009-04-15.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD74F19CBE676009DDF9B /* sdb-2009-04-15.json */; };
-		271AD75F19CBE676009DDF9B /* sns-2010-03-31.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD75019CBE676009DDF9B /* sns-2010-03-31.json */; };
-		271AD76019CBE676009DDF9B /* sqs-2012-11-05.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD75119CBE676009DDF9B /* sqs-2012-11-05.json */; };
-		271AD76119CBE676009DDF9B /* sts-2011-06-15.json in Resources */ = {isa = PBXBuildFile; fileRef = 271AD75219CBE676009DDF9B /* sts-2011-06-15.json */; };
-		271AD76319CBE7E7009DDF9B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD76219CBE7E7009DDF9B /* Bolts.framework */; };
 		271AD76519CBEB2D009DDF9B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD76419CBEB2D009DDF9B /* SystemConfiguration.framework */; };
-		27894CA819CBD48F0009D9DE /* autoscaling-2011-01-01.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894C9919CBD48F0009D9DE /* autoscaling-2011-01-01.json */; };
-		27894CA919CBD48F0009D9DE /* cib-2014-06-30.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894C9A19CBD48F0009D9DE /* cib-2014-06-30.json */; };
-		27894CAA19CBD48F0009D9DE /* css-2014-06-30.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894C9B19CBD48F0009D9DE /* css-2014-06-30.json */; };
-		27894CAB19CBD48F0009D9DE /* dynamodb-2012-08-10.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894C9C19CBD48F0009D9DE /* dynamodb-2012-08-10.json */; };
-		27894CAC19CBD48F0009D9DE /* ec2-2014-06-15.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894C9D19CBD48F0009D9DE /* ec2-2014-06-15.json */; };
-		27894CAD19CBD48F0009D9DE /* elasticloadbalancing-2012-06-01.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894C9E19CBD48F0009D9DE /* elasticloadbalancing-2012-06-01.json */; };
-		27894CAE19CBD48F0009D9DE /* email-2010-12-01.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894C9F19CBD48F0009D9DE /* email-2010-12-01.json */; };
-		27894CAF19CBD48F0009D9DE /* kinesis-2013-12-02.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894CA019CBD48F0009D9DE /* kinesis-2013-12-02.json */; };
-		27894CB019CBD48F0009D9DE /* mobileanalytics-2014-06-30.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894CA119CBD48F0009D9DE /* mobileanalytics-2014-06-30.json */; };
-		27894CB119CBD48F0009D9DE /* monitoring-2010-08-01.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894CA219CBD48F0009D9DE /* monitoring-2010-08-01.json */; };
-		27894CB219CBD48F0009D9DE /* s3-2006-03-01.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894CA319CBD48F0009D9DE /* s3-2006-03-01.json */; };
-		27894CB319CBD48F0009D9DE /* sdb-2009-04-15.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894CA419CBD48F0009D9DE /* sdb-2009-04-15.json */; };
-		27894CB419CBD48F0009D9DE /* sns-2010-03-31.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894CA519CBD48F0009D9DE /* sns-2010-03-31.json */; };
-		27894CB519CBD48F0009D9DE /* sqs-2012-11-05.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894CA619CBD48F0009D9DE /* sqs-2012-11-05.json */; };
-		27894CB619CBD48F0009D9DE /* sts-2011-06-15.json in Resources */ = {isa = PBXBuildFile; fileRef = 27894CA719CBD48F0009D9DE /* sts-2011-06-15.json */; };
+		274C44B019CCEA9900FBE30F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274C44AF19CCEA9900FBE30F /* LoginViewController.m */; };
+		274C44B319CCEC7000FBE30F /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274C44B219CCEC7000FBE30F /* RegisterViewController.m */; };
+		274C44B519CCF40100FBE30F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C44B419CCF40100FBE30F /* Parse.framework */; };
+		274C44B719CCF42A00FBE30F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C44B619CCF42A00FBE30F /* AudioToolbox.framework */; };
+		274C44B919CCF43400FBE30F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C44B819CCF43400FBE30F /* CFNetwork.framework */; };
+		274C44BB19CCF45200FBE30F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C44BA19CCF45200FBE30F /* CoreLocation.framework */; };
+		274C44BD19CCF45B00FBE30F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C44BC19CCF45B00FBE30F /* MobileCoreServices.framework */; };
+		274C44BF19CCF46400FBE30F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C44BE19CCF46400FBE30F /* QuartzCore.framework */; };
+		274C44C119CCF46E00FBE30F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C44C019CCF46E00FBE30F /* Security.framework */; };
+		274C44C319CCF47A00FBE30F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C44C219CCF47A00FBE30F /* StoreKit.framework */; };
+		274C44C519CCF4C600FBE30F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C44C419CCF4C600FBE30F /* Bolts.framework */; };
+		274C44C719CCFFDE00FBE30F /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C44C619CCFFDE00FBE30F /* ParseFacebookUtils.framework */; };
+		274C44C919CD126100FBE30F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C44C819CD126100FBE30F /* Social.framework */; };
 		5998E5C719C9294400A336AD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5998E5C619C9294400A336AD /* libsqlite3.dylib */; };
 		E4EC19ED19BFDF1600E94487 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EC19EC19BFDF1600E94487 /* Foundation.framework */; };
 		E4EC19EF19BFDF1600E94487 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EC19EE19BFDF1600E94487 /* CoreGraphics.framework */; };
@@ -80,47 +54,23 @@
 
 /* Begin PBXFileReference section */
 		271AD72319CBDFB9009DDF9B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
-		271AD72519CBDFFD009DDF9B /* AWSiOSSDKv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSiOSSDKv2.framework; path = "/Users/tan/Desktop/csulb-ff/AWSiOSSDKv2.framework"; sourceTree = "<absolute>"; };
 		271AD73019CBE541009DDF9B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		271AD73419CBE5B0009DDF9B /* GZIP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GZIP.framework; sourceTree = "<group>"; };
-		271AD73519CBE5B0009DDF9B /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mantle.framework; sourceTree = "<group>"; };
-		271AD73619CBE5B0009DDF9B /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reachability.framework; sourceTree = "<group>"; };
-		271AD73719CBE5B0009DDF9B /* TMCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TMCache.framework; sourceTree = "<group>"; };
-		271AD73819CBE5B0009DDF9B /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UICKeyChainStore.framework; sourceTree = "<group>"; };
-		271AD73919CBE5B0009DDF9B /* XMLDictionary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XMLDictionary.framework; sourceTree = "<group>"; };
-		271AD74119CBE5EC009DDF9B /* AWSCognitoSync.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCognitoSync.framework; sourceTree = "<group>"; };
-		271AD74419CBE676009DDF9B /* autoscaling-2011-01-01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "autoscaling-2011-01-01.json"; sourceTree = "<group>"; };
-		271AD74519CBE676009DDF9B /* cib-2014-06-30.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "cib-2014-06-30.json"; sourceTree = "<group>"; };
-		271AD74619CBE676009DDF9B /* css-2014-06-30.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "css-2014-06-30.json"; sourceTree = "<group>"; };
-		271AD74719CBE676009DDF9B /* dynamodb-2012-08-10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "dynamodb-2012-08-10.json"; sourceTree = "<group>"; };
-		271AD74819CBE676009DDF9B /* ec2-2014-06-15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "ec2-2014-06-15.json"; sourceTree = "<group>"; };
-		271AD74919CBE676009DDF9B /* elasticloadbalancing-2012-06-01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "elasticloadbalancing-2012-06-01.json"; sourceTree = "<group>"; };
-		271AD74A19CBE676009DDF9B /* email-2010-12-01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "email-2010-12-01.json"; sourceTree = "<group>"; };
-		271AD74B19CBE676009DDF9B /* kinesis-2013-12-02.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "kinesis-2013-12-02.json"; sourceTree = "<group>"; };
-		271AD74C19CBE676009DDF9B /* mobileanalytics-2014-06-30.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mobileanalytics-2014-06-30.json"; sourceTree = "<group>"; };
-		271AD74D19CBE676009DDF9B /* monitoring-2010-08-01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "monitoring-2010-08-01.json"; sourceTree = "<group>"; };
-		271AD74E19CBE676009DDF9B /* s3-2006-03-01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "s3-2006-03-01.json"; sourceTree = "<group>"; };
-		271AD74F19CBE676009DDF9B /* sdb-2009-04-15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sdb-2009-04-15.json"; sourceTree = "<group>"; };
-		271AD75019CBE676009DDF9B /* sns-2010-03-31.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sns-2010-03-31.json"; sourceTree = "<group>"; };
-		271AD75119CBE676009DDF9B /* sqs-2012-11-05.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sqs-2012-11-05.json"; sourceTree = "<group>"; };
-		271AD75219CBE676009DDF9B /* sts-2011-06-15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sts-2011-06-15.json"; sourceTree = "<group>"; };
-		271AD76219CBE7E7009DDF9B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		271AD76419CBEB2D009DDF9B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		27894C9919CBD48F0009D9DE /* autoscaling-2011-01-01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "autoscaling-2011-01-01.json"; sourceTree = "<group>"; };
-		27894C9A19CBD48F0009D9DE /* cib-2014-06-30.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "cib-2014-06-30.json"; sourceTree = "<group>"; };
-		27894C9B19CBD48F0009D9DE /* css-2014-06-30.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "css-2014-06-30.json"; sourceTree = "<group>"; };
-		27894C9C19CBD48F0009D9DE /* dynamodb-2012-08-10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "dynamodb-2012-08-10.json"; sourceTree = "<group>"; };
-		27894C9D19CBD48F0009D9DE /* ec2-2014-06-15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "ec2-2014-06-15.json"; sourceTree = "<group>"; };
-		27894C9E19CBD48F0009D9DE /* elasticloadbalancing-2012-06-01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "elasticloadbalancing-2012-06-01.json"; sourceTree = "<group>"; };
-		27894C9F19CBD48F0009D9DE /* email-2010-12-01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "email-2010-12-01.json"; sourceTree = "<group>"; };
-		27894CA019CBD48F0009D9DE /* kinesis-2013-12-02.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "kinesis-2013-12-02.json"; sourceTree = "<group>"; };
-		27894CA119CBD48F0009D9DE /* mobileanalytics-2014-06-30.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mobileanalytics-2014-06-30.json"; sourceTree = "<group>"; };
-		27894CA219CBD48F0009D9DE /* monitoring-2010-08-01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "monitoring-2010-08-01.json"; sourceTree = "<group>"; };
-		27894CA319CBD48F0009D9DE /* s3-2006-03-01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "s3-2006-03-01.json"; sourceTree = "<group>"; };
-		27894CA419CBD48F0009D9DE /* sdb-2009-04-15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sdb-2009-04-15.json"; sourceTree = "<group>"; };
-		27894CA519CBD48F0009D9DE /* sns-2010-03-31.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sns-2010-03-31.json"; sourceTree = "<group>"; };
-		27894CA619CBD48F0009D9DE /* sqs-2012-11-05.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sqs-2012-11-05.json"; sourceTree = "<group>"; };
-		27894CA719CBD48F0009D9DE /* sts-2011-06-15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sts-2011-06-15.json"; sourceTree = "<group>"; };
+		274C44AE19CCEA9900FBE30F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		274C44AF19CCEA9900FBE30F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		274C44B119CCEC7000FBE30F /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		274C44B219CCEC7000FBE30F /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		274C44B419CCF40100FBE30F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		274C44B619CCF42A00FBE30F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		274C44B819CCF43400FBE30F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		274C44BA19CCF45200FBE30F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		274C44BC19CCF45B00FBE30F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		274C44BE19CCF46400FBE30F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		274C44C019CCF46E00FBE30F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		274C44C219CCF47A00FBE30F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		274C44C419CCF4C600FBE30F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		274C44C619CCFFDE00FBE30F /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		274C44C819CD126100FBE30F /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		5998E5C619C9294400A336AD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		E4EC19E919BFDF1600E94487 /* CSULB_Friend_Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSULB_Friend_Finder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4EC19EC19BFDF1600E94487 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -152,22 +102,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				274C44C919CD126100FBE30F /* Social.framework in Frameworks */,
+				274C44C319CCF47A00FBE30F /* StoreKit.framework in Frameworks */,
+				274C44C119CCF46E00FBE30F /* Security.framework in Frameworks */,
+				274C44BF19CCF46400FBE30F /* QuartzCore.framework in Frameworks */,
+				274C44BD19CCF45B00FBE30F /* MobileCoreServices.framework in Frameworks */,
+				274C44BB19CCF45200FBE30F /* CoreLocation.framework in Frameworks */,
+				274C44C719CCFFDE00FBE30F /* ParseFacebookUtils.framework in Frameworks */,
+				E4EC19EF19BFDF1600E94487 /* CoreGraphics.framework in Frameworks */,
+				274C44B919CCF43400FBE30F /* CFNetwork.framework in Frameworks */,
+				274C44B719CCF42A00FBE30F /* AudioToolbox.framework in Frameworks */,
 				271AD76519CBEB2D009DDF9B /* SystemConfiguration.framework in Frameworks */,
-				271AD76319CBE7E7009DDF9B /* Bolts.framework in Frameworks */,
-				271AD73E19CBE5B0009DDF9B /* TMCache.framework in Frameworks */,
 				271AD73119CBE541009DDF9B /* libz.dylib in Frameworks */,
 				5998E5C719C9294400A336AD /* libsqlite3.dylib in Frameworks */,
-				271AD73B19CBE5B0009DDF9B /* GZIP.framework in Frameworks */,
-				E4EC19EF19BFDF1600E94487 /* CoreGraphics.framework in Frameworks */,
-				271AD74219CBE5EC009DDF9B /* AWSCognitoSync.framework in Frameworks */,
+				274C44B519CCF40100FBE30F /* Parse.framework in Frameworks */,
 				E4EC19F119BFDF1600E94487 /* UIKit.framework in Frameworks */,
-				271AD73C19CBE5B0009DDF9B /* Mantle.framework in Frameworks */,
 				E4EC19ED19BFDF1600E94487 /* Foundation.framework in Frameworks */,
-				271AD73D19CBE5B0009DDF9B /* Reachability.framework in Frameworks */,
 				271AD72419CBDFB9009DDF9B /* FacebookSDK.framework in Frameworks */,
-				271AD73F19CBE5B0009DDF9B /* UICKeyChainStore.framework in Frameworks */,
-				271AD74019CBE5B0009DDF9B /* XMLDictionary.framework in Frameworks */,
-				271AD72619CBDFFD009DDF9B /* AWSiOSSDKv2.framework in Frameworks */,
+				274C44C519CCF4C600FBE30F /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,61 +136,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		271AD73219CBE5B0009DDF9B /* third-party */ = {
-			isa = PBXGroup;
-			children = (
-				271AD76219CBE7E7009DDF9B /* Bolts.framework */,
-				271AD73419CBE5B0009DDF9B /* GZIP.framework */,
-				271AD73519CBE5B0009DDF9B /* Mantle.framework */,
-				271AD73619CBE5B0009DDF9B /* Reachability.framework */,
-				271AD73719CBE5B0009DDF9B /* TMCache.framework */,
-				271AD73819CBE5B0009DDF9B /* UICKeyChainStore.framework */,
-				271AD73919CBE5B0009DDF9B /* XMLDictionary.framework */,
-			);
-			path = "third-party";
-			sourceTree = "<group>";
-		};
-		271AD74319CBE676009DDF9B /* service-definitions */ = {
-			isa = PBXGroup;
-			children = (
-				271AD74419CBE676009DDF9B /* autoscaling-2011-01-01.json */,
-				271AD74519CBE676009DDF9B /* cib-2014-06-30.json */,
-				271AD74619CBE676009DDF9B /* css-2014-06-30.json */,
-				271AD74719CBE676009DDF9B /* dynamodb-2012-08-10.json */,
-				271AD74819CBE676009DDF9B /* ec2-2014-06-15.json */,
-				271AD74919CBE676009DDF9B /* elasticloadbalancing-2012-06-01.json */,
-				271AD74A19CBE676009DDF9B /* email-2010-12-01.json */,
-				271AD74B19CBE676009DDF9B /* kinesis-2013-12-02.json */,
-				271AD74C19CBE676009DDF9B /* mobileanalytics-2014-06-30.json */,
-				271AD74D19CBE676009DDF9B /* monitoring-2010-08-01.json */,
-				271AD74E19CBE676009DDF9B /* s3-2006-03-01.json */,
-				271AD74F19CBE676009DDF9B /* sdb-2009-04-15.json */,
-				271AD75019CBE676009DDF9B /* sns-2010-03-31.json */,
-				271AD75119CBE676009DDF9B /* sqs-2012-11-05.json */,
-				271AD75219CBE676009DDF9B /* sts-2011-06-15.json */,
-			);
-			path = "service-definitions";
-			sourceTree = "<group>";
-		};
 		E4EC19E019BFDF1600E94487 = {
 			isa = PBXGroup;
 			children = (
-				271AD74319CBE676009DDF9B /* service-definitions */,
-				27894C9919CBD48F0009D9DE /* autoscaling-2011-01-01.json */,
-				27894C9A19CBD48F0009D9DE /* cib-2014-06-30.json */,
-				27894C9B19CBD48F0009D9DE /* css-2014-06-30.json */,
-				27894C9C19CBD48F0009D9DE /* dynamodb-2012-08-10.json */,
-				27894C9D19CBD48F0009D9DE /* ec2-2014-06-15.json */,
-				27894C9E19CBD48F0009D9DE /* elasticloadbalancing-2012-06-01.json */,
-				27894C9F19CBD48F0009D9DE /* email-2010-12-01.json */,
-				27894CA019CBD48F0009D9DE /* kinesis-2013-12-02.json */,
-				27894CA119CBD48F0009D9DE /* mobileanalytics-2014-06-30.json */,
-				27894CA219CBD48F0009D9DE /* monitoring-2010-08-01.json */,
-				27894CA319CBD48F0009D9DE /* s3-2006-03-01.json */,
-				27894CA419CBD48F0009D9DE /* sdb-2009-04-15.json */,
-				27894CA519CBD48F0009D9DE /* sns-2010-03-31.json */,
-				27894CA619CBD48F0009D9DE /* sqs-2012-11-05.json */,
-				27894CA719CBD48F0009D9DE /* sts-2011-06-15.json */,
+				274C44C619CCFFDE00FBE30F /* ParseFacebookUtils.framework */,
+				274C44C419CCF4C600FBE30F /* Bolts.framework */,
+				274C44B419CCF40100FBE30F /* Parse.framework */,
 				E4EC19F219BFDF1600E94487 /* CSULB_Friend_Finder */,
 				E4EC1A1719BFDF1600E94487 /* CSULB_Friend_FinderTests */,
 				E4EC19EB19BFDF1600E94487 /* Frameworks */,
@@ -258,11 +161,16 @@
 		E4EC19EB19BFDF1600E94487 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				274C44C819CD126100FBE30F /* Social.framework */,
+				274C44C219CCF47A00FBE30F /* StoreKit.framework */,
+				274C44C019CCF46E00FBE30F /* Security.framework */,
+				274C44BE19CCF46400FBE30F /* QuartzCore.framework */,
+				274C44BC19CCF45B00FBE30F /* MobileCoreServices.framework */,
+				274C44BA19CCF45200FBE30F /* CoreLocation.framework */,
+				274C44B819CCF43400FBE30F /* CFNetwork.framework */,
+				274C44B619CCF42A00FBE30F /* AudioToolbox.framework */,
 				271AD76419CBEB2D009DDF9B /* SystemConfiguration.framework */,
-				271AD74119CBE5EC009DDF9B /* AWSCognitoSync.framework */,
-				271AD73219CBE5B0009DDF9B /* third-party */,
 				271AD73019CBE541009DDF9B /* libz.dylib */,
-				271AD72519CBDFFD009DDF9B /* AWSiOSSDKv2.framework */,
 				271AD72319CBDFB9009DDF9B /* FacebookSDK.framework */,
 				5998E5C619C9294400A336AD /* libsqlite3.dylib */,
 				E4EC19EC19BFDF1600E94487 /* Foundation.framework */,
@@ -285,6 +193,10 @@
 				E4EC1A0419BFDF1600E94487 /* ModelController.h */,
 				E4EC1A0519BFDF1600E94487 /* ModelController.m */,
 				E4EC1A0719BFDF1600E94487 /* Main.storyboard */,
+				274C44B119CCEC7000FBE30F /* RegisterViewController.h */,
+				274C44B219CCEC7000FBE30F /* RegisterViewController.m */,
+				274C44AE19CCEA9900FBE30F /* LoginViewController.h */,
+				274C44AF19CCEA9900FBE30F /* LoginViewController.m */,
 				E4EC1A0A19BFDF1600E94487 /* Images.xcassets */,
 				E4EC19F319BFDF1600E94487 /* Supporting Files */,
 			);
@@ -397,39 +309,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				271AD75419CBE676009DDF9B /* cib-2014-06-30.json in Resources */,
-				27894CB419CBD48F0009D9DE /* sns-2010-03-31.json in Resources */,
-				27894CA919CBD48F0009D9DE /* cib-2014-06-30.json in Resources */,
-				271AD75319CBE676009DDF9B /* autoscaling-2011-01-01.json in Resources */,
-				27894CAD19CBD48F0009D9DE /* elasticloadbalancing-2012-06-01.json in Resources */,
-				271AD76019CBE676009DDF9B /* sqs-2012-11-05.json in Resources */,
-				27894CB019CBD48F0009D9DE /* mobileanalytics-2014-06-30.json in Resources */,
 				E4EC1A0B19BFDF1600E94487 /* Images.xcassets in Resources */,
-				27894CAE19CBD48F0009D9DE /* email-2010-12-01.json in Resources */,
-				271AD75519CBE676009DDF9B /* css-2014-06-30.json in Resources */,
-				27894CB619CBD48F0009D9DE /* sts-2011-06-15.json in Resources */,
-				27894CAF19CBD48F0009D9DE /* kinesis-2013-12-02.json in Resources */,
-				271AD76119CBE676009DDF9B /* sts-2011-06-15.json in Resources */,
-				271AD75619CBE676009DDF9B /* dynamodb-2012-08-10.json in Resources */,
-				27894CB519CBD48F0009D9DE /* sqs-2012-11-05.json in Resources */,
 				E4EC19F719BFDF1600E94487 /* InfoPlist.strings in Resources */,
-				27894CB219CBD48F0009D9DE /* s3-2006-03-01.json in Resources */,
-				27894CA819CBD48F0009D9DE /* autoscaling-2011-01-01.json in Resources */,
-				271AD75719CBE676009DDF9B /* ec2-2014-06-15.json in Resources */,
-				271AD75D19CBE676009DDF9B /* s3-2006-03-01.json in Resources */,
-				27894CB319CBD48F0009D9DE /* sdb-2009-04-15.json in Resources */,
 				E4EC1A0919BFDF1600E94487 /* Main.storyboard in Resources */,
-				271AD75819CBE676009DDF9B /* elasticloadbalancing-2012-06-01.json in Resources */,
-				271AD75F19CBE676009DDF9B /* sns-2010-03-31.json in Resources */,
-				27894CAA19CBD48F0009D9DE /* css-2014-06-30.json in Resources */,
-				27894CAB19CBD48F0009D9DE /* dynamodb-2012-08-10.json in Resources */,
-				27894CB119CBD48F0009D9DE /* monitoring-2010-08-01.json in Resources */,
-				271AD75E19CBE676009DDF9B /* sdb-2009-04-15.json in Resources */,
-				271AD75A19CBE676009DDF9B /* kinesis-2013-12-02.json in Resources */,
-				271AD75919CBE676009DDF9B /* email-2010-12-01.json in Resources */,
-				27894CAC19CBD48F0009D9DE /* ec2-2014-06-15.json in Resources */,
-				271AD75B19CBE676009DDF9B /* mobileanalytics-2014-06-30.json in Resources */,
-				271AD75C19CBE676009DDF9B /* monitoring-2010-08-01.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,7 +332,9 @@
 			files = (
 				E4EC1A0319BFDF1600E94487 /* DataViewController.m in Sources */,
 				E4EC19FD19BFDF1600E94487 /* AppDelegate.m in Sources */,
+				274C44B019CCEA9900FBE30F /* LoginViewController.m in Sources */,
 				E4EC1A0619BFDF1600E94487 /* ModelController.m in Sources */,
+				274C44B319CCEC7000FBE30F /* RegisterViewController.m in Sources */,
 				E4EC19F919BFDF1600E94487 /* main.m in Sources */,
 				E4EC1A0019BFDF1600E94487 /* RootViewController.m in Sources */,
 			);

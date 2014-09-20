@@ -9,8 +9,7 @@
 #
 #import <UIKit/UIKit.h>
 #import "FacebookSDK/FacebookSDK.h"
-#import <AWSiOSSDKv2/AWSCore.h>
-#import <AWSCognitoSync/Cognito.h>
+#import "Parse/Parse.h"
 
 @class DataViewController;
 

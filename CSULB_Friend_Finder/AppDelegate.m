@@ -9,21 +9,35 @@
 #import "AppDelegate.h"
 #import "ModelController.h"
 
+
+
 @implementation AppDelegate
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     [FBLoginView class];
+    [Parse setApplicationId:@"7Ung08OGNSgz6A0NDXTXRiMtXGvKGDpjhPWmOWaC"
+                  clientKey:@"UTkEQ1cFDmSDrjg8QOiXEyADnK0LQ5csknDqIApN"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    [PFFacebookUtils initializeFacebook];
     return YES;
 }
 
--(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
-    return wasHandled;
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [FBAppCall handleOpenURL:url
+                  sourceApplication:sourceApplication
+                        withSession:[PFFacebookUtils session]];
 }
 
+//- (void)application:(UIApplication *)application didFinishLaunchWithOptions:(NSDictionary *)options {
+    //[PFFacebookUtils initializeFacebook];
+    //[Parse setApplicationId:@"7Ung08OGNSgz6A0NDXTXRiMtXGvKGDpjhPWmOWaC" clientKey:@"UTkEQ1cFDmSDrjg8QOiXEyADnK0LQ5csknDqIApN"];
+//}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -46,11 +60,17 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [[PFFacebookUtils session] close];
+
 }
+
+
+
 
 @end

@@ -10,6 +10,7 @@
 
 #import "DataViewController.h"
 
+
 /*
  A controller object that manages a simple model -- a collection of month names.
  
@@ -28,7 +29,6 @@
 
 - (void)viewDidLoad
 {
-    self.loginView.readPermissions = @[@"public_profile", @"email", @"user_friends"];
 }
 
 - (id)init

@@ -47,34 +47,7 @@
 
     // Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
     self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
-    AWSCognitoCredentialsProvider *credentialsProvider = [AWSCognitoCredentialsProvider 
-        credentialsWithRegionType:AWSRegionUSEast1
-        accountId:@"028795264051"
-        identityPoolId:@"us-east-1:ecac1dae-ce42-4839-b7fc-7606043113c8"
-        unauthRoleArn:@"YOUR UNAUTHENTICATED ARN HERE"
-        authRoleArn:@"arn:aws:iam::028795264051:role/Cognito_CSULBFriendFinderAuth_DefaultRole"];
-
-    AWSServiceConfiguration *configuration = [AWSServiceConfiguration configurationWithRegion:AWSRegionUSEast1
-        credentialsProvider:credentialsProvider];
-    
-    [AWSServiceManager defaultServiceManager].defaultServiceConfiguration = configuration;
-    
-    AWSCognito *syncClient = [AWSCognito defaultCognito];
-    AWSCognitoDataset *dataset = [syncClient openOrCreateDataset:@"myDataset"];
-    [dataset setString:@"myValue" forKey:@"myKey"];
-    [dataset synchronize];
-    
-    FBAccessTokenData *accessTokenData = FBSession.activeSession.accessTokenData;
-    NSString *token = [accessTokenData accessToken];
-    credentialsProvider.logins =  @{[NSNumber numberWithInteger:AWSCognitoLoginProviderKeyFacebook]: token};
-    
-    //Retrieve your cognito ID.
-    NSString * cognitoId = credentialsProvider.identityId;
-    
-    AWSServiceConfiguration *configurationDB = [AWSServiceConfiguration configurationWithRegion:AWSRegionUSEast1 credentialsProvider:credentialsProvider];
-    // get a client with the specified config
-    AWSDynamoDB *dynamoDB = [[AWSDynamoDB new] initWithConfiguration:configurationDB];
-}
+   }
     
     
 - (void)didReceiveMemoryWarning
