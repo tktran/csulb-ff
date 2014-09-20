@@ -59,7 +59,7 @@
          | PFLogInFieldsDismissButton
          | PFLogInFieldsFacebook;
     
-    logInViewController.facebookPermissions = @[@"user_public_profile", @"user_friends"];
+    logInViewController.facebookPermissions = @[@"public_profile", @"user_friends"];
     
         // Create the sign up view controller
         PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
