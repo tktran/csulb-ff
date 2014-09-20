@@ -139,9 +139,6 @@
 		E4EC19E019BFDF1600E94487 = {
 			isa = PBXGroup;
 			children = (
-				274C44C619CCFFDE00FBE30F /* ParseFacebookUtils.framework */,
-				274C44C419CCF4C600FBE30F /* Bolts.framework */,
-				274C44B419CCF40100FBE30F /* Parse.framework */,
 				E4EC19F219BFDF1600E94487 /* CSULB_Friend_Finder */,
 				E4EC1A1719BFDF1600E94487 /* CSULB_Friend_FinderTests */,
 				E4EC19EB19BFDF1600E94487 /* Frameworks */,
@@ -161,6 +158,9 @@
 		E4EC19EB19BFDF1600E94487 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				274C44C619CCFFDE00FBE30F /* ParseFacebookUtils.framework */,
+				274C44C419CCF4C600FBE30F /* Bolts.framework */,
+				274C44B419CCF40100FBE30F /* Parse.framework */,
 				274C44C819CD126100FBE30F /* Social.framework */,
 				274C44C219CCF47A00FBE30F /* StoreKit.framework */,
 				274C44C019CCF46E00FBE30F /* Security.framework */,
