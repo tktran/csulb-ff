@@ -23,6 +23,8 @@
 		274C44C519CCF4C600FBE30F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C44C419CCF4C600FBE30F /* Bolts.framework */; };
 		274C44C719CCFFDE00FBE30F /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C44C619CCFFDE00FBE30F /* ParseFacebookUtils.framework */; };
 		274C44C919CD126100FBE30F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C44C819CD126100FBE30F /* Social.framework */; };
+		27BFDD6019CFBE0C00EF209F /* FriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFDD5F19CFBE0C00EF209F /* FriendsTableViewController.m */; };
+		27BFDD6219CFC2BF00EF209F /* friends.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27BFDD6119CFC2BF00EF209F /* friends.plist */; };
 		5998E5C719C9294400A336AD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5998E5C619C9294400A336AD /* libsqlite3.dylib */; };
 		E4EC19ED19BFDF1600E94487 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EC19EC19BFDF1600E94487 /* Foundation.framework */; };
 		E4EC19EF19BFDF1600E94487 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EC19EE19BFDF1600E94487 /* CoreGraphics.framework */; };
@@ -71,6 +73,9 @@
 		274C44C419CCF4C600FBE30F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		274C44C619CCFFDE00FBE30F /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		274C44C819CD126100FBE30F /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		27BFDD5E19CFBE0C00EF209F /* FriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsTableViewController.h; sourceTree = "<group>"; };
+		27BFDD5F19CFBE0C00EF209F /* FriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsTableViewController.m; sourceTree = "<group>"; };
+		27BFDD6119CFC2BF00EF209F /* friends.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = friends.plist; sourceTree = "<group>"; };
 		5998E5C619C9294400A336AD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		E4EC19E919BFDF1600E94487 /* CSULB_Friend_Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSULB_Friend_Finder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4EC19EC19BFDF1600E94487 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -193,6 +198,8 @@
 				E4EC1A0419BFDF1600E94487 /* ModelController.h */,
 				E4EC1A0519BFDF1600E94487 /* ModelController.m */,
 				E4EC1A0719BFDF1600E94487 /* Main.storyboard */,
+				27BFDD5E19CFBE0C00EF209F /* FriendsTableViewController.h */,
+				27BFDD5F19CFBE0C00EF209F /* FriendsTableViewController.m */,
 				274C44B119CCEC7000FBE30F /* RegisterViewController.h */,
 				274C44B219CCEC7000FBE30F /* RegisterViewController.m */,
 				274C44AE19CCEA9900FBE30F /* LoginViewController.h */,
@@ -210,6 +217,7 @@
 				E4EC19F519BFDF1600E94487 /* InfoPlist.strings */,
 				E4EC19F819BFDF1600E94487 /* main.m */,
 				E4EC19FA19BFDF1600E94487 /* CSULB_Friend_Finder-Prefix.pch */,
+				27BFDD6119CFC2BF00EF209F /* friends.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -311,6 +319,7 @@
 			files = (
 				E4EC1A0B19BFDF1600E94487 /* Images.xcassets in Resources */,
 				E4EC19F719BFDF1600E94487 /* InfoPlist.strings in Resources */,
+				27BFDD6219CFC2BF00EF209F /* friends.plist in Resources */,
 				E4EC1A0919BFDF1600E94487 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4EC1A0319BFDF1600E94487 /* DataViewController.m in Sources */,
+				27BFDD6019CFBE0C00EF209F /* FriendsTableViewController.m in Sources */,
 				E4EC19FD19BFDF1600E94487 /* AppDelegate.m in Sources */,
 				274C44B019CCEA9900FBE30F /* LoginViewController.m in Sources */,
 				E4EC1A0619BFDF1600E94487 /* ModelController.m in Sources */,

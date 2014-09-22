@@ -8,23 +8,11 @@
 
 #import "LoginViewController.h"
 @interface LoginViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *usernameField;
-
-@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UILabel *NameLabel;
 @end
 
 @implementation LoginViewController
-/*- (IBAction)userLogin:(id)sender {
-    [PFUser logInWithUsernameInBackground: self.usernameField.text password:self.passwordField.text
-        block:^(PFUser *user, NSError *error)
-    {
-        if (user) {
-        // Do stuff after successful login.
-        } else {
-        // The login failed. Check error to see why.
-        }
-    }];
-}*/
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,6 +25,7 @@
 
 -(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
 {
+    NSLog(@"Login Successful");
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -45,50 +34,84 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    if(![PFUser currentUser])
+    {
+        
+    }
+    else
+    {
+        
+    }
+}
+
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    //if (![PFUser currentUser]) { // No user logged in
-        // Create the log in view controller
-        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
-        [logInViewController setDelegate:self]; // Set ourselves as the delegate
-        logInViewController.fields = PFLogInFieldsUsernameAndPassword
-         | PFLogInFieldsLogInButton
-         | PFLogInFieldsSignUpButton
-         | PFLogInFieldsPasswordForgotten
-         | PFLogInFieldsDismissButton
-         | PFLogInFieldsFacebook;
+    // Create the log in view controller
+    if(![PFUser currentUser]){
+        
+    PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+    [logInViewController setDelegate:self]; // Set ourselves as the delegate
+    logInViewController.fields = PFLogInFieldsUsernameAndPassword
+    | PFLogInFieldsLogInButton
+    | PFLogInFieldsSignUpButton
+    | PFLogInFieldsPasswordForgotten
+    | PFLogInFieldsDismissButton
+    | PFLogInFieldsFacebook;
+    
+    logInViewController.logInView.logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]];
+    [logInViewController.logInView.logo setFrame:CGRectMake(16.0f, 43.0f, 288.0f, 60.0f)];
     
     logInViewController.facebookPermissions = @[@"public_profile", @"user_friends"];
     
-        // Create the sign up view controller
-        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
-        [signUpViewController setDelegate:self]; // Set ourselves as the delegate
-        
-        
-        // Assign our sign up controller to be displayed from the login controller
-        [logInViewController setSignUpController:signUpViewController];
-        
-        // Present the log in view controller
-        [self presentViewController:logInViewController animated:YES completion:NULL];
-   // }
+    // Create the sign up view controller
+    PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+    [signUpViewController setDelegate:self]; // Set ourselves as the delegate
+    signUpViewController.signUpView.logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]];
+    [signUpViewController.signUpView.logo setFrame:CGRectMake(16.0f, 43.0f, 288.0f, 60.0f)];
+    
+    
+    // Assign our sign up controller to be displayed from the login controller
+    [logInViewController setSignUpController:signUpViewController];
+    
+    
+    // Present the log in view controller
+    [self presentViewController:logInViewController animated:YES completion:NULL];
+    }
+
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    ///////////////////////////////////////////////////////////////
-    //self.view.backgroundColor = [UIColor colorWithPatternImage://
-    //[UIImage imageNamed:@"myBackgroundImage.png"]];            //
-    //label.text = @"My Logo";                                   //
-    //[label sizeToFit];                                         //
-    //self.logInView.logo = label; // logo can be any UIView     //
-    ///////////////////////////////////////////////////////////////
-    
-   
-    // Do any additional setup after loading the view.
+    [self _loadData];
 }
+
+
+-(void) _loadData
+{
+    FBRequest *request = [FBRequest requestForMe];
+    [request startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
+     {
+         if(!error)
+         {
+             NSDictionary *userData = (NSDictionary *)result;
+             NSString *name = userData[@"name"];
+             _NameLabel.text = name;
+             
+             _friends  = [result objectForKey:@"data"];
+             NSLog(@"%lu",_friends.count);
+         }
+     }];
+}
+
 
 - (void)didReceiveMemoryWarning
 {

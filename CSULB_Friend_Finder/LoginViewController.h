@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import <FacebookSDK/FacebookSDK.h>
 
-@interface LoginViewController : PFLogInViewController 
-
-//UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@interface LoginViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@property NSArray *friends;
 
 @end
