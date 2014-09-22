@@ -25,8 +25,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    LoginViewController *vc = [[LoginViewController alloc]initWithNibName: @"LoginViewController" bundle:nil];
-    friendsList = [[NSArray alloc] initWithArray: vc.friends copyItems:YES];
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    friendsList = appDelegate.friends;
+    NSLog(@"%lu", friendsList.count);
     
 }
 

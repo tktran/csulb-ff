@@ -22,7 +22,7 @@
                   clientKey:@"UTkEQ1cFDmSDrjg8QOiXEyADnK0LQ5csknDqIApN"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [PFFacebookUtils initializeFacebook];
-//    [PFUser logOut];
+    
     return YES;
 }
 

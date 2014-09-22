@@ -105,11 +105,27 @@
              NSDictionary *userData = (NSDictionary *)result;
              NSString *name = userData[@"name"];
              _NameLabel.text = name;
-             
-             _friends  = [result objectForKey:@"data"];
-             NSLog(@"%lu",_friends.count);
          }
      }];
+    FBRequest *requestForMyFriends = [FBRequest requestForMyFriends];
+    [requestForMyFriends startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
+     {
+         if(!error)
+         {
+             NSArray * resultList = [result objectForKey:@"data"];
+             NSMutableArray *mutableFriends = [[NSMutableArray alloc] init];
+             for (NSDictionary<FBGraphUser>* result in resultList)
+             {
+                 NSString *realName = result.name;
+                 NSLog(@"%@", realName);
+                 [mutableFriends addObject:realName];
+             }
+             AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+             appDelegate.friends = [NSArray arrayWithArray:mutableFriends];
+             NSLog(@"%lu", appDelegate.friends.count);
+         }
+     }];
+
 }
 
 

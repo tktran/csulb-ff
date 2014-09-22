@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LoginViewController.h"
+#import "AppDelegate.h"
 @interface FriendsTableViewController : UITableViewController
 
 @end
