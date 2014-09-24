@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "AppDelegate.h"
 @interface FBInfoViewController : UIViewController
 
 @end

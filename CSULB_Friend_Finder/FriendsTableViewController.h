@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "LoginViewController.h"
 #import "AppDelegate.h"
-@interface FriendsTableViewController : UITableViewController
+@interface FriendsTableViewController : UITableViewController <UITableViewDelegate>
 
 @end

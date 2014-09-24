@@ -11,6 +11,7 @@
 		271AD73119CBE541009DDF9B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD73019CBE541009DDF9B /* libz.dylib */; };
 		271AD76519CBEB2D009DDF9B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD76419CBEB2D009DDF9B /* SystemConfiguration.framework */; };
 		2740AA1219D273AA00F935FB /* FBInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2740AA1119D273AA00F935FB /* FBInfoViewController.m */; };
+		2740AA1319D2748400F935FB /* FBInfoViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 2740AA1019D273AA00F935FB /* FBInfoViewController.h */; };
 		274C44B019CCEA9900FBE30F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274C44AF19CCEA9900FBE30F /* LoginViewController.m */; };
 		274C44B319CCEC7000FBE30F /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274C44B219CCEC7000FBE30F /* RegisterViewController.m */; };
 		274C44B519CCF40100FBE30F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C44B419CCF40100FBE30F /* Parse.framework */; };
@@ -344,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2740AA1319D2748400F935FB /* FBInfoViewController.h in Sources */,
 				2740AA1219D273AA00F935FB /* FBInfoViewController.m in Sources */,
 				E4EC1A0319BFDF1600E94487 /* DataViewController.m in Sources */,
 				27BFDD6019CFBE0C00EF209F /* FriendsTableViewController.m in Sources */,

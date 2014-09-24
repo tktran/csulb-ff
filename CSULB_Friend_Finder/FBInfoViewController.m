@@ -9,6 +9,9 @@
 #import "FBInfoViewController.h"
 
 @interface FBInfoViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *firstNameField;
+@property (weak, nonatomic) IBOutlet UITextField *emailField;
+@property (weak, nonatomic) IBOutlet UITextField *lastNameField;
 
 @end
 
@@ -16,7 +19,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+
+    self.firstNameField.text = appDelegate.temp_first_name;
+    self.lastNameField.text = appDelegate.temp_last_name;
+    self.emailField.text = appDelegate.temp_email;
+    self.navigationItem.hidesBackButton = YES;
+
 }
 
 - (void)didReceiveMemoryWarning {

@@ -18,6 +18,9 @@
     NSMutableArray *myCheckedFriends;
 }
 
+- (IBAction) performSegue:(id)sender {
+    [self performSegueWithIdentifier:@"ShowDetail" sender:sender];}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -32,6 +35,8 @@
 //    myCheckedFriends = appDelegate.checkedFriends;
     
     NSLog(@"%lu", friendsList.count);
+    
+    self.navigationItem.hidesBackButton = YES;
     
 }
 
@@ -90,6 +95,16 @@
     return cell;
 }
 
+//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+//{
+//    UIView *footerView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 40)];
+//    UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
+//    [button setTitle:@"Next" forState:UIControlStateNormal];
+//    [button addTarget:self action:@selector(performSegue:) forControlEvents:UIControlEventTouchUpInside];
+//    button.frame=CGRectMake(0, 0, 130, 30); //set some large width to ur title
+//    [footerView addSubview:button];
+//    return footerView;
+//}
 
 /*
 // Override to support conditional editing of the table view.

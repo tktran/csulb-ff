@@ -337,12 +337,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wnv-ld-cEx">
-                                <rect key="frame" x="47" y="518" width="227" height="30"/>
-                                <state key="normal" title="Next: Add your Facebook friends">
+                                <rect key="frame" x="90" y="518" width="141" height="30"/>
+                                <state key="normal" title="Next: Enter your info">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3vG-Wo-EbU" kind="push" id="nA4-ZY-Cmu"/>
+                                    <segue destination="9bV-w4-Aoy" kind="push" id="LRX-AG-YpT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -378,24 +378,45 @@
                             <outlet property="delegate" destination="3vG-Wo-EbU" id="TNh-2H-K3c"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="mNs-2Y-6zR"/>
-                    <connections>
-                        <segue destination="9bV-w4-Aoy" kind="push" id="Mg7-bc-IBX"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="mNs-2Y-6zR">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="Xus-3d-pEr">
+                            <rect key="frame" x="34" y="6" width="193" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recommended Friends" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abl-5a-gNG">
+                                    <rect key="frame" x="6" y="6" width="179" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Z17-9S-OPE">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UCG-LI-P9N">
+                                <rect key="frame" x="-23" y="-15" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Finish">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Afx-7n-Uew" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="205" y="26"/>
+            <point key="canvasLocation" x="493" y="66"/>
         </scene>
-        <!--View Controller-->
+        <!--Info View Controller-->
         <scene sceneID="hCV-rB-uSi">
             <objects>
-                <viewController id="9bV-w4-Aoy" sceneMemberID="viewController">
+                <viewController id="9bV-w4-Aoy" customClass="FBInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ano-aQ-c6c"/>
                         <viewControllerLayoutGuide type="bottom" id="PK8-Pv-xYN"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hC4-ao-udy" customClass="FBInfo">
+                    <view key="view" contentMode="scaleToFill" id="hC4-ao-udy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -443,15 +464,23 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="3vG-Wo-EbU" kind="push" id="CTa-nu-qpl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ggp-az-fcp"/>
+                    <connections>
+                        <outlet property="emailField" destination="vrv-53-Yu3" id="yKP-5w-4Dw"/>
+                        <outlet property="firstNameField" destination="cBX-Cq-v3p" id="K8S-hZ-Et0"/>
+                        <outlet property="lastNameField" destination="u1R-wB-1lz" id="ykZ-Uk-WTS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Tg-4b-Cup" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="730" y="-43"/>
+            <point key="canvasLocation" x="82" y="25"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
