@@ -12,6 +12,7 @@
 		271AD76519CBEB2D009DDF9B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD76419CBEB2D009DDF9B /* SystemConfiguration.framework */; };
 		2740AA1219D273AA00F935FB /* FBInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2740AA1119D273AA00F935FB /* FBInfoViewController.m */; };
 		2740AA1319D2748400F935FB /* FBInfoViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 2740AA1019D273AA00F935FB /* FBInfoViewController.h */; };
+		2740AA1619D27F8800F935FB /* AddScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2740AA1519D27F8800F935FB /* AddScheduleViewController.m */; };
 		274C44B019CCEA9900FBE30F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274C44AF19CCEA9900FBE30F /* LoginViewController.m */; };
 		274C44B319CCEC7000FBE30F /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274C44B219CCEC7000FBE30F /* RegisterViewController.m */; };
 		274C44B519CCF40100FBE30F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C44B419CCF40100FBE30F /* Parse.framework */; };
@@ -62,6 +63,8 @@
 		271AD76419CBEB2D009DDF9B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2740AA1019D273AA00F935FB /* FBInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBInfoViewController.h; sourceTree = "<group>"; };
 		2740AA1119D273AA00F935FB /* FBInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBInfoViewController.m; sourceTree = "<group>"; };
+		2740AA1419D27F8800F935FB /* AddScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddScheduleViewController.h; sourceTree = "<group>"; };
+		2740AA1519D27F8800F935FB /* AddScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddScheduleViewController.m; sourceTree = "<group>"; };
 		274C44AE19CCEA9900FBE30F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		274C44AF19CCEA9900FBE30F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		274C44B119CCEC7000FBE30F /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 				E4EC1A0419BFDF1600E94487 /* ModelController.h */,
 				E4EC1A0519BFDF1600E94487 /* ModelController.m */,
 				E4EC1A0719BFDF1600E94487 /* Main.storyboard */,
+				2740AA1419D27F8800F935FB /* AddScheduleViewController.h */,
+				2740AA1519D27F8800F935FB /* AddScheduleViewController.m */,
 				2740AA1019D273AA00F935FB /* FBInfoViewController.h */,
 				2740AA1119D273AA00F935FB /* FBInfoViewController.m */,
 				27BFDD5E19CFBE0C00EF209F /* FriendsTableViewController.h */,
@@ -349,6 +354,7 @@
 				2740AA1219D273AA00F935FB /* FBInfoViewController.m in Sources */,
 				E4EC1A0319BFDF1600E94487 /* DataViewController.m in Sources */,
 				27BFDD6019CFBE0C00EF209F /* FriendsTableViewController.m in Sources */,
+				2740AA1619D27F8800F935FB /* AddScheduleViewController.m in Sources */,
 				E4EC19FD19BFDF1600E94487 /* AppDelegate.m in Sources */,
 				274C44B019CCEA9900FBE30F /* LoginViewController.m in Sources */,
 				E4EC1A0619BFDF1600E94487 /* ModelController.m in Sources */,

@@ -18,4 +18,8 @@
 @property NSString *temp_first_name;
 @property NSString *temp_last_name;
 @property NSString *temp_email;
+
+@property NSMutableDictionary *temp_classes;
+@property NSNumber* n;
+
 @end
