@@ -15,6 +15,7 @@
 @implementation FriendsTableViewController
 {
     NSArray *friendsList;
+    NSMutableArray *myCheckedFriends;
 }
 
 - (void)viewDidLoad {
@@ -27,6 +28,9 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     friendsList = appDelegate.friends;
+    myCheckedFriends = [[NSMutableArray alloc] init];
+//    myCheckedFriends = appDelegate.checkedFriends;
+    
     NSLog(@"%lu", friendsList.count);
     
 }
@@ -50,12 +54,30 @@
     return friendsList.count;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Selected row: %lu", indexPath.row); // you can see selected row number in your console;
+    NSString *friend = friendsList[ indexPath.row ];
+    [myCheckedFriends addObject:friend];
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.imageView.image = [UIImage imageNamed:@"check.png"];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     // Configure the cell...
     cell.textLabel.text = friendsList[indexPath.row];
+    
+    if ([myCheckedFriends containsObject:[friendsList objectAtIndex:indexPath.row]])
+    {
+        cell.imageView.image = [UIImage imageNamed:@"check.png"];
+    }
+    else
+    {
+        cell.imageView.image = [UIImage imageNamed:@"plus.png"];
+    }
     
     return cell;
 }

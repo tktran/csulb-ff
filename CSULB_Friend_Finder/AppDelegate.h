@@ -14,5 +14,4 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property NSArray *friends;
-
 @end

@@ -91,22 +91,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self _loadData];
-}
-
-
--(void) _loadData
-{
+    
     FBRequest *request = [FBRequest requestForMe];
     [request startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
      {
          if(!error)
          {
              NSDictionary *userData = (NSDictionary *)result;
-             NSString *name = userData[@"name"];
+             _NameLabel.adjustsFontSizeToFitWidth = NO;
+             _NameLabel.numberOfLines = 0;
+             NSString *name = [@"Welcome, " stringByAppendingString:userData[@"name"]];
+             name = [name stringByAppendingString:@"\nYou logged in."];
              _NameLabel.text = name;
          }
      }];
+    
     FBRequest *requestForMyFriends = [FBRequest requestForMyFriends];
     [requestForMyFriends startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
      {
@@ -125,9 +124,7 @@
              NSLog(@"%lu", appDelegate.friends.count);
          }
      }];
-
 }
-
 
 - (void)didReceiveMemoryWarning
 {
