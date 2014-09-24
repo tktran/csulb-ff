@@ -64,7 +64,7 @@
     logInViewController.logInView.logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]];
     [logInViewController.logInView.logo setFrame:CGRectMake(16.0f, 43.0f, 288.0f, 60.0f)];
     
-    logInViewController.facebookPermissions = @[@"public_profile", @"user_friends"];
+    logInViewController.facebookPermissions = @[@"public_profile", @"user_friends", @"email"];
     
     // Create the sign up view controller
     PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
@@ -103,6 +103,12 @@
              NSString *name = [@"Welcome, " stringByAppendingString:userData[@"name"]];
              name = [name stringByAppendingString:@"\nYou logged in."];
              _NameLabel.text = name;
+             
+             // not sure if should get delegate stuff here
+             AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+             appDelegate.temp_first_name = userData[@"first_name"];
+             appDelegate.temp_last_name = userData[@"last_name"];
+             appDelegate.temp_email = userData[@"email"];
          }
      }];
     

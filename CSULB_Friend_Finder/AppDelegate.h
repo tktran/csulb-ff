@@ -14,4 +14,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property NSArray *friends;
+
+@property NSString *temp_first_name;
+@property NSString *temp_last_name;
+@property NSString *temp_email;
 @end

@@ -56,12 +56,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // 1. Add this friend to the list of selected friends
+    // (ones that already got a friend request)
     NSLog(@"Selected row: %lu", indexPath.row); // you can see selected row number in your console;
     NSString *friend = friendsList[ indexPath.row ];
     [myCheckedFriends addObject:friend];
     
+    // 2. Update the image from a + to a check
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.imageView.image = [UIImage imageNamed:@"check.png"];
+    
+    // 3. Display "Friend request sent"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"The friend request was sent." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+
+    [alert show];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
