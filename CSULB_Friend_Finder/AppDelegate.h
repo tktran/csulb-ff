@@ -22,4 +22,5 @@
 @property NSMutableDictionary *temp_classes;
 @property NSNumber* n;
 
+@property BOOL isFacebook;
 @end

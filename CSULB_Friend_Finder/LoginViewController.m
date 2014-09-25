@@ -13,7 +13,6 @@
 
 @implementation LoginViewController
 
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,9 +25,21 @@
 -(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
 {
     NSLog(@"Login Successful");
+    if(user.isNew)
+    {
+        [self performSegueWithIdentifier:@"fbSignUpSegue" sender:self];
+   
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self performSegueWithIdentifier:@"loginSegue" sender:self];
 }
 
+- (void) signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
+{
+    NSLog(@"Signup successful");
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self performSegueWithIdentifier:@"fbSignUpSegue" sender:self];
+}
 -(void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController
 {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -83,6 +94,12 @@
 
 }
 
+//- (void) signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
+//{
+//    [self dismissModalViewControllerAnimated:YES];
+//}
+
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
@@ -91,7 +108,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [PFUser logOut];
     FBRequest *request = [FBRequest requestForMe];
     [request startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
      {

@@ -10,20 +10,52 @@
 
 @interface FBInfoViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *firstNameField;
-@property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameField;
 
 @end
 
 @implementation FBInfoViewController
 
+- (IBAction)clickedSubmitButton:(id)sender {
+    if (self.firstNameField.text.length == 0 ||
+        self.lastNameField.text.length == 0)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Try again" message:@"Please fill in the First and Last Name fields." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
+    else
+    {
+        AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+        appDelegate.temp_first_name = self.firstNameField.text;
+        appDelegate.temp_last_name = self.lastNameField.text;
+        
+        FBSession *myFbSession = [PFFacebookUtils session];
+        if( myFbSession.isOpen)
+        {
+            [self performSegueWithIdentifier: @"recommendedFriendsSegue" sender: sender];
+        }
+        else
+        {
+            [self performSegueWithIdentifier: @"FBInfoSegue" sender: sender];
+        }
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 
-    self.firstNameField.text = appDelegate.temp_first_name;
-    self.lastNameField.text = appDelegate.temp_last_name;
-    self.emailField.text = appDelegate.temp_email;
+    FBSession *myFbSession = [PFFacebookUtils session];
+    if( myFbSession.isOpen)
+    {
+        self.firstNameField.text = appDelegate.temp_first_name;
+        self.lastNameField.text = appDelegate.temp_last_name;
+    }
+    else
+    {
+        self.firstNameField.text = @"";
+        self.lastNameField.text = @"";
+    }
     self.navigationItem.hidesBackButton = YES;
 
 }
