@@ -20,12 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.hidesBackButton = YES;
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+//    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 
-    self.nameLabel.text = [appDelegate.temp_first_name stringByAppendingString:appDelegate.temp_last_name];
+    PFUser *user = [PFUser currentUser];
+    self.nameLabel.text = [NSString stringWithFormat:@"%@ %@",                            user[@"first_name"], user[@"last_name"]];
     
-    NSDictionary *classes = appDelegate.temp_classes;
-    
+    NSDictionary *classes = user[@"temp_classes"];
     NSString *classLabelString = @"";
     for (id key in classes)
     {

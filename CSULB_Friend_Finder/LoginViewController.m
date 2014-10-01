@@ -28,17 +28,20 @@
     if(user.isNew)
     {
         [self performSegueWithIdentifier:@"fbSignUpSegue" sender:self];
-   
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
-    [self dismissViewControllerAnimated:YES completion:nil];
-    [self performSegueWithIdentifier:@"loginSegue" sender:self];
+    else
+    {
+        [self performSegueWithIdentifier:@"loginSegue" sender:self];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (void) signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 {
     NSLog(@"Signup successful");
-    [self dismissViewControllerAnimated:YES completion:nil];
     [self performSegueWithIdentifier:@"fbSignUpSegue" sender:self];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 -(void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController
 {
@@ -122,12 +125,16 @@
              _NameLabel.text = name;
              
              // not sure if should get delegate stuff here
-             AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-             appDelegate.temp_first_name = userData[@"first_name"];
-             appDelegate.temp_last_name = userData[@"last_name"];
-             appDelegate.temp_email = userData[@"email"];
+//             AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+//             appDelegate.temp_first_name = userData[@"first_name"];
+//             
+//             appDelegate.temp_last_name = userData[@"last_name"];
+//             appDelegate.temp_email = userData[@"email"];
+
          }
      }];
+    
+
     
     FBRequest *requestForMyFriends = [FBRequest requestForMyFriends];
     [requestForMyFriends startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)

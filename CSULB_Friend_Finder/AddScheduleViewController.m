@@ -28,10 +28,7 @@
     }
     else // successful entry of class fields
     {
-        AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-        NSMutableDictionary *classes = appDelegate.temp_classes;
-        if (classes == nil)
-            classes = [[NSMutableDictionary alloc] init];
+        NSMutableDictionary *classes = [[NSMutableDictionary alloc] init];
             
         NSString *className = self.classNameField.text;
         NSString *location = self.locationField.text;
@@ -47,9 +44,19 @@
         self.locationField.text = @"";
         self.timeField.text = @"";
         
-        NSLog(@"%lu", (unsigned long)classes.count);
-        appDelegate.temp_classes = classes;
-        
+        PFUser *user = [PFUser currentUser];
+        user[@"temp_classes"] = classes;
+        [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error)
+            {
+                NSLog(@"A new class was saved to user[temp_classes]. temp_classes now has %lu elements.", (unsigned long)classes.count);
+            }
+            else
+            {
+                NSString *errorString = [error userInfo][@"Error pushing to parse"];
+                NSLog(@"%@", errorString);
+            }
+        }];
     }
 }
 

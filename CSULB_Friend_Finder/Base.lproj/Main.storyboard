@@ -396,7 +396,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Afx-7n-Uew" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="598" y="-232"/>
+            <point key="canvasLocation" x="586" y="-724"/>
         </scene>
         <!--Add Schedule View Controller-->
         <scene sceneID="mw4-ni-TZL">
@@ -467,7 +467,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ejt-7y-0rb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1033" y="-242"/>
+            <point key="canvasLocation" x="1023" y="-275"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="hCV-rB-uSi">
@@ -587,7 +587,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ei-xV-3GR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1446" y="-56"/>
+            <point key="canvasLocation" x="1466" y="56"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -596,7 +596,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="azB-KM-6Ux"/>
         <segue reference="uwR-ak-ZPx"/>
+        <segue reference="YRX-71-GKv"/>
     </inferredMetricsTieBreakers>
 </document>

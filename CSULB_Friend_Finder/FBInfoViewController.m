@@ -25,9 +25,9 @@
     }
     else
     {
-        AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-        appDelegate.temp_first_name = self.firstNameField.text;
-        appDelegate.temp_last_name = self.lastNameField.text;
+//        AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+//        appDelegate.temp_first_name = self.firstNameField.text;
+//        appDelegate.temp_last_name = self.lastNameField.text;
         
         FBSession *myFbSession = [PFFacebookUtils session];
         if( myFbSession.isOpen)
@@ -46,19 +46,43 @@
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 
     FBSession *myFbSession = [PFFacebookUtils session];
-    if( myFbSession.isOpen)
+    if( myFbSession.isOpen )
     {
-        self.firstNameField.text = appDelegate.temp_first_name;
-        self.lastNameField.text = appDelegate.temp_last_name;
+        FBRequest *request = [FBRequest requestForMe];
+        [request startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
+         {
+             if (error)
+             {
+                 NSLog(@"%@", error);
+             }
+             else
+             {
+                 PFUser *user = [PFUser currentUser];
+                 [user setObject:result[@"first_name"] forKey:@"first_name"];
+                 [user setObject:result[@"last_name"] forKey:@"last_name"];
+                 [user setObject:result[@"email"] forKey:@"email"];
+
+                 [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                     if (!error)
+                     {
+                         // Hooray! Let them use the app now.
+                         NSLog(@"User Info:\n%@\n%@\n%@", user[@"first_name"],user[@"last_name"],user[@"email"]);
+                     }
+                     else
+                     {
+                         NSString *errorString = [error userInfo][@"Error pushing to parse"];
+                         NSLog(@"%@", errorString);
+                     }
+                 }];
+             }
+         }];
     }
     else
     {
-        self.firstNameField.text = @"";
-        self.lastNameField.text = @"";
+        NSLog(@"Error no FB connection.");
     }
-    self.navigationItem.hidesBackButton = YES;
-
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
