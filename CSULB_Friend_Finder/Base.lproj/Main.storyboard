@@ -62,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0A3-O9-ARL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="350" y="1147"/>
+            <point key="canvasLocation" x="-322" y="1347"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3rq-2U-7IA">
@@ -128,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V08-VT-7Mw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="350" y="1806"/>
+            <point key="canvasLocation" x="-322" y="2006"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="UUL-JJ-sHN">
@@ -170,7 +170,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="352" y="2496"/>
+            <point key="canvasLocation" x="-818" y="1880"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bK7-ZO-uSy">
@@ -238,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tp3-hO-Hgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="760" y="1806"/>
+            <point key="canvasLocation" x="88" y="2006"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Zjh-qp-V5j">
@@ -301,7 +301,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tUc-ZV-aMC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="760" y="1148"/>
+            <point key="canvasLocation" x="88" y="1348"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mmb-Xx-fH0">
@@ -316,7 +316,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGQ-2a-L7E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-727" y="56"/>
+            <point key="canvasLocation" x="-709" y="447"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="wCS-cj-XHb">
@@ -329,34 +329,16 @@
                     <view key="view" contentMode="scaleToFill" id="pjY-Wt-O7v">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JpZ-dk-k7I">
-                                <rect key="frame" x="41" y="93" width="239" height="77"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wnv-ld-cEx">
-                                <rect key="frame" x="90" y="518" width="141" height="30"/>
-                                <state key="normal" title="Next: Enter your info">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="9bV-w4-Aoy" kind="push" identifier="fbSignUpSegue" id="LRX-AG-YpT"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="2Xp-Jj-odF"/>
                     <connections>
-                        <outlet property="NameLabel" destination="JpZ-dk-k7I" id="RRj-wN-Ew7"/>
-                        <segue destination="rPJ-tW-IKE" kind="push" identifier="loginSegue" id="azB-KM-6Ux"/>
+                        <segue destination="DAp-ps-vgE" kind="push" identifier="loginSegue" id="lcR-Nx-7MY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XVm-Nw-ctV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-281" y="56"/>
+            <point key="canvasLocation" x="-281" y="447"/>
         </scene>
         <!--Recommended Friends-->
         <scene sceneID="Zma-I3-5bS">
@@ -461,7 +443,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="rPJ-tW-IKE" kind="push" id="YRX-71-GKv"/>
+                                    <segue destination="DAp-ps-vgE" kind="push" id="IHP-xt-t1k"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -541,7 +523,7 @@
                         <outlet property="firstNameField" destination="cBX-Cq-v3p" id="K8S-hZ-Et0"/>
                         <outlet property="lastNameField" destination="u1R-wB-1lz" id="ykZ-Uk-WTS"/>
                         <segue destination="3vG-Wo-EbU" kind="push" identifier="recommendedFriendsSegue" id="gyo-0u-XKn"/>
-                        <segue destination="6P5-2Q-02y" kind="push" identifier="FBInfoSegue" id="xPm-Al-csu"/>
+                        <segue destination="6P5-2Q-02y" kind="push" identifier="userInfoSegue" id="xPm-Al-csu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Tg-4b-Cup" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -590,20 +572,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRP-p8-jJJ">
-                                <rect key="frame" x="0.0" y="519" width="320" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem title="Item" id="gTz-31-JPM"/>
-                                    <tabBarItem systemItem="favorites" id="u4k-Er-EWw"/>
-                                    <tabBarItem systemItem="more" id="cRa-CL-One"/>
-                                </items>
-                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="ou7-GH-Gyv"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="hhN-xv-sk9"/>
                     <connections>
                         <outlet property="classLabel" destination="hJt-ec-fQt" id="qUZ-eR-ja6"/>
                         <outlet property="friendsLabel" destination="uqu-D3-mPW" id="TOF-4G-ARb"/>
@@ -612,7 +585,46 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ei-xV-3GR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1460" y="56"/>
+            <point key="canvasLocation" x="1436" y="178"/>
+        </scene>
+        <!--Friends-->
+        <scene sceneID="ZDb-R7-0ko">
+            <objects>
+                <viewController id="dXe-RH-M8J" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="48A-fb-BT6"/>
+                        <viewControllerLayoutGuide type="bottom" id="1WZ-I9-XjQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PJD-8m-KbQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Friends" id="lyf-Yk-sHk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sL1-76-1AO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1405" y="957"/>
+        </scene>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="VX4-Uw-TXi">
+            <objects>
+                <tabBarController id="DAp-ps-vgE" customClass="TabBarViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="87N-Xd-4ca"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="pLO-wR-bND">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="rPJ-tW-IKE" kind="relationship" relationship="viewControllers" id="MvL-ke-c0O"/>
+                        <segue destination="dXe-RH-M8J" kind="relationship" relationship="viewControllers" id="Vcd-EG-P4I"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fog-cK-ryf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="586" y="447"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -621,7 +633,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="YRX-71-GKv"/>
+        <segue reference="lcR-Nx-7MY"/>
         <segue reference="xPm-Al-csu"/>
     </inferredMetricsTieBreakers>
 </document>

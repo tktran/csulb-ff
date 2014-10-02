@@ -1,5 +1,5 @@
 //
-//  FBInfoViewController.h
+//  UserInfoViewController.h
 //  CSULB_Friend_Finder
 //
 //  Created by Tan Tran on 9/23/14.

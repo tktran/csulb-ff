@@ -1,5 +1,5 @@
 //
-//  FBInfoViewController.m
+//  UserInfoViewController.m
 //  CSULB_Friend_Finder
 //
 //  Created by Tan Tran on 9/23/14.
@@ -47,7 +47,7 @@
         }
         else
         {
-            [self performSegueWithIdentifier: @"FBInfoSegue" sender: sender];
+            [self performSegueWithIdentifier: @"userInfoSegue" sender: sender];
         }
     }
     [self.firstNameField resignFirstResponder];
@@ -67,24 +67,24 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    FBRequest *requestForMyFriends = [FBRequest requestForMyFriends];
-    [requestForMyFriends startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
-     {
-         if(!error)
-         {
-             NSArray * resultList = [result objectForKey:@"data"];
-             NSMutableArray *mutableFriends = [[NSMutableArray alloc] init];
-             for (NSDictionary<FBGraphUser>* result in resultList)
-             {
-                 NSString *realName = result.name;
-                 NSLog(@"%@", realName);
-                 [mutableFriends addObject:realName];
-             }
-             AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-             appDelegate.friends = [NSArray arrayWithArray:mutableFriends];
-             NSLog(@"%lu", appDelegate.friends.count);
-         }
-     }];
+//    FBRequest *requestForMyFriends = [FBRequest requestForMyFriends];
+//    [requestForMyFriends startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
+//     {
+//         if(!error)
+//         {
+//             NSArray * resultList = [result objectForKey:@"data"];
+//             NSMutableArray *mutableFriends = [[NSMutableArray alloc] init];
+//             for (NSDictionary<FBGraphUser>* result in resultList)
+//             {
+//                 NSString *realName = result.name;
+//                 NSLog(@"%@", realName);
+//                 [mutableFriends addObject:realName];
+//             }
+//             AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+//             appDelegate.friends = [NSArray arrayWithArray:mutableFriends];
+//             NSLog(@"%lu", appDelegate.friends.count);
+//         }
+//     }];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -123,7 +123,6 @@
                  if (!error)
                  {
                      // Hooray! Let them use the app now.
-                     NSLog(@"User Info:\n%@\n%@\n%@", user[@"first_name"],user[@"last_name"],user[@"email"]);
                  }
                  else
                  {
@@ -135,6 +134,25 @@
              // Populate text fields with the retrieved FB info, if applicable
              self.firstNameField.text = result[@"first_name"];
              self.lastNameField.text = result[@"last_name"];
+         }
+     }];
+    
+    FBRequest *requestForMyFriends = [FBRequest requestForMyFriends];
+    [requestForMyFriends startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
+     {
+         if(!error)
+         {
+             NSArray * resultList = [result objectForKey:@"data"];
+             NSMutableArray *mutableFriends = [[NSMutableArray alloc] init];
+             for (NSDictionary<FBGraphUser>* result in resultList)
+             {
+                 NSString *realName = result.name;
+                 NSLog(@"%@", realName);
+                 [mutableFriends addObject:realName];
+             }
+             AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+             appDelegate.friends = [NSArray arrayWithArray:mutableFriends];
+             NSLog(@"%lu", appDelegate.friends.count);
          }
      }];
 }
