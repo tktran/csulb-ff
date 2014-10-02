@@ -8,6 +8,6 @@
 
 #import "AppDelegate.h"
 
-@interface AddScheduleViewController : UIViewController
+@interface AddScheduleViewController : UIViewController <UITextFieldDelegate>
 
 @end

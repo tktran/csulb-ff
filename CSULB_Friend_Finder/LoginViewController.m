@@ -48,18 +48,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    if(![PFUser currentUser])
-    {
-        
-    }
-    else
-    {
-        
-    }
-}
-
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -97,27 +85,6 @@
 
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    FBRequest *requestForMyFriends = [FBRequest requestForMyFriends];
-    [requestForMyFriends startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
-     {
-         if(!error)
-         {
-             NSArray * resultList = [result objectForKey:@"data"];
-             NSMutableArray *mutableFriends = [[NSMutableArray alloc] init];
-             for (NSDictionary<FBGraphUser>* result in resultList)
-             {
-                 NSString *realName = result.name;
-                 NSLog(@"%@", realName);
-                 [mutableFriends addObject:realName];
-             }
-             AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-             appDelegate.friends = [NSArray arrayWithArray:mutableFriends];
-             NSLog(@"%lu", appDelegate.friends.count);
-         }
-     }];
-}
 
 //- (void) signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 //{
@@ -128,28 +95,36 @@
 {
     [super viewDidLoad];
 //    [PFUser logOut];
-    FBRequest *request = [FBRequest requestForMe];
-    [request startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
-     {
-         if(!error)
-         {
-             NSDictionary *userData = (NSDictionary *)result;
-             _NameLabel.adjustsFontSizeToFitWidth = NO;
-             _NameLabel.numberOfLines = 0;
-             NSString *name = [@"Welcome, " stringByAppendingString:userData[@"name"]];
-             name = [name stringByAppendingString:@"\nYou logged in."];
-             _NameLabel.text = name;
-             
-             // not sure if should get delegate stuff here
-//             AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-//             appDelegate.temp_first_name = userData[@"first_name"];
-//             
-//             appDelegate.temp_last_name = userData[@"last_name"];
-//             appDelegate.temp_email = userData[@"email"];
-             [self performSegueWithIdentifier:@"loginSegue" sender:self];
-             [self dismissViewControllerAnimated:YES completion:nil];
-         }
-     }];
+    if([PFUser currentUser] != nil)
+    {
+        // Not sure if we need this, or if it was just for demo pruposes
+//        FBRequest *request = [FBRequest requestForMe];
+//        [request startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
+//         {
+//             if(!error)
+//             {
+//                 NSDictionary *userData = (NSDictionary *)result;
+//                 _NameLabel.adjustsFontSizeToFitWidth = NO;
+//                 _NameLabel.numberOfLines = 0;
+//                 NSString *name = [@"Welcome, " stringByAppendingString:userData[@"name"]];
+//                 name = [name stringByAppendingString:@"\nYou logged in."];
+//                 _NameLabel.text = name;
+//                 
+//                 // not sure if should get delegate stuff here
+//                 AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+//                 appDelegate.temp_first_name = userData[@"first_name"];
+//                 
+//                 appDelegate.temp_last_name = userData[@"last_name"];
+//                 appDelegate.temp_email = userData[@"email"];
+//                 [self performSegueWithIdentifier:@"loginSegue" sender:self];
+//                 [self dismissViewControllerAnimated:YES completion:nil];
+//             }
+//         }];
+        
+        [self performSegueWithIdentifier:@"loginSegue" sender:self];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning

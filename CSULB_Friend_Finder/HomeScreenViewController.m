@@ -17,13 +17,18 @@
 
 @implementation HomeScreenViewController
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+    self.navigationItem.leftBarButtonItem=nil;
+    self.navigationItem.hidesBackButton = YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.hidesBackButton = YES;
-//    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 
     PFUser *user = [PFUser currentUser];
-    self.nameLabel.text = [NSString stringWithFormat:@"%@ %@",                            user[@"first_name"], user[@"last_name"]];
+    self.nameLabel.text = [NSString stringWithFormat:@"%@ %@",user[@"first_name"], user[@"last_name"]];
     
     NSDictionary *classes = user[@"temp_classes"];
     NSString *classLabelString = @"";

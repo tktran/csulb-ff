@@ -21,8 +21,17 @@
 - (IBAction) performSegue:(id)sender {
     [self performSegueWithIdentifier:@"ShowDetail" sender:sender];}
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+    self.navigationItem.leftBarButtonItem=nil;
+    self.navigationItem.hidesBackButton = YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.leftBarButtonItem=nil;
+    self.navigationItem.hidesBackButton = YES;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -35,9 +44,6 @@
 //    myCheckedFriends = appDelegate.checkedFriends;
     
     NSLog(@"%lu", friendsList.count);
-    
-    self.navigationItem.hidesBackButton = YES;
-    
 }
 
 - (void)didReceiveMemoryWarning {

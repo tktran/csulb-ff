@@ -8,6 +8,6 @@
 
 #import "AppDelegate.h"
 
-@interface FBInfoViewController : UIViewController
+@interface UserInfoViewController : UIViewController <UITextFieldDelegate>
 
 @end

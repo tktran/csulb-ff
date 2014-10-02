@@ -12,6 +12,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *classNameField;
 @property (weak, nonatomic) IBOutlet UITextField *locationField;
 @property (weak, nonatomic) IBOutlet UITextField *timeField;
+@property (strong, nonatomic) NSMutableDictionary *classes;
+@property (strong, nonatomic) NSMutableArray *myClassValues;
+
 
 @end
 
@@ -28,28 +31,25 @@
     }
     else // successful entry of class fields
     {
-        NSMutableDictionary *classes = [[NSMutableDictionary alloc] init];
-            
         NSString *className = self.classNameField.text;
         NSString *location = self.locationField.text;
         NSString *time = self.timeField.text;
-
-        NSMutableArray *myClassValues = [[NSMutableArray alloc] init];
-        myClassValues[0] = location;
-        myClassValues[1] = time;
         
-        [classes setObject:myClassValues forKey:className];
+        self.myClassValues[0] = location;
+        self.myClassValues[1] = time;
+        
+        [self.classes setObject:self.myClassValues forKey:className];
         
         self.classNameField.text = @"";
         self.locationField.text = @"";
         self.timeField.text = @"";
         
         PFUser *user = [PFUser currentUser];
-        user[@"temp_classes"] = classes;
+        user[@"temp_classes"] = self.classes;
         [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (!error)
             {
-                NSLog(@"A new class was saved to user[temp_classes]. temp_classes now has %lu elements.", (unsigned long)classes.count);
+                NSLog(@"A new class was saved to user[temp_classes]. temp_classes now has %lu elements.", (unsigned long)self.classes.count);
             }
             else
             {
@@ -57,12 +57,36 @@
                 NSLog(@"%@", errorString);
             }
         }];
+        
     }
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+    self.navigationItem.leftBarButtonItem=nil;
+    self.navigationItem.hidesBackButton = YES;
+}
+
+// Method to dismiss keyboard when touching screen
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.leftBarButtonItem=nil;
     self.navigationItem.hidesBackButton = YES;
+    
+    self.classes = [[NSMutableDictionary alloc] init];
+    self.myClassValues = [[NSMutableArray alloc] init];
+
 
     // Do any additional setup after loading the view.
 }
