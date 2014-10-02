@@ -97,21 +97,37 @@
 
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    FBRequest *requestForMyFriends = [FBRequest requestForMyFriends];
+    [requestForMyFriends startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
+     {
+         if(!error)
+         {
+             NSArray * resultList = [result objectForKey:@"data"];
+             NSMutableArray *mutableFriends = [[NSMutableArray alloc] init];
+             for (NSDictionary<FBGraphUser>* result in resultList)
+             {
+                 NSString *realName = result.name;
+                 NSLog(@"%@", realName);
+                 [mutableFriends addObject:realName];
+             }
+             AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+             appDelegate.friends = [NSArray arrayWithArray:mutableFriends];
+             NSLog(@"%lu", appDelegate.friends.count);
+         }
+     }];
+}
+
 //- (void) signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 //{
 //    [self dismissModalViewControllerAnimated:YES];
 //}
 
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [PFUser logOut];
+//    [PFUser logOut];
     FBRequest *request = [FBRequest requestForMe];
     [request startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
      {
@@ -130,28 +146,8 @@
 //             
 //             appDelegate.temp_last_name = userData[@"last_name"];
 //             appDelegate.temp_email = userData[@"email"];
-
-         }
-     }];
-    
-
-    
-    FBRequest *requestForMyFriends = [FBRequest requestForMyFriends];
-    [requestForMyFriends startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
-     {
-         if(!error)
-         {
-             NSArray * resultList = [result objectForKey:@"data"];
-             NSMutableArray *mutableFriends = [[NSMutableArray alloc] init];
-             for (NSDictionary<FBGraphUser>* result in resultList)
-             {
-                 NSString *realName = result.name;
-                 NSLog(@"%@", realName);
-                 [mutableFriends addObject:realName];
-             }
-             AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-             appDelegate.friends = [NSArray arrayWithArray:mutableFriends];
-             NSLog(@"%lu", appDelegate.friends.count);
+             [self performSegueWithIdentifier:@"loginSegue" sender:self];
+             [self dismissViewControllerAnimated:YES completion:nil];
          }
      }];
 }

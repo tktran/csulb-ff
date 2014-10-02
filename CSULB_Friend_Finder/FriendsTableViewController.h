@@ -6,9 +6,8 @@
 //  Copyright (c) 2014 Tan Tran. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "LoginViewController.h"
 #import "AppDelegate.h"
+
 @interface FriendsTableViewController : UITableViewController <UITableViewDelegate>
 
 @end

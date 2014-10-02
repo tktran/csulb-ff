@@ -6,8 +6,7 @@
 //  Copyright (c) 2014 Tan Tran. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface RegisterViewController : UIViewController
 

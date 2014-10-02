@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Gustavo Yepes. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+
 @interface HomeScreenViewController : UIViewController
 
 @end

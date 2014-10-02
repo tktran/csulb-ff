@@ -43,44 +43,44 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    self.navigationItem.hidesBackButton = YES;
 
     FBSession *myFbSession = [PFFacebookUtils session];
-    if( myFbSession.isOpen )
+    if( !myFbSession.isOpen )
     {
-        FBRequest *request = [FBRequest requestForMe];
-        [request startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
+        [FBSession openActiveSessionWithAllowLoginUI:NO];
+    }
+    FBRequest *request = [FBRequest requestForMe];
+    [request startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
+     {
+         if (error)
          {
-             if (error)
-             {
-                 NSLog(@"%@", error);
-             }
-             else
-             {
-                 PFUser *user = [PFUser currentUser];
-                 [user setObject:result[@"first_name"] forKey:@"first_name"];
-                 [user setObject:result[@"last_name"] forKey:@"last_name"];
-                 [user setObject:result[@"email"] forKey:@"email"];
+             NSLog(@"%@", error);
+         }
+         else
+         {
+             PFUser *user = [PFUser currentUser];
+             [user setObject:result[@"first_name"] forKey:@"first_name"];
+             [user setObject:result[@"last_name"] forKey:@"last_name"];
+             [user setObject:result[@"email"] forKey:@"email"];
 
-                 [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                     if (!error)
-                     {
-                         // Hooray! Let them use the app now.
-                         NSLog(@"User Info:\n%@\n%@\n%@", user[@"first_name"],user[@"last_name"],user[@"email"]);
-                     }
-                     else
-                     {
-                         NSString *errorString = [error userInfo][@"Error pushing to parse"];
-                         NSLog(@"%@", errorString);
-                     }
-                 }];
-             }
-         }];
-    }
-    else
-    {
-        NSLog(@"Error no FB connection.");
-    }
+             [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                 if (!error)
+                 {
+                     // Hooray! Let them use the app now.
+                     NSLog(@"User Info:\n%@\n%@\n%@", user[@"first_name"],user[@"last_name"],user[@"email"]);
+                 }
+                 else
+                 {
+                     NSString *errorString = [error userInfo][@"Error pushing to parse"];
+                     NSLog(@"%@", errorString);
+                 }
+             }];
+             // Populate text fields with the retrieved FB info
+             self.firstNameField.text = result[@"first_name"];
+             self.lastNameField.text = result[@"last_name"];
+         }
+     }];
 }
 
 

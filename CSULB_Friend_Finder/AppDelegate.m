@@ -7,9 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "ModelController.h"
-
-
 
 @implementation AppDelegate
 
