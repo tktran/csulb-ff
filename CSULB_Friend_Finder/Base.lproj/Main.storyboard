@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kUq-Qs-ipP">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -334,6 +333,7 @@
                     <navigationItem key="navigationItem" id="2Xp-Jj-odF"/>
                     <connections>
                         <segue destination="DAp-ps-vgE" kind="push" identifier="loginSegue" id="lcR-Nx-7MY"/>
+                        <segue destination="9bV-w4-Aoy" kind="push" identifier="fbSignUpSegue" id="JuU-8a-kKH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XVm-Nw-ctV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -633,7 +633,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="lcR-Nx-7MY"/>
         <segue reference="xPm-Al-csu"/>
+        <segue reference="IHP-xt-t1k"/>
     </inferredMetricsTieBreakers>
 </document>

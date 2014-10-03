@@ -35,10 +35,13 @@
     for (id key in classes)
     {
         NSArray *array = [classes objectForKey:key];
+        
         NSString *classLocation = array[0];
         classLabelString = [classLabelString stringByAppendingString:key];
+        
         classLabelString = [classLabelString stringByAppendingString:@" at "];
         classLabelString = [classLabelString stringByAppendingString:classLocation];
+        
         classLabelString = [classLabelString stringByAppendingString:@" at "];
         NSString *classTime = array[1];
         classLabelString = [classLabelString stringByAppendingString:classTime];

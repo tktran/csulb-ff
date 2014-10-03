@@ -24,14 +24,16 @@
 
 -(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
 {
-    NSLog(@"Login Successful");
+    NSLog(@"LoginViewController:didLogInUser()");
     if(user.isNew)
     {
+        NSLog(@"LoginViewController:didLogInUser(): user.isNew");
         [self performSegueWithIdentifier:@"fbSignUpSegue" sender:self];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
     else
     {
+        NSLog(@"LoginViewController:didLogInUser(): !user.isNew");
         [self performSegueWithIdentifier:@"loginSegue" sender:self];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
@@ -39,60 +41,57 @@
 
 - (void) signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 {
-    NSLog(@"Signup successful");
+    NSLog(@"LoginViewController:didSignUpUser()");
     [self performSegueWithIdentifier:@"fbSignUpSegue" sender:self];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 -(void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController
 {
+    NSLog(@"LoginViewController:didCancelLogIn()");
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
+    NSLog(@"LoginViewController:viewDidAppear()");
     [super viewDidAppear:animated];
+    
     // Create the log in view controller
-    if(![PFUser currentUser]){
+    if(![PFUser currentUser])
+    {
+        NSLog(@"LoginViewController:viewDidAppear(): ![PFUser currentUser]");
+        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+        [logInViewController setDelegate:self]; // Set ourselves as the delegate
+        logInViewController.fields = PFLogInFieldsUsernameAndPassword
+        | PFLogInFieldsLogInButton
+        | PFLogInFieldsSignUpButton
+        | PFLogInFieldsPasswordForgotten
+        | PFLogInFieldsDismissButton
+        | PFLogInFieldsFacebook;
         
-    PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
-    [logInViewController setDelegate:self]; // Set ourselves as the delegate
-    logInViewController.fields = PFLogInFieldsUsernameAndPassword
-    | PFLogInFieldsLogInButton
-    | PFLogInFieldsSignUpButton
-    | PFLogInFieldsPasswordForgotten
-    | PFLogInFieldsDismissButton
-    | PFLogInFieldsFacebook;
-    
-    logInViewController.logInView.logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]];
-    [logInViewController.logInView.logo setFrame:CGRectMake(16.0f, 43.0f, 288.0f, 60.0f)];
-    
-    logInViewController.facebookPermissions = @[@"public_profile", @"user_friends", @"email"];
-    
-    // Create the sign up view controller
-    PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
-    [signUpViewController setDelegate:self]; // Set ourselves as the delegate
-    signUpViewController.signUpView.logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]];
-    [signUpViewController.signUpView.logo setFrame:CGRectMake(16.0f, 43.0f, 288.0f, 60.0f)];
-    
-    
-    // Assign our sign up controller to be displayed from the login controller
-    [logInViewController setSignUpController:signUpViewController];
-    
-    
-    // Present the log in view controller
-    [self presentViewController:logInViewController animated:YES completion:NULL];
+        logInViewController.logInView.logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]];
+        [logInViewController.logInView.logo setFrame:CGRectMake(16.0f, 43.0f, 288.0f, 60.0f)];
+        
+        logInViewController.facebookPermissions = @[@"public_profile", @"user_friends", @"email"];
+        
+        // Create the sign up view controller
+        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+        [signUpViewController setDelegate:self]; // Set ourselves as the delegate
+        signUpViewController.signUpView.logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]];
+        [signUpViewController.signUpView.logo setFrame:CGRectMake(16.0f, 43.0f, 288.0f, 60.0f)];
+        
+        // Assign our sign up controller to be displayed from the login controller
+        [logInViewController setSignUpController:signUpViewController];
+        
+        // Present the log in view controller
+        [self presentViewController:logInViewController animated:YES completion:NULL];
     }
 
 }
 
-
-//- (void) signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
-//{
-//    [self dismissModalViewControllerAnimated:YES];
-//}
-
 - (void)viewDidLoad
 {
+    NSLog(@"LoginViewController:viewDidLoad()");
     [super viewDidLoad];
 //    [PFUser logOut];
     if([PFUser currentUser] != nil)
