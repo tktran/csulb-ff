@@ -585,12 +585,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ei-xV-3GR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1436" y="178"/>
+            <point key="canvasLocation" x="1458" y="-62"/>
         </scene>
         <!--Friends-->
         <scene sceneID="ZDb-R7-0ko">
             <objects>
-                <viewController id="dXe-RH-M8J" sceneMemberID="viewController">
+                <viewController id="dXe-RH-M8J" customClass="FriendsListTableViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="48A-fb-BT6"/>
                         <viewControllerLayoutGuide type="bottom" id="1WZ-I9-XjQ"/>
@@ -604,7 +604,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sL1-76-1AO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1405" y="957"/>
+            <point key="canvasLocation" x="1493" y="607"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="VX4-Uw-TXi">
@@ -633,7 +633,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="xPm-Al-csu"/>
+        <segue reference="uwR-ak-ZPx"/>
         <segue reference="IHP-xt-t1k"/>
     </inferredMetricsTieBreakers>
 </document>
