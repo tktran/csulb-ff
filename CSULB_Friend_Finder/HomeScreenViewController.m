@@ -26,11 +26,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    // Allows current view controller's nav bar to show
+    [self.parentViewController.navigationController setNavigationBarHidden:YES];
+    
     PFUser *user = [PFUser currentUser];
     self.nameLabel.text = [NSString stringWithFormat:@"%@ %@",user[@"first_name"], user[@"last_name"]];
+    NSLog(@"%@", user[@"last_name"]);
     
-    NSDictionary *classes = user[@"temp_classes"];
+    NSMutableDictionary *classes = [[NSMutableDictionary alloc] initWithDictionary: user[@"temp_classes"]];
     NSString *classLabelString = @"";
     for (id key in classes)
     {
@@ -45,17 +49,18 @@
         classLabelString = [classLabelString stringByAppendingString:@" at "];
         NSString *classTime = array[1];
         classLabelString = [classLabelString stringByAppendingString:classTime];
+        classLabelString = [classLabelString stringByAppendingString:@"\n"];
     }
     self.classLabel.text = classLabelString;
-    self.classLabel.numberOfLines = 0;
-    
-    UILabel *label = self.classLabel;
-    CGSize labelSize = [label.text sizeWithFont:label.font
-                              constrainedToSize:label.frame.size
-                                  lineBreakMode:label.lineBreakMode];
-    label.frame = CGRectMake(
-                             label.frame.origin.x, label.frame.origin.y,
-                             label.frame.size.width, labelSize.height);
+//    self.classLabel.numberOfLines = 0;
+//    
+//    UILabel *label = self.classLabel;
+//    CGSize labelSize = [label.text sizeWithFont:label.font
+//                              constrainedToSize:label.frame.size
+//                                  lineBreakMode:label.lineBreakMode];
+//    label.frame = CGRectMake(
+//                             label.frame.origin.x, label.frame.origin.y,
+//                             label.frame.size.width, labelSize.height);
 
 }
 

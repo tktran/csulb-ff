@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Tan Tran. All rights reserved.
 //
 
-#import "FriendsTableViewController.h"
+#import "RecommendedFriendsTableViewController.h"
 
-@interface FriendsTableViewController ()
+@interface RecommendedFriendsTableViewController ()
 
 @end
 
-@implementation FriendsTableViewController
+@implementation RecommendedFriendsTableViewController
 {
     NSArray *friendsList;
     NSMutableArray *myCheckedFriends;

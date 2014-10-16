@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface FriendsListTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface FriendsListTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end

@@ -8,6 +8,6 @@
 
 #import "AppDelegate.h"
 
-@interface FriendsTableViewController : UITableViewController <UITableViewDelegate>
+@interface RecommendedFriendsTableViewController : UITableViewController <UITableViewDelegate>
 
 @end
