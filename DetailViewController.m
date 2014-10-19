@@ -1,9 +1,4 @@
-//
-//  DetailViewController.m
-//  Geolocations
-//
-//  Created by Héctor Ramos on 7/31/12.
-//
+
 
 #import <MapKit/MapKit.h>
 #import <Parse/Parse.h>
@@ -30,6 +25,18 @@
         GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:self.detailItem];
         [self.mapView addAnnotation:annotation];
     }
+    else // go to default location: CSULB coordinates
+    {
+        CLLocationCoordinate2D csulbCoords;
+        csulbCoords.latitude = 33.7830f;
+        csulbCoords.longitude = -118.1129f;
+        MKCoordinateSpan span;
+        span = MKCoordinateSpanMake(0.01f, 0.01f);
+        self.mapView.region = MKCoordinateRegionMake(csulbCoords, span);
+        
+        // add annotations
+        // run a parse query, and for each object, addAnnotation it
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -52,6 +59,10 @@
         annotationView.animatesDrop = YES;
     }
     
+    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    [rightButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
+    annotationView.rightCalloutAccessoryView = rightButton;
+
     return annotationView;
 }
 

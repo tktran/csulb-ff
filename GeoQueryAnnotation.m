@@ -1,9 +1,4 @@
-//
-//  GeoQueryAnnotation.m
-//  Geolocations
-//
-//  Created by Héctor Ramos on 8/17/12.
-//
+
 
 #import "GeoQueryAnnotation.h"
 

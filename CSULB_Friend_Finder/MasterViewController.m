@@ -1,9 +1,4 @@
-//
-//  MasterViewController.m
-//  Geolocations
-//
-//  Created by Héctor Ramos on 7/31/12.
-//
+
 
 // PFQueryTableViewController UIStoryboard Template
 
@@ -47,7 +42,7 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"showDetail"]) {
+    if ([segue.identifier isEqualToString:@"showProfile"]) {
         // Row selection
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         PFObject *object = [self.objects objectAtIndex:indexPath.row];
@@ -119,15 +114,12 @@
     
     // Configure the cell
     PFGeoPoint *geoPoint = object[@"location"];
-    
-    cell.textLabel.text = [dateFormatter stringFromDate:object.updatedAt];
-    
+    cell.textLabel.text = object[@"first_name"];
+//    cell.detailTextLabel.text = [dateFormatter stringFromDate:object.updatedAt];
     NSString *string = [NSString stringWithFormat:@"%@, %@",
                         [numberFormatter stringFromNumber:[NSNumber numberWithDouble:geoPoint.latitude]],
                         [numberFormatter stringFromNumber:[NSNumber numberWithDouble:geoPoint.longitude]]];
-    
     cell.detailTextLabel.text = string;
-    
     return cell;
 }
 

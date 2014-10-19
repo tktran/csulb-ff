@@ -1,39 +1,75 @@
-//
-//  ProfileViewController.m
-//  CSULB_Friend_Finder
-//
-//  Created by Nick Colburn on 10/1/14.
-//  Copyright (c) 2014 Nick Colburn. All rights reserved.
-//
+
+
+#import <MapKit/MapKit.h>
+#import <Parse/Parse.h>
 
 #import "ProfileViewController.h"
-
-@interface ProfileViewController ()
-
-@end
+#import "GeoPointAnnotation.h"
 
 @implementation ProfileViewController
 
-- (void)viewDidLoad
-{
+
+#pragma mark - UIViewController
+
+- (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    if (self.detailItem) {
+        NSLog(@"testing");
+        // obtain the geopoint
+        PFGeoPoint *geoPoint = self.detailItem[@"location"];
+        
+        // center our map view around this geopoint
+        self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude), MKCoordinateSpanMake(0.01f, 0.01f));
+        
+        // add the annotation
+        GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:self.detailItem];
+        [self.mapView addAnnotation:annotation];
+        
+        // status, location, contact info
+        NSString *friendStatus = self.detailItem[@"status"];
+        NSString *friendName = self.detailItem[@"first_name"];
+        friendName = [friendName stringByAppendingString:self.detailItem[@"last_name"]];
+        
+        self.nameLabel.text = friendName;
+        self.statusLabel.text = friendStatus;
+        
+    }
+    else // go to default location: CSULB coordinates
+    {
+        CLLocationCoordinate2D csulbCoords;
+        csulbCoords.latitude = 33.7830f;
+        csulbCoords.longitude = -118.1129f;
+        MKCoordinateSpan span;
+        span = MKCoordinateSpanMake(0.01f, 0.01f);
+        self.mapView.region = MKCoordinateRegionMake(csulbCoords, span);
+        
+        // add annotations
+        // run a parse query, and for each object, addAnnotation it
+    }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return (interfaceOrientation == UIInterfaceOrientationMaskPortrait);
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - MKMapViewDelegate
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    static NSString *GeoPointAnnotationIdentifier = @"RedPin";
+    
+    MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:GeoPointAnnotationIdentifier];
+    
+    if (!annotationView) {
+        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:GeoPointAnnotationIdentifier];
+        annotationView.pinColor = MKPinAnnotationColorRed;
+        annotationView.canShowCallout = YES;
+        annotationView.draggable = YES;
+        annotationView.animatesDrop = YES;
+    }
+        
+    return annotationView;
 }
-*/
 
 @end

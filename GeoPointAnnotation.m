@@ -1,9 +1,4 @@
-//
-//  GeoPointAnnotation.m
-//  Geolocations
-//
-//  Created by Héctor Ramos on 8/2/12.
-//
+
 
 #import "GeoPointAnnotation.h"
 

@@ -2,7 +2,6 @@
 //  SearchViewController.m
 //  Geolocations
 //
-//  Created by Héctor Ramos on 8/16/12.
 //
 
 #import <Parse/Parse.h>

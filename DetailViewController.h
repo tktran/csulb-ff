@@ -2,7 +2,6 @@
 //  DetailViewController.h
 //  Geolocations
 //
-//  Created by Héctor Ramos on 7/31/12.
 //
 
 #import <UIKit/UIKit.h>

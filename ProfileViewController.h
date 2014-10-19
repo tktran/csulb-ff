@@ -1,13 +1,18 @@
 //
-//  ProfileViewController.h
-//  CSULB_Friend_Finder
+//  DetailViewController.h
+//  Geolocations
 //
-//  Created by Nick Colburn on 10/1/14.
-//  Copyright (c) 2014 Nick Colburn. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface ProfileViewController : UIViewController
+@interface ProfileViewController : UIViewController <MKMapViewDelegate>
 
+@property (nonatomic, strong) PFObject *detailItem;
+@property (nonatomic, weak) IBOutlet MKMapView *mapView;
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @end
