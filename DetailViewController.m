@@ -34,8 +34,25 @@
         span = MKCoordinateSpanMake(0.01f, 0.01f);
         self.mapView.region = MKCoordinateRegionMake(csulbCoords, span);
         
-        // add annotations
-        // run a parse query, and for each object, addAnnotation it
+        // run a query for all friends
+        CGFloat kilometers = 1.0f; // find friends 1km around you
+        
+        PFQuery *query = [PFQuery queryWithClassName:@"Location"];
+        [query setLimit:1000];
+        [query whereKey:@"location"
+           nearGeoPoint:[PFGeoPoint geoPointWithLatitude:csulbCoords.latitude
+                                               longitude:csulbCoords.longitude]
+       withinKilometers:kilometers];
+        
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                for (PFObject *object in objects) {
+                    GeoPointAnnotation *geoPointAnnotation = [[GeoPointAnnotation alloc]
+                                                              initWithObject:object];
+                    [self.mapView addAnnotation:geoPointAnnotation];
+                }
+            }
+        }];
     }
 }
 
