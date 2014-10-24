@@ -11,35 +11,23 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>9C1A92CF5C568D530AE1E5AC95A8993E0ECF407B</key>
-		<string>https://github.com/tktran/csulb-ff.git</string>
-		<key>C7DBEE3065FAF37E959D0C02DE08D96C73B2BF10</key>
-		<string>https://github.com/ParsePlatform/AnyWall.git</string>
+		<string>https://www.github.com/tktran/csulb-ff.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>CSULB_Friend_Finder.xcodeproj/project.xcworkspace</string>
+	<string>CSULB_Friend_Finder.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>9C1A92CF5C568D530AE1E5AC95A8993E0ECF407B</key>
 		<string>../..</string>
-		<key>C7DBEE3065FAF37E959D0C02DE08D96C73B2BF10</key>
-		<string>../../../AnyWall</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/tktran/csulb-ff.git</string>
+	<string>https://www.github.com/tktran/csulb-ff.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
 	<string>9C1A92CF5C568D530AE1E5AC95A8993E0ECF407B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C7DBEE3065FAF37E959D0C02DE08D96C73B2BF10</string>
-			<key>IDESourceControlWCCName</key>
-			<string>AnyWall</string>
-		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

@@ -41,6 +41,7 @@
         NSArray *array = [classes objectForKey:key];
         
         NSString *classLocation = array[0];
+        classLabelString = [classLabelString stringByAppendingString:@"\u2022"];
         classLabelString = [classLabelString stringByAppendingString:key];
         
         classLabelString = [classLabelString stringByAppendingString:@" at "];

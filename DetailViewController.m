@@ -37,7 +37,7 @@
         // run a query for all friends
         CGFloat kilometers = 1.0f; // find friends 1km around you
         
-        PFQuery *query = [PFQuery queryWithClassName:@"Location"];
+        PFQuery *query = [PFQuery queryWithClassName:@"_User"];
         [query setLimit:1000];
         [query whereKey:@"location"
            nearGeoPoint:[PFGeoPoint geoPointWithLatitude:csulbCoords.latitude
@@ -82,5 +82,4 @@
 
     return annotationView;
 }
-
 @end

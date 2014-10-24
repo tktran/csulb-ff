@@ -29,6 +29,7 @@
         // status, location, contact info
         NSString *friendStatus = self.detailItem[@"status"];
         NSString *friendName = self.detailItem[@"first_name"];
+        friendName = [friendName stringByAppendingString:@" "];
         friendName = [friendName stringByAppendingString:self.detailItem[@"last_name"]];
         friendName = [@"Name: " stringByAppendingString:friendName];
         friendStatus = [@"Status: " stringByAppendingString:friendStatus];
