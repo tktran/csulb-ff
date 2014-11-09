@@ -1,14 +1,12 @@
-//
-//  FriendsListTableViewController.h
-//  CSULB_Friend_Finder
-//
-//  Created by Tan Tran on 10/7/14.
-//  Copyright (c) 2014 Tan Tran. All rights reserved.
-//
 
-#import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
+#import "MapViewController.h"
+#import "SearchViewController.h"
+#import "AppDelegate.h"
 
-@interface FriendsListTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface FriendsListTableViewController : PFQueryTableViewController <CLLocationManagerDelegate>
+
+@property (nonatomic, retain) CLLocationManager *locationManager;
+
+- (IBAction)insertCurrentLocation:(id)sender;
 
 @end

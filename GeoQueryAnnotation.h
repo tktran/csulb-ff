@@ -1,8 +1,6 @@
 
 
-#import <UIKit/UIKit.h>
-#import <MapKit/MapKit.h>
-#import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface GeoQueryAnnotation : NSObject <MKAnnotation>
 

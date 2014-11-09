@@ -1,6 +1,9 @@
 
 
-#import <MapKit/MapKit.h>
+#import "AppDelegate.h"
+#import "CircleOverlay.h"
+#import "GeoQueryAnnotation.h"
+#import "GeoPointAnnotation.h"
 
 @interface SearchViewController : UIViewController <MKMapViewDelegate>
 

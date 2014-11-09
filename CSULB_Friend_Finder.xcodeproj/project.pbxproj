@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		011B362B19DCE89900E33D4A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B362A19DCE89900E33D4A /* ProfileViewController.m */; };
 		011B363119DD268E00E33D4A /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B363019DD268E00E33D4A /* TabBarViewController.m */; };
+		013F028B1A0DC6CE00ED9ADB /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013F028A1A0DC6CE00ED9ADB /* MapViewController.m */; };
 		271AD72419CBDFB9009DDF9B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD72319CBDFB9009DDF9B /* FacebookSDK.framework */; };
 		271AD73119CBE541009DDF9B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD73019CBE541009DDF9B /* libz.dylib */; };
 		271AD76519CBEB2D009DDF9B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD76419CBEB2D009DDF9B /* SystemConfiguration.framework */; };
@@ -31,9 +32,7 @@
 		2756ADFA19E4D63300B5AD0C /* FriendsListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2756ADF919E4D63300B5AD0C /* FriendsListTableViewController.m */; };
 		27BFDD6019CFBE0C00EF209F /* RecommendedFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFDD5F19CFBE0C00EF209F /* RecommendedFriendsTableViewController.m */; };
 		27BFDD6219CFC2BF00EF209F /* friends.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27BFDD6119CFC2BF00EF209F /* friends.plist */; };
-		27F1050919EF9F7700184E5A /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F1050819EF9F7700184E5A /* MasterViewController.m */; };
 		27F1051419EF9FEC00184E5A /* CircleOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F1050B19EF9FEC00184E5A /* CircleOverlay.m */; };
-		27F1051519EF9FEC00184E5A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F1050D19EF9FEC00184E5A /* DetailViewController.m */; };
 		27F1051619EF9FEC00184E5A /* GeoPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F1050F19EF9FEC00184E5A /* GeoPointAnnotation.m */; };
 		27F1051719EF9FEC00184E5A /* GeoQueryAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F1051119EF9FEC00184E5A /* GeoQueryAnnotation.m */; };
 		27F1051819EF9FEC00184E5A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F1051319EF9FEC00184E5A /* SearchViewController.m */; };
@@ -69,6 +68,8 @@
 		011B362A19DCE89900E33D4A /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = ../ProfileViewController.m; sourceTree = "<group>"; };
 		011B362F19DD268E00E33D4A /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		011B363019DD268E00E33D4A /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		013F02891A0DC6CE00ED9ADB /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		013F028A1A0DC6CE00ED9ADB /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		271AD72319CBDFB9009DDF9B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		271AD73019CBE541009DDF9B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		271AD76419CBEB2D009DDF9B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -96,12 +97,8 @@
 		27BFDD5E19CFBE0C00EF209F /* RecommendedFriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendedFriendsTableViewController.h; sourceTree = "<group>"; };
 		27BFDD5F19CFBE0C00EF209F /* RecommendedFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendedFriendsTableViewController.m; sourceTree = "<group>"; };
 		27BFDD6119CFC2BF00EF209F /* friends.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = friends.plist; sourceTree = "<group>"; };
-		27F1050719EF9F7700184E5A /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		27F1050819EF9F7700184E5A /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		27F1050A19EF9FEC00184E5A /* CircleOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CircleOverlay.h; path = ../CircleOverlay.h; sourceTree = "<group>"; };
 		27F1050B19EF9FEC00184E5A /* CircleOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CircleOverlay.m; path = ../CircleOverlay.m; sourceTree = "<group>"; };
-		27F1050C19EF9FEC00184E5A /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ../DetailViewController.h; sourceTree = "<group>"; };
-		27F1050D19EF9FEC00184E5A /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = ../DetailViewController.m; sourceTree = "<group>"; };
 		27F1050E19EF9FEC00184E5A /* GeoPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoPointAnnotation.h; path = ../GeoPointAnnotation.h; sourceTree = "<group>"; };
 		27F1050F19EF9FEC00184E5A /* GeoPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoPointAnnotation.m; path = ../GeoPointAnnotation.m; sourceTree = "<group>"; };
 		27F1051019EF9FEC00184E5A /* GeoQueryAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoQueryAnnotation.h; path = ../GeoQueryAnnotation.h; sourceTree = "<group>"; };
@@ -219,16 +216,14 @@
 			children = (
 				27F1050A19EF9FEC00184E5A /* CircleOverlay.h */,
 				27F1050B19EF9FEC00184E5A /* CircleOverlay.m */,
-				27F1050C19EF9FEC00184E5A /* DetailViewController.h */,
-				27F1050D19EF9FEC00184E5A /* DetailViewController.m */,
 				27F1050E19EF9FEC00184E5A /* GeoPointAnnotation.h */,
 				27F1050F19EF9FEC00184E5A /* GeoPointAnnotation.m */,
+				013F02891A0DC6CE00ED9ADB /* MapViewController.h */,
+				013F028A1A0DC6CE00ED9ADB /* MapViewController.m */,
 				27F1051019EF9FEC00184E5A /* GeoQueryAnnotation.h */,
 				27F1051119EF9FEC00184E5A /* GeoQueryAnnotation.m */,
 				27F1051219EF9FEC00184E5A /* SearchViewController.h */,
 				27F1051319EF9FEC00184E5A /* SearchViewController.m */,
-				27F1050719EF9F7700184E5A /* MasterViewController.h */,
-				27F1050819EF9F7700184E5A /* MasterViewController.m */,
 				2756ADF819E4D63300B5AD0C /* FriendsListTableViewController.h */,
 				2756ADF919E4D63300B5AD0C /* FriendsListTableViewController.m */,
 				011B362919DCE89800E33D4A /* ProfileViewController.h */,
@@ -400,9 +395,8 @@
 				62A5D68719D3CD4F0027A193 /* HomeScreenViewController.m in Sources */,
 				E4EC19F919BFDF1600E94487 /* main.m in Sources */,
 				27F1051419EF9FEC00184E5A /* CircleOverlay.m in Sources */,
-				27F1050919EF9F7700184E5A /* MasterViewController.m in Sources */,
+				013F028B1A0DC6CE00ED9ADB /* MapViewController.m in Sources */,
 				27F1051819EF9FEC00184E5A /* SearchViewController.m in Sources */,
-				27F1051519EF9FEC00184E5A /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

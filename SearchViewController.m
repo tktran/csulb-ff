@@ -4,12 +4,7 @@
 //
 //
 
-#import <Parse/Parse.h>
-
 #import "SearchViewController.h"
-#import "CircleOverlay.h"
-#import "GeoPointAnnotation.h"
-#import "GeoQueryAnnotation.h"
 
 enum PinAnnotationTypeTag {
     PinAnnotationTypeTagGeoPoint = 0,

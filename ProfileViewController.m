@@ -1,10 +1,7 @@
 
 
-#import <MapKit/MapKit.h>
-#import <Parse/Parse.h>
-
 #import "ProfileViewController.h"
-#import "GeoPointAnnotation.h"
+
 
 @implementation ProfileViewController
 
@@ -25,6 +22,30 @@
         // add the annotation
         GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:self.detailItem];
         [self.mapView addAnnotation:annotation];
+        
+        //
+        FBRequest *request = [FBRequest requestForMe];
+        //        [request startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
+        //         {
+        //             if(!error)
+        //             {
+        //                 NSDictionary *userData = (NSDictionary *)result;
+        //                 _NameLabel.adjustsFontSizeToFitWidth = NO;
+        //                 _NameLabel.numberOfLines = 0;
+        //                 NSString *name = [@"Welcome, " stringByAppendingString:userData[@"name"]];
+        //                 name = [name stringByAppendingString:@"\nYou logged in."];
+        //                 _NameLabel.text = name;
+        //
+        //                 // not sure if should get delegate stuff here
+        //                 AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+        //                 appDelegate.temp_first_name = userData[@"first_name"];
+        //
+        //                 appDelegate.temp_last_name = userData[@"last_name"];
+        //                 appDelegate.temp_email = userData[@"email"];
+        //                 [self performSegueWithIdentifier:@"loginSegue" sender:self];
+        //                 [self dismissViewControllerAnimated:YES completion:nil];
+        //             }
+        //         }];
         
         // status, location, contact info
         NSString *friendStatus = self.detailItem[@"status"];
