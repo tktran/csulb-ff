@@ -24,7 +24,7 @@
         [self.mapView addAnnotation:annotation];
         
         //
-        FBRequest *request = [FBRequest requestForMe];
+        //FBRequest *request = [FBRequest requestForMe];
         //        [request startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
         //         {
         //             if(!error)

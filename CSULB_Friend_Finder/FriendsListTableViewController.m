@@ -68,22 +68,27 @@
 // Override to customize what kind of query to perform on the class. The default is to query for
 // all objects ordered by createdAt descending.
 - (PFQuery *)queryForTable {
-    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+    
+    PFQuery *friendsQuery = [PFQuery queryWithClassName:@"_User"];
     
     // If Pull To Refresh is enabled, query against the network by default.
     if (self.pullToRefreshEnabled) {
-        query.cachePolicy = kPFCachePolicyNetworkOnly;
+        friendsQuery.cachePolicy = kPFCachePolicyNetworkOnly;
     }
     
     // If no objects are loaded in memory, we look to the cache first to fill the table
     // and then subsequently do a query against the network.
     if (self.objects.count == 0) {
-        query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+        friendsQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
     }
+    PFUser *user = [PFUser currentUser];
+    [friendsQuery orderByDescending:@"createdAt"];
     
-    [query orderByDescending:@"createdAt"];
+    // Gets only the current user's friends column
+    [friendsQuery whereKey:@"username" equalTo: user[@"username"]];
+    [friendsQuery selectKeys:@[@"friends"]];
     
-    return query;
+    return friendsQuery;
 }
 
 
@@ -91,6 +96,10 @@
 // a UITableViewCellStyleDefault style cell with the label being the textKey in the object,
 // and the imageView being the imageKey in the object.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
+    
+    NSArray *tempFriends = [object.description componentsSeparatedByString:@""];
+    NSLog(@"%@", object.allKeys[0]);
+
     // A date formatter for the creation date.
     static NSDateFormatter *dateFormatter = nil;
     if (dateFormatter == nil) {
@@ -107,8 +116,7 @@
     }
     
     PFTableViewCell *cell = (PFTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"LocationCell"];
-    
-    // Configure the cell
+   
     PFGeoPoint *geoPoint = object[@"location"];
     cell.textLabel.text = object[@"first_name"];
     //    cell.detailTextLabel.text = [dateFormatter stringFromDate:object.updatedAt];

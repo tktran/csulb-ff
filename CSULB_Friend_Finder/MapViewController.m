@@ -32,14 +32,14 @@
         // run a query for all friends
         CGFloat kilometers = 1.0f; // find friends 1km around you
         
-        PFQuery *query = [PFQuery queryWithClassName:@"_User"];
-        [query setLimit:1000];
-        [query whereKey:@"location"
+        PFQuery *mapQuery = [PFQuery queryWithClassName:@"_User"];
+        [mapQuery setLimit:1000];
+        [mapQuery whereKey:@"location"
            nearGeoPoint:[PFGeoPoint geoPointWithLatitude:csulbCoords.latitude
                                                longitude:csulbCoords.longitude]
        withinKilometers:kilometers];
         
-        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        [mapQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
                 for (PFObject *object in objects) {
                     GeoPointAnnotation *geoPointAnnotation = [[GeoPointAnnotation alloc]
