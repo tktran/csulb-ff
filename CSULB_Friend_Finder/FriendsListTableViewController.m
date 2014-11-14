@@ -68,27 +68,43 @@
 // Override to customize what kind of query to perform on the class. The default is to query for
 // all objects ordered by createdAt descending.
 - (PFQuery *)queryForTable {
-    
-    PFQuery *friendsQuery = [PFQuery queryWithClassName:@"_User"];
-    
-    // If Pull To Refresh is enabled, query against the network by default.
-    if (self.pullToRefreshEnabled) {
-        friendsQuery.cachePolicy = kPFCachePolicyNetworkOnly;
-    }
-    
-    // If no objects are loaded in memory, we look to the cache first to fill the table
-    // and then subsequently do a query against the network.
-    if (self.objects.count == 0) {
-        friendsQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
-    }
+    PFQuery *friendsQuery = [PFQuery queryWithClassName:@"Friendship"];
     PFUser *user = [PFUser currentUser];
-    [friendsQuery orderByDescending:@"createdAt"];
-    
-    // Gets only the current user's friends column
-    [friendsQuery whereKey:@"username" equalTo: user[@"username"]];
-    [friendsQuery selectKeys:@[@"friends"]];
-    
+    [friendsQuery whereKey:@"Friend1_Id" equalTo: @"X9UYxx35cf"]; // user[@"objectId"]];
+    [friendsQuery selectKeys:@[@"Friend2_Id"]];
     return friendsQuery;
+    
+//    PFQuery *friendsQuery = [PFQuery queryWithClassName:@"_User"];
+//    
+//    // If Pull To Refresh is enabled, query against the network by default.
+//    if (self.pullToRefreshEnabled) {
+//        friendsQuery.cachePolicy = kPFCachePolicyNetworkOnly;
+//    }
+//    
+//    // If no objects are loaded in memory, we look to the cache first to fill the table
+//    // and then subsequently do a query against the network.
+//    if (self.objects.count == 0) {
+//        friendsQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
+//    }
+//    PFUser *user = [PFUser currentUser];
+//    [friendsQuery orderByDescending:@"createdAt"];
+//    
+//    // Gets only the current user's friends column
+//    // just strings
+//    [friendsQuery whereKey:@"username" equalTo: user[@"username"]];
+//    [friendsQuery selectKeys:@[@"friends"]];
+//    
+//    self.firstQuery = friendsQuery;
+//    
+//    PFQuery *usersQuery = [PFQuery queryWithClassName:@"_User"];
+//    [usersQuery whereKey:@"objectId" matchesKey:@"friends" inQuery:self.firstQuery];
+////    [usersQuery findObjects];
+////    [usersQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+////        if (!error) {
+////            NSLog(@"%@", objects);
+////        }
+////    }];
+//    return usersQuery;
 }
 
 
@@ -97,33 +113,48 @@
 // and the imageView being the imageKey in the object.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
     
-    NSArray *tempFriends = [object.description componentsSeparatedByString:@""];
-    NSLog(@"%@", object.allKeys[0]);
-
-    // A date formatter for the creation date.
-    static NSDateFormatter *dateFormatter = nil;
-    if (dateFormatter == nil) {
-        dateFormatter = [[NSDateFormatter alloc] init];
-        dateFormatter.timeStyle = NSDateFormatterMediumStyle;
-        dateFormatter.dateStyle = NSDateFormatterMediumStyle;
-    }
-    
-    static NSNumberFormatter *numberFormatter = nil;
-    if (numberFormatter == nil) {
-        numberFormatter = [[NSNumberFormatter alloc] init];
-        numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
-        numberFormatter.maximumFractionDigits = 3;
-    }
-    
     PFTableViewCell *cell = (PFTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"LocationCell"];
-   
-    PFGeoPoint *geoPoint = object[@"location"];
-    cell.textLabel.text = object[@"first_name"];
-    //    cell.detailTextLabel.text = [dateFormatter stringFromDate:object.updatedAt];
-    NSString *string = [NSString stringWithFormat:@"%@, %@",
-                        [numberFormatter stringFromNumber:[NSNumber numberWithDouble:geoPoint.latitude]],
-                        [numberFormatter stringFromNumber:[NSNumber numberWithDouble:geoPoint.longitude]]];
-    cell.detailTextLabel.text = string;
+
+    
+    
+    NSString *friendId = [object objectForKey:@"Friend2_Id"];
+    NSLog(@"%@", friendId);
+
+    
+//    PFQuery *friendsQuery = [PFQuery queryWithClassName:@"Friendship"];
+//    PFUser *user = [PFUser currentUser];
+//    [friendsQuery whereKey:@"Friend1_Id" equalTo: @"X9UYxx35cf"]; // user[@"objectId"]];
+//    [friendsQuery selectKeys:@[@"Friend2_Id"]];
+//    return friendsQuery;
+
+    
+    PFQuery *friendQuery = [PFQuery queryWithClassName:@"_User"];
+    [friendQuery getObjectInBackgroundWithId:friendId block:^(PFObject *object, NSError *error) {
+        // Success
+        // A date formatter for the creation date.
+        static NSDateFormatter *dateFormatter = nil;
+        if (dateFormatter == nil) {
+            dateFormatter = [[NSDateFormatter alloc] init];
+            dateFormatter.timeStyle = NSDateFormatterMediumStyle;
+            dateFormatter.dateStyle = NSDateFormatterMediumStyle;
+        }
+        
+        static NSNumberFormatter *numberFormatter = nil;
+        if (numberFormatter == nil) {
+            numberFormatter = [[NSNumberFormatter alloc] init];
+            numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+            numberFormatter.maximumFractionDigits = 3;
+        }
+        
+        PFGeoPoint *geoPoint = object[@"location"];
+        cell.textLabel.text = object[@"first_name"];
+        //    cell.detailTextLabel.text = [dateFormatter stringFromDate:object.updatedAt];
+        NSString *string = [NSString stringWithFormat:@"%@, %@",
+                            [numberFormatter stringFromNumber:[NSNumber numberWithDouble:geoPoint.latitude]],
+                            [numberFormatter stringFromNumber:[NSNumber numberWithDouble:geoPoint.longitude]]];
+        cell.detailTextLabel.text = string;
+
+    }];
     return cell;
 }
 
