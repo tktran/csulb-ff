@@ -40,10 +40,19 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showProfile"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSIndexPath *indexPath =[self.tableView indexPathForSelectedRow];
         PFObject *object = [self.objects objectAtIndex:indexPath.row];
-        [segue.destinationViewController setDetailItem:object];
-    } else if ([segue.identifier isEqualToString:@"showSearch"]) {
+        NSString *friendId = [object objectForKey:@"Friend2_Id"];
+        PFQuery *userQuery = [PFQuery queryWithClassName:@"_User"];
+        [userQuery getObjectInBackgroundWithId:friendId block:^(PFObject *object, NSError *error)
+        {
+            
+            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+            NSLog(@"%ld", (long)indexPath.row);
+            [segue.destinationViewController setDetailItem:object];
+        }];
+    }
+         else if ([segue.identifier isEqualToString:@"showSearch"]) {
         // Search button
         [segue.destinationViewController setInitialLocation:self.locationManager.location];
     }
@@ -72,6 +81,9 @@
     PFUser *user = [PFUser currentUser];
     [friendsQuery whereKey:@"Friend1_Id" equalTo: @"X9UYxx35cf"]; // user[@"objectId"]];
     [friendsQuery selectKeys:@[@"Friend2_Id"]];
+    if (self.objects.count == 0) {
+        friendsQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    }
     return friendsQuery;
     
 //    PFQuery *friendsQuery = [PFQuery queryWithClassName:@"_User"];
@@ -83,9 +95,7 @@
 //    
 //    // If no objects are loaded in memory, we look to the cache first to fill the table
 //    // and then subsequently do a query against the network.
-//    if (self.objects.count == 0) {
-//        friendsQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
-//    }
+    
 //    PFUser *user = [PFUser currentUser];
 //    [friendsQuery orderByDescending:@"createdAt"];
 //    
@@ -156,6 +166,12 @@
 
     }];
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"%@",[self.objects objectAtIndex:indexPath.row]);
+    
 }
 
 /*

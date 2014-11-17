@@ -1,0 +1,1 @@
+../../../PRAugmentedReality/Classes/PRARManager.h
