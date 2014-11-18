@@ -77,4 +77,11 @@
     return annotationView;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"navigateToFriend"] && self.detailItem) {
+        PFObject *friend = self.detailItem;
+        [segue.destinationViewController setDetailItem:friend];
+    }
+}
+
 @end

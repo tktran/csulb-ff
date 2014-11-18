@@ -65,8 +65,7 @@
     }
     _locationManager = [[CLLocationManager alloc] init];
     _locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
-    _locationManager.delegate = self;
-    
+    _locationManager.startUpdatingLocation;
     return _locationManager;
 }
 

@@ -34,37 +34,43 @@
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    CLLocationCoordinate2D locationCoordinates = CLLocationCoordinate2DMake(33.782674, -118.108972);
     
-    [self.manager startARWithData:[self getDummyData] forLocation:locationCoordinates];
+    if (self.detailItem) {
+        // Get the source (the currentUser)
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        CLLocationManager *manager = [appDelegate locationManager];
+        manager.delegate = self;
+    }
+    else
+    {
+        NSLog(@"error: no user given to navigation view");
+        // go back
+    }
 }
 
 
-#pragma mark - Dummy data
--(NSArray *)getDummyData{
-    NSArray *dummyData = @[
-                           @{
-                               @"id" : @(0),
-                               @"lat" : @(33.785063F),
-                               @"lon" : @(-118.112F),
-                               @"title" : @"Prospector"
-                               },
-                           @{
-                               @"id" : @(1),
-                               @"lat" : @(33.781046F),
-                               @"lon" : @(-118.111105F),
-                               @"title" : @"Gustavo"
-                               },
-                           @{
-                               @"id" : @(2),
-                               @"lat" : @(33.785928F),
-                               @"lon" : @(-118.114712F),
-                               @"title" : @"Miguel"
-                               }
-                           ];
-    return dummyData;
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)currentLocation fromLocation:(CLLocation *)oldLocation
+{
+    CLLocationCoordinate2D currentCoordinates = currentLocation.coordinate;
+    if (self.detailItem && !self.didStartAR)
+    {
+        // Get the destination (the friend)
+        PFUser *friend = (PFUser*) self.detailItem;
+        PFGeoPoint *geoPoint = friend[@"location"];
+        NSString *friendName = friend[@"first_name"];
+        NSArray *friendPRARElement = @[
+                                       @{
+                                           @"id" : @(0),
+                                           @"lat" : @(geoPoint.latitude),
+                                           @"lon" : @(geoPoint.longitude),
+                                           @"title" : friendName
+                                           }];
+        
+        // Start the AR display with source->destination
+        [self.manager startARWithData:friendPRARElement forLocation:currentCoordinates];
+        self.didStartAR = true;
+    }
 }
-
 
 #pragma mark - PRAR delegate
 - (void)prarDidSetupAR:(UIView *)arView withCameraLayer:(AVCaptureVideoPreviewLayer *)cameraLayer andRadarView:(UIView *)radar

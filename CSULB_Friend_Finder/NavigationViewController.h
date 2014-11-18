@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "PRARManager.h"
+#import <Parse/Parse.h>
+#import "AppDelegate.h"
 
-@interface NavigationViewController : UIViewController <PRARManagerDelegate>
+@interface NavigationViewController : UIViewController <PRARManagerDelegate, CLLocationManagerDelegate>
+
+@property (nonatomic, strong) PFObject *detailItem;
 @property (nonatomic, strong) PRARManager *manager;
-
+@property (nonatomic) BOOL didStartAR;
 
 @end

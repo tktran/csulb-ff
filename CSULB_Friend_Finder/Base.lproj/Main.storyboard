@@ -523,7 +523,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="lCJ-Sg-t2I" kind="push" id="KNy-X3-wza"/>
+                                    <segue destination="lCJ-Sg-t2I" kind="push" identifier="navigateToFriend" id="KNy-X3-wza"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current class: (next sprint)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJJ-fQ-A1d">
