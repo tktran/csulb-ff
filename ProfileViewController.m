@@ -14,7 +14,9 @@
     if (self.detailItem) {
         NSLog(@"testing");
         // obtain the geopoint
-        PFGeoPoint *geoPoint = self.detailItem[@"location"];
+        self.detailItem.fetch;
+        PFUser *user = self.detailItem;
+        PFGeoPoint *geoPoint = user[@"location"];
         
         // center our map view around this geopoint
         self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude), MKCoordinateSpanMake(0.01f, 0.01f));
@@ -26,10 +28,10 @@
         
         
         // status, location, contact info
-        NSString *friendStatus = self.detailItem[@"status"];
-        NSString *friendName = self.detailItem[@"first_name"];
+        NSString *friendStatus = user[@"status"];
+        NSString *friendName = user[@"first_name"];
         friendName = [friendName stringByAppendingString:@" "];
-        friendName = [friendName stringByAppendingString:self.detailItem[@"last_name"]];
+        friendName = [friendName stringByAppendingString:user[@"last_name"]];
         friendName = [@"Name: " stringByAppendingString:friendName];
         friendStatus = [@"Status: " stringByAppendingString:friendStatus];
         self.nameLabel.text = friendName;

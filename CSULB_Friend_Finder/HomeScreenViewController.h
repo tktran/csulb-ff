@@ -9,5 +9,6 @@
 #import "AppDelegate.h"
 
 @interface HomeScreenViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
 @end

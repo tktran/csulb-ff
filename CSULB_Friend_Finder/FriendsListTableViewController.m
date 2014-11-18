@@ -5,7 +5,6 @@
 #import "FriendsListTableViewController.h"
 
 @implementation FriendsListTableViewController
-@synthesize locationManager = _locationManager;
 
 #pragma mark - NSObject
 
@@ -24,10 +23,13 @@
     self.navigationItem.rightBarButtonItem.enabled = NO;
     
     // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
-    if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
-        [self.locationManager requestAlwaysAuthorization ];
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
+    if ([appDelegate.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+        [appDelegate.locationManager requestAlwaysAuthorization ];
     }
-    [self.locationManager startUpdatingLocation];
+    [appDelegate.locationManager startUpdatingLocation];
     
     // Listen for annotation updates. Triggers a refresh whenever an annotation is dragged and dropped.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadObjects) name:@"geoPointAnnotiationUpdated" object:nil];
@@ -38,23 +40,22 @@
     return interfaceOrientation == UIInterfaceOrientationPortrait;
 }
 
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showProfile"]) {
         NSIndexPath *indexPath =[self.tableView indexPathForSelectedRow];
         PFObject *object = [self.objects objectAtIndex:indexPath.row];
         NSString *friendId = [object objectForKey:@"Friend2_Id"];
         PFQuery *userQuery = [PFQuery queryWithClassName:@"_User"];
-        [userQuery getObjectInBackgroundWithId:friendId block:^(PFObject *object, NSError *error)
-        {
-            
-            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-            NSLog(@"%ld", (long)indexPath.row);
-            [segue.destinationViewController setDetailItem:object];
-        }];
+        
+        PFObject *friend = [userQuery getObjectWithId:friendId];
+        [segue.destinationViewController setDetailItem:friend];
+        
     }
-         else if ([segue.identifier isEqualToString:@"showSearch"]) {
+    else if ([segue.identifier isEqualToString:@"showSearch"]) {
         // Search button
-        [segue.destinationViewController setInitialLocation:self.locationManager.location];
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        [segue.destinationViewController setInitialLocation:appDelegate.locationManager.location];
     }
 }
 
@@ -78,43 +79,18 @@
 // all objects ordered by createdAt descending.
 - (PFQuery *)queryForTable {
     PFQuery *friendsQuery = [PFQuery queryWithClassName:@"Friendship"];
-    PFUser *user = [PFUser currentUser];
-    [friendsQuery whereKey:@"Friend1_Id" equalTo: @"X9UYxx35cf"]; // user[@"objectId"]];
-    [friendsQuery selectKeys:@[@"Friend2_Id"]];
-    if (self.objects.count == 0) {
-        friendsQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    
+    if ([[PFUser currentUser] objectId] == nil) {
+        NSLog(@"No objectID");
+        return [[PFQuery alloc] init];
+    } else {
+        [friendsQuery whereKey:@"Friend1_Id" equalTo:[[PFUser currentUser] objectId]];
+        [friendsQuery selectKeys:@[@"Friend2_Id"]];
+        if (self.objects.count == 0) {
+            friendsQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
+        }
+        return friendsQuery;
     }
-    return friendsQuery;
-    
-//    PFQuery *friendsQuery = [PFQuery queryWithClassName:@"_User"];
-//    
-//    // If Pull To Refresh is enabled, query against the network by default.
-//    if (self.pullToRefreshEnabled) {
-//        friendsQuery.cachePolicy = kPFCachePolicyNetworkOnly;
-//    }
-//    
-//    // If no objects are loaded in memory, we look to the cache first to fill the table
-//    // and then subsequently do a query against the network.
-    
-//    PFUser *user = [PFUser currentUser];
-//    [friendsQuery orderByDescending:@"createdAt"];
-//    
-//    // Gets only the current user's friends column
-//    // just strings
-//    [friendsQuery whereKey:@"username" equalTo: user[@"username"]];
-//    [friendsQuery selectKeys:@[@"friends"]];
-//    
-//    self.firstQuery = friendsQuery;
-//    
-//    PFQuery *usersQuery = [PFQuery queryWithClassName:@"_User"];
-//    [usersQuery whereKey:@"objectId" matchesKey:@"friends" inQuery:self.firstQuery];
-////    [usersQuery findObjects];
-////    [usersQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-////        if (!error) {
-////            NSLog(@"%@", objects);
-////        }
-////    }];
-//    return usersQuery;
 }
 
 
@@ -261,21 +237,13 @@
 /**
  Return a location manager -- create one if necessary.
  */
-- (CLLocationManager *)locationManager {
-    
-    if (_locationManager != nil) {
-        return _locationManager;
-    }
-    _locationManager = [[CLLocationManager alloc] init];
-    _locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
-    _locationManager.delegate = self;
-    
-    return _locationManager;
-}
+
 
 - (IBAction)insertCurrentLocation:(id)sender {
     // If it's not possible to get a location, then return.
-    CLLocation *location = self.locationManager.location;
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    CLLocation *location = appDelegate.locationManager.location;
     if (!location) {
         return;
     }

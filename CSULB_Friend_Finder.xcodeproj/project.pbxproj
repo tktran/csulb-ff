@@ -185,6 +185,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27F65BCA1A1B1F2E00D1B0E2 /* PRAR */ = {
+			isa = PBXGroup;
+			children = (
+				27F65BC71A1B1CFA00D1B0E2 /* LocationMath.h */,
+				27F65BC81A1B1CFA00D1B0E2 /* LocationMath.m */,
+				27F65BC41A1B1CE600D1B0E2 /* ARObject.h */,
+				27F65BC51A1B1CE600D1B0E2 /* ARObject.m */,
+				27F65BC11A1B1CDB00D1B0E2 /* ARController.h */,
+				27F65BC21A1B1CDB00D1B0E2 /* ARController.m */,
+				27F65BBE1A1B1CCB00D1B0E2 /* ARRadar.h */,
+				27F65BBF1A1B1CCB00D1B0E2 /* ARRadar.m */,
+				27F65BBD1A1B1CAE00D1B0E2 /* PRARManager.h */,
+				27F65BAA1A1B1C4200D1B0E2 /* ARSettings.h */,
+				27F65BA81A1B1C2400D1B0E2 /* PRARManager.m */,
+			);
+			name = PRAR;
+			sourceTree = "<group>";
+		};
 		E4EC19E019BFDF1600E94487 = {
 			isa = PBXGroup;
 			children = (
@@ -233,17 +251,7 @@
 		E4EC19F219BFDF1600E94487 /* CSULB_Friend_Finder */ = {
 			isa = PBXGroup;
 			children = (
-				27F65BC71A1B1CFA00D1B0E2 /* LocationMath.h */,
-				27F65BC81A1B1CFA00D1B0E2 /* LocationMath.m */,
-				27F65BC41A1B1CE600D1B0E2 /* ARObject.h */,
-				27F65BC51A1B1CE600D1B0E2 /* ARObject.m */,
-				27F65BC11A1B1CDB00D1B0E2 /* ARController.h */,
-				27F65BC21A1B1CDB00D1B0E2 /* ARController.m */,
-				27F65BBE1A1B1CCB00D1B0E2 /* ARRadar.h */,
-				27F65BBF1A1B1CCB00D1B0E2 /* ARRadar.m */,
-				27F65BBD1A1B1CAE00D1B0E2 /* PRARManager.h */,
-				27F65BAA1A1B1C4200D1B0E2 /* ARSettings.h */,
-				27F65BA81A1B1C2400D1B0E2 /* PRARManager.m */,
+				27F65BCA1A1B1F2E00D1B0E2 /* PRAR */,
 				27F1050A19EF9FEC00184E5A /* CircleOverlay.h */,
 				27F1050B19EF9FEC00184E5A /* CircleOverlay.m */,
 				27F1050E19EF9FEC00184E5A /* GeoPointAnnotation.h */,

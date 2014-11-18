@@ -25,5 +25,7 @@
 @property NSMutableDictionary *temp_classes;
 @property NSNumber* n;
 
+@property (nonatomic, retain) CLLocationManager *locationManager;
+
 @property BOOL isFacebook;
 @end

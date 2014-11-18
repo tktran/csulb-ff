@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 @implementation AppDelegate
+@synthesize locationManager = _locationManager;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -57,10 +58,17 @@
                         withSession:[PFFacebookUtils session]];
 }
 
-//- (void)application:(UIApplication *)application didFinishLaunchWithOptions:(NSDictionary *)options {
-    //[PFFacebookUtils initializeFacebook];
-    //[Parse setApplicationId:@"7Ung08OGNSgz6A0NDXTXRiMtXGvKGDpjhPWmOWaC" clientKey:@"UTkEQ1cFDmSDrjg8QOiXEyADnK0LQ5csknDqIApN"];
-//}
+- (CLLocationManager *)locationManager {
+    
+    if (_locationManager != nil) {
+        return _locationManager;
+    }
+    _locationManager = [[CLLocationManager alloc] init];
+    _locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+    _locationManager.delegate = self;
+    
+    return _locationManager;
+}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application
