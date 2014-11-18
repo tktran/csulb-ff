@@ -14,7 +14,8 @@
     self = [super init];
     if (self) {
         _object = aObject;
-        _title = self.object[@"first_name"];
+        _title = [NSString stringWithFormat: @"%@ %@", self.object[@"first_name"], self.object[@"last_name"]];
+        _subtitle = [LocationTranslation closestBuilding:self.object[@"location"]];
         PFGeoPoint *geoPoint = self.object[@"location"];
         [self setGeoPoint:geoPoint];
     }
@@ -59,8 +60,8 @@
     }
     
 //    _title = [dateFormatter stringFromDate:self.object.updatedAt];
-    _subtitle = [NSString stringWithFormat:@"%@, %@", [numberFormatter stringFromNumber:[NSNumber numberWithDouble:geoPoint.latitude]],
-                 [numberFormatter stringFromNumber:[NSNumber numberWithDouble:geoPoint.longitude]]];
+//    _subtitle = [NSString stringWithFormat:@"%@, %@", [numberFormatter stringFromNumber:[NSNumber numberWithDouble:geoPoint.latitude]],
+//                 [numberFormatter stringFromNumber:[NSNumber numberWithDouble:geoPoint.longitude]]];
 }
 
 @end

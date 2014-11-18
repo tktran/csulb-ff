@@ -42,6 +42,7 @@
 		27F65BC31A1B1CDB00D1B0E2 /* ARController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F65BC21A1B1CDB00D1B0E2 /* ARController.m */; };
 		27F65BC61A1B1CE600D1B0E2 /* ARObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F65BC51A1B1CE600D1B0E2 /* ARObject.m */; };
 		27F65BC91A1B1CFA00D1B0E2 /* LocationMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F65BC81A1B1CFA00D1B0E2 /* LocationMath.m */; };
+		27F65BCD1A1BEDEC00D1B0E2 /* LocationTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F65BCC1A1BEDEC00D1B0E2 /* LocationTranslation.m */; };
 		5998E5C719C9294400A336AD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5998E5C619C9294400A336AD /* libsqlite3.dylib */; };
 		62A5D68719D3CD4F0027A193 /* HomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A5D68619D3CD4F0027A193 /* HomeScreenViewController.m */; };
 		E4EC19ED19BFDF1600E94487 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EC19EC19BFDF1600E94487 /* Foundation.framework */; };
@@ -124,6 +125,8 @@
 		27F65BC51A1B1CE600D1B0E2 /* ARObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARObject.m; sourceTree = "<group>"; };
 		27F65BC71A1B1CFA00D1B0E2 /* LocationMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationMath.h; sourceTree = "<group>"; };
 		27F65BC81A1B1CFA00D1B0E2 /* LocationMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationMath.m; sourceTree = "<group>"; };
+		27F65BCB1A1BEDEC00D1B0E2 /* LocationTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTranslation.h; sourceTree = "<group>"; };
+		27F65BCC1A1BEDEC00D1B0E2 /* LocationTranslation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTranslation.m; sourceTree = "<group>"; };
 		5998E5C619C9294400A336AD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		62A5D68519D3CD4F0027A193 /* HomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreenViewController.h; sourceTree = "<group>"; };
 		62A5D68619D3CD4F0027A193 /* HomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenViewController.m; sourceTree = "<group>"; };
@@ -251,6 +254,8 @@
 		E4EC19F219BFDF1600E94487 /* CSULB_Friend_Finder */ = {
 			isa = PBXGroup;
 			children = (
+				27F65BCB1A1BEDEC00D1B0E2 /* LocationTranslation.h */,
+				27F65BCC1A1BEDEC00D1B0E2 /* LocationTranslation.m */,
 				27F65BCA1A1B1F2E00D1B0E2 /* PRAR */,
 				27F1050A19EF9FEC00184E5A /* CircleOverlay.h */,
 				27F1050B19EF9FEC00184E5A /* CircleOverlay.m */,
@@ -420,6 +425,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27F65BCD1A1BEDEC00D1B0E2 /* LocationTranslation.m in Sources */,
 				2740AA1319D2748400F935FB /* UserInfoViewController.h in Sources */,
 				27F65BC01A1B1CCB00D1B0E2 /* ARRadar.m in Sources */,
 				2740AA1219D273AA00F935FB /* UserInfoViewController.m in Sources */,

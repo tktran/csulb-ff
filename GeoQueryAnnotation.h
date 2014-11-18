@@ -1,7 +1,7 @@
 
 
 #import "AppDelegate.h"
-
+#import "LocationTranslation.h"
 @interface GeoQueryAnnotation : NSObject <MKAnnotation>
 
 - (id)initWithCoordinate:(CLLocationCoordinate2D)aCoordinate radius:(CLLocationDistance)radius;

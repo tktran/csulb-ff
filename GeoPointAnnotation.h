@@ -1,7 +1,7 @@
 
 
 #import "AppDelegate.h"
-
+#import "LocationTranslation.h"
 @interface GeoPointAnnotation : NSObject <MKAnnotation>
 
 - (id)initWithObject:(PFObject *)aObject;

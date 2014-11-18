@@ -39,11 +39,9 @@
 
     _title = @"Geo Query";
     
-    _subtitle = [NSString stringWithFormat:@"Center: (%@, %@) Radius: %@ m",
-                 [numberFormatter stringFromNumber:[NSNumber numberWithFloat:_coordinate.latitude]],
-                 [numberFormatter stringFromNumber:[NSNumber numberWithFloat:_coordinate.longitude]],
-                 [numberFormatter stringFromNumber:[NSNumber numberWithInt:_radius]]
-                 ];
+    
+    PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLatitude:_coordinate.latitude longitude:_coordinate.longitude];
+    _subtitle = [LocationTranslation closestBuilding:geoPoint];
 }
 
 @end
