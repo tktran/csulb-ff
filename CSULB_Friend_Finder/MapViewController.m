@@ -79,4 +79,24 @@
     
     return annotationView;
 }
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    [self performSegueWithIdentifier:@"showProfile" sender:view];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(MKAnnotationView *)sender
+{
+    if ([segue.identifier isEqualToString:@"showProfile"])
+    {
+        GeoPointAnnotation *selectedPinAnnotation = sender.annotation;
+        PFObject *selectedPinUser = selectedPinAnnotation.object;
+        [segue.destinationViewController setDetailItem:selectedPinUser];
+    }
+    else
+    {
+        NSLog(@"PFS:something else");
+    }
+}
+
 @end

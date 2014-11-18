@@ -348,7 +348,7 @@
                     <navigationItem key="navigationItem" title="Map" id="woZ-X1-FEM"/>
                     <connections>
                         <outlet property="mapView" destination="jSu-nM-2Hp" id="jSi-Sj-5ta"/>
-                        <segue destination="cB3-mi-rCh" kind="push" id="nvK-uh-LSG"/>
+                        <segue destination="cB3-mi-rCh" kind="push" identifier="showProfile" id="nvK-uh-LSG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VoW-Uh-cYZ" sceneMemberID="firstResponder"/>
@@ -583,8 +583,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="uwR-ak-ZPx"/>
         <segue reference="IHP-xt-t1k"/>
-        <segue reference="Oe5-rC-a42"/>
+        <segue reference="uwR-ak-ZPx"/>
+        <segue reference="nvK-uh-LSG"/>
     </inferredMetricsTieBreakers>
 </document>

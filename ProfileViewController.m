@@ -8,14 +8,19 @@
 
 #pragma mark - UIViewController
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    // http://keighl.com/post/hide-the-navbar/
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     if (self.detailItem) {
-        NSLog(@"testing");
         // obtain the geopoint
-        self.detailItem.fetch;
-        PFUser *user = self.detailItem;
+        PFUser *user = (PFUser*) self.detailItem;
         PFGeoPoint *geoPoint = user[@"location"];
         
         // center our map view around this geopoint
@@ -46,9 +51,6 @@
         MKCoordinateSpan span;
         span = MKCoordinateSpanMake(0.01f, 0.01f);
         self.mapView.region = MKCoordinateRegionMake(csulbCoords, span);
-        
-        // add annotations
-        // run a parse query, and for each object, addAnnotation it
     }
 }
 
