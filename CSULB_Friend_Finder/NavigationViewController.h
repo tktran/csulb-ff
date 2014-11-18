@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <PRARManager.h>
+#import "PRARManager.h"
 
 @interface NavigationViewController : UIViewController <PRARManagerDelegate>
+@property (nonatomic, strong) PRARManager *manager;
+
 
 @end

@@ -1,1 +1,0 @@
-PODS_PRAUGMENTEDREALITY_OTHER_LDFLAGS = -framework "AVFoundation" -framework "CoreLocation" -framework "CoreMotion" -framework "MapKit" -framework "MobileCoreServices" -framework "QuartzCore" -framework "SystemConfiguration"

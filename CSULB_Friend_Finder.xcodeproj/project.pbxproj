@@ -10,22 +10,9 @@
 		011B362B19DCE89900E33D4A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B362A19DCE89900E33D4A /* ProfileViewController.m */; };
 		011B363119DD268E00E33D4A /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B363019DD268E00E33D4A /* TabBarViewController.m */; };
 		013F028B1A0DC6CE00ED9ADB /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013F028A1A0DC6CE00ED9ADB /* MapViewController.m */; };
-		0A11DB190EB9B9EB8864517F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF4B89DE2A8E6FD04C148B0 /* libPods.a */; };
 		271AD72419CBDFB9009DDF9B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD72319CBDFB9009DDF9B /* FacebookSDK.framework */; };
 		271AD73119CBE541009DDF9B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD73019CBE541009DDF9B /* libz.dylib */; };
 		271AD76519CBEB2D009DDF9B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD76419CBEB2D009DDF9B /* SystemConfiguration.framework */; };
-		2737668B1A1983B0001E5741 /* ARController.m in Sources */ = {isa = PBXBuildFile; fileRef = 273766781A1983B0001E5741 /* ARController.m */; };
-		2737668C1A1983B0001E5741 /* ARObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2737667A1A1983B0001E5741 /* ARObject.m */; };
-		2737668D1A1983B0001E5741 /* ARObject.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2737667B1A1983B0001E5741 /* ARObject.xib */; };
-		2737668E1A1983B0001E5741 /* ar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2737667E1A1983B0001E5741 /* ar_icon.png */; };
-		2737668F1A1983B0001E5741 /* ar_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 2737667F1A1983B0001E5741 /* ar_overlay.png */; };
-		273766901A1983B0001E5741 /* ar_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 273766801A1983B0001E5741 /* ar_overlay@2x.png */; };
-		273766911A1983B0001E5741 /* Radar.png in Resources */ = {isa = PBXBuildFile; fileRef = 273766811A1983B0001E5741 /* Radar.png */; };
-		273766921A1983B0001E5741 /* RadarMV.png in Resources */ = {isa = PBXBuildFile; fileRef = 273766821A1983B0001E5741 /* RadarMV.png */; };
-		273766931A1983B0001E5741 /* ARRadar.m in Sources */ = {isa = PBXBuildFile; fileRef = 273766851A1983B0001E5741 /* ARRadar.m */; };
-		273766941A1983B0001E5741 /* ARRadar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 273766861A1983B0001E5741 /* ARRadar.xib */; };
-		273766951A1983B0001E5741 /* LocationMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 273766881A1983B0001E5741 /* LocationMath.m */; };
-		273766961A1983B0001E5741 /* PRARManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2737668A1A1983B0001E5741 /* PRARManager.m */; };
 		273766991A198444001E5741 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 273766981A198444001E5741 /* NavigationViewController.m */; };
 		2740AA1219D273AA00F935FB /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2740AA1119D273AA00F935FB /* UserInfoViewController.m */; };
 		2740AA1319D2748400F935FB /* UserInfoViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 2740AA1019D273AA00F935FB /* UserInfoViewController.h */; };
@@ -50,6 +37,11 @@
 		27F1051619EF9FEC00184E5A /* GeoPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F1050F19EF9FEC00184E5A /* GeoPointAnnotation.m */; };
 		27F1051719EF9FEC00184E5A /* GeoQueryAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F1051119EF9FEC00184E5A /* GeoQueryAnnotation.m */; };
 		27F1051819EF9FEC00184E5A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F1051319EF9FEC00184E5A /* SearchViewController.m */; };
+		27F65BA91A1B1C2400D1B0E2 /* PRARManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F65BA81A1B1C2400D1B0E2 /* PRARManager.m */; };
+		27F65BC01A1B1CCB00D1B0E2 /* ARRadar.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F65BBF1A1B1CCB00D1B0E2 /* ARRadar.m */; };
+		27F65BC31A1B1CDB00D1B0E2 /* ARController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F65BC21A1B1CDB00D1B0E2 /* ARController.m */; };
+		27F65BC61A1B1CE600D1B0E2 /* ARObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F65BC51A1B1CE600D1B0E2 /* ARObject.m */; };
+		27F65BC91A1B1CFA00D1B0E2 /* LocationMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F65BC81A1B1CFA00D1B0E2 /* LocationMath.m */; };
 		5998E5C719C9294400A336AD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5998E5C619C9294400A336AD /* libsqlite3.dylib */; };
 		62A5D68719D3CD4F0027A193 /* HomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A5D68619D3CD4F0027A193 /* HomeScreenViewController.m */; };
 		E4EC19ED19BFDF1600E94487 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EC19EC19BFDF1600E94487 /* Foundation.framework */; };
@@ -87,24 +79,6 @@
 		271AD72319CBDFB9009DDF9B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		271AD73019CBE541009DDF9B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		271AD76419CBEB2D009DDF9B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		273766771A1983B0001E5741 /* ARController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARController.h; sourceTree = "<group>"; };
-		273766781A1983B0001E5741 /* ARController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARController.m; sourceTree = "<group>"; };
-		273766791A1983B0001E5741 /* ARObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARObject.h; sourceTree = "<group>"; };
-		2737667A1A1983B0001E5741 /* ARObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARObject.m; sourceTree = "<group>"; };
-		2737667B1A1983B0001E5741 /* ARObject.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARObject.xib; sourceTree = "<group>"; };
-		2737667C1A1983B0001E5741 /* ARSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARSettings.h; sourceTree = "<group>"; };
-		2737667E1A1983B0001E5741 /* ar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ar_icon.png; sourceTree = "<group>"; };
-		2737667F1A1983B0001E5741 /* ar_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ar_overlay.png; sourceTree = "<group>"; };
-		273766801A1983B0001E5741 /* ar_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ar_overlay@2x.png"; sourceTree = "<group>"; };
-		273766811A1983B0001E5741 /* Radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Radar.png; sourceTree = "<group>"; };
-		273766821A1983B0001E5741 /* RadarMV.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RadarMV.png; sourceTree = "<group>"; };
-		273766841A1983B0001E5741 /* ARRadar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRadar.h; sourceTree = "<group>"; };
-		273766851A1983B0001E5741 /* ARRadar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRadar.m; sourceTree = "<group>"; };
-		273766861A1983B0001E5741 /* ARRadar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARRadar.xib; sourceTree = "<group>"; };
-		273766871A1983B0001E5741 /* LocationMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationMath.h; sourceTree = "<group>"; };
-		273766881A1983B0001E5741 /* LocationMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationMath.m; sourceTree = "<group>"; };
-		273766891A1983B0001E5741 /* PRARManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRARManager.h; sourceTree = "<group>"; };
-		2737668A1A1983B0001E5741 /* PRARManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRARManager.m; sourceTree = "<group>"; };
 		273766971A198444001E5741 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
 		273766981A198444001E5741 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		2740AA1019D273AA00F935FB /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
@@ -139,12 +113,20 @@
 		27F1051119EF9FEC00184E5A /* GeoQueryAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoQueryAnnotation.m; path = ../GeoQueryAnnotation.m; sourceTree = "<group>"; };
 		27F1051219EF9FEC00184E5A /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = ../SearchViewController.h; sourceTree = "<group>"; };
 		27F1051319EF9FEC00184E5A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = ../SearchViewController.m; sourceTree = "<group>"; };
-		36BA603D0645D87643852F49 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		4DF4B89DE2A8E6FD04C148B0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		27F65BA81A1B1C2400D1B0E2 /* PRARManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRARManager.m; sourceTree = "<group>"; };
+		27F65BAA1A1B1C4200D1B0E2 /* ARSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ARSettings.h; path = ../ARSettings.h; sourceTree = "<group>"; };
+		27F65BBD1A1B1CAE00D1B0E2 /* PRARManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRARManager.h; sourceTree = "<group>"; };
+		27F65BBE1A1B1CCB00D1B0E2 /* ARRadar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRadar.h; sourceTree = "<group>"; };
+		27F65BBF1A1B1CCB00D1B0E2 /* ARRadar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRadar.m; sourceTree = "<group>"; };
+		27F65BC11A1B1CDB00D1B0E2 /* ARController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARController.h; sourceTree = "<group>"; };
+		27F65BC21A1B1CDB00D1B0E2 /* ARController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARController.m; sourceTree = "<group>"; };
+		27F65BC41A1B1CE600D1B0E2 /* ARObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARObject.h; sourceTree = "<group>"; };
+		27F65BC51A1B1CE600D1B0E2 /* ARObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARObject.m; sourceTree = "<group>"; };
+		27F65BC71A1B1CFA00D1B0E2 /* LocationMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationMath.h; sourceTree = "<group>"; };
+		27F65BC81A1B1CFA00D1B0E2 /* LocationMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationMath.m; sourceTree = "<group>"; };
 		5998E5C619C9294400A336AD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		62A5D68519D3CD4F0027A193 /* HomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreenViewController.h; sourceTree = "<group>"; };
 		62A5D68619D3CD4F0027A193 /* HomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenViewController.m; sourceTree = "<group>"; };
-		82FA1B428DF8D0E784000AC6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E4EC19E919BFDF1600E94487 /* CSULB_Friend_Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSULB_Friend_Finder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4EC19EC19BFDF1600E94487 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E4EC19EE19BFDF1600E94487 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -187,7 +169,6 @@
 				E4EC19ED19BFDF1600E94487 /* Foundation.framework in Frameworks */,
 				271AD72419CBDFB9009DDF9B /* FacebookSDK.framework in Frameworks */,
 				274C44C519CCF4C600FBE30F /* Bolts.framework in Frameworks */,
-				0A11DB190EB9B9EB8864517F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,73 +185,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		273766751A1983B0001E5741 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				273766761A1983B0001E5741 /* AR */,
-				2737667C1A1983B0001E5741 /* ARSettings.h */,
-				2737667D1A1983B0001E5741 /* Graphics */,
-				273766831A1983B0001E5741 /* Location */,
-				273766891A1983B0001E5741 /* PRARManager.h */,
-				2737668A1A1983B0001E5741 /* PRARManager.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		273766761A1983B0001E5741 /* AR */ = {
-			isa = PBXGroup;
-			children = (
-				273766771A1983B0001E5741 /* ARController.h */,
-				273766781A1983B0001E5741 /* ARController.m */,
-				273766791A1983B0001E5741 /* ARObject.h */,
-				2737667A1A1983B0001E5741 /* ARObject.m */,
-				2737667B1A1983B0001E5741 /* ARObject.xib */,
-			);
-			path = AR;
-			sourceTree = "<group>";
-		};
-		2737667D1A1983B0001E5741 /* Graphics */ = {
-			isa = PBXGroup;
-			children = (
-				2737667E1A1983B0001E5741 /* ar_icon.png */,
-				2737667F1A1983B0001E5741 /* ar_overlay.png */,
-				273766801A1983B0001E5741 /* ar_overlay@2x.png */,
-				273766811A1983B0001E5741 /* Radar.png */,
-				273766821A1983B0001E5741 /* RadarMV.png */,
-			);
-			path = Graphics;
-			sourceTree = "<group>";
-		};
-		273766831A1983B0001E5741 /* Location */ = {
-			isa = PBXGroup;
-			children = (
-				273766841A1983B0001E5741 /* ARRadar.h */,
-				273766851A1983B0001E5741 /* ARRadar.m */,
-				273766861A1983B0001E5741 /* ARRadar.xib */,
-				273766871A1983B0001E5741 /* LocationMath.h */,
-				273766881A1983B0001E5741 /* LocationMath.m */,
-			);
-			path = Location;
-			sourceTree = "<group>";
-		};
-		A2493759498A403F6EACAE40 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				36BA603D0645D87643852F49 /* Pods.debug.xcconfig */,
-				82FA1B428DF8D0E784000AC6 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		E4EC19E019BFDF1600E94487 = {
 			isa = PBXGroup;
 			children = (
-				273766751A1983B0001E5741 /* Classes */,
 				E4EC19F219BFDF1600E94487 /* CSULB_Friend_Finder */,
 				E4EC1A1719BFDF1600E94487 /* CSULB_Friend_FinderTests */,
 				E4EC19EB19BFDF1600E94487 /* Frameworks */,
 				E4EC19EA19BFDF1600E94487 /* Products */,
-				A2493759498A403F6EACAE40 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -305,7 +226,6 @@
 				E4EC19EE19BFDF1600E94487 /* CoreGraphics.framework */,
 				E4EC19F019BFDF1600E94487 /* UIKit.framework */,
 				E4EC1A1119BFDF1600E94487 /* XCTest.framework */,
-				4DF4B89DE2A8E6FD04C148B0 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -313,6 +233,17 @@
 		E4EC19F219BFDF1600E94487 /* CSULB_Friend_Finder */ = {
 			isa = PBXGroup;
 			children = (
+				27F65BC71A1B1CFA00D1B0E2 /* LocationMath.h */,
+				27F65BC81A1B1CFA00D1B0E2 /* LocationMath.m */,
+				27F65BC41A1B1CE600D1B0E2 /* ARObject.h */,
+				27F65BC51A1B1CE600D1B0E2 /* ARObject.m */,
+				27F65BC11A1B1CDB00D1B0E2 /* ARController.h */,
+				27F65BC21A1B1CDB00D1B0E2 /* ARController.m */,
+				27F65BBE1A1B1CCB00D1B0E2 /* ARRadar.h */,
+				27F65BBF1A1B1CCB00D1B0E2 /* ARRadar.m */,
+				27F65BBD1A1B1CAE00D1B0E2 /* PRARManager.h */,
+				27F65BAA1A1B1C4200D1B0E2 /* ARSettings.h */,
+				27F65BA81A1B1C2400D1B0E2 /* PRARManager.m */,
 				27F1050A19EF9FEC00184E5A /* CircleOverlay.h */,
 				27F1050B19EF9FEC00184E5A /* CircleOverlay.m */,
 				27F1050E19EF9FEC00184E5A /* GeoPointAnnotation.h */,
@@ -389,11 +320,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4EC1A2119BFDF1600E94487 /* Build configuration list for PBXNativeTarget "CSULB_Friend_Finder" */;
 			buildPhases = (
-				CC76BA567774C08C6D682193 /* Check Pods Manifest.lock */,
 				E4EC19E519BFDF1600E94487 /* Sources */,
 				E4EC19E619BFDF1600E94487 /* Frameworks */,
 				E4EC19E719BFDF1600E94487 /* Resources */,
-				B9EDD47B966BE729BA5ABFA4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -462,16 +391,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4EC1A0B19BFDF1600E94487 /* Images.xcassets in Resources */,
-				273766941A1983B0001E5741 /* ARRadar.xib in Resources */,
-				2737668E1A1983B0001E5741 /* ar_icon.png in Resources */,
-				273766901A1983B0001E5741 /* ar_overlay@2x.png in Resources */,
 				E4EC19F719BFDF1600E94487 /* InfoPlist.strings in Resources */,
 				27BFDD6219CFC2BF00EF209F /* friends.plist in Resources */,
 				E4EC1A0919BFDF1600E94487 /* Main.storyboard in Resources */,
-				2737668F1A1983B0001E5741 /* ar_overlay.png in Resources */,
-				2737668D1A1983B0001E5741 /* ARObject.xib in Resources */,
-				273766911A1983B0001E5741 /* Radar.png in Resources */,
-				273766921A1983B0001E5741 /* RadarMV.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,67 +407,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		B9EDD47B966BE729BA5ABFA4 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CC76BA567774C08C6D682193 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		E4EC19E519BFDF1600E94487 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2737668B1A1983B0001E5741 /* ARController.m in Sources */,
-				273766931A1983B0001E5741 /* ARRadar.m in Sources */,
 				2740AA1319D2748400F935FB /* UserInfoViewController.h in Sources */,
+				27F65BC01A1B1CCB00D1B0E2 /* ARRadar.m in Sources */,
 				2740AA1219D273AA00F935FB /* UserInfoViewController.m in Sources */,
-				273766961A1983B0001E5741 /* PRARManager.m in Sources */,
+				27F65BC31A1B1CDB00D1B0E2 /* ARController.m in Sources */,
 				27BFDD6019CFBE0C00EF209F /* RecommendedFriendsTableViewController.m in Sources */,
 				2740AA1619D27F8800F935FB /* AddScheduleViewController.m in Sources */,
-				2737668C1A1983B0001E5741 /* ARObject.m in Sources */,
+				27F65BC91A1B1CFA00D1B0E2 /* LocationMath.m in Sources */,
 				011B362B19DCE89900E33D4A /* ProfileViewController.m in Sources */,
 				27F1051719EF9FEC00184E5A /* GeoQueryAnnotation.m in Sources */,
 				E4EC19FD19BFDF1600E94487 /* AppDelegate.m in Sources */,
 				2756ADFA19E4D63300B5AD0C /* FriendsListTableViewController.m in Sources */,
 				274C44B019CCEA9900FBE30F /* LoginViewController.m in Sources */,
 				011B363119DD268E00E33D4A /* TabBarViewController.m in Sources */,
+				27F65BA91A1B1C2400D1B0E2 /* PRARManager.m in Sources */,
 				27F1051619EF9FEC00184E5A /* GeoPointAnnotation.m in Sources */,
 				274C44B319CCEC7000FBE30F /* RegisterViewController.m in Sources */,
 				62A5D68719D3CD4F0027A193 /* HomeScreenViewController.m in Sources */,
 				E4EC19F919BFDF1600E94487 /* main.m in Sources */,
+				27F65BC61A1B1CE600D1B0E2 /* ARObject.m in Sources */,
 				273766991A198444001E5741 /* NavigationViewController.m in Sources */,
 				27F1051419EF9FEC00184E5A /* CircleOverlay.m in Sources */,
 				013F028B1A0DC6CE00ED9ADB /* MapViewController.m in Sources */,
 				27F1051819EF9FEC00184E5A /* SearchViewController.m in Sources */,
-				273766951A1983B0001E5741 /* LocationMath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,7 +556,6 @@
 		};
 		E4EC1A2219BFDF1600E94487 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36BA603D0645D87643852F49 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -695,7 +583,6 @@
 		};
 		E4EC1A2319BFDF1600E94487 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82FA1B428DF8D0E784000AC6 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

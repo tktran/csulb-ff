@@ -28,8 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [PRARManager sharedManagerWithRadarAndSize:self.view.frame.size andDelegate:self];
-    
+    self.manager = [[PRARManager alloc] initWithSize:self.view.frame.size delegate:self showRadar:true];
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -37,8 +36,7 @@
     [super viewDidAppear:animated];
     CLLocationCoordinate2D locationCoordinates = CLLocationCoordinate2DMake(33.782674, -118.108972);
     
-    [[PRARManager sharedManager] startARWithData:[self getDummyData] forLocation:locationCoordinates];
-    
+    [self.manager startARWithData:[self getDummyData] forLocation:locationCoordinates];
 }
 
 
