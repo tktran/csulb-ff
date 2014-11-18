@@ -18,6 +18,7 @@
         
         // add the annotation
         GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:self.detailItem];
+        
         [self.mapView addAnnotation:annotation];
     }
     else // go to default location: CSULB coordinates
@@ -44,6 +45,7 @@
                 for (PFObject *object in objects) {
                     GeoPointAnnotation *geoPointAnnotation = [[GeoPointAnnotation alloc]
                                                               initWithObject:object];
+                    NSLog(@"geoPoint init");
                     [self.mapView addAnnotation:geoPointAnnotation];
                 }
             }

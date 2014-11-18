@@ -58,16 +58,6 @@
     PFGeoPoint *geoPoint = user[@"location"];
     NSString *string = [NSString stringWithFormat:@"Your location is: %.2f, %.2f", geoPoint.latitude, geoPoint.longitude];
     self.locationLabel.text = string;
-    
-    //    self.classLabel.numberOfLines = 0;
-    //
-    //    UILabel *label = self.classLabel;
-    //    CGSize labelSize = [label.text sizeWithFont:label.font
-    //                              constrainedToSize:label.frame.size
-    //                                  lineBreakMode:label.lineBreakMode];
-    //    label.frame = CGRectMake(
-    //                             label.frame.origin.x, label.frame.origin.y,
-    //                             label.frame.size.width, labelSize.height);
 
 }
 - (IBAction)updateLocation:(id)sender {

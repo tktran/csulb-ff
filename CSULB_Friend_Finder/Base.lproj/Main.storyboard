@@ -422,7 +422,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ylg-bd-We8">
                             <connections>
-                                <action selector="insertCurrentLocation:" destination="sIy-cH-uMZ" id="ifZ-WS-wcu"/>
+                                <action selector="addFriend:" destination="sIy-cH-uMZ" id="U0o-18-Ih5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

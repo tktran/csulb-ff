@@ -100,19 +100,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
     
     PFTableViewCell *cell = (PFTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"LocationCell"];
-
-    
     
     NSString *friendId = [object objectForKey:@"Friend2_Id"];
     NSLog(@"%@", friendId);
-
-    
-//    PFQuery *friendsQuery = [PFQuery queryWithClassName:@"Friendship"];
-//    PFUser *user = [PFUser currentUser];
-//    [friendsQuery whereKey:@"Friend1_Id" equalTo: @"X9UYxx35cf"]; // user[@"objectId"]];
-//    [friendsQuery selectKeys:@[@"Friend2_Id"]];
-//    return friendsQuery;
-
     
     PFQuery *friendQuery = [PFQuery queryWithClassName:@"_User"];
     [friendQuery getObjectInBackgroundWithId:friendId block:^(PFObject *object, NSError *error) {
@@ -239,27 +229,8 @@
  */
 
 
-- (IBAction)insertCurrentLocation:(id)sender {
-    // If it's not possible to get a location, then return.
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+- (IBAction)addFriend:(id)sender {
     
-    CLLocation *location = appDelegate.locationManager.location;
-    if (!location) {
-        return;
-    }
-    
-    // Configure the new event with information from the location.
-    CLLocationCoordinate2D coordinate = [location coordinate];
-    PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLatitude:coordinate.latitude longitude:coordinate.longitude];
-    PFUser *user = [PFUser currentUser];
-    [user setObject:geoPoint forKey:@"location"];
-    
-    [user saveEventually:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            // Reload the PFQueryTableViewController
-            [self loadObjects];
-        }
-    }];
 }
 
 @end

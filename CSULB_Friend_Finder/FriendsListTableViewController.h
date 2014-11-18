@@ -5,7 +5,7 @@
 
 @interface FriendsListTableViewController : PFQueryTableViewController <CLLocationManagerDelegate>
 
-- (IBAction)insertCurrentLocation:(id)sender;
+- (IBAction)addFriend:(id)sender;
 @property (nonatomic, strong) PFQuery *firstQuery;
 
 @end
