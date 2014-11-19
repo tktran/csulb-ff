@@ -20,7 +20,7 @@
     // Allows current view controller's nav bar to show
     [self.parentViewController.navigationController setNavigationBarHidden:YES];
     self.navigationItem.leftBarButtonItem.enabled = NO;
-    self.navigationItem.rightBarButtonItem.enabled = NO;
+    self.navigationItem.rightBarButtonItem.enabled = YES;
     
     // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
     
