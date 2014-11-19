@@ -125,10 +125,10 @@
         PFGeoPoint *geoPoint = object[@"location"];
         cell.textLabel.text = object[@"first_name"];
         //    cell.detailTextLabel.text = [dateFormatter stringFromDate:object.updatedAt];
-        NSString *string = [NSString stringWithFormat:@"%@, %@",
-                            [numberFormatter stringFromNumber:[NSNumber numberWithDouble:geoPoint.latitude]],
-                            [numberFormatter stringFromNumber:[NSNumber numberWithDouble:geoPoint.longitude]]];
-        cell.detailTextLabel.text = string;
+//        NSString *string = [NSString stringWithFormat:@"%@, %@",
+//                            [numberFormatter stringFromNumber:[NSNumber numberWithDouble:geoPoint.latitude]],
+//                            [numberFormatter stringFromNumber:[NSNumber numberWithDouble:geoPoint.longitude]]];
+        cell.detailTextLabel.text = [LocationTranslation closestBuilding:geoPoint];
 
     }];
     return cell;
@@ -225,7 +225,7 @@
 #pragma mark - MasterViewController
 
 - (IBAction)addFriend:(id)sender {
-    
+    NSLog(@"We should add a view or something to add a friend here. How does Facebook do it?");
 }
 
 @end
