@@ -62,16 +62,16 @@ andCurrentLocation:(CLLocationCoordinate2D)currLoc
     CLLocationCoordinate2D object_loc_coord = CLLocationCoordinate2DMake(lat, lon);
     
     CLLocation *object_location = [[CLLocation alloc] initWithLatitude:object_loc_coord.latitude
-                                                              longitude:object_loc_coord.longitude];
+                                                             longitude:object_loc_coord.longitude];
     CLLocation *user_location = [[CLLocation alloc] initWithLatitude:user_loc_coord.latitude
-                                                            longitude:user_loc_coord.longitude];
+                                                           longitude:user_loc_coord.longitude];
     
     return [object_location distanceFromLocation:user_location];
 }
 -(NSString*)getDistanceLabelText
 {
     if (distance.doubleValue > POINT_ONE_MILE_METERS)
-         return [NSString stringWithFormat:@"%.2f mi", distance.doubleValue*METERS_TO_MILES];
+        return [NSString stringWithFormat:@"%.2f mi", distance.doubleValue*METERS_TO_MILES];
     else return [NSString stringWithFormat:@"%.0f ft", distance.doubleValue*METERS_TO_FEET];
 }
 
@@ -80,10 +80,10 @@ andCurrentLocation:(CLLocationCoordinate2D)currLoc
     NSArray *keys = @[@"id",@"title", @"latitude", @"longitude", @"distance"];
     
     NSArray *values = @[@(arId),
-                       arTitle,
-                       @(lat),
-                       @(lon),
-                       distance];
+                        arTitle,
+                        @(lat),
+                        @(lon),
+                        distance];
     return [NSDictionary dictionaryWithObjects:values forKeys:keys];
 }
 

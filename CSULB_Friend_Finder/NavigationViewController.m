@@ -28,7 +28,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.manager = [[PRARManager alloc] initWithSize:self.view.frame.size delegate:self showRadar:true];
+    self.manager = [[PRARManager alloc] initWithSize:self.view.frame.size
+                                            delegate:self
+                                           showRadar:true];
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -39,7 +41,7 @@
         // Get the source (the friend)
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         CLLocationManager *manager = [appDelegate locationManager];
-        manager.startUpdatingLocation;
+        [manager startUpdatingLocation];
         manager.delegate = self;
     }
     else
@@ -48,6 +50,7 @@
         // go back
     }
 }
+
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *) locations
 {
@@ -66,30 +69,11 @@
                                            @"lon" : @(geoPoint.longitude),
                                            @"title" : friendName
                                            }];
-        NSArray *dummyData = @[
-                               @{
-                                   @"id" : @(0),
-                                   @"lat" : @(33.785063F),
-                                   @"lon" : @(-118.112F),
-                                   @"title" : @"Prospector"
-                                   },
-                               @{
-                                   @"id" : @(1),
-                                   @"lat" : @(33.781046F),
-                                   @"lon" : @(-118.111105F),
-                                   @"title" : @"Gustavo"
-                                   },
-                               @{
-                                   @"id" : @(2),
-                                   @"lat" : @(33.785928F),
-                                   @"lon" : @(-118.114712F),
-                                   @"title" : @"Miguel"
-                                   }
-                               ];
+        
         
         // Start the AR display with source->destination
         NSLog(@"lat: %.2f, lon: %.2f", currentCoordinates.latitude, currentCoordinates.longitude);
-        [self.manager startARWithData:dummyData forLocation:currentCoordinates];
+        [self.manager startARWithData:friendPRARElement forLocation:currentCoordinates];
         self.didStartAR = true;
     }
 }

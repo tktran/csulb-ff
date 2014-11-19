@@ -10,6 +10,7 @@
 		011B362B19DCE89900E33D4A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B362A19DCE89900E33D4A /* ProfileViewController.m */; };
 		011B363119DD268E00E33D4A /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B363019DD268E00E33D4A /* TabBarViewController.m */; };
 		013F028B1A0DC6CE00ED9ADB /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013F028A1A0DC6CE00ED9ADB /* MapViewController.m */; };
+		01F09EE31A1C88C8003A81E5 /* ARObject.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F09EE21A1C88C8003A81E5 /* ARObject.xib */; };
 		271AD72419CBDFB9009DDF9B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD72319CBDFB9009DDF9B /* FacebookSDK.framework */; };
 		271AD73119CBE541009DDF9B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD73019CBE541009DDF9B /* libz.dylib */; };
 		271AD76519CBEB2D009DDF9B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD76419CBEB2D009DDF9B /* SystemConfiguration.framework */; };
@@ -78,6 +79,7 @@
 		011B363019DD268E00E33D4A /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		013F02891A0DC6CE00ED9ADB /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		013F028A1A0DC6CE00ED9ADB /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		01F09EE21A1C88C8003A81E5 /* ARObject.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARObject.xib; sourceTree = "<group>"; };
 		271AD72319CBDFB9009DDF9B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		271AD73019CBE541009DDF9B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		271AD76419CBEB2D009DDF9B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -250,6 +252,7 @@
 		27F65BCA1A1B1F2E00D1B0E2 /* PRAR */ = {
 			isa = PBXGroup;
 			children = (
+				01F09EE21A1C88C8003A81E5 /* ARObject.xib */,
 				27F65BC71A1B1CFA00D1B0E2 /* LocationMath.h */,
 				27F65BC81A1B1CFA00D1B0E2 /* LocationMath.m */,
 				27F65BC41A1B1CE600D1B0E2 /* ARObject.h */,
@@ -436,6 +439,7 @@
 				E4EC19F719BFDF1600E94487 /* InfoPlist.strings in Resources */,
 				27BFDD6219CFC2BF00EF209F /* friends.plist in Resources */,
 				E4EC1A0919BFDF1600E94487 /* Main.storyboard in Resources */,
+				01F09EE31A1C88C8003A81E5 /* ARObject.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

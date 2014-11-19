@@ -1,3 +1,4 @@
+
 //
 //  ARController.m
 //  PrometAR
@@ -40,16 +41,16 @@
 
 CG_INLINE CATransform3D
 CATransform3DMake(CGFloat m11, CGFloat m12, CGFloat m13, CGFloat m14,
-				  CGFloat m21, CGFloat m22, CGFloat m23, CGFloat m24,
-				  CGFloat m31, CGFloat m32, CGFloat m33, CGFloat m34,
-				  CGFloat m41, CGFloat m42, CGFloat m43, CGFloat m44)
+                  CGFloat m21, CGFloat m22, CGFloat m23, CGFloat m24,
+                  CGFloat m31, CGFloat m32, CGFloat m33, CGFloat m34,
+                  CGFloat m41, CGFloat m42, CGFloat m43, CGFloat m44)
 {
-	CATransform3D t;
-	t.m11 = m11; t.m12 = m12; t.m13 = m13; t.m14 = m14;
-	t.m21 = m21; t.m22 = m22; t.m23 = m23; t.m24 = m24;
-	t.m31 = m31; t.m32 = m32; t.m33 = m33; t.m34 = m34;
-	t.m41 = m41; t.m42 = m42; t.m43 = m43; t.m44 = m44;
-	return t;
+    CATransform3D t;
+    t.m11 = m11; t.m12 = m12; t.m13 = m13; t.m14 = m14;
+    t.m21 = m21; t.m22 = m22; t.m23 = m23; t.m24 = m24;
+    t.m31 = m31; t.m32 = m32; t.m33 = m33; t.m34 = m34;
+    t.m41 = m41; t.m42 = m42; t.m43 = m43; t.m44 = m44;
+    return t;
 }
 
 #pragma mark - AR builders
@@ -62,10 +63,10 @@ CATransform3DMake(CGFloat m11, CGFloat m12, CGFloat m13, CGFloat m14,
     for (NSDictionary *arObjectData in arData) {
         NSNumber *ar_id = @([arObjectData[@"id"] intValue]);
         arObject = [[ARObject alloc] initWithId:ar_id.intValue
-                                           title:arObjectData[@"title"]
-                                     coordinates:CLLocationCoordinate2DMake([arObjectData[@"lat"] doubleValue],
-                                                                            [arObjectData[@"lon"] doubleValue])
-                              andCurrentLocation:newLocation];
+                                          title:arObjectData[@"title"]
+                                    coordinates:CLLocationCoordinate2DMake([arObjectData[@"lat"] doubleValue],
+                                                                           [arObjectData[@"lon"] doubleValue])
+                             andCurrentLocation:newLocation];
         
         x_pos = [self.locationMath getARObjectXPosition:arObject]-arObject.view.frame.size.width;
         
@@ -80,7 +81,7 @@ CATransform3DMake(CGFloat m11, CGFloat m12, CGFloat m13, CGFloat m14,
 }
 
 - (NSArray*)createRadarSpots
-{    
+{
     NSMutableArray *spots = [NSMutableArray arrayWithCapacity:geoobjectOverlays.count];
     
     int x_pos = 0;

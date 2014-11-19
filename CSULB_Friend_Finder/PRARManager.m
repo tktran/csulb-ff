@@ -100,9 +100,11 @@
 
 - (void)setupAROverlaysWithData:(NSDictionary*)arObjectsDict
 {
+    NSLog(@"Setting up overlays");
     [[arOverlaysContainerView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
-    for (NSNumber *ar_id in arObjectsDict.allKeys) {
+    for (NSNumber *ar_id in arObjectsDict.allKeys)
+    {
         [arOverlaysContainerView addSubview:[arObjectsDict[ar_id] view]];
     }
 }
