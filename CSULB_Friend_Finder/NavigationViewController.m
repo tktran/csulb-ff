@@ -36,9 +36,10 @@
     [super viewDidAppear:animated];
     
     if (self.detailItem) {
-        // Get the source (the currentUser)
+        // Get the source (the friend)
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         CLLocationManager *manager = [appDelegate locationManager];
+        manager.startUpdatingLocation;
         manager.delegate = self;
     }
     else
@@ -48,10 +49,10 @@
     }
 }
 
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)currentLocation fromLocation:(CLLocation *)oldLocation
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *) locations
 {
-    CLLocationCoordinate2D currentCoordinates = currentLocation.coordinate;
+    CLLocation *location = [locations lastObject];
+    CLLocationCoordinate2D currentCoordinates = location.coordinate;
     if (self.detailItem && !self.didStartAR)
     {
         // Get the destination (the friend)
@@ -65,9 +66,30 @@
                                            @"lon" : @(geoPoint.longitude),
                                            @"title" : friendName
                                            }];
+        NSArray *dummyData = @[
+                               @{
+                                   @"id" : @(0),
+                                   @"lat" : @(33.785063F),
+                                   @"lon" : @(-118.112F),
+                                   @"title" : @"Prospector"
+                                   },
+                               @{
+                                   @"id" : @(1),
+                                   @"lat" : @(33.781046F),
+                                   @"lon" : @(-118.111105F),
+                                   @"title" : @"Gustavo"
+                                   },
+                               @{
+                                   @"id" : @(2),
+                                   @"lat" : @(33.785928F),
+                                   @"lon" : @(-118.114712F),
+                                   @"title" : @"Miguel"
+                                   }
+                               ];
         
         // Start the AR display with source->destination
-        [self.manager startARWithData:friendPRARElement forLocation:currentCoordinates];
+        NSLog(@"lat: %.2f, lon: %.2f", currentCoordinates.latitude, currentCoordinates.longitude);
+        [self.manager startARWithData:dummyData forLocation:currentCoordinates];
         self.didStartAR = true;
     }
 }

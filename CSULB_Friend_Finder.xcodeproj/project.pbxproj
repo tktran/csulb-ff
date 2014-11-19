@@ -33,6 +33,7 @@
 		2756ADFA19E4D63300B5AD0C /* FriendsListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2756ADF919E4D63300B5AD0C /* FriendsListTableViewController.m */; };
 		27BFDD6019CFBE0C00EF209F /* RecommendedFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFDD5F19CFBE0C00EF209F /* RecommendedFriendsTableViewController.m */; };
 		27BFDD6219CFC2BF00EF209F /* friends.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27BFDD6119CFC2BF00EF209F /* friends.plist */; };
+		27D3E6F41A1C476D00FB83A1 /* UpdateStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D3E6F31A1C476D00FB83A1 /* UpdateStatusViewController.m */; };
 		27F1051419EF9FEC00184E5A /* CircleOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F1050B19EF9FEC00184E5A /* CircleOverlay.m */; };
 		27F1051619EF9FEC00184E5A /* GeoPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F1050F19EF9FEC00184E5A /* GeoPointAnnotation.m */; };
 		27F1051719EF9FEC00184E5A /* GeoQueryAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F1051119EF9FEC00184E5A /* GeoQueryAnnotation.m */; };
@@ -106,6 +107,8 @@
 		27BFDD5E19CFBE0C00EF209F /* RecommendedFriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendedFriendsTableViewController.h; sourceTree = "<group>"; };
 		27BFDD5F19CFBE0C00EF209F /* RecommendedFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendedFriendsTableViewController.m; sourceTree = "<group>"; };
 		27BFDD6119CFC2BF00EF209F /* friends.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = friends.plist; sourceTree = "<group>"; };
+		27D3E6F21A1C476D00FB83A1 /* UpdateStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateStatusViewController.h; sourceTree = "<group>"; };
+		27D3E6F31A1C476D00FB83A1 /* UpdateStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateStatusViewController.m; sourceTree = "<group>"; };
 		27F1050A19EF9FEC00184E5A /* CircleOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CircleOverlay.h; path = ../CircleOverlay.h; sourceTree = "<group>"; };
 		27F1050B19EF9FEC00184E5A /* CircleOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CircleOverlay.m; path = ../CircleOverlay.m; sourceTree = "<group>"; };
 		27F1050E19EF9FEC00184E5A /* GeoPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoPointAnnotation.h; path = ../GeoPointAnnotation.h; sourceTree = "<group>"; };
@@ -188,6 +191,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		270041011A1C2B57009029F7 /* Login/registration */ = {
+			isa = PBXGroup;
+			children = (
+				2740AA1419D27F8800F935FB /* AddScheduleViewController.h */,
+				2740AA1519D27F8800F935FB /* AddScheduleViewController.m */,
+				2740AA1019D273AA00F935FB /* UserInfoViewController.h */,
+				2740AA1119D273AA00F935FB /* UserInfoViewController.m */,
+				27BFDD5E19CFBE0C00EF209F /* RecommendedFriendsTableViewController.h */,
+				27BFDD5F19CFBE0C00EF209F /* RecommendedFriendsTableViewController.m */,
+				274C44AE19CCEA9900FBE30F /* LoginViewController.h */,
+				274C44AF19CCEA9900FBE30F /* LoginViewController.m */,
+				274C44B119CCEC7000FBE30F /* RegisterViewController.h */,
+				274C44B219CCEC7000FBE30F /* RegisterViewController.m */,
+			);
+			name = Login/registration;
+			sourceTree = "<group>";
+		};
+		270041021A1C2B83009029F7 /* Parse Geo tools */ = {
+			isa = PBXGroup;
+			children = (
+				27F1051019EF9FEC00184E5A /* GeoQueryAnnotation.h */,
+				27F1051119EF9FEC00184E5A /* GeoQueryAnnotation.m */,
+				27F1050A19EF9FEC00184E5A /* CircleOverlay.h */,
+				27F1050B19EF9FEC00184E5A /* CircleOverlay.m */,
+				27F1050E19EF9FEC00184E5A /* GeoPointAnnotation.h */,
+				27F1050F19EF9FEC00184E5A /* GeoPointAnnotation.m */,
+				27F65BCB1A1BEDEC00D1B0E2 /* LocationTranslation.h */,
+				27F65BCC1A1BEDEC00D1B0E2 /* LocationTranslation.m */,
+			);
+			name = "Parse Geo tools";
+			sourceTree = "<group>";
+		};
+		270041031A1C2BA7009029F7 /* Main tabs */ = {
+			isa = PBXGroup;
+			children = (
+				E4EC1A0719BFDF1600E94487 /* Main.storyboard */,
+				27F1051219EF9FEC00184E5A /* SearchViewController.h */,
+				27F1051319EF9FEC00184E5A /* SearchViewController.m */,
+				273766971A198444001E5741 /* NavigationViewController.h */,
+				273766981A198444001E5741 /* NavigationViewController.m */,
+				011B362919DCE89800E33D4A /* ProfileViewController.h */,
+				011B362A19DCE89900E33D4A /* ProfileViewController.m */,
+				013F02891A0DC6CE00ED9ADB /* MapViewController.h */,
+				013F028A1A0DC6CE00ED9ADB /* MapViewController.m */,
+				2756ADF819E4D63300B5AD0C /* FriendsListTableViewController.h */,
+				2756ADF919E4D63300B5AD0C /* FriendsListTableViewController.m */,
+				62A5D68519D3CD4F0027A193 /* HomeScreenViewController.h */,
+				62A5D68619D3CD4F0027A193 /* HomeScreenViewController.m */,
+				011B362F19DD268E00E33D4A /* TabBarViewController.h */,
+				011B363019DD268E00E33D4A /* TabBarViewController.m */,
+				27D3E6F21A1C476D00FB83A1 /* UpdateStatusViewController.h */,
+				27D3E6F31A1C476D00FB83A1 /* UpdateStatusViewController.m */,
+			);
+			name = "Main tabs";
+			sourceTree = "<group>";
+		};
 		27F65BCA1A1B1F2E00D1B0E2 /* PRAR */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,42 +313,12 @@
 		E4EC19F219BFDF1600E94487 /* CSULB_Friend_Finder */ = {
 			isa = PBXGroup;
 			children = (
-				27F65BCB1A1BEDEC00D1B0E2 /* LocationTranslation.h */,
-				27F65BCC1A1BEDEC00D1B0E2 /* LocationTranslation.m */,
+				270041031A1C2BA7009029F7 /* Main tabs */,
+				270041021A1C2B83009029F7 /* Parse Geo tools */,
+				270041011A1C2B57009029F7 /* Login/registration */,
 				27F65BCA1A1B1F2E00D1B0E2 /* PRAR */,
-				27F1050A19EF9FEC00184E5A /* CircleOverlay.h */,
-				27F1050B19EF9FEC00184E5A /* CircleOverlay.m */,
-				27F1050E19EF9FEC00184E5A /* GeoPointAnnotation.h */,
-				27F1050F19EF9FEC00184E5A /* GeoPointAnnotation.m */,
-				013F02891A0DC6CE00ED9ADB /* MapViewController.h */,
-				013F028A1A0DC6CE00ED9ADB /* MapViewController.m */,
-				27F1051019EF9FEC00184E5A /* GeoQueryAnnotation.h */,
-				27F1051119EF9FEC00184E5A /* GeoQueryAnnotation.m */,
-				27F1051219EF9FEC00184E5A /* SearchViewController.h */,
-				27F1051319EF9FEC00184E5A /* SearchViewController.m */,
-				2756ADF819E4D63300B5AD0C /* FriendsListTableViewController.h */,
-				2756ADF919E4D63300B5AD0C /* FriendsListTableViewController.m */,
-				273766971A198444001E5741 /* NavigationViewController.h */,
-				273766981A198444001E5741 /* NavigationViewController.m */,
-				011B362919DCE89800E33D4A /* ProfileViewController.h */,
-				011B362A19DCE89900E33D4A /* ProfileViewController.m */,
 				E4EC19FB19BFDF1600E94487 /* AppDelegate.h */,
 				E4EC19FC19BFDF1600E94487 /* AppDelegate.m */,
-				E4EC1A0719BFDF1600E94487 /* Main.storyboard */,
-				62A5D68519D3CD4F0027A193 /* HomeScreenViewController.h */,
-				62A5D68619D3CD4F0027A193 /* HomeScreenViewController.m */,
-				2740AA1419D27F8800F935FB /* AddScheduleViewController.h */,
-				2740AA1519D27F8800F935FB /* AddScheduleViewController.m */,
-				2740AA1019D273AA00F935FB /* UserInfoViewController.h */,
-				2740AA1119D273AA00F935FB /* UserInfoViewController.m */,
-				27BFDD5E19CFBE0C00EF209F /* RecommendedFriendsTableViewController.h */,
-				27BFDD5F19CFBE0C00EF209F /* RecommendedFriendsTableViewController.m */,
-				011B362F19DD268E00E33D4A /* TabBarViewController.h */,
-				011B363019DD268E00E33D4A /* TabBarViewController.m */,
-				274C44B119CCEC7000FBE30F /* RegisterViewController.h */,
-				274C44B219CCEC7000FBE30F /* RegisterViewController.m */,
-				274C44AE19CCEA9900FBE30F /* LoginViewController.h */,
-				274C44AF19CCEA9900FBE30F /* LoginViewController.m */,
 				E4EC1A0A19BFDF1600E94487 /* Images.xcassets */,
 				E4EC19F319BFDF1600E94487 /* Supporting Files */,
 			);
@@ -440,6 +469,7 @@
 				274C44B019CCEA9900FBE30F /* LoginViewController.m in Sources */,
 				011B363119DD268E00E33D4A /* TabBarViewController.m in Sources */,
 				27F65BA91A1B1C2400D1B0E2 /* PRARManager.m in Sources */,
+				27D3E6F41A1C476D00FB83A1 /* UpdateStatusViewController.m in Sources */,
 				27F1051619EF9FEC00184E5A /* GeoPointAnnotation.m in Sources */,
 				274C44B319CCEC7000FBE30F /* RegisterViewController.m in Sources */,
 				62A5D68719D3CD4F0027A193 /* HomeScreenViewController.m in Sources */,

@@ -9,9 +9,6 @@
 #import "HomeScreenViewController.h"
 
 @interface HomeScreenViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *classLabel;
-@property (weak, nonatomic) IBOutlet UILabel *friendsLabel;
 
 @end
 
@@ -35,7 +32,7 @@
     NSLog(@"%@", user[@"last_name"]);
     
     NSMutableDictionary *classes = [[NSMutableDictionary alloc] initWithDictionary: user[@"temp_classes"]];
-    NSString *classLabelString = @"Your clases are:\n";
+    NSString *classLabelString = @"Your classes are:\n";
     for (id key in classes)
     {
         NSArray *array = [classes objectForKey:key];

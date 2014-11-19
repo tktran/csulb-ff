@@ -25,8 +25,8 @@
             <objects>
                 <viewController id="iNv-Is-Jtd" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8P9-Nm-9rV"/>
-                        <viewControllerLayoutGuide type="bottom" id="xJd-3r-JtD"/>
+                        <viewControllerLayoutGuide type="top" id="06L-Id-TNT"/>
+                        <viewControllerLayoutGuide type="bottom" id="wLR-YJ-XPb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pjY-Wt-O7v">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -88,8 +88,8 @@
             <objects>
                 <viewController id="6P5-2Q-02y" customClass="AddScheduleViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qNG-Yf-b5V"/>
-                        <viewControllerLayoutGuide type="bottom" id="tEB-rz-bw2"/>
+                        <viewControllerLayoutGuide type="top" id="6gF-Ka-xcK"/>
+                        <viewControllerLayoutGuide type="bottom" id="cAd-YJ-87h"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CEQ-b5-uJJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -168,8 +168,8 @@
             <objects>
                 <viewController id="9bV-w4-Aoy" customClass="UserInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ano-aQ-c6c"/>
-                        <viewControllerLayoutGuide type="bottom" id="PK8-Pv-xYN"/>
+                        <viewControllerLayoutGuide type="top" id="ZS2-ua-Ps1"/>
+                        <viewControllerLayoutGuide type="bottom" id="qnn-qf-Foo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hC4-ao-udy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -238,31 +238,44 @@
             <objects>
                 <viewController id="rPJ-tW-IKE" customClass="HomeScreenViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="MHy-w1-ErW"/>
-                        <viewControllerLayoutGuide type="bottom" id="Wrs-Tb-CeG"/>
+                        <viewControllerLayoutGuide type="top" id="uze-11-Q7A"/>
+                        <viewControllerLayoutGuide type="bottom" id="C9U-5L-Zi4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="frD-Vc-Zga">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqu-D3-mPW">
-                                <rect key="frame" x="44" y="416" width="232" height="64"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJt-ec-fQt">
-                                <rect key="frame" x="56" y="157" width="208" height="251"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZz-Az-UJm">
-                                <rect key="frame" x="44" y="89" width="232" height="40"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="w0K-zY-Vqe">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                            </mapView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OVs-uk-UUk">
+                                <rect key="frame" x="8" y="116" width="240" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Co5-HO-VGa">
+                                <rect key="frame" x="40" y="228" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cpm-xq-LZA">
+                                <rect key="frame" x="40" y="373" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Welcome," minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gzc-ct-KaV">
+                                <rect key="frame" x="16" y="78" width="97" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -271,19 +284,63 @@
                         <barButtonItem key="rightBarButtonItem" title="Update" style="plain" id="Gv8-Rv-P4K">
                             <connections>
                                 <action selector="updateLocation:" destination="rPJ-tW-IKE" id="ga5-wg-52I"/>
+                                <segue destination="Xf6-OV-kJj" kind="push" id="cI5-W2-hxG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="classLabel" destination="hJt-ec-fQt" id="qUZ-eR-ja6"/>
-                        <outlet property="friendsLabel" destination="uqu-D3-mPW" id="TOF-4G-ARb"/>
-                        <outlet property="locationLabel" destination="uqu-D3-mPW" id="2Vt-cF-4SG"/>
-                        <outlet property="nameLabel" destination="ZZz-Az-UJm" id="r8i-Ot-WlP"/>
+                        <outlet property="classLabel" destination="Co5-HO-VGa" id="Dfi-ze-l4M"/>
+                        <outlet property="locationLabel" destination="Cpm-xq-LZA" id="MCY-1p-fHe"/>
+                        <outlet property="nameLabel" destination="OVs-uk-UUk" id="0oN-QU-OUH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ei-xV-3GR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1851" y="-239"/>
+        </scene>
+        <!--Update Status View Controller-->
+        <scene sceneID="pqw-z3-LhB">
+            <objects>
+                <viewController id="Xf6-OV-kJj" customClass="UpdateStatusViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pXZ-2y-Ly4"/>
+                        <viewControllerLayoutGuide type="bottom" id="IfZ-00-CaW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Lp-oN-qzT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g6g-yZ-Q4H">
+                                <rect key="frame" x="16" y="86" width="288" height="243"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SbS-gg-Rkn">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="30P-fk-o9q">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xxk-xt-w9m">
+                                <rect key="frame" x="243" y="7" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="HitSubmitButton:" destination="Xf6-OV-kJj" eventType="touchUpInside" id="xba-Hp-B9O"/>
+                                    <segue destination="rPJ-tW-IKE" kind="push" id="kxq-X4-63F"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="StatusTextField" destination="g6g-yZ-Q4H" id="mHp-Rp-stm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nIW-T8-Jph" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2237" y="-239"/>
         </scene>
         <!--Home-->
         <scene sceneID="3Ie-iV-KeX">
@@ -328,8 +385,8 @@
             <objects>
                 <viewController title="Map" id="PIu-c8-1mY" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="V0P-5j-zkV"/>
-                        <viewControllerLayoutGuide type="bottom" id="OWQ-YP-1EA"/>
+                        <viewControllerLayoutGuide type="top" id="Rwh-f3-fF9"/>
+                        <viewControllerLayoutGuide type="bottom" id="x8h-7R-eUt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eLz-UF-yBa">
                         <rect key="frame" x="0.0" y="64" width="320" height="568"/>
@@ -444,8 +501,8 @@
             <objects>
                 <viewController id="WdK-1r-RBr" customClass="SearchViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nwA-ph-ccC"/>
-                        <viewControllerLayoutGuide type="bottom" id="gmg-bW-Qai"/>
+                        <viewControllerLayoutGuide type="top" id="MBb-zj-SHS"/>
+                        <viewControllerLayoutGuide type="bottom" id="wxy-UH-CdR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QPq-Jp-6Hm">
                         <rect key="frame" x="0.0" y="64" width="320" height="568"/>
@@ -492,8 +549,8 @@
             <objects>
                 <viewController title="Profile" id="cB3-mi-rCh" customClass="ProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xtf-xt-Pya"/>
-                        <viewControllerLayoutGuide type="bottom" id="qM5-mv-7So"/>
+                        <viewControllerLayoutGuide type="top" id="kHJ-a2-oQ1"/>
+                        <viewControllerLayoutGuide type="bottom" id="gmV-8w-CkK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vUn-p4-cAN">
                         <rect key="frame" x="0.0" y="64" width="320" height="568"/>
@@ -562,8 +619,8 @@
             <objects>
                 <viewController id="lCJ-Sg-t2I" customClass="NavigationViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xkV-ga-ReE"/>
-                        <viewControllerLayoutGuide type="bottom" id="Rdk-0O-8dO"/>
+                        <viewControllerLayoutGuide type="top" id="Zcz-Vb-KTM"/>
+                        <viewControllerLayoutGuide type="bottom" id="JT6-Wz-Lke"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="z70-5F-YIn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -586,5 +643,6 @@
         <segue reference="IHP-xt-t1k"/>
         <segue reference="uwR-ak-ZPx"/>
         <segue reference="Oe5-rC-a42"/>
+        <segue reference="kxq-X4-63F"/>
     </inferredMetricsTieBreakers>
 </document>
