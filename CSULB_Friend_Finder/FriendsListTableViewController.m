@@ -9,9 +9,8 @@
 #pragma mark - NSObject
 
 - (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"geoPointAnnotiationUpdated" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"geoPointAnnotationUpdated" object:nil];
 }
-
 
 #pragma mark - UIViewController
 
@@ -32,7 +31,7 @@
     [appDelegate.locationManager startUpdatingLocation];
     
     // Listen for annotation updates. Triggers a refresh whenever an annotation is dragged and dropped.
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadObjects) name:@"geoPointAnnotiationUpdated" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadObjects) name:@"geoPointAnnotationUpdated" object:nil];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
