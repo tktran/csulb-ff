@@ -15,7 +15,8 @@
 @implementation UpdateStatusViewController
 
 
-- (IBAction)HitSubmitButton:(id)sender {
+- (IBAction)HitSubmitButton:(id)sender
+{
     PFUser *user = [PFUser currentUser];
     NSString *userStatus = self.StatusTextField.text;
     user[@"status"] = userStatus;

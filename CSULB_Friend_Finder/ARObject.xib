@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" image="ar_overlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="218">
+                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" image="ar_overlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="218">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="6">
@@ -29,8 +29,14 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00.0 miles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="10">
-                    <rect key="frame" x="58" y="25" width="81" height="21"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ar_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="87">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="512"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="00.0 miles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="10">
+                    <rect key="frame" x="58" y="29" width="81" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="466"/>
                         <constraint firstAttribute="width" constant="81" id="513"/>
@@ -39,12 +45,6 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ar_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="87">
-                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="50" id="512"/>
-                    </constraints>
-                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
             <constraints>

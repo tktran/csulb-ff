@@ -19,7 +19,7 @@
     [mapQuery setLimit:1000];
     
     NSArray *objects = [mapQuery findObjects];
-    double minDistance = INFINITY;
+    double minDistance = 1;
     NSString *closestBuildingName = @"None";
 
     for (PFObject *object in objects) {

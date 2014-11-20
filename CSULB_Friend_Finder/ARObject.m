@@ -71,7 +71,10 @@ andCurrentLocation:(CLLocationCoordinate2D)currLoc
 -(NSString*)getDistanceLabelText
 {
     if (distance.doubleValue > POINT_ONE_MILE_METERS)
+    {
+        NSLog(@"%.2f", distance.doubleValue);
         return [NSString stringWithFormat:@"%.2f mi", distance.doubleValue*METERS_TO_MILES];
+    }
     else return [NSString stringWithFormat:@"%.0f ft", distance.doubleValue*METERS_TO_FEET];
 }
 
