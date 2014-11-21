@@ -11,6 +11,11 @@
 		011B363119DD268E00E33D4A /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B363019DD268E00E33D4A /* TabBarViewController.m */; };
 		013F028B1A0DC6CE00ED9ADB /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013F028A1A0DC6CE00ED9ADB /* MapViewController.m */; };
 		01F09EE31A1C88C8003A81E5 /* ARObject.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F09EE21A1C88C8003A81E5 /* ARObject.xib */; };
+		01F09EF51A1EBDE5003A81E5 /* ar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F09EF01A1EBDE5003A81E5 /* ar_icon.png */; };
+		01F09EF61A1EBDE5003A81E5 /* ar_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F09EF11A1EBDE5003A81E5 /* ar_overlay.png */; };
+		01F09EF71A1EBDE5003A81E5 /* ar_overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F09EF21A1EBDE5003A81E5 /* ar_overlay@2x.png */; };
+		01F09EF81A1EBDE5003A81E5 /* Radar.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F09EF31A1EBDE5003A81E5 /* Radar.png */; };
+		01F09EF91A1EBDE5003A81E5 /* RadarMV.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F09EF41A1EBDE5003A81E5 /* RadarMV.png */; };
 		271AD72419CBDFB9009DDF9B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD72319CBDFB9009DDF9B /* FacebookSDK.framework */; };
 		271AD73119CBE541009DDF9B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD73019CBE541009DDF9B /* libz.dylib */; };
 		271AD76519CBEB2D009DDF9B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD76419CBEB2D009DDF9B /* SystemConfiguration.framework */; };
@@ -80,6 +85,11 @@
 		013F02891A0DC6CE00ED9ADB /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		013F028A1A0DC6CE00ED9ADB /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		01F09EE21A1C88C8003A81E5 /* ARObject.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARObject.xib; sourceTree = "<group>"; };
+		01F09EF01A1EBDE5003A81E5 /* ar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ar_icon.png; sourceTree = "<group>"; };
+		01F09EF11A1EBDE5003A81E5 /* ar_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ar_overlay.png; sourceTree = "<group>"; };
+		01F09EF21A1EBDE5003A81E5 /* ar_overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ar_overlay@2x.png"; sourceTree = "<group>"; };
+		01F09EF31A1EBDE5003A81E5 /* Radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Radar.png; sourceTree = "<group>"; };
+		01F09EF41A1EBDE5003A81E5 /* RadarMV.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RadarMV.png; sourceTree = "<group>"; };
 		271AD72319CBDFB9009DDF9B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		271AD73019CBE541009DDF9B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		271AD76419CBEB2D009DDF9B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -193,6 +203,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01F09EEF1A1EBDE5003A81E5 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				01F09EF01A1EBDE5003A81E5 /* ar_icon.png */,
+				01F09EF11A1EBDE5003A81E5 /* ar_overlay.png */,
+				01F09EF21A1EBDE5003A81E5 /* ar_overlay@2x.png */,
+				01F09EF31A1EBDE5003A81E5 /* Radar.png */,
+				01F09EF41A1EBDE5003A81E5 /* RadarMV.png */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
 		270041011A1C2B57009029F7 /* Login/registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +274,7 @@
 		27F65BCA1A1B1F2E00D1B0E2 /* PRAR */ = {
 			isa = PBXGroup;
 			children = (
+				01F09EEF1A1EBDE5003A81E5 /* Graphics */,
 				01F09EE21A1C88C8003A81E5 /* ARObject.xib */,
 				27F65BC71A1B1CFA00D1B0E2 /* LocationMath.h */,
 				27F65BC81A1B1CFA00D1B0E2 /* LocationMath.m */,
@@ -436,10 +459,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4EC1A0B19BFDF1600E94487 /* Images.xcassets in Resources */,
+				01F09EF51A1EBDE5003A81E5 /* ar_icon.png in Resources */,
+				01F09EF71A1EBDE5003A81E5 /* ar_overlay@2x.png in Resources */,
 				E4EC19F719BFDF1600E94487 /* InfoPlist.strings in Resources */,
 				27BFDD6219CFC2BF00EF209F /* friends.plist in Resources */,
 				E4EC1A0919BFDF1600E94487 /* Main.storyboard in Resources */,
+				01F09EF61A1EBDE5003A81E5 /* ar_overlay.png in Resources */,
 				01F09EE31A1C88C8003A81E5 /* ARObject.xib in Resources */,
+				01F09EF81A1EBDE5003A81E5 /* Radar.png in Resources */,
+				01F09EF91A1EBDE5003A81E5 /* RadarMV.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
