@@ -1,7 +1,7 @@
 
 
 #import "ProfileViewController.h"
-
+#import "NavigationViewController.h"
 
 @implementation ProfileViewController
 
@@ -80,7 +80,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"navigateToFriend"] && self.detailItem) {
         PFObject *friend = self.detailItem;
-        [segue.destinationViewController setDetailItem:friend];
+        NavigationViewController *dest = [segue destinationViewController];
+        dest.hidesBottomBarWhenPushed = YES;
+        [dest setDetailItem:friend];
     }
 }
 

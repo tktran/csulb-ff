@@ -37,6 +37,7 @@
 {
     [super viewDidAppear:animated];
     
+    
     if (self.detailItem) {
         // Get the source (the friend)
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -51,6 +52,10 @@
     }
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.manager stopAR];
+}
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *) locations
 {

@@ -590,9 +590,9 @@
                                 <rect key="frame" x="9" y="133" width="136" height="147"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMl-EJ-vYz">
-                                <rect key="frame" x="25" y="422" width="75" height="30"/>
+                                <rect key="frame" x="9" y="422" width="295" height="30"/>
                                 <color key="backgroundColor" red="0.81536599864130432" green="0.81498731483374987" blue="0.73245486934957627" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Navigate"/>
+                                <state key="normal" title="Find Your Friend"/>
                                 <connections>
                                     <segue destination="lCJ-Sg-t2I" kind="push" identifier="navigateToFriend" id="KNy-X3-wza"/>
                                 </connections>
