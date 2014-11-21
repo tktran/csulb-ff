@@ -21,6 +21,13 @@
     self.navigationItem.rightBarButtonItem.style = UIBarButtonSystemItemAdd;
     self.navigationItem.rightBarButtonItem.enabled = YES;
     self.navigationItem.hidesBackButton = YES;
+    
+    CLLocationCoordinate2D csulbCoords;
+    csulbCoords.latitude = 33.7830f;
+    csulbCoords.longitude = -118.1129f;
+    MKCoordinateSpan span;
+    span = MKCoordinateSpanMake(0.01f, 0.01f);
+    self.mapView.region = MKCoordinateRegionMake(csulbCoords, span);
 }
 
 -(void) updateTextLabels {
@@ -28,7 +35,7 @@
     [self.parentViewController.navigationController setNavigationBarHidden:YES];
     
     PFUser *user = [PFUser currentUser];
-    self.nameLabel.text = [NSString stringWithFormat:@"Welcome, %@ %@",user[@"first_name"], user[@"last_name"]];
+    self.nameLabel.text = [NSString stringWithFormat:@"%@ %@",user[@"first_name"], user[@"last_name"]];
     NSLog(@"%@", user[@"last_name"]);
     
     NSMutableDictionary *classes = [[NSMutableDictionary alloc] initWithDictionary: user[@"temp_classes"]];
