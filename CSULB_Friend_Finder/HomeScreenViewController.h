@@ -11,7 +11,6 @@
 @interface HomeScreenViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextView *nameLabel;
-@property (weak, nonatomic) IBOutlet UITextView *classLabel;
 @property (weak, nonatomic) IBOutlet UITextView *locationLabel;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 

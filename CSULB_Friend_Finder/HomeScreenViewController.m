@@ -38,27 +38,6 @@
     self.nameLabel.text = [NSString stringWithFormat:@"%@ %@",user[@"first_name"], user[@"last_name"]];
     NSLog(@"%@", user[@"last_name"]);
     
-    NSMutableDictionary *classes = [[NSMutableDictionary alloc] initWithDictionary: user[@"temp_classes"]];
-    NSString *classLabelString = @"Your classes are:\n";
-    for (id key in classes)
-    {
-        NSArray *array = [classes objectForKey:key];
-        
-        NSString *classLocation = array[0];
-        classLabelString = [classLabelString stringByAppendingString:@"\u2022"];
-        classLabelString = [classLabelString stringByAppendingString:key];
-        
-        classLabelString = [classLabelString stringByAppendingString:@" at "];
-        classLabelString = [classLabelString stringByAppendingString:classLocation];
-        
-        classLabelString = [classLabelString stringByAppendingString:@" at "];
-        NSString *classTime = array[1];
-        classLabelString = [classLabelString stringByAppendingString:classTime];
-        classLabelString = [classLabelString stringByAppendingString:@"\n"];
-    }
-    self.classLabel.text = classLabelString;
-    
-    
     PFGeoPoint *geoPoint = user[@"location"];
     NSString *string = [NSString stringWithFormat:@"Your location is: %.2f, %.2f", geoPoint.latitude, geoPoint.longitude];
     self.locationLabel.text = string;
