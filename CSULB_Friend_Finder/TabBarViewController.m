@@ -16,13 +16,13 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
-    self.navigationItem.leftBarButtonItem=nil;
     self.navigationItem.hidesBackButton = YES;
-    
+
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     // Do any additional setup after loading the view.
 }
 

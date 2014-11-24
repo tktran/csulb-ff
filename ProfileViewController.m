@@ -11,47 +11,61 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    // http://keighl.com/post/hide-the-navbar/
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    
+    [self updateRightButton];
+    [self updateDisplayInfo];
+}
+
+-(IBAction) updateStatus:(UIBarButtonItem*) button
+{
+    [self performSegueWithIdentifier:@"updateStatusSegue" sender:self];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) updateRightButton {
+    if (self.detailItem)
+    {
+        self.navigationItem.rightBarButtonItem = nil;
+        
+        self.pokeButton.hidden = false;
+        self.findYourFriendButton.hidden = false;
+    }
+    else // This view was not segue-d to from another view. Therefore, this view is being used to display the current user of the app.
+    {
+        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"Update" style:UIBarButtonItemStylePlain target:self action:@selector(updateStatus:)];
+        button.enabled = true;
+        
+        self.navigationItem.rightBarButtonItem = button;
+        
+        self.pokeButton.hidden = true;
+        self.findYourFriendButton.hidden = true;
+    }
+}
+
+- (void) updateDisplayInfo {
+    PFUser *user;
+    if (self.detailItem)
+        user = (PFUser*) self.detailItem;
+    else
+        user = [PFUser currentUser];
+    PFGeoPoint *geoPoint = user[@"location"];
+    self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude), MKCoordinateSpanMake(0.01f, 0.01f));
+    // add the annotation
+    GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:self.detailItem];
+    [self.mapView addAnnotation:annotation];
+    // status, location, contact info
+    NSString *friendStatus = user[@"status"];
+    NSString *friendName = user[@"first_name"];
+    friendName = [friendName stringByAppendingString:@" "];
+    friendName = [friendName stringByAppendingString:user[@"last_name"]];
+    friendName = [@"Name: " stringByAppendingString:friendName];
+    friendStatus = [@"Status: " stringByAppendingString:friendStatus];
+    self.nameLabel.text = friendName;
+    self.statusLabel.text = friendStatus;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    if (self.detailItem) {
-        // obtain the geopoint
-        PFUser *user = (PFUser*) self.detailItem;
-        PFGeoPoint *geoPoint = user[@"location"];
-        
-        // center our map view around this geopoint
-        self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude), MKCoordinateSpanMake(0.01f, 0.01f));
-        
-        // add the annotation
-        GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:self.detailItem];
-        [self.mapView addAnnotation:annotation];
-        
-        
-        
-        // status, location, contact info
-        NSString *friendStatus = user[@"status"];
-        NSString *friendName = user[@"first_name"];
-        friendName = [friendName stringByAppendingString:@" "];
-        friendName = [friendName stringByAppendingString:user[@"last_name"]];
-        friendName = [@"Name: " stringByAppendingString:friendName];
-        friendStatus = [@"Status: " stringByAppendingString:friendStatus];
-        self.nameLabel.text = friendName;
-        self.statusLabel.text = friendStatus;
-        
-    }
-    else // go to default location: CSULB coordinates
-    {
-        CLLocationCoordinate2D csulbCoords;
-        csulbCoords.latitude = 33.7830f;
-        csulbCoords.longitude = -118.1129f;
-        MKCoordinateSpan span;
-        span = MKCoordinateSpanMake(0.01f, 0.01f);
-        self.mapView.region = MKCoordinateRegionMake(csulbCoords, span);
-    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

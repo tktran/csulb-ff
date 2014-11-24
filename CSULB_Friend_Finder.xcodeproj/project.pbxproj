@@ -428,6 +428,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "___FULLUSERNAME___";
 				TargetAttributes = {
+					E4EC19E819BFDF1600E94487 = {
+						DevelopmentTeam = 8UUC583ETC;
+					};
 					E4EC1A0F19BFDF1600E94487 = {
 						TestTargetID = E4EC19E819BFDF1600E94487;
 					};

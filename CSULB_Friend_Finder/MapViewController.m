@@ -6,6 +6,11 @@
 
 #pragma mark - UIViewController
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationItem.rightBarButtonItem = nil;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     

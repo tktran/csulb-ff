@@ -17,10 +17,6 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:YES];
-    self.navigationItem.leftBarButtonItem=nil;
-    self.navigationItem.rightBarButtonItem.style = UIBarButtonSystemItemAdd;
-    self.navigationItem.rightBarButtonItem.enabled = YES;
-    self.navigationItem.hidesBackButton = YES;
     
     CLLocationCoordinate2D csulbCoords;
     csulbCoords.latitude = 33.7830f;
@@ -70,13 +66,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self updateTextLabels];
+    [self performSegueWithIdentifier:@"loginSegue" sender:self];
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 /*
 #pragma mark - Navigation

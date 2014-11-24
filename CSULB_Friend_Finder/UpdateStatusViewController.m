@@ -13,21 +13,31 @@
 @end
 
 @implementation UpdateStatusViewController
-
-
-- (IBAction)HitSubmitButton:(id)sender
-{
-    PFUser *user = [PFUser currentUser];
-    NSString *userStatus = self.StatusTextField.text;
-    user[@"status"] = userStatus;
-    [user saveInBackground];
-    
-}
+BOOL didHitSubmitButton;
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+
     [_StatusTextField becomeFirstResponder];
+}
+
+- (IBAction)didSubmitStatus:(id)sender {
+    PFUser *user = [PFUser currentUser];
+    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error)
+    {
+        if (!error)
+            user[@"location"] = geoPoint;
+    }];
+    
+    NSString *userStatus = self.StatusTextField.text;
+    user[@"status"] = userStatus;
+    
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+    {
+        if (!error)
+            [self.navigationController popViewControllerAnimated:YES];
+    }];
 }
 
 - (void)viewDidLoad {

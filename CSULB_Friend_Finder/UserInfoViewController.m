@@ -31,7 +31,15 @@
         [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (!error)
             {
-                // Hooray! Let them use the app now.
+                FBSession *myFbSession = [PFFacebookUtils session];
+                if( myFbSession.isOpen)
+                {
+                    [self performSegueWithIdentifier: @"recommendedFriendsSegue" sender: sender];
+                }
+                else
+                {
+                    [self performSegueWithIdentifier: @"homeSegue" sender: sender];
+                }
             }
             else
             {
@@ -39,16 +47,6 @@
                 NSLog(@"%@", errorString);
             }
         }];
-        
-        FBSession *myFbSession = [PFFacebookUtils session];
-        if( myFbSession.isOpen)
-        {
-            [self performSegueWithIdentifier: @"recommendedFriendsSegue" sender: sender];
-        }
-        else
-        {
-            [self performSegueWithIdentifier: @"userInfoSegue" sender: sender];
-        }
     }
     [self.firstNameField resignFirstResponder];
     [self.lastNameField resignFirstResponder];
@@ -67,24 +65,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-//    FBRequest *requestForMyFriends = [FBRequest requestForMyFriends];
-//    [requestForMyFriends startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
-//     {
-//         if(!error)
-//         {
-//             NSArray * resultList = [result objectForKey:@"data"];
-//             NSMutableArray *mutableFriends = [[NSMutableArray alloc] init];
-//             for (NSDictionary<FBGraphUser>* result in resultList)
-//             {
-//                 NSString *realName = result.name;
-//                 NSLog(@"%@", realName);
-//                 [mutableFriends addObject:realName];
-//             }
-//             AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-//             appDelegate.friends = [NSArray arrayWithArray:mutableFriends];
-//             NSLog(@"%lu", appDelegate.friends.count);
-//         }
-//     }];
+
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -114,9 +95,6 @@
          else
          {
              PFUser *user = [PFUser currentUser];
-             // Removed so the user can use what's written in the text field
-//             [user setObject:result[@"first_name"] forKey:@"first_name"];
-//             [user setObject:result[@"last_name"] forKey:@"last_name"];
              [user setObject:result[@"email"] forKey:@"email"];
 
              [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
