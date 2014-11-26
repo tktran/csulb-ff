@@ -486,7 +486,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jsX-Zw-cIl" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1260" y="1920"/>
+            <point key="canvasLocation" x="1262" y="2078"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="5rd-HT-7N1">
@@ -515,7 +515,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="oit-Gu-MAL"/>
-        <segue reference="7GS-WQ-rHt"/>
         <segue reference="nvK-uh-LSG"/>
+        <segue reference="dhk-32-h1O"/>
     </inferredMetricsTieBreakers>
 </document>
