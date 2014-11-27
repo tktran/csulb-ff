@@ -28,31 +28,25 @@
     }
     else // go to default location: CSULB coordinates
     {
-        CLLocationCoordinate2D csulbCoords;
-        csulbCoords.latitude = 33.7830f;
-        csulbCoords.longitude = -118.1129f;
-        MKCoordinateSpan span;
-        span = MKCoordinateSpanMake(0.01f, 0.01f);
-        self.mapView.region = MKCoordinateRegionMake(csulbCoords, span);
+        self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(33.7830f, -118.1129f), MKCoordinateSpanMake(0.01f, 0.01f));
         
-        // run a query for all friends
-        CGFloat kilometers = 1.0f; // find friends 1km around you
-        
-        PFQuery *mapQuery = [PFQuery queryWithClassName:@"_User"];
-        [mapQuery setLimit:1000];
-        [mapQuery whereKey:@"location"
-           nearGeoPoint:[PFGeoPoint geoPointWithLatitude:csulbCoords.latitude
-                                               longitude:csulbCoords.longitude]
-       withinKilometers:kilometers];
-        
-        [mapQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            if (!error) {
-                for (PFObject *object in objects) {
+        PFQuery *friendsQuery = [PFQuery queryWithClassName:@"Friendship"];
+        [friendsQuery whereKey:@"Friend1_Id" equalTo:[[PFUser currentUser] objectId]];
+        [friendsQuery selectKeys:@[@"Friend2_Id"]];
+        [friendsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            // Success
+            for (PFObject *object in objects)
+            {
+                NSString *friendId = object[@"Friend2_Id"];
+                PFQuery *friendQuery = [PFQuery queryWithClassName:@"_User"];
+                [friendQuery whereKey:@"objectId" equalTo:friendId];
+                [friendQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                    PFObject *object = objects[0];
                     GeoPointAnnotation *geoPointAnnotation = [[GeoPointAnnotation alloc]
                                                               initWithObject:object];
-                    NSLog(@"geoPoint init");
+                    NSLog(@"geoPoint init for friend");
                     [self.mapView addAnnotation:geoPointAnnotation];
-                }
+                }];
             }
         }];
     }
