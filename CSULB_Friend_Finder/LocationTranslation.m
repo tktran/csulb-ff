@@ -16,19 +16,18 @@
 +(NSString*) closestBuilding: (PFGeoPoint*) sourceLoc
 {
     PFQuery *mapQuery = [PFQuery queryWithClassName:@"Building"];
-    [mapQuery setLimit:1000];
     
-    NSArray *objects = [mapQuery findObjects];
-    double minDistance = 1;
-    NSString *closestBuildingName = @"None";
+    NSArray *buildings = [mapQuery findObjects];
+    double minDistance = INFINITY;
+    NSString *closestBuildingName = @"nowhere";
 
-    for (PFObject *object in objects) {
-        PFGeoPoint *buildingPoint = object[@"location"];
+    for (PFObject *building in buildings) {
+        PFGeoPoint *buildingPoint = building[@"location"];
         double distance = [buildingPoint distanceInKilometersTo:sourceLoc];
         if (distance < minDistance)
         {
             minDistance = distance;
-            closestBuildingName = object[@"name"];
+            closestBuildingName = building[@"name"];
         }
     }
     NSString *aroundString = [NSString stringWithFormat:@"Around %@", closestBuildingName];

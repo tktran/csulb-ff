@@ -11,6 +11,7 @@
 @interface UserInfoViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *firstNameField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameField;
+@property (weak, nonatomic) IBOutlet UITextField *emailField;
 
 @end
 
@@ -18,16 +19,20 @@
 
 - (IBAction)clickedSubmitButton:(id)sender {
     if (self.firstNameField.text.length == 0 ||
-        self.lastNameField.text.length == 0)
+        self.lastNameField.text.length == 0 ||
+        self.emailField.text.length == 0)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Try again" message:@"Please fill in the First and Last Name fields." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Try again" message:@"Please fill in the First Name, Last Name, and Email fields." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
     }
     else
     {
         PFUser *user = [PFUser currentUser];
-        [user setObject:self.firstNameField.text forKey:@"first_name"];
-        [user setObject:self.lastNameField.text forKey:@"last_name"];
+        user[@"first_name"] = self.firstNameField.text;
+        user[@"last_name"] = self.lastNameField.text;
+        user[@"email"] = self.emailField.text;
+        user[@"status"] = @"I just joined CSULB FF!";
+        user[@"location"] = [PFGeoPoint geoPointWithLatitude:37.7873589F longitude:122.408227F];
         [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (!error)
             {
@@ -43,8 +48,12 @@
             }
             else
             {
-                NSString *errorString = [error userInfo][@"Error pushing to parse"];
-                NSLog(@"%@", errorString);
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                message: @"There was an error submitting your info. Please wait a moment and try again."
+                                                               delegate: nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
             }
         }];
     }
@@ -81,58 +90,28 @@
     self.navigationItem.hidesBackButton = YES;
 
     FBSession *myFbSession = [PFFacebookUtils session];
-    if(!myFbSession.isOpen)
+    if (myFbSession != nil)
     {
-        [FBSession openActiveSessionWithAllowLoginUI:NO];
-    }
-    FBRequest *request = [FBRequest requestForMe];
-    [request startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
-     {
-         if (error)
+        if(!myFbSession.isOpen)
+        {
+            [FBSession openActiveSessionWithAllowLoginUI:NO];
+        }
+        FBRequest *request = [FBRequest requestForMe];
+        [request startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
          {
-             NSLog(@"%@", error);
-         }
-         else
-         {
-             PFUser *user = [PFUser currentUser];
-             [user setObject:result[@"email"] forKey:@"email"];
-
-             [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                 if (!error)
-                 {
-                     // Hooray! Let them use the app now.
-                 }
-                 else
-                 {
-                     NSString *errorString = [error userInfo][@"Error pushing to parse"];
-                     NSLog(@"%@", errorString);
-                 }
-             }];
-             
-             // Populate text fields with the retrieved FB info, if applicable
-             self.firstNameField.text = result[@"first_name"];
-             self.lastNameField.text = result[@"last_name"];
-         }
-     }];
-    
-    FBRequest *requestForMyFriends = [FBRequest requestForMyFriends];
-    [requestForMyFriends startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
-     {
-         if(!error)
-         {
-             NSArray * resultList = [result objectForKey:@"data"];
-             NSMutableArray *mutableFriends = [[NSMutableArray alloc] init];
-             for (NSDictionary<FBGraphUser>* result in resultList)
+             if (error)
              {
-                 NSString *realName = result.name;
-                 NSLog(@"%@", realName);
-                 [mutableFriends addObject:realName];
+                 NSLog(@"%@", error);
              }
-             AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-             appDelegate.friends = [NSArray arrayWithArray:mutableFriends];
-             NSLog(@"%lu", appDelegate.friends.count);
-         }
-     }];
+             else
+             {
+                 // Populate text fields with the retrieved FB info, if applicable
+                 self.firstNameField.text = result[@"first_name"];
+                 self.lastNameField.text = result[@"last_name"];
+                 self.emailField.text = result[@"email"];
+             }
+         }];
+    }
 }
 
 

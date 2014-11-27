@@ -18,12 +18,9 @@
     NSMutableArray *myCheckedFriends;
 }
 
-- (IBAction) performSegue:(id)sender {
-    [self performSegueWithIdentifier:@"ShowDetail" sender:sender];}
-
--(void)viewDidAppear:(BOOL)animated
+-(void) viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:YES];
+    [super viewWillAppear:animated];
     self.navigationItem.leftBarButtonItem=nil;
     self.navigationItem.hidesBackButton = YES;
 }
@@ -33,31 +30,34 @@
     self.navigationItem.leftBarButtonItem=nil;
     self.navigationItem.hidesBackButton = YES;
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    friendsList = appDelegate.friends;
+    FBSession *myFbSession = [PFFacebookUtils session];
+    if (myFbSession != nil)
+    {
+        FBRequest *requestForMyFriends = [FBRequest requestForMyFriends];
+        [requestForMyFriends startWithCompletionHandler: ^(FBRequestConnection *connection, id result, NSError *error)
+         {
+             if(!error)
+             {
+                 NSArray * resultList = [result objectForKey:@"data"];
+                 NSMutableArray *mutableFriends = [[NSMutableArray alloc] init];
+                 for (NSDictionary<FBGraphUser>* result in resultList)
+                 {
+                     NSString *realName = result.name;
+                     NSLog(@"%@", realName);
+                     [mutableFriends addObject:realName];
+                 }
+                 friendsList = [NSArray arrayWithArray:mutableFriends];
+                 self.tableView.reloadData;
+             }
+         }];
+    }
     myCheckedFriends = [[NSMutableArray alloc] init];
-//    myCheckedFriends = appDelegate.checkedFriends;
-    
-    NSLog(@"%lu", friendsList.count);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-#pragma mark - Table view data source
-
-/*- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}*/
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
@@ -77,8 +77,9 @@
     cell.imageView.image = [UIImage imageNamed:@"check.png"];
     
     // 3. Display "Friend request sent"
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"The friend request was sent." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"The friend request was sent. But not really." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    // Okay, need to actually send a friend request here...
+    
     [alert show];
 }
 
@@ -96,63 +97,6 @@
     {
         cell.imageView.image = [UIImage imageNamed:@"plus.png"];
     }
-    
     return cell;
 }
-
-//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-//{
-//    UIView *footerView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 40)];
-//    UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
-//    [button setTitle:@"Next" forState:UIControlStateNormal];
-//    [button addTarget:self action:@selector(performSegue:) forControlEvents:UIControlEventTouchUpInside];
-//    button.frame=CGRectMake(0, 0, 130, 30); //set some large width to ur title
-//    [footerView addSubview:button];
-//    return footerView;
-//}
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

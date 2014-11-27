@@ -23,20 +23,31 @@ BOOL didHitSubmitButton;
 }
 
 - (IBAction)didSubmitStatus:(id)sender {
+    // If we reached here, the current view wasn't pop. There must have been an error.
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                    message: @"There was an error updating your status. Please try again later."
+                                                   delegate: nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+
     PFUser *user = [PFUser currentUser];
     [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error)
     {
         if (!error)
+        {
+            user[@"status"] = self.StatusTextField.text;
             user[@"location"] = geoPoint;
-    }];
-    
-    NSString *userStatus = self.StatusTextField.text;
-    user[@"status"] = userStatus;
-    
-    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
-    {
-        if (!error)
-            [self.navigationController popViewControllerAnimated:YES];
+            [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+             {
+                 if (!error)
+                     [self.navigationController popViewControllerAnimated:YES];
+                 else
+                     [alert show];
+                     
+             }];
+        }
+        else
+            [alert show];
     }];
 }
 

@@ -72,12 +72,12 @@
                                 <state key="normal" title="Next">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="DAp-ps-vgE" kind="push" identifier="homeSegue" id="HQM-l3-GIO"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="DAp-ps-vgE" kind="push" id="Dmj-Bw-jSO"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Afx-7n-Uew" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,13 +102,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZC-qb-zYb">
-                                <rect key="frame" x="36" y="277" width="83" height="21"/>
+                                <rect key="frame" x="36" y="273" width="83" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMX-Ks-yFL">
-                                <rect key="frame" x="129" y="311" width="63" height="30"/>
+                                <rect key="frame" x="129" y="360" width="63" height="30"/>
                                 <state key="normal" title="Submit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -131,11 +131,25 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u1R-wB-1lz">
-                                <rect key="frame" x="129" y="273" width="155" height="30"/>
+                                <rect key="frame" x="129" y="269" width="155" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="9bV-w4-Aoy" id="whD-jw-Fro"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRG-aj-uXf">
+                                <rect key="frame" x="36" y="315" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nc3-TM-Gt2">
+                                <rect key="frame" x="129" y="311" width="155" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9bV-w4-Aoy" id="lmQ-jk-1yS"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -143,6 +157,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Ggp-az-fcp"/>
                     <connections>
+                        <outlet property="emailField" destination="nc3-TM-Gt2" id="9rN-Y9-i37"/>
                         <outlet property="firstNameField" destination="cBX-Cq-v3p" id="K8S-hZ-Et0"/>
                         <outlet property="lastNameField" destination="u1R-wB-1lz" id="ykZ-Uk-WTS"/>
                         <segue destination="3vG-Wo-EbU" kind="push" identifier="recommendedFriendsSegue" id="gyo-0u-XKn"/>
@@ -514,7 +529,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="oit-Gu-MAL"/>
+        <segue reference="HQM-l3-GIO"/>
         <segue reference="nvK-uh-LSG"/>
         <segue reference="dhk-32-h1O"/>
     </inferredMetricsTieBreakers>

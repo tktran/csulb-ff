@@ -22,9 +22,7 @@
 		273766991A198444001E5741 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 273766981A198444001E5741 /* NavigationViewController.m */; };
 		2740AA1219D273AA00F935FB /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2740AA1119D273AA00F935FB /* UserInfoViewController.m */; };
 		2740AA1319D2748400F935FB /* UserInfoViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 2740AA1019D273AA00F935FB /* UserInfoViewController.h */; };
-		2740AA1619D27F8800F935FB /* AddScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2740AA1519D27F8800F935FB /* AddScheduleViewController.m */; };
 		274C44B019CCEA9900FBE30F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274C44AF19CCEA9900FBE30F /* LoginViewController.m */; };
-		274C44B319CCEC7000FBE30F /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274C44B219CCEC7000FBE30F /* RegisterViewController.m */; };
 		274C44B519CCF40100FBE30F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C44B419CCF40100FBE30F /* Parse.framework */; };
 		274C44B719CCF42A00FBE30F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C44B619CCF42A00FBE30F /* AudioToolbox.framework */; };
 		274C44B919CCF43400FBE30F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C44B819CCF43400FBE30F /* CFNetwork.framework */; };
@@ -97,12 +95,8 @@
 		273766981A198444001E5741 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		2740AA1019D273AA00F935FB /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
 		2740AA1119D273AA00F935FB /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
-		2740AA1419D27F8800F935FB /* AddScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddScheduleViewController.h; sourceTree = "<group>"; };
-		2740AA1519D27F8800F935FB /* AddScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddScheduleViewController.m; sourceTree = "<group>"; };
 		274C44AE19CCEA9900FBE30F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		274C44AF19CCEA9900FBE30F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		274C44B119CCEC7000FBE30F /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
-		274C44B219CCEC7000FBE30F /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		274C44B419CCF40100FBE30F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		274C44B619CCF42A00FBE30F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		274C44B819CCF43400FBE30F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -218,16 +212,12 @@
 		270041011A1C2B57009029F7 /* Login/registration */ = {
 			isa = PBXGroup;
 			children = (
-				2740AA1419D27F8800F935FB /* AddScheduleViewController.h */,
-				2740AA1519D27F8800F935FB /* AddScheduleViewController.m */,
 				2740AA1019D273AA00F935FB /* UserInfoViewController.h */,
 				2740AA1119D273AA00F935FB /* UserInfoViewController.m */,
 				27BFDD5E19CFBE0C00EF209F /* RecommendedFriendsTableViewController.h */,
 				27BFDD5F19CFBE0C00EF209F /* RecommendedFriendsTableViewController.m */,
 				274C44AE19CCEA9900FBE30F /* LoginViewController.h */,
 				274C44AF19CCEA9900FBE30F /* LoginViewController.m */,
-				274C44B119CCEC7000FBE30F /* RegisterViewController.h */,
-				274C44B219CCEC7000FBE30F /* RegisterViewController.m */,
 			);
 			name = Login/registration;
 			sourceTree = "<group>";
@@ -495,7 +485,6 @@
 				2740AA1219D273AA00F935FB /* UserInfoViewController.m in Sources */,
 				27F65BC31A1B1CDB00D1B0E2 /* ARController.m in Sources */,
 				27BFDD6019CFBE0C00EF209F /* RecommendedFriendsTableViewController.m in Sources */,
-				2740AA1619D27F8800F935FB /* AddScheduleViewController.m in Sources */,
 				27F65BC91A1B1CFA00D1B0E2 /* LocationMath.m in Sources */,
 				011B362B19DCE89900E33D4A /* ProfileViewController.m in Sources */,
 				27F1051719EF9FEC00184E5A /* GeoQueryAnnotation.m in Sources */,
@@ -506,7 +495,6 @@
 				27F65BA91A1B1C2400D1B0E2 /* PRARManager.m in Sources */,
 				27D3E6F41A1C476D00FB83A1 /* UpdateStatusViewController.m in Sources */,
 				27F1051619EF9FEC00184E5A /* GeoPointAnnotation.m in Sources */,
-				274C44B319CCEC7000FBE30F /* RegisterViewController.m in Sources */,
 				62A5D68719D3CD4F0027A193 /* HomeScreenViewController.m in Sources */,
 				E4EC19F919BFDF1600E94487 /* main.m in Sources */,
 				27F65BC61A1B1CE600D1B0E2 /* ARObject.m in Sources */,

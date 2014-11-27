@@ -51,15 +51,11 @@
     PFGeoPoint *geoPoint = user[@"location"];
     self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude), MKCoordinateSpanMake(0.01f, 0.01f));
     // add the annotation
-    GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:self.detailItem];
+    GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:user];
     [self.mapView addAnnotation:annotation];
     // status, location, contact info
-    NSString *friendStatus = user[@"status"];
-    NSString *friendName = user[@"first_name"];
-    friendName = [friendName stringByAppendingString:@" "];
-    friendName = [friendName stringByAppendingString:user[@"last_name"]];
-    friendName = [@"Name: " stringByAppendingString:friendName];
-    friendStatus = [@"Status: " stringByAppendingString:friendStatus];
+    NSString *friendStatus = [NSString stringWithFormat:@"Status: %@", user[@"status"]];
+    NSString *friendName = [NSString stringWithFormat:@"Name: %@ %@", user[@"first_name"], user[@"last_name"]];
     self.nameLabel.text = friendName;
     self.statusLabel.text = friendStatus;
 }
