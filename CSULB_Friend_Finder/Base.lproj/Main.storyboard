@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kUq-Qs-ipP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kUq-Qs-ipP">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -266,12 +266,29 @@
                     <connections>
                         <segue destination="S7C-hg-8Rj" kind="relationship" relationship="viewControllers" id="lnr-YZ-H5x"/>
                         <segue destination="fEM-P2-f0H" kind="relationship" relationship="viewControllers" id="fXO-iw-xH9"/>
-                        <segue destination="PIu-c8-1mY" kind="relationship" relationship="viewControllers" id="SSt-XV-XXt"/>
+                        <segue destination="5wM-vY-iZs" kind="relationship" relationship="viewControllers" id="QG4-7g-mbx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fog-cK-ryf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1023" y="447"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="gql-8e-ieL">
+            <objects>
+                <navigationController id="5wM-vY-iZs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" id="q8f-Xc-9qi"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5hw-7E-C3R">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PIu-c8-1mY" kind="relationship" relationship="rootViewController" id="jlk-sl-baR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E1A-ZN-sfZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1527" y="447"/>
         </scene>
         <!--Map-->
         <scene sceneID="IAn-eM-XZs">
@@ -530,7 +547,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="HQM-l3-GIO"/>
+        <segue reference="7GS-WQ-rHt"/>
         <segue reference="nvK-uh-LSG"/>
-        <segue reference="dhk-32-h1O"/>
     </inferredMetricsTieBreakers>
 </document>
