@@ -47,7 +47,7 @@
                      [mutableFriends addObject:realName];
                  }
                  friendsList = [NSArray arrayWithArray:mutableFriends];
-                 self.tableView.reloadData;
+                 [self.tableView reloadData];
              }
          }];
     }

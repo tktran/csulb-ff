@@ -19,7 +19,7 @@
         PFGeoPoint *geoPoint = self.detailItem[@"location"];
         
         // center our map view around this geopoint
-        self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude), MKCoordinateSpanMake(0.01f, 0.01f));
+        self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude), MKCoordinateSpanMake(0.015f, 0.015f));
         
         // add the annotation
         GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:self.detailItem];
@@ -28,7 +28,7 @@
     }
     else // go to default location: CSULB coordinates
     {
-        self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(33.7830f, -118.1129f), MKCoordinateSpanMake(0.01f, 0.01f));
+        self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(33.7830f, -118.1151f), MKCoordinateSpanMake(0.015f, 0.015f));
         
         PFQuery *friendsQuery = [PFQuery queryWithClassName:@"Friendship"];
         [friendsQuery whereKey:@"Friend1_Id" equalTo:[[PFUser currentUser] objectId]];

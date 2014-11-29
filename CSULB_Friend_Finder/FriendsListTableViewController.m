@@ -21,17 +21,13 @@
     self.navigationItem.leftBarButtonItem.enabled = NO;
     self.navigationItem.rightBarButtonItem.enabled = YES;
     
-    // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-
+    // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
     if ([appDelegate.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
         [appDelegate.locationManager requestAlwaysAuthorization ];
     }
     [appDelegate.locationManager startUpdatingLocation];
-    
-    // Listen for annotation updates. Triggers a refresh whenever an annotation is dragged and dropped.
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadObjects) name:@"geoPointAnnotationUpdated" object:nil];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -50,11 +46,6 @@
         PFObject *friend = [userQuery getObjectWithId:friendId];
         [segue.destinationViewController setDetailItem:friend];
         
-    }
-    else if ([segue.identifier isEqualToString:@"showSearch"]) {
-        // Search button
-        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        [segue.destinationViewController setInitialLocation:appDelegate.locationManager.location];
     }
 }
 

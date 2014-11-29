@@ -59,13 +59,12 @@
 }
 
 - (CLLocationManager *)locationManager {
-    
     if (_locationManager != nil) {
         return _locationManager;
     }
     _locationManager = [[CLLocationManager alloc] init];
     _locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
-    _locationManager.startUpdatingLocation;
+    [_locationManager startUpdatingLocation];
     return _locationManager;
 }
 

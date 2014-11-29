@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kUq-Qs-ipP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kUq-Qs-ipP">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -381,11 +382,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Friends" id="btT-il-q1d">
-                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="Wu0-Ot-CKT">
-                            <connections>
-                                <segue destination="WdK-1r-RBr" kind="push" identifier="showSearch" id="u0h-VB-fQT"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ylg-bd-We8">
                             <connections>
                                 <action selector="addFriend:" destination="sIy-cH-uMZ" id="U0o-18-Ih5"/>
@@ -545,8 +541,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="lcR-Nx-7MY"/>
+        <segue reference="oit-Gu-MAL"/>
         <segue reference="7GS-WQ-rHt"/>
-        <segue reference="nvK-uh-LSG"/>
+        <segue reference="Oe5-rC-a42"/>
     </inferredMetricsTieBreakers>
 </document>
