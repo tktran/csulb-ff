@@ -6,6 +6,8 @@
 @implementation ProfileViewController
 
 
+
+
 #pragma mark - UIViewController
 
 - (void) viewWillAppear:(BOOL)animated
@@ -15,6 +17,19 @@
     [self updateRightButton];
     [self updateDisplayInfo];
 }
+
+// //POKE BUTTON FUNCTIONALITY
+// // Build the actual push notification target query
+// PFQuery *query = [PFInstallation query];
+
+// // only return Installations that belong to the specified user
+// [query whereKey:@"user" matchesQuery: /*target friend*/ ];
+
+// // Send the notification.
+// PFPush *push = [[PFPush alloc] init];
+// [push setQuery:query];
+// [push setMessage:@“/*current user*/ poked you!“];
+// [push sendPushInBackground];
 
 -(IBAction) updateStatus:(UIBarButtonItem*) button
 {
@@ -62,13 +77,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Create our Installation query
-    PFQuery *pushQuery = [PFInstallation query];
-    [pushQuery whereKey:@"deviceType" equalTo:@"ios"];
+    // Code for testing push notifications
+    // // Create our Installation query
+    // PFQuery *pushQuery = [PFInstallation query];
+    // [pushQuery whereKey:@"deviceType" equalTo:@"ios"];
     
-    // Send push notification to query
-    [PFPush sendPushMessageToQueryInBackground:pushQuery
-                                   withMessage:@"Hello World!"];
+    // // Send push notification to query
+    // [PFPush sendPushMessageToQueryInBackground:pushQuery
+    //                                withMessage:@"Hello World!"];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
