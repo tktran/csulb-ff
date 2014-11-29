@@ -8,6 +8,11 @@
 
 #import "AppDelegate.h"
 
+/* 
+ @class RecommendedFriendsTableViewController
+ @discussion This VC is a UITableViewController that displays any Facebook friends
+ of the about-to-be user who also use CSULB FF.
+*/
 @interface RecommendedFriendsTableViewController : UITableViewController <UITableViewDelegate>
 
 @end

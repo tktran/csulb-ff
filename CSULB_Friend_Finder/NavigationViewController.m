@@ -26,24 +26,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    self.manager = [[PRARManager alloc] initWithSize:self.view.frame.size
-                                            delegate:self
-                                           showRadar:true];
+    self.prarManager = [[PRARManager alloc] initWithSize:self.view.frame.size
+                                                delegate:self
+                                               showRadar:true];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    self.locationManager = [appDelegate locationManager];
+    self.locationManager.delegate = self;
 }
 
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
-    
     if (self.detailItem) {
-        // Get the source (the friend)
-        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        CLLocationManager *manager = [appDelegate locationManager];
-        [manager startUpdatingLocation];
-        manager.delegate = self;
+        [self.locationManager startUpdatingLocation];
     }
     else
     {
@@ -52,9 +48,12 @@
     }
 }
 
--(void)viewWillAppear:(BOOL)animated
+-(void) viewWillDisappear:(BOOL)animated
 {
-    [self.manager stopAR];
+    [super viewWillDisappear:animated];
+    [self.locationManager stopUpdatingLocation];
+    [self.prarManager stopAR];
+    self.didStartAR = false;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *) locations
@@ -77,8 +76,7 @@
         
         
         // Start the AR display with source->destination
-        NSLog(@"lat: %.2f, lon: %.2f", currentCoordinates.latitude, currentCoordinates.longitude);
-        [self.manager startARWithData:friendPRARElement forLocation:currentCoordinates];
+        [self.prarManager startARWithData:friendPRARElement forLocation:currentCoordinates];
         self.didStartAR = true;
     }
 }

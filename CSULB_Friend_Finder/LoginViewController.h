@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 
+/*! 
+ @class LoginViewController
+ @discussion This VC displays the login screen (username, password, submit) and signup buttons.
+*/
 @interface LoginViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
 

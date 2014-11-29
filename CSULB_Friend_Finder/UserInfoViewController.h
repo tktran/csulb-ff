@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 
+/*!
+ @class This VC asks for the First Name, Last Name, and email of
+ the about-to-be user.
+*/
 @interface UserInfoViewController : UIViewController <UITextFieldDelegate>
 
 @end

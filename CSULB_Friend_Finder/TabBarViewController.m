@@ -32,13 +32,6 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"showDetail"]) {
-        // Row selection
-//        [segue.destinationViewController setDetailItem:object];
-    } else if ([segue.identifier isEqualToString:@"showSearch"]) {
-        // Search button
-//        [segue.destinationViewController setInitialLocation:self.locationManager.location];
-    }
 }
 
 /*

@@ -46,7 +46,6 @@
 		27F65BC91A1B1CFA00D1B0E2 /* LocationMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F65BC81A1B1CFA00D1B0E2 /* LocationMath.m */; };
 		27F65BCD1A1BEDEC00D1B0E2 /* LocationTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F65BCC1A1BEDEC00D1B0E2 /* LocationTranslation.m */; };
 		5998E5C719C9294400A336AD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5998E5C619C9294400A336AD /* libsqlite3.dylib */; };
-		62A5D68719D3CD4F0027A193 /* HomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A5D68619D3CD4F0027A193 /* HomeScreenViewController.m */; };
 		E4EC19ED19BFDF1600E94487 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EC19EC19BFDF1600E94487 /* Foundation.framework */; };
 		E4EC19EF19BFDF1600E94487 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EC19EE19BFDF1600E94487 /* CoreGraphics.framework */; };
 		E4EC19F119BFDF1600E94487 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EC19F019BFDF1600E94487 /* UIKit.framework */; };
@@ -128,8 +127,6 @@
 		27F65BCB1A1BEDEC00D1B0E2 /* LocationTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTranslation.h; sourceTree = "<group>"; };
 		27F65BCC1A1BEDEC00D1B0E2 /* LocationTranslation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTranslation.m; sourceTree = "<group>"; };
 		5998E5C619C9294400A336AD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		62A5D68519D3CD4F0027A193 /* HomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreenViewController.h; sourceTree = "<group>"; };
-		62A5D68619D3CD4F0027A193 /* HomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenViewController.m; sourceTree = "<group>"; };
 		E4EC19E919BFDF1600E94487 /* CSULB_Friend_Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSULB_Friend_Finder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4EC19EC19BFDF1600E94487 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E4EC19EE19BFDF1600E94487 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -235,8 +232,6 @@
 				013F028A1A0DC6CE00ED9ADB /* MapViewController.m */,
 				2756ADF819E4D63300B5AD0C /* FriendsListTableViewController.h */,
 				2756ADF919E4D63300B5AD0C /* FriendsListTableViewController.m */,
-				62A5D68519D3CD4F0027A193 /* HomeScreenViewController.h */,
-				62A5D68619D3CD4F0027A193 /* HomeScreenViewController.m */,
 				011B362F19DD268E00E33D4A /* TabBarViewController.h */,
 				011B363019DD268E00E33D4A /* TabBarViewController.m */,
 				27D3E6F21A1C476D00FB83A1 /* UpdateStatusViewController.h */,
@@ -479,7 +474,6 @@
 				27F65BA91A1B1C2400D1B0E2 /* PRARManager.m in Sources */,
 				27D3E6F41A1C476D00FB83A1 /* UpdateStatusViewController.m in Sources */,
 				27F1051619EF9FEC00184E5A /* GeoPointAnnotation.m in Sources */,
-				62A5D68719D3CD4F0027A193 /* HomeScreenViewController.m in Sources */,
 				E4EC19F919BFDF1600E94487 /* main.m in Sources */,
 				27F65BC61A1B1CE600D1B0E2 /* ARObject.m in Sources */,
 				273766991A198444001E5741 /* NavigationViewController.m in Sources */,

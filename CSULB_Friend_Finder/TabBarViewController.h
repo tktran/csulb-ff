@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 
+/*!
+ @class TabBarViewController
+ @discussion This VC handles three tabs: Home, Friends, and Map.
+*/
 @interface TabBarViewController : UITabBarController
 
 @end

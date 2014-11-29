@@ -10,6 +10,12 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Parse/Parse.h"
 
+/*!
+ @class LocationTranslation
+ @discussion The closestBuilding function implemented by this interface
+ returns a string "Around ____", where ____ is the closest CSULB
+ building to the given coordinates. e.g., "Around Hall of Science".
+*/
 @interface LocationTranslation : NSObject
 +(NSString*) closestBuilding: (PFGeoPoint*) sourceLoc;
 @end
