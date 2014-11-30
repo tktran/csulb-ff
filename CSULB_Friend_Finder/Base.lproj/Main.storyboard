@@ -478,6 +478,9 @@
                                 <state key="normal" title="Poke (next sprint)">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pressedPokeButton:" destination="cB3-mi-rCh" eventType="touchUpInside" id="Ps5-28-FvW"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7x5-PF-Ey2">
                                 <rect key="frame" x="25" y="347" width="260" height="21"/>
@@ -542,7 +545,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="oit-Gu-MAL"/>
-        <segue reference="7GS-WQ-rHt"/>
         <segue reference="Oe5-rC-a42"/>
+        <segue reference="dhk-32-h1O"/>
     </inferredMetricsTieBreakers>
 </document>

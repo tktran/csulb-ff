@@ -18,19 +18,6 @@
     [self updateDisplayInfo];
 }
 
-// //POKE BUTTON FUNCTIONALITY
-// // Build the actual push notification target query
-// PFQuery *query = [PFInstallation query];
-
-// // only return Installations that belong to the specified user
-// [query whereKey:@"user" matchesQuery: /*target friend*/ ];
-
-// // Send the notification.
-// PFPush *push = [[PFPush alloc] init];
-// [push setQuery:query];
-// [push setMessage:@“/*current user*/ poked you!“];
-// [push sendPushInBackground];
-
 -(IBAction) updateStatus:(UIBarButtonItem*) button
 {
     [self performSegueWithIdentifier:@"updateStatusSegue" sender:self];
@@ -85,6 +72,42 @@
     // // Send push notification to query
     // [PFPush sendPushMessageToQueryInBackground:pushQuery
     //                                withMessage:@"Hello World!"];
+}
+
+
+- (IBAction)pressedPokeButton:(id)sender
+{
+    // PFPush *push -> PFQuery *pokeQuery -> PFQuery *friendQuery
+    // https://www.parse.com/questions/how-to-send-push-notification-to-a-specific-device-without-creating-channels
+    
+    // only return Installations that belong to the user to poke
+    PFQuery *friendQuery = [PFUser query];
+    NSString *friendId = self.detailItem.objectId;
+    [friendQuery whereKey:@"objectId" equalTo:friendId];
+    
+    // Build the actual push notification target query
+    PFQuery *pokeQuery = [PFInstallation query];
+    [pokeQuery whereKey:@"Owner" matchesQuery:friendQuery];
+
+    // Create the push using the pokeQuery
+    PFPush *push = [[PFPush alloc] init];
+    [push setQuery:pokeQuery];
+    PFUser *currentUser = [PFUser currentUser];
+    NSString *pokeMessage = [NSString stringWithFormat:@"%@ %@ poked you!", currentUser[@"first_name"], currentUser[@"last_name"]];
+    [push setMessage:pokeMessage];
+    [push sendPushInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+    {
+        if (!error)
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Poke succeeded!" message:@"Your friend was poked!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
+        else
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Poke failed" message:@"The poke failed. Try again later." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
+    }];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
