@@ -77,7 +77,7 @@
 
 - (IBAction)pressedPokeButton:(id)sender
 {
-    // PFPush *push -> PFQuery *pokeQuery -> PFQuery *friendQuery
+    // PFPush *push PUSHES NOTIFICATION TO ALL INSTALLATIONS RETURNED FROM A PFQuery *pokeQuery FINDS ALL INSTALLATIONS WHOSE OWNERS ARE IN PFQuery *friendQuery
     // https://www.parse.com/questions/how-to-send-push-notification-to-a-specific-device-without-creating-channels
     
     // only return Installations that belong to the user to poke
