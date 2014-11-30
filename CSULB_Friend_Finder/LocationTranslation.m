@@ -15,9 +15,11 @@
 
 +(NSString*) closestBuilding: (PFGeoPoint*) sourceLoc
 {
+    // Retrieve all buildings
     PFQuery *mapQuery = [PFQuery queryWithClassName:@"Building"];
-    
     NSArray *buildings = [mapQuery findObjects];
+    
+    // Find the closest building
     double minDistance = INFINITY;
     NSString *closestBuildingName = @"nowhere";
 
@@ -30,7 +32,22 @@
             closestBuildingName = building[@"name"];
         }
     }
+    
+    // Return "Around ..." string
     NSString *aroundString = [NSString stringWithFormat:@"Around %@", closestBuildingName];
+    
     return aroundString;
 }
+
++(BOOL) isOnCSULBCampus: (PFGeoPoint *) geoPoint
+{
+    double latitude = geoPoint.latitude;
+    double longitude = geoPoint.longitude;
+    
+    BOOL isOnUpperCampus = (latitude > 33.781506f && latitude < 33.788746f) && (longitude > -118.122501f && longitude < -118.107996f);
+    BOOL isOnLowerCampus = (latitude > 33.775156f && latitude < 33.781862f) && (longitude > -118.11542f && longitude < -118.111429f);
+    return (isOnUpperCampus || isOnLowerCampus);
+}
+
+
 @end

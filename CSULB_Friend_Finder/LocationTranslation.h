@@ -18,4 +18,5 @@
 */
 @interface LocationTranslation : NSObject
 +(NSString*) closestBuilding: (PFGeoPoint*) sourceLoc;
++(BOOL) isOnCSULBCampus: (PFGeoPoint *) location;
 @end

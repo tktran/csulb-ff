@@ -115,12 +115,15 @@
         
         PFGeoPoint *geoPoint = object[@"location"];
         cell.textLabel.text = object[@"first_name"];
-        //    cell.detailTextLabel.text = [dateFormatter stringFromDate:object.updatedAt];
-//        NSString *string = [NSString stringWithFormat:@"%@, %@",
-//                            [numberFormatter stringFromNumber:[NSNumber numberWithDouble:geoPoint.latitude]],
-//                            [numberFormatter stringFromNumber:[NSNumber numberWithDouble:geoPoint.longitude]]];
-        cell.detailTextLabel.text = [LocationTranslation closestBuilding:geoPoint];
-
+        
+        if ([LocationTranslation isOnCSULBCampus:geoPoint])
+        {
+            cell.detailTextLabel.text = [LocationTranslation closestBuilding:geoPoint];
+        }
+        else
+        {
+            cell.detailTextLabel.text = @"Not on campus";
+        }
     }];
     return cell;
 }

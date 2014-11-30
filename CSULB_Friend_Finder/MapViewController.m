@@ -18,13 +18,16 @@
         // obtain the geopoint
         PFGeoPoint *geoPoint = self.detailItem[@"location"];
         
-        // center our map view around this geopoint
-        self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude), MKCoordinateSpanMake(0.015f, 0.015f));
-        
-        // add the annotation
-        GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:self.detailItem];
-        
-        [self.mapView addAnnotation:annotation];
+        if ([LocationTranslation isOnCSULBCampus:geoPoint] || self.detailItem == [PFUser currentUser]) // only display annotation if friend is on CSULB campus, or user to display is self.
+        {
+            // center our map view around this geopoint
+            self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude), MKCoordinateSpanMake(0.015f, 0.015f));
+            
+            // add the annotation
+            GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:self.detailItem];
+            
+            [self.mapView addAnnotation:annotation];
+        }
     }
     else // go to default location: CSULB coordinates
     {
