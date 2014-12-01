@@ -33,11 +33,7 @@
         self.findYourFriendButton.hidden = false;
     }
     else // No friend passed. Must be displaying my own profile
-    {
-        UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(pressedSettingsButton:)];
-        leftButton.enabled = true;
-        self.navigationItem.leftBarButtonItem = leftButton;
-        
+    {        
         // Create the Right Bar Button Item: "Update"
         UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Update" style:UIBarButtonItemStylePlain target:self action:@selector(updateStatus:)];
         rightButton.enabled = true;
