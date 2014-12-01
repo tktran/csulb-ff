@@ -17,8 +17,8 @@
 
 @implementation UserInfoViewController
 
-/**
- 
+/*!
+*/
 - (IBAction)clickedSubmitButton:(id)sender {
     if (self.firstNameField.text.length == 0 ||
         self.lastNameField.text.length == 0 ||

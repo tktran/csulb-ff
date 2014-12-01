@@ -428,7 +428,7 @@
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter the name or email address of the friend you wish to add." translatesAutoresizingMaskIntoConstraints="NO" id="RMf-W1-u0j">
-                                <rect key="frame" x="40" y="91" width="240" height="56"/>
+                                <rect key="frame" x="40" y="85" width="240" height="56"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
