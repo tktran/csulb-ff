@@ -83,8 +83,7 @@
 
 - (IBAction)pressedPokeButton:(id)sender
 {
-    // PFPush *push PUSHES NOTIFICATION TO ALL INSTALLATIONS RETURNED FROM A PFQuery *pokeQuery FINDS ALL INSTALLATIONS WHOSE OWNERS ARE IN PFQuery *friendQuery
-    // https://www.parse.com/questions/how-to-send-push-notification-to-a-specific-device-without-creating-channels
+    PFUser *friend = (PFUser*) self.detailItem;
     
     // only return Installations that belong to the user to poke
     PFQuery *friendQuery = [PFUser query];
@@ -105,7 +104,7 @@
     {
         if (!error)
         {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Poke succeeded!" message:@"Your friend was poked!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Poke succeeded!" message:[NSString stringWithFormat:@"%@ was poked!", friend[@"first_name"]] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
         }
         else

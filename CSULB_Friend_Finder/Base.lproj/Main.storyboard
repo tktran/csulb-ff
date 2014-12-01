@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kUq-Qs-ipP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kUq-Qs-ipP">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -251,11 +250,11 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Settings" id="Vnp-Kf-kPK"/>
-                    <navigationItem key="navigationItem" id="EGI-Fi-i5L"/>
+                    <navigationItem key="navigationItem" title="Settings" id="EGI-Fi-i5L"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0IL-23-Sas" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2009" y="1177"/>
+            <point key="canvasLocation" x="1967" y="1880"/>
         </scene>
         <!--Update Status View Controller-->
         <scene sceneID="pqw-z3-LhB">
@@ -353,7 +352,7 @@
                         <segue destination="S7C-hg-8Rj" kind="relationship" relationship="viewControllers" id="lnr-YZ-H5x"/>
                         <segue destination="fEM-P2-f0H" kind="relationship" relationship="viewControllers" id="fXO-iw-xH9"/>
                         <segue destination="5wM-vY-iZs" kind="relationship" relationship="viewControllers" id="QG4-7g-mbx"/>
-                        <segue destination="P9Z-W0-nfH" kind="relationship" relationship="viewControllers" id="Hgr-Qq-KN9"/>
+                        <segue destination="FT9-cu-E0t" kind="relationship" relationship="viewControllers" id="8Fp-wj-sEa"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fog-cK-ryf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -376,6 +375,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1A-ZN-sfZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1414" y="1177"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="ito-Qe-8CO">
+            <objects>
+                <navigationController id="FT9-cu-E0t" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" id="FBB-Od-MC2"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vhs-YV-LkH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="P9Z-W0-nfH" kind="relationship" relationship="rootViewController" id="9bD-P7-kSl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VFi-Yc-oUd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1967" y="1162"/>
         </scene>
         <!--Map-->
         <scene sceneID="IAn-eM-XZs">
@@ -555,15 +571,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Dv-SG-Ovr">
-                                <rect key="frame" x="25" y="376" width="120" height="30"/>
-                                <state key="normal" title="Poke (next sprint)">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pressedPokeButton:" destination="cB3-mi-rCh" eventType="touchUpInside" id="Ps5-28-FvW"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7x5-PF-Ey2">
                                 <rect key="frame" x="25" y="347" width="260" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -581,6 +588,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OIn-vE-Nri">
                                 <rect key="frame" x="9" y="133" width="136" height="147"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Dv-SG-Ovr">
+                                <rect key="frame" x="25" y="376" width="120" height="30"/>
+                                <state key="normal" title="Poke ">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedPokeButton:" destination="cB3-mi-rCh" eventType="touchUpInside" id="Ps5-28-FvW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
