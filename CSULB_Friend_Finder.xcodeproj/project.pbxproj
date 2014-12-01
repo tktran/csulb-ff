@@ -19,6 +19,7 @@
 		271AD72419CBDFB9009DDF9B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD72319CBDFB9009DDF9B /* FacebookSDK.framework */; };
 		271AD73119CBE541009DDF9B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD73019CBE541009DDF9B /* libz.dylib */; };
 		271AD76519CBEB2D009DDF9B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD76419CBEB2D009DDF9B /* SystemConfiguration.framework */; };
+		271ED7691A2BE8C900BE64F2 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271ED7681A2BE8C900BE64F2 /* SettingsViewController.m */; };
 		273766991A198444001E5741 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 273766981A198444001E5741 /* NavigationViewController.m */; };
 		2740AA1219D273AA00F935FB /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2740AA1119D273AA00F935FB /* UserInfoViewController.m */; };
 		2740AA1319D2748400F935FB /* UserInfoViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 2740AA1019D273AA00F935FB /* UserInfoViewController.h */; };
@@ -87,6 +88,8 @@
 		271AD72319CBDFB9009DDF9B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		271AD73019CBE541009DDF9B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		271AD76419CBEB2D009DDF9B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		271ED7671A2BE8C900BE64F2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		271ED7681A2BE8C900BE64F2 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		273766971A198444001E5741 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
 		273766981A198444001E5741 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		2740AA1019D273AA00F935FB /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
@@ -224,6 +227,8 @@
 		270041031A1C2BA7009029F7 /* Main tabs */ = {
 			isa = PBXGroup;
 			children = (
+				271ED7671A2BE8C900BE64F2 /* SettingsViewController.h */,
+				271ED7681A2BE8C900BE64F2 /* SettingsViewController.m */,
 				273766971A198444001E5741 /* NavigationViewController.h */,
 				273766981A198444001E5741 /* NavigationViewController.m */,
 				011B362919DCE89800E33D4A /* ProfileViewController.h */,
@@ -466,6 +471,7 @@
 				27F65BC31A1B1CDB00D1B0E2 /* ARController.m in Sources */,
 				27BFDD6019CFBE0C00EF209F /* RecommendedFriendsTableViewController.m in Sources */,
 				27F65BC91A1B1CFA00D1B0E2 /* LocationMath.m in Sources */,
+				271ED7691A2BE8C900BE64F2 /* SettingsViewController.m in Sources */,
 				011B362B19DCE89900E33D4A /* ProfileViewController.m in Sources */,
 				E4EC19FD19BFDF1600E94487 /* AppDelegate.m in Sources */,
 				2756ADFA19E4D63300B5AD0C /* FriendsListTableViewController.m in Sources */,

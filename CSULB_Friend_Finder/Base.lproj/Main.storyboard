@@ -243,6 +243,11 @@
             <objects>
                 <tabBarController id="DAp-ps-vgE" customClass="TabBarViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Friend Finder" id="87N-Xd-4ca">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="Csk-0K-uMl">
+                            <connections>
+                                <segue destination="hS5-4Z-ykD" kind="push" id="lmf-vI-t7z"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="qOC-rA-F0g">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sAO-xQ-SnI">
                                 <rect key="frame" x="-23" y="-15" width="71" height="30"/>
@@ -512,11 +517,31 @@
                         <outlet property="profilePicture" destination="OIn-vE-Nri" id="7uc-6j-1tZ"/>
                         <outlet property="statusLabel" destination="7x5-PF-Ey2" id="dl5-al-Lpg"/>
                         <segue destination="Xf6-OV-kJj" kind="push" identifier="updateStatusSegue" id="dhk-32-h1O"/>
+                        <segue destination="hS5-4Z-ykD" kind="push" identifier="settingsSegue" id="wUa-VI-71A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jsX-Zw-cIl" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1262" y="2078"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="JEI-Yg-YrN">
+            <objects>
+                <viewController id="hS5-4Z-ykD" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ky5-le-q4X"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZDZ-u7-tSX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vx7-75-Plp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mWU-y3-lIN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rEX-D0-Eco" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1737" y="2522"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="5rd-HT-7N1">
@@ -545,7 +570,8 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="oit-Gu-MAL"/>
+        <segue reference="lmf-vI-t7z"/>
+        <segue reference="7GS-WQ-rHt"/>
         <segue reference="Oe5-rC-a42"/>
-        <segue reference="dhk-32-h1O"/>
     </inferredMetricsTieBreakers>
 </document>

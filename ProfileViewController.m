@@ -25,20 +25,25 @@
 }
 
 - (void) updateRightButton {
-    if (self.detailItem)
+    if (self.detailItem) // Friend passed. Display friend's profile
     {
         self.navigationItem.rightBarButtonItem = nil;
         
         self.pokeButton.hidden = false;
         self.findYourFriendButton.hidden = false;
     }
-    else // This view was not segue-d to from another view. Therefore, this view is being used to display the current user of the app.
+    else // No friend passed. Must be displaying my own profile
     {
-        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"Update" style:UIBarButtonItemStylePlain target:self action:@selector(updateStatus:)];
-        button.enabled = true;
+        UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(pressedSettingsButton:)];
+        leftButton.enabled = true;
+        self.navigationItem.leftBarButtonItem = leftButton;
         
-        self.navigationItem.rightBarButtonItem = button;
+        // Create the Right Bar Button Item: "Update"
+        UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Update" style:UIBarButtonItemStylePlain target:self action:@selector(updateStatus:)];
+        rightButton.enabled = true;
+        self.navigationItem.rightBarButtonItem = rightButton;
         
+        // Hide the "Poke" and "Find your friend" buttons
         self.pokeButton.hidden = true;
         self.findYourFriendButton.hidden = true;
     }
@@ -74,6 +79,11 @@
     //                                withMessage:@"Hello World!"];
 }
 
+
+- (IBAction)pressedSettingsButton:(id)sender
+{
+    [self performSegueWithIdentifier:@"settingsSegue" sender:self];
+}
 
 - (IBAction)pressedPokeButton:(id)sender
 {
