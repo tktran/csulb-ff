@@ -118,7 +118,7 @@
         
         if ([LocationTranslation isOnCSULBCampus:geoPoint])
         {
-            cell.detailTextLabel.text = [LocationTranslation closestBuilding:geoPoint];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"Around %@",[LocationTranslation closestBuilding:geoPoint]];
         }
         else
         {

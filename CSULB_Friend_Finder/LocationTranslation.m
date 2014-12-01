@@ -10,9 +10,6 @@
 
 @implementation LocationTranslation
 
-
-
-
 +(NSString*) closestBuilding: (PFGeoPoint*) sourceLoc
 {
     // Retrieve all buildings
@@ -33,10 +30,7 @@
         }
     }
     
-    // Return "Around ..." string
-    NSString *aroundString = [NSString stringWithFormat:@"Around %@", closestBuildingName];
-    
-    return aroundString;
+    return closestBuildingName;
 }
 
 +(BOOL) isOnCSULBCampus: (PFGeoPoint *) geoPoint
