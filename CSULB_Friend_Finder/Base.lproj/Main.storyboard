@@ -325,7 +325,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VoW-Uh-cYZ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1939" y="1162"/>
+            <point key="canvasLocation" x="2081" y="1162"/>
         </scene>
         <!--Friends-->
         <scene sceneID="CU8-8q-C75">
@@ -390,6 +390,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ylg-bd-We8">
                             <connections>
                                 <action selector="addFriend:" destination="sIy-cH-uMZ" id="U0o-18-Ih5"/>
+                                <segue destination="4va-sF-Xcb" kind="push" id="J3g-8v-O5N"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -406,53 +407,24 @@
             </objects>
             <point key="canvasLocation" x="1113" y="1162"/>
         </scene>
-        <!--Search-->
-        <scene sceneID="xn8-FN-pmC">
+        <!--Add Friend View Controller-->
+        <scene sceneID="Ibz-k6-lsy">
             <objects>
-                <viewController id="WdK-1r-RBr" customClass="SearchViewController" sceneMemberID="viewController">
+                <viewController id="4va-sF-Xcb" customClass="AddFriendViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="MBb-zj-SHS"/>
-                        <viewControllerLayoutGuide type="bottom" id="wxy-UH-CdR"/>
+                        <viewControllerLayoutGuide type="top" id="0yT-Qz-IZ9"/>
+                        <viewControllerLayoutGuide type="bottom" id="Alb-Qk-y7j"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QPq-Jp-6Hm">
-                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="N28-SN-kew">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="374"/>
-                                <connections>
-                                    <outlet property="delegate" destination="WdK-1r-RBr" id="8fK-LJ-kWm"/>
-                                </connections>
-                            </mapView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s7S-9H-sBX">
-                                <rect key="frame" x="0.0" y="374" width="320" height="44"/>
-                                <items>
-                                    <barButtonItem title="Radius (m)" style="plain" id="ZEm-gw-Zzs"/>
-                                    <barButtonItem style="plain" id="ODZ-h4-Lo5">
-                                        <slider key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1000" minValue="100" maxValue="10000" id="Ug7-of-eb2">
-                                            <rect key="frame" x="120" y="11" width="180" height="29"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <connections>
-                                                <action selector="sliderDidTouchUp:" destination="WdK-1r-RBr" eventType="touchUpInside" id="JUc-pA-DH2"/>
-                                                <action selector="sliderDidTouchUp:" destination="WdK-1r-RBr" eventType="touchUpOutside" id="bQv-Xg-cVa"/>
-                                                <action selector="sliderValueChanged:" destination="WdK-1r-RBr" eventType="valueChanged" id="Ley-px-qz5"/>
-                                            </connections>
-                                        </slider>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <view key="view" contentMode="scaleToFill" id="eyP-Ke-1DW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Search" id="9RN-ZG-4RN"/>
-                    <connections>
-                        <outlet property="mapView" destination="N28-SN-kew" id="DCC-VB-iyD"/>
-                        <outlet property="slider" destination="Ug7-of-eb2" id="369-yI-B4M"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="sBp-lh-8hk"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rbv-VF-cKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LZs-po-bE8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1545" y="1162"/>
+            <point key="canvasLocation" x="1587" y="1169"/>
         </scene>
         <!--Profile-->
         <scene sceneID="HBn-Im-ic1">
@@ -522,7 +494,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jsX-Zw-cIl" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1262" y="2078"/>
+            <point key="canvasLocation" x="1302" y="2361"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="JEI-Yg-YrN">
@@ -541,7 +513,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEX-D0-Eco" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1737" y="2522"/>
+            <point key="canvasLocation" x="1930" y="2577"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="5rd-HT-7N1">
@@ -570,8 +542,8 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="oit-Gu-MAL"/>
-        <segue reference="lmf-vI-t7z"/>
-        <segue reference="7GS-WQ-rHt"/>
         <segue reference="Oe5-rC-a42"/>
+        <segue reference="dhk-32-h1O"/>
+        <segue reference="wUa-VI-71A"/>
     </inferredMetricsTieBreakers>
 </document>

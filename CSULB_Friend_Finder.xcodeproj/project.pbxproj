@@ -20,6 +20,7 @@
 		271AD73119CBE541009DDF9B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD73019CBE541009DDF9B /* libz.dylib */; };
 		271AD76519CBEB2D009DDF9B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271AD76419CBEB2D009DDF9B /* SystemConfiguration.framework */; };
 		271ED7691A2BE8C900BE64F2 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271ED7681A2BE8C900BE64F2 /* SettingsViewController.m */; };
+		271ED76C1A2BECA500BE64F2 /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271ED76B1A2BECA500BE64F2 /* AddFriendViewController.m */; };
 		273766991A198444001E5741 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 273766981A198444001E5741 /* NavigationViewController.m */; };
 		2740AA1219D273AA00F935FB /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2740AA1119D273AA00F935FB /* UserInfoViewController.m */; };
 		2740AA1319D2748400F935FB /* UserInfoViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 2740AA1019D273AA00F935FB /* UserInfoViewController.h */; };
@@ -90,6 +91,8 @@
 		271AD76419CBEB2D009DDF9B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		271ED7671A2BE8C900BE64F2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		271ED7681A2BE8C900BE64F2 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		271ED76A1A2BECA500BE64F2 /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFriendViewController.h; path = ../AddFriendViewController.h; sourceTree = "<group>"; };
+		271ED76B1A2BECA500BE64F2 /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFriendViewController.m; path = ../AddFriendViewController.m; sourceTree = "<group>"; };
 		273766971A198444001E5741 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
 		273766981A198444001E5741 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		2740AA1019D273AA00F935FB /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
@@ -227,22 +230,31 @@
 		270041031A1C2BA7009029F7 /* Main tabs */ = {
 			isa = PBXGroup;
 			children = (
-				271ED7671A2BE8C900BE64F2 /* SettingsViewController.h */,
-				271ED7681A2BE8C900BE64F2 /* SettingsViewController.m */,
-				273766971A198444001E5741 /* NavigationViewController.h */,
-				273766981A198444001E5741 /* NavigationViewController.m */,
+				011B362F19DD268E00E33D4A /* TabBarViewController.h */,
+				011B363019DD268E00E33D4A /* TabBarViewController.m */,
 				011B362919DCE89800E33D4A /* ProfileViewController.h */,
 				011B362A19DCE89900E33D4A /* ProfileViewController.m */,
 				013F02891A0DC6CE00ED9ADB /* MapViewController.h */,
 				013F028A1A0DC6CE00ED9ADB /* MapViewController.m */,
 				2756ADF819E4D63300B5AD0C /* FriendsListTableViewController.h */,
 				2756ADF919E4D63300B5AD0C /* FriendsListTableViewController.m */,
-				011B362F19DD268E00E33D4A /* TabBarViewController.h */,
-				011B363019DD268E00E33D4A /* TabBarViewController.m */,
-				27D3E6F21A1C476D00FB83A1 /* UpdateStatusViewController.h */,
-				27D3E6F31A1C476D00FB83A1 /* UpdateStatusViewController.m */,
 			);
 			name = "Main tabs";
+			sourceTree = "<group>";
+		};
+		271ED76D1A2BECCB00BE64F2 /* Secondary tabs */ = {
+			isa = PBXGroup;
+			children = (
+				273766971A198444001E5741 /* NavigationViewController.h */,
+				273766981A198444001E5741 /* NavigationViewController.m */,
+				27D3E6F21A1C476D00FB83A1 /* UpdateStatusViewController.h */,
+				27D3E6F31A1C476D00FB83A1 /* UpdateStatusViewController.m */,
+				271ED7671A2BE8C900BE64F2 /* SettingsViewController.h */,
+				271ED7681A2BE8C900BE64F2 /* SettingsViewController.m */,
+				271ED76A1A2BECA500BE64F2 /* AddFriendViewController.h */,
+				271ED76B1A2BECA500BE64F2 /* AddFriendViewController.m */,
+			);
+			name = "Secondary tabs";
 			sourceTree = "<group>";
 		};
 		27F65BCA1A1B1F2E00D1B0E2 /* PRAR */ = {
@@ -313,6 +325,7 @@
 		E4EC19F219BFDF1600E94487 /* CSULB_Friend_Finder */ = {
 			isa = PBXGroup;
 			children = (
+				271ED76D1A2BECCB00BE64F2 /* Secondary tabs */,
 				E4EC19FB19BFDF1600E94487 /* AppDelegate.h */,
 				E4EC19FC19BFDF1600E94487 /* AppDelegate.m */,
 				E4EC1A0719BFDF1600E94487 /* Main.storyboard */,
@@ -480,6 +493,7 @@
 				27F65BA91A1B1C2400D1B0E2 /* PRARManager.m in Sources */,
 				27D3E6F41A1C476D00FB83A1 /* UpdateStatusViewController.m in Sources */,
 				27F1051619EF9FEC00184E5A /* GeoPointAnnotation.m in Sources */,
+				271ED76C1A2BECA500BE64F2 /* AddFriendViewController.m in Sources */,
 				E4EC19F919BFDF1600E94487 /* main.m in Sources */,
 				27F65BC61A1B1CE600D1B0E2 /* ARObject.m in Sources */,
 				273766991A198444001E5741 /* NavigationViewController.m in Sources */,
