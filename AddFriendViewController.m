@@ -13,6 +13,10 @@
 @end
 
 @implementation AddFriendViewController
+- (IBAction)finishedEnteringFriendNameOrEmail:(id)sender
+{
+    // Load the table view with suggestions for friend
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
