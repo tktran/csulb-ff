@@ -1,12 +1,6 @@
-
-
 #import "GeoPointAnnotation.h"
 
-@interface GeoPointAnnotation()
-@end
-
 @implementation GeoPointAnnotation
-
 
 #pragma mark - Initialization
 

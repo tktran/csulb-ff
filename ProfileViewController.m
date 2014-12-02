@@ -37,6 +37,7 @@
         // Create the Right Bar Button Item: "Update"
         UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Update" style:UIBarButtonItemStylePlain target:self action:@selector(updateStatus:)];
         rightButton.enabled = true;
+        
         self.navigationItem.rightBarButtonItem = rightButton;
         
         // Hide the "Poke" and "Find your friend" buttons

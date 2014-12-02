@@ -199,22 +199,6 @@
 
 #pragma mark - CLLocationManagerDelegate
 
-/**
- Conditionally enable the Search/Add buttons:
- If the location manager is generating updates, then enable the buttons;
- If the location manager is failing, then disable the buttons.
- */
-//- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
-//    self.navigationItem.leftBarButtonItem.enabled = YES;
-//    self.navigationItem.rightBarButtonItem.enabled = YES;
-//}
-//
-//- (void)locationManager:(CLLocationManager *)manager
-//       didFailWithError:(NSError *)error {
-//    self.navigationItem.leftBarButtonItem.enabled = NO;
-//    self.navigationItem.rightBarButtonItem.enabled = NO;
-//}
-
 
 #pragma mark - MasterViewController
 

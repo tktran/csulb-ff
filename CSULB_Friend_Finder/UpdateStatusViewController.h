@@ -16,6 +16,5 @@
 */
 @interface UpdateStatusViewController : UIViewController <CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *StatusTextField;
-@property (weak, nonatomic) IBOutlet UIButton *submitButton;
 
 @end

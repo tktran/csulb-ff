@@ -17,14 +17,12 @@
 
 @property (strong, nonatomic) PFObject *detailItem;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
-
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *pokeButton;
 @property (weak, nonatomic) IBOutlet UIButton *findYourFriendButton;
-@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *updateButton;
 
-- (void) updateDisplayInfo;
-- (void) updateRightButton;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
 @end

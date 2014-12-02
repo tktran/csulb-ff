@@ -8,13 +8,6 @@
 
 #import "UserInfoViewController.h"
 
-@interface UserInfoViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *firstNameField;
-@property (weak, nonatomic) IBOutlet UITextField *lastNameField;
-@property (weak, nonatomic) IBOutlet UITextField *emailField;
-
-@end
-
 @implementation UserInfoViewController
 
 /*!
