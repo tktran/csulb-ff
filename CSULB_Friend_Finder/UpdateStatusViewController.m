@@ -18,7 +18,7 @@
 {
     [super viewWillAppear:animated];
 
-    [_StatusTextField becomeFirstResponder];
+    [_statusTextField becomeFirstResponder];
 }
 
 - (IBAction)didSubmitStatus:(id)sender {
@@ -33,7 +33,7 @@
     {
         if (!error)
         {
-            user[@"status"] = self.StatusTextField.text;
+            user[@"status"] = self.statusTextField.text;
             user[@"location"] = geoPoint;
             [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (!error)

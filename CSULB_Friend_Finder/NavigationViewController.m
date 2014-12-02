@@ -8,22 +8,12 @@
 
 #import "NavigationViewController.h"
 
-@interface NavigationViewController ()
-
-@end
-
 @implementation NavigationViewController
 
-
-- (void) alert:(NSString*)title withDetails:(NSString*)details {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message: details
-                                                   delegate: nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
-}
-
+/*!
+ @function viewDidLoad
+ @abstract Loads PRAR Manager and appDelegate's locationManager (singleton, initialized if nil)
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.prarManager = [[PRARManager alloc] initWithSize:self.view.frame.size
@@ -34,6 +24,10 @@
     self.locationManager.delegate = self;
 }
 
+/*!
+ @function viewDidAppear
+ @abstract Calls [locationManager startUpdatingLocation] for the detailItem (friend). If none, display error view.
+ */
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -43,19 +37,40 @@
     }
     else
     {
-        NSLog(@"error: no user given to navigation view");
-        // go back
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Error"
+                              message: @"There was an error determining the friend to navigate to. Please try again later."
+                              delegate: self
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+        [alert show];
     }
 }
 
+/*!
+ @function didDismissWithButtonIndex
+ @abstract UIAlertViewDelegate implementation. When error alert is dismissed, this function is called. It pops the current VC (goes back).
+ */
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+/*!
+ @function viewWillDisappear
+ @abstract Calls [prarManager stopAR].
+ */
 -(void) viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self.locationManager stopUpdatingLocation];
     [self.prarManager stopAR];
     self.didStartAR = false;
 }
 
+/*!
+ @function didUpdateLocations
+ @abstract CLLocationManagerDelegate implementation. When user's location is retrieved,
+ this function is called. It starts the AR display with those coordinates.
+ */
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *) locations
 {
     CLLocation *location = [locations lastObject];
@@ -81,7 +96,10 @@
     }
 }
 
-#pragma mark - PRAR delegate
+/*!
+ @function prarDidSetupAR
+ @abstract PRARManagerDelegate implementation. Adds the camera view to screen.
+ */
 - (void)prarDidSetupAR:(UIView *)arView withCameraLayer:(AVCaptureVideoPreviewLayer *)cameraLayer andRadarView:(UIView *)radar
 {
     [self.view.layer addSublayer:cameraLayer];
@@ -92,15 +110,30 @@
     [self.view addSubview:radar];
     
 }
+
+/*!
+ @function prarUpdateFrame
+ @abstract PRARManagerDelegate implementation. Sets AR frame.
+ */
 - (void)prarUpdateFrame:(CGRect)arViewFrame
 {
     [[self.view viewWithTag:AR_VIEW_TAG] setFrame:arViewFrame];
     
 }
 
--(void)prarGotProblem:(NSString *)problemTitle withDetails:(NSString *)problemDetails
+/*!
+ @function prarGotProblem
+ @abstract PRARManagerDelegate implementation. Displays error alert.
+ */
+- (void)prarGotProblem:(NSString*)problemTitle withDetails:(NSString*)problemDetails;
 {
-    [self alert:problemTitle withDetails:problemDetails];
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Error"
+                          message: @"There was an error starting the augmented reality display. Please try again later."
+                          delegate: self
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil];
+    [alert show];
 }
 
 - (void)didReceiveMemoryWarning {

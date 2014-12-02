@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+/*!
+ @class AddFriendViewController
+ @abstract Adds a friend from their email address or real name.
+*/
 @interface AddFriendViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

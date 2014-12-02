@@ -9,7 +9,7 @@
 
 /*!
  @class MapViewController
- @discussion This VC displays a map of CSULB with pins for all friends
+ @abstract This VC displays a map of CSULB with pins for all friends
  of the current user.
 */
 @interface MapViewController : UIViewController <MKMapViewDelegate>

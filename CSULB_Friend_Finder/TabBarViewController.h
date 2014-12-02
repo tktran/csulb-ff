@@ -10,7 +10,7 @@
 
 /*!
  @class TabBarViewController
- @discussion This VC handles three tabs: Home, Friends, and Map.
+ @abstract This VC handles three tabs: Home, Friends, and Map.
 */
 @interface TabBarViewController : UITabBarController
 

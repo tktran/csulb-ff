@@ -3,7 +3,7 @@
 #import "AppDelegate.h"
 #import "LocationTranslation.h"
 
-/*
+/*!
  @class GeoPointAnnotation
  @discussion This implementation of MKAnnotation (the iOS class for
  pins on maps) adds functionality to initialize an MKAnnotation

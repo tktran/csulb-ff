@@ -13,13 +13,14 @@
 
 /*!
  @class NavigationViewController
+ @abstract Loads PRAR camera display
  @discussion This view controller launches the PRAR view as soon as possible
  upon loading. It does so by retrieving the system-wide locationManager and
  calling locationManager.startUpdatingLocations. When the current location
  is finally retrieved, this VC's didUpdateLocations method will be called with
  the current location. That method will launch PRAR with those coordinates.
  */
-@interface NavigationViewController : UIViewController <PRARManagerDelegate, CLLocationManagerDelegate>
+@interface NavigationViewController : UIViewController <PRARManagerDelegate, CLLocationManagerDelegate, UIAlertViewDelegate>
 
 /*!
  @property detailItem

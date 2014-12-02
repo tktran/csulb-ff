@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/*! @class SettingsViewController
+ @abstract Toggles privacy mode, logs out, or change password/email.
+*/
 @interface SettingsViewController : UIViewController
 
 @end

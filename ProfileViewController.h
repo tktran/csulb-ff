@@ -9,6 +9,7 @@
 
 /*!
  @class ProfileViewController
+ @abstract Displays a user's profile.
  @discussion This VC displays a user's profile, with map pin, name, and
  status. Buttons displayed differ depending on whether the user being
  displayed is the current user or a friend.
