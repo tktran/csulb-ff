@@ -8,12 +8,11 @@
 
 #import "NavigationViewController.h"
 
+/*!
+ @class NavigationViewController
+*/
 @implementation NavigationViewController
 
-/*!
- @function viewDidLoad
- @abstract Loads PRAR Manager and appDelegate's locationManager (singleton, initialized if nil)
- */
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.prarManager = [[PRARManager alloc] initWithSize:self.view.frame.size

@@ -11,6 +11,8 @@
 @implementation UserInfoViewController
 
 /*!
+ @function clickedSubmitButton
+ @discussion sdflk
 */
 - (IBAction)clickedSubmitButton:(id)sender {
     if (self.firstNameField.text.length == 0 ||

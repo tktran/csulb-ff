@@ -13,8 +13,23 @@
  the about-to-be user.
 */
 @interface UserInfoViewController : UIViewController <UITextFieldDelegate>
+
+/*!
+ @property firstNameField
+ @abstract Text field for first name of the user signing up.
+*/
 @property (weak, nonatomic) IBOutlet UITextField *firstNameField;
+
+/*!
+ @property lastNameField
+ @abstract Text field for last name of the user signing up.
+ */
 @property (weak, nonatomic) IBOutlet UITextField *lastNameField;
+
+/*!
+ @property emailField
+ @abstract Text field for email address of the user signing up.
+ */
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 
 @end

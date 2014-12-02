@@ -275,10 +275,52 @@ returns a string "Around ____", where ____ is the closest CSULB
 building to the given coordinates. e.g., "Around Hall of Science".
 <!-- headerDoc=discussion;uid=//apple_ref/occ/cl/LocationTranslation;name=end --><!-- end discussion -->
 </p>
+<hr class="afterClassOrHeaderInfo">
+<br><a name="HeaderDoc_methods"></a>
+<h2 class="h2tight">Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/LocationTranslation/closestBuilding:" target="_top">+closestBuilding:</a></tt></dt>
+<dd><p>Finds the closest building on campus to the sourceLoc.
+</p></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/LocationTranslation/isOnCSULBCampus:" target="_top">+isOnCSULBCampus:</a></tt></dt>
+<dd><p>True if location within CSULB campus, false if not
+</p></dd>
+</dl>
+<hr class="betweenAPIEntries">
+<!-- headerDoc=clm;  uid=//apple_ref/occ/clm/LocationTranslation/closestBuilding:;   name=LocationTranslation::closestBuilding: --><a name="//apple_ref/occ/clm/LocationTranslation/closestBuilding:"></a>
+<h3><a name="closestBuilding:">closestBuilding:</a></h3>
+<hr class="afterName">
+<p><!-- headerDoc=abstract;uid=//apple_ref/occ/clm/LocationTranslation/closestBuilding:;name=start --><!-- begin abstract --></p>
+<p>Finds the closest building on campus to the sourceLoc.
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/occ/clm/LocationTranslation/closestBuilding:;name=end --></p>
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/occ/clm/LocationTranslation/closestBuilding:;name=start -->+(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/intf/NSString //apple_ref/doc/anysymbol/NSString" machineGenerated="true" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <a machinegenerated="true" href="index.html#//apple_ref/occ/clm/LocationTranslation/closestBuilding:" logicalPath="//apple_ref/occ/instm/LocationTranslation/closestBuilding //apple_ref/occ/clm/LocationTranslation/closestBuilding" target="_top"><span class="function">closestBuilding</span></a>: (<!-- a logicalPath="//apple_ref/occ/cl/PFGeoPoint //apple_ref/occ/tdef/PFGeoPoint //apple_ref/occ/tag/PFGeoPoint //apple_ref/occ/struct/PFGeoPoint //apple_ref/occ/intf/PFGeoPoint //apple_ref/doc/anysymbol/PFGeoPoint" machineGenerated="true" --><span class="type">PFGeoPoint</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/sourceLoc //apple_ref/occ/data/LocationTranslation/sourceLoc //apple_ref/occ/data/sourceLoc //apple_ref/occ/clconst/LocationTranslation/sourceLoc " machineGenerated="true" --><span class="var">sourceLoc</span><!-- /a -->; <!-- headerDoc=declaration;uid=//apple_ref/occ/clm/LocationTranslation/closestBuilding:;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=methodparam;  uid=//apple_ref/doc/methodparam/LocationTranslation/closestBuilding:/sourceLoc;   name=closestBuilding:::sourceLoc -->
+<a name="//apple_ref/doc/methodparam/LocationTranslation/closestBuilding:/sourceLoc"></a>
+<code>sourceLoc</code>
+</dt>
+<dd><p>A valid PFGeoPoint</p></dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries">
+<!-- headerDoc=clm;  uid=//apple_ref/occ/clm/LocationTranslation/isOnCSULBCampus:;   name=LocationTranslation::isOnCSULBCampus: --><a name="//apple_ref/occ/clm/LocationTranslation/isOnCSULBCampus:"></a>
+<h3><a name="isOnCSULBCampus:">isOnCSULBCampus:</a></h3>
+<hr class="afterName">
+<p><!-- headerDoc=abstract;uid=//apple_ref/occ/clm/LocationTranslation/isOnCSULBCampus:;name=start --><!-- begin abstract --></p>
+<p>True if location within CSULB campus, false if not
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/occ/clm/LocationTranslation/isOnCSULBCampus:;name=end --></p>
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/occ/clm/LocationTranslation/isOnCSULBCampus:;name=start -->+(<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/intf/BOOL //apple_ref/doc/anysymbol/BOOL" machineGenerated="true" --><span class="type">BOOL</span><!-- /a -->) <a machinegenerated="true" href="index.html#//apple_ref/occ/clm/LocationTranslation/isOnCSULBCampus:" logicalPath="//apple_ref/occ/instm/LocationTranslation/isOnCSULBCampus //apple_ref/occ/clm/LocationTranslation/isOnCSULBCampus" target="_top"><span class="function">isOnCSULBCampus</span></a>: (<!-- a logicalPath="//apple_ref/occ/cl/PFGeoPoint //apple_ref/occ/tdef/PFGeoPoint //apple_ref/occ/tag/PFGeoPoint //apple_ref/occ/struct/PFGeoPoint //apple_ref/occ/intf/PFGeoPoint //apple_ref/doc/anysymbol/PFGeoPoint" machineGenerated="true" --><span class="type">PFGeoPoint</span><!-- /a --> <span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/location //apple_ref/occ/data/LocationTranslation/location //apple_ref/occ/data/location //apple_ref/occ/clconst/LocationTranslation/location " machineGenerated="true" --><span class="var">location</span><!-- /a -->; <!-- headerDoc=declaration;uid=//apple_ref/occ/clm/LocationTranslation/isOnCSULBCampus:;name=end --></pre>
+</div>
 <p class="gapBeforeFooter">&nbsp;</p>
 <hr class="afterFooter">
 <div class="hd_copyright_and_timestamp">
-<p class="hd_timestamp">Last Updated: Saturday, November 29, 2014
+<p class="hd_timestamp">Last Updated: Tuesday, December 02, 2014
 </p>
 </div>
 </td>

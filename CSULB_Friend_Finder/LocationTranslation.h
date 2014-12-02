@@ -17,6 +17,18 @@
  building to the given coordinates. e.g., "Around Hall of Science".
 */
 @interface LocationTranslation : NSObject
+
+/*!
+ @function closestBuilding
+ @abstract Finds the closest building on campus to the sourceLoc.
+ @param sourceLoc
+    A valid PFGeoPoint
+*/
 +(NSString*) closestBuilding: (PFGeoPoint*) sourceLoc;
+
+/*!
+ @function isOnCSULBCampus
+ @abstract True if location within CSULB campus, false if not
+*/
 +(BOOL) isOnCSULBCampus: (PFGeoPoint *) location;
 @end

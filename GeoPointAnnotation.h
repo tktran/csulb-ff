@@ -14,7 +14,16 @@
 */
 @interface GeoPointAnnotation : NSObject <MKAnnotation>
 
-- (id)initWithObject:(PFObject *)aObject;
+/*!
+ @function initWithObject
+ @abstract Initialize using a PFUser's name and coordinates.
+ @discussion The PFUser's First+Names become Annotation title.
+    Their approximate building locatoin becomes Annotation subtitle.
+    Their PFGeoPoint location becomes Annotation coordinate.
+ @param aObject
+    The PFUser to make an annotation from
+*/
+- (id)initWithObject:(PFUser *)aObject;
 
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 @property (nonatomic, strong) PFObject *object;
