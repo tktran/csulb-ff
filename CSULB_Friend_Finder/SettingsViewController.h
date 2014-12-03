@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+
 
 /*! @class SettingsViewController
  @abstract Toggles privacy mode, logs out, or change password/email.
 */
-@interface SettingsViewController : UIViewController
+@interface SettingsViewController : UITableViewController <UITableViewDelegate>
 
 @end

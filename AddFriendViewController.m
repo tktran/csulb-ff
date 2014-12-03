@@ -15,15 +15,39 @@
 
 - (IBAction)finishedEnteringFriendNameOrEmail:(id)sender
 {
-    // Load the table view with suggestions for friend
+    ;
 }
 
+-(PFQuery*) queryForTable {
+    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+    [query whereKey:@"username" equalTo:self.searchFriendTextField.text];
+    return query;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *) user
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    // Configure the cell...
+    cell.textLabel.text = user.objectId;
+    return cell;
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.searchFriendTextField becomeFirstResponder];
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    NSMutableArray *test = [[NSMutableArray alloc] init];
-    test[0] = @"Hello?";
     self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
+//    // Do any additional setup after loading the view.
+//    NSMutableArray *test = [[NSMutableArray alloc] init];
+//    test[0] = @"Hello?";
+//    self.tableView.dataSource = self;
 }
 
 - (void)didReceiveMemoryWarning {

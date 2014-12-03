@@ -84,16 +84,18 @@
 
 - (IBAction)pressedPokeButton:(id)sender
 {
+//    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+//    currentInstallation[@"deviceToken"] = @"41283ead3a67860f516dae1006fa903524e424a0337d296b901e4805012a46b3";
+//    currentInstallation[@"user"] = [PFUser currentUser].objectId;
+//    [currentInstallation save];
+
+    
     PFUser *friend = (PFUser*) self.detailItem;
     
     // only return Installations that belong to the user to poke
-    PFQuery *friendQuery = [PFUser query];
     NSString *friendId = self.detailItem.objectId;
-    [friendQuery whereKey:@"objectId" equalTo:friendId];
-    
-    // Build the actual push notification target query
     PFQuery *pokeQuery = [PFInstallation query];
-    [pokeQuery whereKey:@"Owner" matchesQuery:friendQuery];
+    [pokeQuery whereKey:@"user" equalTo:friendId];
 
     // Create the push using the pokeQuery
     PFPush *push = [[PFPush alloc] init];
@@ -101,6 +103,7 @@
     PFUser *currentUser = [PFUser currentUser];
     NSString *pokeMessage = [NSString stringWithFormat:@"%@ %@ poked you!", currentUser[@"first_name"], currentUser[@"last_name"]];
     [push setMessage:pokeMessage];
+
     [push sendPushInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
     {
         if (!error)

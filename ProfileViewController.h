@@ -16,14 +16,14 @@
 */
 @interface ProfileViewController : UIViewController <MKMapViewDelegate>
 
-@property (strong, nonatomic) PFObject *detailItem;
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, atomic) PFObject *detailItem;
+@property (weak, atomic) IBOutlet MKMapView *mapView;
 
-@property (weak, nonatomic) IBOutlet UIButton *pokeButton;
-@property (weak, nonatomic) IBOutlet UIButton *findYourFriendButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *updateButton;
+@property (weak, atomic) IBOutlet UIButton *pokeButton;
+@property (weak, atomic) IBOutlet UIButton *findYourFriendButton;
+@property (weak, atomic) IBOutlet UIBarButtonItem *updateButton;
 
-@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, atomic) IBOutlet UILabel *statusLabel;
+@property (weak, atomic) IBOutlet UILabel *nameLabel;
 
 @end

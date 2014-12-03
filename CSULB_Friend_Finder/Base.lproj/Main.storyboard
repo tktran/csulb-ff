@@ -171,7 +171,7 @@
         <!--Settings-->
         <scene sceneID="2TV-kL-KG5">
             <objects>
-                <tableViewController id="P9Z-W0-nfH" sceneMemberID="viewController">
+                <tableViewController id="P9Z-W0-nfH" customClass="SettingsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="gC8-s3-QlI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -252,10 +252,13 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Settings" id="Vnp-Kf-kPK"/>
                     <navigationItem key="navigationItem" title="Settings" id="EGI-Fi-i5L"/>
+                    <connections>
+                        <segue destination="iNv-Is-Jtd" kind="push" identifier="logoutSegue" id="lFy-z9-B2F"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0IL-23-Sas" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1967" y="1880"/>
+            <point key="canvasLocation" x="1394" y="-221"/>
         </scene>
         <!--Update Status View Controller-->
         <scene sceneID="pqw-z3-LhB">
@@ -488,7 +491,7 @@
                     <navigationItem key="navigationItem" title="Friends" id="btT-il-q1d">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ylg-bd-We8">
                             <connections>
-                                <segue destination="4va-sF-Xcb" kind="push" id="J3g-8v-O5N"/>
+                                <segue destination="J9f-PZ-rCZ" kind="push" id="5Hi-8d-Ugf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -504,48 +507,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ocv-yO-YjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="664" y="2321"/>
-        </scene>
-        <!--Add Friend View Controller-->
-        <scene sceneID="Ibz-k6-lsy">
-            <objects>
-                <viewController id="4va-sF-Xcb" customClass="AddFriendViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0yT-Qz-IZ9"/>
-                        <viewControllerLayoutGuide type="bottom" id="Alb-Qk-y7j"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="eyP-Ke-1DW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tR3-N5-ynr">
-                                <rect key="frame" x="24" y="143" width="273" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="finishedEnteringFriendNameOrEmail:" destination="4va-sF-Xcb" eventType="editingDidEndOnExit" id="GRB-O4-4wY"/>
-                                </connections>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter the name or email address of the friend you wish to add." translatesAutoresizingMaskIntoConstraints="NO" id="RMf-W1-u0j">
-                                <rect key="frame" x="40" y="85" width="240" height="56"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dDd-5r-F6h">
-                                <rect key="frame" x="74" y="187" width="160" height="284"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="sBp-lh-8hk"/>
-                    <connections>
-                        <outlet property="tableView" destination="dDd-5r-F6h" id="WaL-NW-rxl"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LZs-po-bE8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="664" y="3086"/>
         </scene>
         <!--Profile-->
         <scene sceneID="HBn-Im-ic1">
@@ -612,6 +573,25 @@
             </objects>
             <point key="canvasLocation" x="51" y="3086"/>
         </scene>
+        <!--Add Friend View Controller-->
+        <scene sceneID="PGw-Zm-8TI">
+            <objects>
+                <viewController id="J9f-PZ-rCZ" customClass="AddFriendViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yW2-yT-s3I"/>
+                        <viewControllerLayoutGuide type="bottom" id="i7O-zK-Sz5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zkd-jd-IEq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bTZ-3Y-n05"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Io2-06-0eN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="659" y="3176"/>
+        </scene>
         <!--Navigation View Controller-->
         <scene sceneID="5rd-HT-7N1">
             <objects>
@@ -638,7 +618,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="oit-Gu-MAL"/>
+        <segue reference="lFy-z9-B2F"/>
+        <segue reference="lcR-Nx-7MY"/>
         <segue reference="Oe5-rC-a42"/>
     </inferredMetricsTieBreakers>
 </document>

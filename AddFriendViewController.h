@@ -7,17 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+
 
 /*!
  @class AddFriendViewController
  @abstract Adds a friend from their email address or real name.
 */
-@interface AddFriendViewController : UIViewController
+@interface AddFriendViewController : PFQueryTableViewController
 
 /*!
  @property tableView
  @abstract Table to display search results (from searching by real name or email)
 */
+@property (weak, nonatomic) IBOutlet UITextField *searchFriendTextField;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (weak, nonatomic) NSMutableArray *queryResults;
 @end

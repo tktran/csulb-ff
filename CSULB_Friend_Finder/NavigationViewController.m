@@ -23,6 +23,12 @@
     self.locationManager.delegate = self;
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.locationManager.delegate = self;
+}
+
 /*!
  @function viewDidAppear
  @abstract Calls [locationManager startUpdatingLocation] for the detailItem (friend). If none, display error view.
@@ -63,6 +69,7 @@
     [super viewWillDisappear:animated];
     [self.prarManager stopAR];
     self.didStartAR = false;
+    self.locationManager.delegate = nil;
 }
 
 /*!
