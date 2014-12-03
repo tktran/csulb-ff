@@ -8,10 +8,9 @@
 
 #import "UpdateStatusViewController.h"
 
-@interface UpdateStatusViewController ()
-
-@end
-
+/*!
+ @class UpdateStatusViewController
+*/
 @implementation UpdateStatusViewController
 
 -(void)viewWillAppear:(BOOL)animated

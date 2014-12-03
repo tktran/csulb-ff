@@ -22,31 +22,31 @@
  */
 @interface NavigationViewController : UIViewController <PRARManagerDelegate, CLLocationManagerDelegate, UIAlertViewDelegate>
 
-/*!
- @property detailItem
- @discussion Item passed to this VC in its segue. It is the user (PFObject) to navigate to.
-*/
-@property (nonatomic, strong) PFObject *detailItem;
+    /*!
+     @property detailItem
+     @discussion Item passed to this VC in its segue. It is the user (PFObject) to navigate to.
+    */
+    @property (nonatomic, strong) PFObject *detailItem;
 
-/*!
- @property prarManager
- @discussion The PRAR manager, with methods to start and stop the AR display.
-*/
-@property (nonatomic, strong) PRARManager *prarManager;
+    /*!
+     @property prarManager
+     @discussion The PRAR manager, with methods to start and stop the AR display.
+    */
+    @property (nonatomic, strong) PRARManager *prarManager;
 
-/*!
- @property locationManager
- @discussion The location manager to get current coordinates from. Assigned by
- retrieving the reference to the system-wide locationManager from appDelegate.
-*/
-@property (nonatomic, strong) CLLocationManager *locationManager;
+    /*!
+     @property locationManager
+     @discussion The location manager to get current coordinates from. Assigned by
+     retrieving the reference to the system-wide locationManager from appDelegate.
+    */
+    @property (nonatomic, strong) CLLocationManager *locationManager;
 
-/*! 
- @property didStartAR
- @discussion Set within didUpdateLocations, after calling prarManager.didStartAR.
- Needed because didUpdateLocations may be called multiple times by iOS, but the
- AR display should only be launched once.
-*/
-@property (nonatomic) BOOL didStartAR;
+    /*! 
+     @property didStartAR
+     @discussion Set within didUpdateLocations, after calling prarManager.didStartAR.
+     Needed because didUpdateLocations may be called multiple times by iOS, but the
+     AR display should only be launched once.
+    */
+    @property (nonatomic) BOOL didStartAR;
 
 @end

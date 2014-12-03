@@ -238,6 +238,8 @@
 				013F028A1A0DC6CE00ED9ADB /* MapViewController.m */,
 				2756ADF819E4D63300B5AD0C /* FriendsListTableViewController.h */,
 				2756ADF919E4D63300B5AD0C /* FriendsListTableViewController.m */,
+				271ED7671A2BE8C900BE64F2 /* SettingsViewController.h */,
+				271ED7681A2BE8C900BE64F2 /* SettingsViewController.m */,
 			);
 			name = "Main tabs";
 			sourceTree = "<group>";
@@ -249,8 +251,6 @@
 				273766981A198444001E5741 /* NavigationViewController.m */,
 				27D3E6F21A1C476D00FB83A1 /* UpdateStatusViewController.h */,
 				27D3E6F31A1C476D00FB83A1 /* UpdateStatusViewController.m */,
-				271ED7671A2BE8C900BE64F2 /* SettingsViewController.h */,
-				271ED7681A2BE8C900BE64F2 /* SettingsViewController.m */,
 				271ED76A1A2BECA500BE64F2 /* AddFriendViewController.h */,
 				271ED76B1A2BECA500BE64F2 /* AddFriendViewController.m */,
 			);
@@ -325,13 +325,13 @@
 		E4EC19F219BFDF1600E94487 /* CSULB_Friend_Finder */ = {
 			isa = PBXGroup;
 			children = (
-				271ED76D1A2BECCB00BE64F2 /* Secondary tabs */,
 				E4EC19FB19BFDF1600E94487 /* AppDelegate.h */,
 				E4EC19FC19BFDF1600E94487 /* AppDelegate.m */,
 				E4EC1A0719BFDF1600E94487 /* Main.storyboard */,
-				270041031A1C2BA7009029F7 /* Main tabs */,
-				270041021A1C2B83009029F7 /* Parse Geo tools */,
 				270041011A1C2B57009029F7 /* Login/registration */,
+				270041031A1C2BA7009029F7 /* Main tabs */,
+				271ED76D1A2BECCB00BE64F2 /* Secondary tabs */,
+				270041021A1C2B83009029F7 /* Parse Geo tools */,
 				27F65BCA1A1B1F2E00D1B0E2 /* PRAR */,
 				E4EC1A0A19BFDF1600E94487 /* Images.xcassets */,
 				E4EC19F319BFDF1600E94487 /* Supporting Files */,

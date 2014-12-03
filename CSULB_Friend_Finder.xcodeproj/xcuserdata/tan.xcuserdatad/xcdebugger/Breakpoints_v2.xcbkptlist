@@ -247,52 +247,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CSULB_Friend_Finder/NavigationViewController.h"
-            timestampString = "438950502.366095"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "locationManager"
-            landmarkType = "19">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[NavigationViewController didStartAR]"
-                  moduleName = "CSULB_Friend_Finder"
-                  urlString = "file:///Users/tan/Desktop/csulb-ff/CSULB_Friend_Finder/NavigationViewController.h"
-                  timestampString = "438037678.47321"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[NavigationViewController setDidStartAR:]"
-                  moduleName = "CSULB_Friend_Finder"
-                  urlString = "file:///Users/tan/Desktop/csulb-ff/CSULB_Friend_Finder/NavigationViewController.h"
-                  timestampString = "438037678.473418"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "19">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "GeoQueryAnnotation.m"
             timestampString = "438047690.810637"
             startingColumnNumber = "9223372036854775807"
@@ -326,23 +280,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CSULB_Friend_Finder/NavigationViewController.m"
-            timestampString = "438950502.366095"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "-viewWillDisappear:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CSULB_Friend_Finder/NavigationViewController.m"
-            timestampString = "438950502.366095"
+            timestampString = "439257081.976976"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
@@ -358,11 +296,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CSULB_Friend_Finder/NavigationViewController.m"
-            timestampString = "438950502.366095"
+            timestampString = "439257081.976976"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "-viewWillDisappear:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CSULB_Friend_Finder/NavigationViewController.m"
+            timestampString = "439257081.976976"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "-locationManager:didUpdateLocations:"
             landmarkType = "5">
          </BreakpointContent>
@@ -534,12 +488,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CSULB_Friend_Finder/SettingsViewController.m"
-            timestampString = "439093989.120012"
+            timestampString = "439257081.976976"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "@implementation SettingsViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AddFriendViewController.m"
+            timestampString = "439258777.781994"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "@implementation AddFriendViewController"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>

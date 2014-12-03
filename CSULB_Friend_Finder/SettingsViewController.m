@@ -8,10 +8,8 @@
 
 #import "SettingsViewController.h"
 
-@interface SettingsViewController ()
-
-@end
-
+/*! @class SettingsViewController
+ */
 @implementation SettingsViewController
 
 - (void)viewDidLoad {

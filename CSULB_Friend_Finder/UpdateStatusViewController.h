@@ -10,16 +10,17 @@
 #import "AppDelegate.h"
 
 /*!
- @class This VC contains a text box for the user to enter a new
+ @class UpdateStatusViewController
+ @discussion This VC contains a text box for the user to enter a new
  status. Upon pressing the Submit button of this VC, this new status
  and the user's location will be pushed to Parse.
 */
 @interface UpdateStatusViewController : UIViewController <CLLocationManagerDelegate>
 
-/*!
- @property statusTextField
- @abstract 140-character status to update one's profile with
- */
-@property (weak, nonatomic) IBOutlet UITextView *statusTextField;
+    /*!
+     @property statusTextField
+     @abstract 140-character status to update one's profile with
+     */
+    @property (weak, nonatomic) IBOutlet UITextView *statusTextField;
 
 @end

@@ -13,6 +13,11 @@
  @abstract Adds a friend from their email address or real name.
 */
 @interface AddFriendViewController : UIViewController
+
+/*!
+ @property tableView
+ @abstract Table to display search results (from searching by real name or email)
+*/
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
