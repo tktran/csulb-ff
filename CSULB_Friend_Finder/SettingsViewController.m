@@ -22,8 +22,7 @@
         if (indexPath.row == 0)
         {
             PFUser *user = [PFUser currentUser];
-            NSString *privacyIsOn = user[@"privacy"];
-            if (privacyIsOn) // we're turning it off
+            if ([user[@"privacy"] isEqualToString:@"on"])
             {
                 self.privacySwitch.on = false;
                 user[@"privacy"] = @"off";
@@ -58,7 +57,7 @@
 -(void) viewWillAppear:(BOOL)animated
 {
     PFUser *user = [PFUser currentUser];
-    if (user[@"privacy"])
+    if ([user[@"privacy"] isEqualToString:@"on"])
         self.privacySwitch.on = true;
     else
         self.privacySwitch.on = false;
