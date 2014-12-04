@@ -90,33 +90,25 @@
 // and the imageView being the imageKey in the object.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
     
+    // Get a cell
     PFTableViewCell *cell = (PFTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"LocationCell"];
     
+    // Construct query for the friend
     NSString *friendId = [object objectForKey:@"Friend2_Id"];
-    NSLog(@"%@", friendId);
-    
     PFQuery *friendQuery = [PFQuery queryWithClassName:@"_User"];
+    
+    // Retrieve friend. Upon success, set cell's title as first_name+last_name
+    // and cell's subtitle as closest building, but only if BOTH:
+    // 1. friend is on campus
+    // 2. friend does not have privacy mode on
     [friendQuery getObjectInBackgroundWithId:friendId block:^(PFObject *object, NSError *error) {
-        // Success
-        // A date formatter for the creation date.
-        static NSDateFormatter *dateFormatter = nil;
-        if (dateFormatter == nil) {
-            dateFormatter = [[NSDateFormatter alloc] init];
-            dateFormatter.timeStyle = NSDateFormatterMediumStyle;
-            dateFormatter.dateStyle = NSDateFormatterMediumStyle;
-        }
-        
-        static NSNumberFormatter *numberFormatter = nil;
-        if (numberFormatter == nil) {
-            numberFormatter = [[NSNumberFormatter alloc] init];
-            numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
-            numberFormatter.maximumFractionDigits = 3;
-        }
         
         PFGeoPoint *geoPoint = object[@"location"];
-        cell.textLabel.text = object[@"first_name"];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", object[@"first_name"], object[@"last_name"]];
         
-        if ([LocationTranslation isOnCSULBCampus:geoPoint])
+        BOOL isOnCampus = [LocationTranslation isOnCSULBCampus:geoPoint];
+        BOOL isOnPrivacyMode = [object[@"privacy"] isEqualToString:@"yes"];
+        if (isOnCampus && !isOnPrivacyMode)
         {
             cell.detailTextLabel.text = [NSString stringWithFormat:@"Around %@",[LocationTranslation closestBuilding:geoPoint]];
         }

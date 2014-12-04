@@ -17,16 +17,23 @@
     [super viewDidLoad];
     
     if (self.detailItem) {
+        PFUser *user = (PFUser*) self.detailItem;
         // obtain the geopoint
-        PFGeoPoint *geoPoint = self.detailItem[@"location"];
+        PFGeoPoint *geoPoint = user[@"location"];
         
-        if ([LocationTranslation isOnCSULBCampus:geoPoint] || self.detailItem == [PFUser currentUser]) // only display annotation if friend is on CSULB campus, or user to display is self.
+        BOOL isOnPrivacyMode = [user[@"privacy"] isEqualToString:@"yes"];
+        BOOL isOnCampus = [LocationTranslation isOnCSULBCampus:geoPoint];
+        BOOL isCurrentUser = (self.detailItem == [PFUser currentUser]);
+        // only display annotation if user is not on privacy mode, and
+        // (they are on CSULB campus, or user to display is self)
+        if (!isOnPrivacyMode &&
+            (isOnCampus || isCurrentUser))
         {
             // center our map view around this geopoint
             self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude), MKCoordinateSpanMake(0.015f, 0.015f));
             
             // add the annotation
-            GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:self.detailItem];
+            GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:user];
             
             [self.mapView addAnnotation:annotation];
         }
@@ -38,19 +45,23 @@
         PFQuery *friendsQuery = [PFQuery queryWithClassName:@"Friendship"];
         [friendsQuery whereKey:@"Friend1_Id" equalTo:[[PFUser currentUser] objectId]];
         [friendsQuery selectKeys:@[@"Friend2_Id"]];
-        [friendsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        [friendsQuery findObjectsInBackgroundWithBlock:^(NSArray *friendships, NSError *error) {
             // Success
-            for (PFObject *object in objects)
+            for (PFObject *friendship in friendships)
             {
-                NSString *friendId = object[@"Friend2_Id"];
+                NSString *friendId = friendship[@"Friend2_Id"];
                 PFQuery *friendQuery = [PFQuery queryWithClassName:@"_User"];
                 [friendQuery whereKey:@"objectId" equalTo:friendId];
-                [friendQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-                    PFObject *object = objects[0];
-                    GeoPointAnnotation *geoPointAnnotation = [[GeoPointAnnotation alloc]
-                                                              initWithObject:object];
-                    NSLog(@"geoPoint init for friend");
-                    [self.mapView addAnnotation:geoPointAnnotation];
+                [friendQuery findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
+                    PFObject *user = users[0];
+                    BOOL isOnPrivacyMode = [user[@"privacy"] isEqualToString:@"yes"];
+                    
+                    if (!isOnPrivacyMode)
+                    {
+                        GeoPointAnnotation *geoPointAnnotation = [[GeoPointAnnotation alloc]
+                                                                  initWithObject:user];
+                        [self.mapView addAnnotation:geoPointAnnotation];
+                    }
                 }];
             }
         }];
