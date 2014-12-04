@@ -14,5 +14,6 @@
  @abstract Toggles privacy mode, logs out, or change password/email.
 */
 @interface SettingsViewController : UITableViewController <UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UISwitch *privacySwitch;
 
 @end

@@ -12,12 +12,31 @@
  @class SettingsViewController
  */
 @implementation SettingsViewController
+- (IBAction)didFlipSwitch:(id)sender {
+}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"Section: %ld, Row: %ld",(long)indexPath.section, (long)indexPath.row);
     if (indexPath.section == 0){
-        if(indexPath.row == 1){
+        if (indexPath.row == 0)
+        {
+            PFUser *user = [PFUser currentUser];
+            NSString *privacyIsOn = user[@"privacy"];
+            if (privacyIsOn) // we're turning it off
+            {
+                self.privacySwitch.on = false;
+                user[@"privacy"] = @"off";
+            }
+            else // we're turning it on
+            {
+                self.privacySwitch.on = true;
+                user[@"privacy"] = @"on";
+            }
+            [user saveInBackground];
+        }
+        else
+        {
             [PFUser logOut];
             [self performSegueWithIdentifier:@"logoutSegue" sender:self];
         }
@@ -33,8 +52,16 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.parentViewController.navigationController setNavigationBarHidden:YES];
+//    [self.parentViewController.navigationController setNavigationBarHidden:YES];
+}
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    PFUser *user = [PFUser currentUser];
+    if (user[@"privacy"])
+        self.privacySwitch.on = true;
+    else
+        self.privacySwitch.on = false;
 }
 
 - (void)didReceiveMemoryWarning {
