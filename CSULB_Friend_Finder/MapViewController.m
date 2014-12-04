@@ -9,6 +9,8 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.parentViewController.navigationController setNavigationBarHidden:YES];
+
     self.navigationItem.rightBarButtonItem = nil;
 }
 - (void)viewDidLoad {

@@ -13,19 +13,28 @@
  */
 @implementation SettingsViewController
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"Section: %ld, Row: %ld",(long)indexPath.section, (long)indexPath.row);
     if (indexPath.section == 0){
-        if(indexPath.row == 0){
+        if(indexPath.row == 1){
             [PFUser logOut];
             [self performSegueWithIdentifier:@"logoutSegue" sender:self];
-        }else{}
+        }
     }
-    else{}
+    else{
+        if(indexPath.row == 0){
+            [self performSegueWithIdentifier:@"changePasswordSegue" sender:self];
+        }
+        else{
+            [self performSegueWithIdentifier:@"changeEmailSegue" sender:self];
+        }
+    }
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.parentViewController.navigationController setNavigationBarHidden:YES];
+
 }
 
 - (void)didReceiveMemoryWarning {

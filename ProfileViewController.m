@@ -13,7 +13,8 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    [self.parentViewController.navigationController setNavigationBarHidden:YES];
+
     [self updateRightButton];
     [self updateDisplayInfo];
 }
@@ -27,19 +28,13 @@
 - (void) updateRightButton {
     if (self.detailItem) // Friend passed. Display friend's profile
     {
-        self.navigationItem.rightBarButtonItem = nil;
+        self.navigationItem.rightBarButtonItem.image = nil;
         
         self.pokeButton.hidden = false;
         self.findYourFriendButton.hidden = false;
     }
     else // No friend passed. Must be displaying my own profile
-    {        
-        // Create the Right Bar Button Item: "Update"
-        UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Update" style:UIBarButtonItemStylePlain target:self action:@selector(updateStatus:)];
-        rightButton.enabled = true;
-        
-        self.navigationItem.rightBarButtonItem = rightButton;
-        
+    {
         // Hide the "Poke" and "Find your friend" buttons
         self.pokeButton.hidden = true;
         self.findYourFriendButton.hidden = true;
