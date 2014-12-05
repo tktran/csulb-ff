@@ -28,34 +28,36 @@
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PFObject *userToAdd = [self objectAtIndexPath:indexPath];
-    // Run a query to send that friend a push
-    // only return Installations that belong to the user to poke
-    NSString *userId = userToAdd.objectId;
-    PFQuery *pokeQuery = [PFInstallation query];
-    [pokeQuery whereKey:@"user" equalTo:userToAdd];
-    
-    // Create the push using the pokeQuery
-    PFPush *push = [[PFPush alloc] init];
-    [push setQuery:pokeQuery];
     PFUser *currentUser = [PFUser currentUser];
-    NSString *pokeMessage = [NSString stringWithFormat:@"%@ %@ sent you a friend request!", currentUser[@"first_name"], currentUser[@"last_name"]];
-    [push setMessage:pokeMessage];
-    
-    [push sendPushInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
-     {
-         if (!error)
-         {
-             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"Your friend request was sent!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-             [alert show];
-         }
-         else
-         {
-             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure" message:@"Your friend request failed. Try again later." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-             [alert show];
-         }
-     }];
-    
+    PFObject *userToAdd = [self objectAtIndexPath:indexPath];
+    PFObject *friendRequest = [PFObject objectWithClassName:@"FriendRequest"];
+    friendRequest[@"RequesterId"] = currentUser.objectId;
+    friendRequest[@"RequesteeId"] = userToAdd.objectId;
+
+//    PFQuery *pokeQuery = [PFInstallation query];
+//    [pokeQuery whereKey:@"user" equalTo:userToAdd];
+//    
+//    // Create the push using the pokeQuery
+//    PFPush *push = [[PFPush alloc] init];
+//    [push setQuery:pokeQuery];
+//    PFUser *currentUser = [PFUser currentUser];
+//    NSString *pokeMessage = [NSString stringWithFormat:@"%@ %@ sent you a friend request!", currentUser[@"first_name"], currentUser[@"last_name"]];
+//    [push setMessage:pokeMessage];
+//    
+//    [push sendPushInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+//     {
+//         if (!error)
+//         {
+//             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"Your friend request was sent!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//             [alert show];
+//         }
+//         else
+//         {
+//             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure" message:@"Your friend request failed. Try again later." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//             [alert show];
+//         }
+//     }];
+//    
     // Need to make a FriendRequest
 }
 

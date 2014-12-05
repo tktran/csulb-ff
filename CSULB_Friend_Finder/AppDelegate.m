@@ -101,17 +101,14 @@
         PFQuery *requesterQuery = [PFUser query];
         PFObject *requester = [requesterQuery getObjectWithId:request[@"RequesterId"]];
         
-        if (self.requesterIds == nil)
-            self.requesterIds = [[NSMutableArray alloc] init];
-        [self.requesterIds addObject:requester.objectId];
-        
+        self.requesterId = requester.objectId;
          NSString *requestMessage = [NSString stringWithFormat:@"%@ %@ sent you a friend request!", requester[@"first_name"], requester[@"last_name"]];
          UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Request" message:requestMessage delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
          [view addButtonWithTitle:@"Accept"];
-         [view addButtonWithTitle:@"Reject"];
+         [view addButtonWithTitle:@"Ignore"];
          [view show];
         
-        [request delete];
+        [request deleteInBackground];
     }
 }
 
@@ -121,13 +118,18 @@
     {
         PFObject *friendship = [PFObject objectWithClassName:@"Friendship"];
         friendship[@"Friend1_Id"] = [PFUser currentUser].objectId;
-        friendship[@"Friend2_Id"] = self.requesterIds[0];
-        [self.requesterIds removeObjectAtIndex:0];
-        [friendship save];
+        friendship[@"Friend2_Id"] = self.requesterId;
+        [friendship saveInBackground];
+        
+        // BLEH. MAKESHIFT.
+        friendship = [PFObject objectWithClassName:@"Friendship"];
+        friendship[@"Friend2_Id"] = [PFUser currentUser].objectId;
+        friendship[@"Friend1_Id"] = self.requesterId;
+        [friendship saveInBackground];
     }
     else
     {
-        // Declined
+        // Ignore friend request
     }
 }
 

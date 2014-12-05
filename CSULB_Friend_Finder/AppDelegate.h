@@ -38,5 +38,5 @@
     */
     @property (nonatomic, retain) CLLocationManager *locationManager;
 
-@property (nonatomic, retain) NSMutableArray *requesterIds;
+@property (nonatomic, retain) NSString *requesterId;
 @end

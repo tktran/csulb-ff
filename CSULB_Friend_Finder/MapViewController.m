@@ -45,6 +45,7 @@
         PFQuery *friendsQuery = [PFQuery queryWithClassName:@"Friendship"];
         [friendsQuery whereKey:@"Friend1_Id" equalTo:[[PFUser currentUser] objectId]];
         [friendsQuery selectKeys:@[@"Friend2_Id"]];
+
         [friendsQuery findObjectsInBackgroundWithBlock:^(NSArray *friendships, NSError *error) {
             // Success
             for (PFObject *friendship in friendships)
