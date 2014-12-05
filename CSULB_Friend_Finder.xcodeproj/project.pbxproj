@@ -24,6 +24,7 @@
 		273766991A198444001E5741 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 273766981A198444001E5741 /* NavigationViewController.m */; };
 		2740AA1219D273AA00F935FB /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2740AA1119D273AA00F935FB /* UserInfoViewController.m */; };
 		2740AA1319D2748400F935FB /* UserInfoViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 2740AA1019D273AA00F935FB /* UserInfoViewController.h */; };
+		27418E2D1A314F8D00C27D83 /* ChangeEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27418E2C1A314F8D00C27D83 /* ChangeEmailViewController.m */; };
 		274C44B019CCEA9900FBE30F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274C44AF19CCEA9900FBE30F /* LoginViewController.m */; };
 		274C44B519CCF40100FBE30F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C44B419CCF40100FBE30F /* Parse.framework */; };
 		274C44B719CCF42A00FBE30F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C44B619CCF42A00FBE30F /* AudioToolbox.framework */; };
@@ -99,6 +100,8 @@
 		273766981A198444001E5741 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		2740AA1019D273AA00F935FB /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
 		2740AA1119D273AA00F935FB /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
+		27418E2B1A314F8D00C27D83 /* ChangeEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeEmailViewController.h; sourceTree = "<group>"; };
+		27418E2C1A314F8D00C27D83 /* ChangeEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeEmailViewController.m; sourceTree = "<group>"; };
 		274C44AE19CCEA9900FBE30F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		274C44AF19CCEA9900FBE30F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		274C44B419CCF40100FBE30F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -253,6 +256,8 @@
 		271ED76D1A2BECCB00BE64F2 /* Secondary tabs */ = {
 			isa = PBXGroup;
 			children = (
+				27418E2B1A314F8D00C27D83 /* ChangeEmailViewController.h */,
+				27418E2C1A314F8D00C27D83 /* ChangeEmailViewController.m */,
 				27C4A0DF1A312DF000BEE362 /* UpdatePasswordTableViewController.h */,
 				27C4A0E01A312DF000BEE362 /* UpdatePasswordTableViewController.m */,
 				273766971A198444001E5741 /* NavigationViewController.h */,
@@ -498,6 +503,7 @@
 				011B362B19DCE89900E33D4A /* ProfileViewController.m in Sources */,
 				E4EC19FD19BFDF1600E94487 /* AppDelegate.m in Sources */,
 				2756ADFA19E4D63300B5AD0C /* FriendsListTableViewController.m in Sources */,
+				27418E2D1A314F8D00C27D83 /* ChangeEmailViewController.m in Sources */,
 				274C44B019CCEA9900FBE30F /* LoginViewController.m in Sources */,
 				011B363119DD268E00E33D4A /* TabBarViewController.m in Sources */,
 				27F65BA91A1B1C2400D1B0E2 /* PRARManager.m in Sources */,
