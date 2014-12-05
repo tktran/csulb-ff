@@ -69,7 +69,6 @@
     return _locationManager;
 }
 
-
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -91,13 +90,39 @@
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
+    
+    PFUser *user = [PFUser currentUser];
+    PFQuery *query = [PFQuery queryWithClassName:@"FriendRequest"];
+    [query whereKey:@"RequesteeId" equalTo:user.objectId];
+    NSArray *requests = [query findObjects];
+    for (PFObject *request in requests)
+    {
+        PFQuery *requesterQuery = [PFUser query];
+        PFObject *requester = [requesterQuery getObjectWithId:request[@"RequesterId"]];
+         NSString *requestMessage = [NSString stringWithFormat:@"%@ %@ sent you a friend request!", requester[@"first_name"], requester[@"last_name"]];
+         UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Request" message:requestMessage delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
+         [view addButtonWithTitle:@"Accept"];
+         [view addButtonWithTitle:@"Reject"];
+         [view show];
+    }
+}
+
+-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex==0)
+    {
+        // Accepted
+    }
+    else
+    {
+        // Declined
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     [[PFFacebookUtils session] close];
-
 }
 
 @end

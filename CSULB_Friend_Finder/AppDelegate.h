@@ -19,7 +19,7 @@
  These objects handle app-wide tasks such as: startup, shutdown, going
  into background, and registering for the ability to display notifications.
 */
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UIAlertViewDelegate>
 
     /*!
      @property window
