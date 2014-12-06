@@ -120,12 +120,6 @@
         friendship[@"Friend1_Id"] = [PFUser currentUser].objectId;
         friendship[@"Friend2_Id"] = self.requesterId;
         [friendship saveInBackground];
-        
-        // BLEH. MAKESHIFT.
-        friendship = [PFObject objectWithClassName:@"Friendship"];
-        friendship[@"Friend2_Id"] = [PFUser currentUser].objectId;
-        friendship[@"Friend1_Id"] = self.requesterId;
-        [friendship saveInBackground];
     }
     else
     {

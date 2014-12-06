@@ -22,17 +22,17 @@
         if (indexPath.row == 0)
         {
             PFUser *user = [PFUser currentUser];
-            if ([user[@"privacy"] isEqualToString:@"on"])
+            if ([user[@"isOnPrivacyMode"] boolValue])
             {
                 self.privacySwitch.on = false;
-                user[@"privacy"] = @"off";
+                user[@"isOnPrivacyMode"] = [NSNumber numberWithBool:NO];
             }
             else // we're turning it on
             {
                 self.privacySwitch.on = true;
-                user[@"privacy"] = @"on";
+                user[@"isOnPrivacyMode"] = [NSNumber numberWithBool:YES];
             }
-            [user saveInBackground];
+            [user save];
         }
         else
         {
@@ -57,7 +57,8 @@
 -(void) viewWillAppear:(BOOL)animated
 {
     PFUser *user = [PFUser currentUser];
-    if ([user[@"privacy"] isEqualToString:@"on"])
+    
+    if ([user[@"isOnPrivacyMode"] boolValue])
         self.privacySwitch.on = true;
     else
         self.privacySwitch.on = false;

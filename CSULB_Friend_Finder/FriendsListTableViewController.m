@@ -98,7 +98,7 @@
         cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", object[@"first_name"], object[@"last_name"]];
         
         BOOL isOnCampus = [LocationTranslation isOnCSULBCampus:geoPoint];
-        BOOL isOnPrivacyMode = [object[@"privacy"] isEqualToString:@"yes"];
+        BOOL isOnPrivacyMode = [object[@"isOnPrivacyMode"] boolValue];
         if (isOnCampus && !isOnPrivacyMode)
         {
             cell.detailTextLabel.text = [NSString stringWithFormat:@"Around %@",[LocationTranslation closestBuilding:geoPoint]];

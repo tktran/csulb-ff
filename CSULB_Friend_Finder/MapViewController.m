@@ -21,7 +21,7 @@
         // obtain the geopoint
         PFGeoPoint *geoPoint = user[@"location"];
         
-        BOOL isOnPrivacyMode = [user[@"privacy"] isEqualToString:@"yes"];
+        BOOL isOnPrivacyMode = [user[@"isOnPrivacyMode"] boolValue];
         BOOL isOnCampus = [LocationTranslation isOnCSULBCampus:geoPoint];
         BOOL isCurrentUser = (self.detailItem == [PFUser currentUser]);
         // only display annotation if user is not on privacy mode, and
@@ -55,7 +55,7 @@
                 [friendQuery whereKey:@"objectId" equalTo:friendId];
                 [friendQuery findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
                     PFObject *user = users[0];
-                    BOOL isOnPrivacyMode = [user[@"privacy"] isEqualToString:@"yes"];
+                    BOOL isOnPrivacyMode = [user[@"isOnPrivacyMode"] boolValue];
                     
                     if (!isOnPrivacyMode)
                     {
