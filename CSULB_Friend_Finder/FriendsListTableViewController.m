@@ -20,14 +20,7 @@
     [self.parentViewController.navigationController setNavigationBarHidden:YES];
     self.navigationItem.leftBarButtonItem.enabled = NO;
     self.navigationItem.rightBarButtonItem.enabled = YES;
-    
-    
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
-    if ([appDelegate.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
-        [appDelegate.locationManager requestAlwaysAuthorization ];
-    }
-    [appDelegate.locationManager startUpdatingLocation];
+
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -45,7 +38,6 @@
         
         PFObject *friend = [userQuery getObjectWithId:friendId];
         [segue.destinationViewController setDetailItem:friend];
-        
     }
 }
 
@@ -68,7 +60,6 @@
 // Override to customize what kind of query to perform on the class. The default is to query for
 // all objects ordered by createdAt descending.
 - (PFQuery *)queryForTable {
-    
     if ([[PFUser currentUser] objectId] == nil) {
         NSLog(@"No objectID");
         return [[PFQuery alloc] init];
