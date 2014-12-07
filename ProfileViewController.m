@@ -22,14 +22,16 @@
 - (void) updateRightButton {
     if (self.detailItem) // Friend passed. Display friend's profile
     {
-        self.navigationItem.rightBarButtonItem.image = nil;
-        
+        self.navigationItem.rightBarButtonItem.title = @"";
+        self.navigationItem.rightBarButtonItem.enabled = NO;
         self.pokeButton.hidden = false;
         self.findYourFriendButton.hidden = false;
     }
     else // No friend passed. Must be displaying my own profile
     {
         // Hide the "Poke" and "Find your friend" buttons
+        self.navigationItem.rightBarButtonItem.title = @"Update";
+        self.navigationItem.rightBarButtonItem.enabled = YES;
         self.pokeButton.hidden = true;
         self.findYourFriendButton.hidden = true;
     }
@@ -43,7 +45,7 @@
         user = [PFUser currentUser];
     
     self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(33.7830f, -118.1151f), MKCoordinateSpanMake(0.01f, 0.01f));
-    if ( ![user[@"isOnPrivacyMode"] boolValue] )
+    if ( ![user[@"isOnPrivacyMode"] boolValue] || user==[PFUser currentUser])
     {
         GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:user];
         [self.mapView addAnnotation:annotation];
