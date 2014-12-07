@@ -29,6 +29,7 @@
         user[@"last_name"] = self.lastNameField.text;
         user[@"email"] = self.emailField.text;
         user[@"status"] = @"I just joined CSULB FF!";
+        user[@"isOnPrivacyMode"] = [NSNumber numberWithBool:NO];
         user[@"location"] = [PFGeoPoint geoPointWithLatitude:37.7873589F longitude:122.408227F];
         [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (!error)

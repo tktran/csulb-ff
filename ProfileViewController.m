@@ -10,9 +10,14 @@
 
 #pragma mark - UIViewController
 
-- (void) viewWillAppear:(BOOL)animated
+- (void) viewDidLoad
 {
-    [super viewWillAppear:animated];
+    [super viewDidLoad];
+    self.mapView.delegate = self;
+}
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     [self.parentViewController.navigationController setNavigationBarHidden:YES];
 
     [self updateRightButton];
@@ -45,35 +50,14 @@
         user = [PFUser currentUser];
     
     self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(33.7830f, -118.1151f), MKCoordinateSpanMake(0.01f, 0.01f));
-    if ( ![user[@"isOnPrivacyMode"] boolValue] || user==[PFUser currentUser])
-    {
-        GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:user];
-        [self.mapView addAnnotation:annotation];
-    }
+    GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:user];
+    [self.mapView addAnnotation:annotation];
     
     // status, location, contact info
     NSString *friendStatus = [NSString stringWithFormat:@"Status: %@", user[@"status"]];
     NSString *friendName = [NSString stringWithFormat:@"Name: %@ %@", user[@"first_name"], user[@"last_name"]];
     self.nameLabel.text = friendName;
     self.statusLabel.text = friendStatus;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Code for testing push notifications
-    // // Create our Installation query
-    // PFQuery *pushQuery = [PFInstallation query];
-    // [pushQuery whereKey:@"deviceType" equalTo:@"ios"];
-    
-    // // Send push notification to query
-    // [PFPush sendPushMessageToQueryInBackground:pushQuery
-    //                                withMessage:@"Hello World!"];
-}
-
-
-- (IBAction)pressedSettingsButton:(id)sender
-{
-    [self performSegueWithIdentifier:@"settingsSegue" sender:self];
 }
 
 - (IBAction)pressedPokeButton:(id)sender
@@ -121,18 +105,13 @@
 #pragma mark - MKMapViewDelegate
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-    static NSString *GeoPointAnnotationIdentifier = @"RedPin";
     
-    MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:GeoPointAnnotationIdentifier];
+    MKPinAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Annotation"];
+    annotationView.pinColor = MKPinAnnotationColorRed;
+    annotationView.canShowCallout = YES;
+    annotationView.animatesDrop = YES;
     
-    if (!annotationView) {
-        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:GeoPointAnnotationIdentifier];
-        annotationView.pinColor = MKPinAnnotationColorRed;
-        annotationView.canShowCallout = YES;
-        annotationView.draggable = YES;
-        annotationView.animatesDrop = YES;
-    }
-        
+    NSLog(@"Hello?");
     return annotationView;
 }
 

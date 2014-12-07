@@ -12,6 +12,8 @@
     [self.parentViewController.navigationController setNavigationBarHidden:YES];
 
     self.navigationItem.rightBarButtonItem = nil;
+    
+    [self.mapView removeAnnotations:self.mapView.annotations];
 }
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -65,23 +67,26 @@
                 }];
             }
         }];
+        
+        // add myself
+        GeoPointAnnotation *geoPointAnnotation = [[GeoPointAnnotation alloc] initWithObject:[PFUser currentUser]];
+        [self.mapView addAnnotation:geoPointAnnotation];
     }
 }
 
 #pragma mark - MKMapViewDelegate
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-    static NSString *GeoPointAnnotationIdentifier = @"RedPin";
+    MKPinAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"AnnotationView"];
+    annotationView.canShowCallout = YES;
+    annotationView.animatesDrop = YES;
     
-    MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:GeoPointAnnotationIdentifier];
-    
-    if (!annotationView) {
-        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:GeoPointAnnotationIdentifier];
+    GeoPointAnnotation *geoPointAnnotation = (GeoPointAnnotation*) annotation;
+    if (geoPointAnnotation.object == [PFUser currentUser])
+        annotationView.pinColor = MKPinAnnotationColorGreen;
+    else
         annotationView.pinColor = MKPinAnnotationColorRed;
-        annotationView.canShowCallout = YES;
-        annotationView.draggable = YES;
-        annotationView.animatesDrop = YES;
-    }
+
     
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     [rightButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];

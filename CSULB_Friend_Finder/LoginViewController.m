@@ -24,16 +24,8 @@
 
 -(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
 {
-    if(user.isNew)
-    {
-        [self performSegueWithIdentifier:@"signUpSegue" sender:self];
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
-    else
-    {
-        [self performSegueWithIdentifier:@"loginSegue" sender:self];
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
+    [self performSegueWithIdentifier:@"loginSegue" sender:self];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void) signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
@@ -59,11 +51,11 @@
         PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
         [logInViewController setDelegate:self]; // Set ourselves as the delegate
         logInViewController.fields = PFLogInFieldsUsernameAndPassword
-        | PFLogInFieldsLogInButton
-        | PFLogInFieldsSignUpButton
-        | PFLogInFieldsPasswordForgotten
-        | PFLogInFieldsDismissButton
-        | PFLogInFieldsFacebook;
+            | PFLogInFieldsLogInButton
+            | PFLogInFieldsSignUpButton
+            | PFLogInFieldsPasswordForgotten
+            | PFLogInFieldsDismissButton
+            | PFLogInFieldsFacebook;
         
         logInViewController.logInView.logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]];
         [logInViewController.logInView.logo setFrame:CGRectMake(16.0f, 43.0f, 288.0f, 60.0f)];
@@ -74,6 +66,10 @@
         PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
         [signUpViewController setDelegate:self]; // Set ourselves as the delegate
         signUpViewController.signUpView.logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]];
+        signUpViewController.fields = PFSignUpFieldsDefault
+            | PFSignUpFieldsUsernameAndPassword
+            | PFSignUpFieldsSignUpButton
+            | PFSignUpFieldsDismissButton;
         [signUpViewController.signUpView.logo setFrame:CGRectMake(16.0f, 43.0f, 288.0f, 60.0f)];
         
         // Assign our sign up controller to be displayed from the login controller

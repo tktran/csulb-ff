@@ -13,7 +13,7 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
     self.navigationItem.hidesBackButton = YES;
-
+    [self setSelectedIndex:0];
 }
 
 - (void)viewDidLoad {
