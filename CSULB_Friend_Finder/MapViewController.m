@@ -50,7 +50,13 @@
             // Success
             for (PFObject *friendship in friendships)
             {
-                NSString *friendId = friendship[@"Friend2_Id"];
+                NSString *friendId;
+                NSString *currentUserId = [PFUser currentUser].objectId;
+                if ([currentUserId isEqualToString:friendship[@"Friend1_Id"]])
+                    friendId = friendship[@"Friend2_Id"];
+                else
+                    friendId = friendship[@"Friend1_Id"];
+                
                 PFQuery *friendQuery = [PFQuery queryWithClassName:@"_User"];
                 [friendQuery whereKey:@"objectId" equalTo:friendId];
                 [friendQuery findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
@@ -59,9 +65,7 @@
                     
                     if (!isOnPrivacyMode)
                     {
-                        GeoPointAnnotation *geoPointAnnotation =
-                        [[GeoPointAnnotation alloc]
-                          initWithObject:user];
+                        GeoPointAnnotation *geoPointAnnotation = [[GeoPointAnnotation alloc] initWithObject:user];
                         [self.mapView addAnnotation:geoPointAnnotation];
                     }
                 }];
@@ -69,11 +73,6 @@
         }];
     }
 }
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return (interfaceOrientation == UIInterfaceOrientationMaskPortrait);
-}
-
 
 #pragma mark - MKMapViewDelegate
 

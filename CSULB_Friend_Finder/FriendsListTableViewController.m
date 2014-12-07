@@ -39,7 +39,14 @@
     if ([segue.identifier isEqualToString:@"showProfile"]) {
         NSIndexPath *indexPath =[self.tableView indexPathForSelectedRow];
         PFObject *object = [self.objects objectAtIndex:indexPath.row];
-        NSString *friendId = [object objectForKey:@"Friend2_Id"];
+        
+        PFUser *user = [PFUser currentUser];
+        NSString *friendId;
+        if (object[@"Friend1_Id"] == user.objectId)
+            friendId = object[@"Friend2_Id"];
+        else
+            friendId = object[@"Friend1_Id"];
+        
         PFQuery *userQuery = [PFQuery queryWithClassName:@"_User"];
         
         PFObject *friend = [userQuery getObjectWithId:friendId];
