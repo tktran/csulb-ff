@@ -4,10 +4,10 @@
 
 #pragma mark - Initialization
 
-- (id)initWithObject:(PFObject *)aObject {
+- (id)initWithObject:(PFUser *)aUser {
     self = [super init];
     if (self) {
-        _object = aObject;
+        _object = aUser;
         _title = [NSString stringWithFormat: @"%@ %@", self.object[@"first_name"], self.object[@"last_name"]];
         if ([LocationTranslation isOnCSULBCampus:_object[@"location"]])
         {

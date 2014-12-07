@@ -99,14 +99,12 @@
         
         BOOL isOnCampus = [LocationTranslation isOnCSULBCampus:geoPoint];
         BOOL isOnPrivacyMode = [object[@"isOnPrivacyMode"] boolValue];
-        if (isOnCampus && !isOnPrivacyMode)
-        {
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"Around %@",[LocationTranslation closestBuilding:geoPoint]];
-        }
-        else
-        {
+        if (isOnPrivacyMode)
+            cell.detailTextLabel.text = @"On privacy mode";
+        else if (!isOnCampus)
             cell.detailTextLabel.text = @"Not on campus";
-        }
+        else
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"Around %@",[LocationTranslation closestBuilding:geoPoint]];
     }];
     return cell;
 }

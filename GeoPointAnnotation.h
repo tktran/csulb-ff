@@ -23,7 +23,7 @@
  @param aObject
     The PFUser to make an annotation from
 */
-- (id)initWithObject:(PFUser *)aObject;
+- (id)initWithObject:(PFUser *)aUser;
 
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 @property (nonatomic, strong) PFObject *object;

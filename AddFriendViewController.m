@@ -23,6 +23,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
     UITableViewCell *cell = [[UITableViewCell alloc] init];
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", object[@"first_name"], object[@"last_name"]];
+    cell.imageView.image = [UIImage imageNamed:@"check.png"];
     return cell;
 }
 
@@ -33,6 +34,13 @@
     PFObject *friendRequest = [PFObject objectWithClassName:@"FriendRequest"];
     friendRequest[@"RequesterId"] = currentUser.objectId;
     friendRequest[@"RequesteeId"] = userToAdd.objectId;
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.imageView.image = [UIImage imageNamed:@"plus.png"];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Request sent!" message:@"Your friend request was sent!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
+
 }
 
 
@@ -45,15 +53,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

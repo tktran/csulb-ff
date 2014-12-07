@@ -19,12 +19,6 @@
     [self updateDisplayInfo];
 }
 
--(IBAction) updateStatus:(UIBarButtonItem*) button
-{
-    [self performSegueWithIdentifier:@"updateStatusSegue" sender:self];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 - (void) updateRightButton {
     if (self.detailItem) // Friend passed. Display friend's profile
     {
@@ -47,11 +41,14 @@
         user = (PFUser*) self.detailItem;
     else
         user = [PFUser currentUser];
-    PFGeoPoint *geoPoint = user[@"location"];
-    self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude), MKCoordinateSpanMake(0.01f, 0.01f));
-    // add the annotation
-    GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:user];
-    [self.mapView addAnnotation:annotation];
+    
+    self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(33.7830f, -118.1151f), MKCoordinateSpanMake(0.01f, 0.01f));
+    if ( ![user[@"isOnPrivacyMode"] boolValue] )
+    {
+        GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:user];
+        [self.mapView addAnnotation:annotation];
+    }
+    
     // status, location, contact info
     NSString *friendStatus = [NSString stringWithFormat:@"Status: %@", user[@"status"]];
     NSString *friendName = [NSString stringWithFormat:@"Name: %@ %@", user[@"first_name"], user[@"last_name"]];

@@ -40,7 +40,6 @@
 		2756ADFA19E4D63300B5AD0C /* FriendsListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2756ADF919E4D63300B5AD0C /* FriendsListTableViewController.m */; };
 		27BFDD6019CFBE0C00EF209F /* RecommendedFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFDD5F19CFBE0C00EF209F /* RecommendedFriendsTableViewController.m */; };
 		27BFDD6219CFC2BF00EF209F /* friends.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27BFDD6119CFC2BF00EF209F /* friends.plist */; };
-		27C4A0E11A312DF000BEE362 /* UpdatePasswordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C4A0E01A312DF000BEE362 /* UpdatePasswordTableViewController.m */; };
 		27C4A0E41A31452400BEE362 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C4A0E31A31452400BEE362 /* ChangePasswordViewController.m */; };
 		27D3E6F41A1C476D00FB83A1 /* UpdateStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D3E6F31A1C476D00FB83A1 /* UpdateStatusViewController.m */; };
 		27F1051619EF9FEC00184E5A /* GeoPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F1050F19EF9FEC00184E5A /* GeoPointAnnotation.m */; };
@@ -120,8 +119,6 @@
 		27BFDD5E19CFBE0C00EF209F /* RecommendedFriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendedFriendsTableViewController.h; sourceTree = "<group>"; };
 		27BFDD5F19CFBE0C00EF209F /* RecommendedFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendedFriendsTableViewController.m; sourceTree = "<group>"; };
 		27BFDD6119CFC2BF00EF209F /* friends.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = friends.plist; sourceTree = "<group>"; };
-		27C4A0DF1A312DF000BEE362 /* UpdatePasswordTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatePasswordTableViewController.h; sourceTree = "<group>"; };
-		27C4A0E01A312DF000BEE362 /* UpdatePasswordTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePasswordTableViewController.m; sourceTree = "<group>"; };
 		27C4A0E21A31452400BEE362 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
 		27C4A0E31A31452400BEE362 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
 		27D3E6F21A1C476D00FB83A1 /* UpdateStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateStatusViewController.h; sourceTree = "<group>"; };
@@ -256,10 +253,10 @@
 		271ED76D1A2BECCB00BE64F2 /* Secondary tabs */ = {
 			isa = PBXGroup;
 			children = (
+				27C4A0E21A31452400BEE362 /* ChangePasswordViewController.h */,
+				27C4A0E31A31452400BEE362 /* ChangePasswordViewController.m */,
 				27418E2B1A314F8D00C27D83 /* ChangeEmailViewController.h */,
 				27418E2C1A314F8D00C27D83 /* ChangeEmailViewController.m */,
-				27C4A0DF1A312DF000BEE362 /* UpdatePasswordTableViewController.h */,
-				27C4A0E01A312DF000BEE362 /* UpdatePasswordTableViewController.m */,
 				273766971A198444001E5741 /* NavigationViewController.h */,
 				273766981A198444001E5741 /* NavigationViewController.m */,
 				27D3E6F21A1C476D00FB83A1 /* UpdateStatusViewController.h */,
@@ -348,8 +345,6 @@
 				27F65BCA1A1B1F2E00D1B0E2 /* PRAR */,
 				E4EC1A0A19BFDF1600E94487 /* Images.xcassets */,
 				E4EC19F319BFDF1600E94487 /* Supporting Files */,
-				27C4A0E21A31452400BEE362 /* ChangePasswordViewController.h */,
-				27C4A0E31A31452400BEE362 /* ChangePasswordViewController.m */,
 			);
 			path = CSULB_Friend_Finder;
 			sourceTree = "<group>";
@@ -510,7 +505,6 @@
 				27D3E6F41A1C476D00FB83A1 /* UpdateStatusViewController.m in Sources */,
 				27F1051619EF9FEC00184E5A /* GeoPointAnnotation.m in Sources */,
 				271ED76C1A2BECA500BE64F2 /* AddFriendViewController.m in Sources */,
-				27C4A0E11A312DF000BEE362 /* UpdatePasswordTableViewController.m in Sources */,
 				27C4A0E41A31452400BEE362 /* ChangePasswordViewController.m in Sources */,
 				E4EC19F919BFDF1600E94487 /* main.m in Sources */,
 				27F65BC61A1B1CE600D1B0E2 /* ARObject.m in Sources */,
