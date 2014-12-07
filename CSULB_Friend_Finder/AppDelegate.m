@@ -92,23 +92,26 @@
     [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
     
     PFUser *user = [PFUser currentUser];
-    PFQuery *query = [PFQuery queryWithClassName:@"FriendRequest"];
-    [query whereKey:@"RequesteeId" equalTo:user.objectId];
-    NSArray *requests = [query findObjects];
-    
-    for (PFObject *request in requests)
+    if (user != nil)
     {
-        PFQuery *requesterQuery = [PFUser query];
-        PFObject *requester = [requesterQuery getObjectWithId:request[@"RequesterId"]];
+        PFQuery *query = [PFQuery queryWithClassName:@"FriendRequest"];
+        [query whereKey:@"RequesteeId" equalTo:user.objectId];
+        NSArray *requests = [query findObjects];
         
-        self.requesterId = requester.objectId;
-         NSString *requestMessage = [NSString stringWithFormat:@"%@ %@ sent you a friend request!", requester[@"first_name"], requester[@"last_name"]];
-         UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Request" message:requestMessage delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
-         [view addButtonWithTitle:@"Accept"];
-         [view addButtonWithTitle:@"Ignore"];
-         [view show];
-        
-        [request deleteInBackground];
+        for (PFObject *request in requests)
+        {
+            PFQuery *requesterQuery = [PFUser query];
+            PFObject *requester = [requesterQuery getObjectWithId:request[@"RequesterId"]];
+            
+            self.requesterId = requester.objectId;
+             NSString *requestMessage = [NSString stringWithFormat:@"%@ %@ sent you a friend request!", requester[@"first_name"], requester[@"last_name"]];
+             UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Request" message:requestMessage delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
+             [view addButtonWithTitle:@"Accept"];
+             [view addButtonWithTitle:@"Ignore"];
+             [view show];
+            
+            [request deleteInBackground];
+        }
     }
 }
 
