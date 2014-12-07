@@ -49,8 +49,9 @@
         
         PFQuery *userQuery = [PFQuery queryWithClassName:@"_User"];
         
-        PFObject *friend = [userQuery getObjectWithId:friendId];
-        [segue.destinationViewController setDetailItem:friend];
+        [userQuery getObjectInBackgroundWithId:friendId block:^(PFObject *object, NSError *error) {
+            [segue.destinationViewController setDetailItem:object];
+        }];
     }
 }
 
@@ -79,11 +80,8 @@
     } else {
         PFQuery *friendsQuery = [PFQuery queryWithClassName:@"Friendship"];
         [friendsQuery whereKey:@"Friend1_Id" equalTo:[[PFUser currentUser] objectId]];
-        PFQuery *friendsQuery2 = [PFQuery queryWithClassName:@"Friendship"];
-        [friendsQuery2 whereKey:@"Friend2_Id" equalTo:[[PFUser currentUser] objectId]];
-        PFQuery *finalQuery = [PFQuery orQueryWithSubqueries:@[friendsQuery, friendsQuery2]];
         
-        return finalQuery;
+        return friendsQuery;
     }
 }
 
@@ -96,12 +94,8 @@
     // Get a cell
     PFTableViewCell *cell = (PFTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"LocationCell"];
     
-    NSString *friendId;
-    NSString *currentUserId = [PFUser currentUser].objectId;
-    if ([currentUserId isEqualToString:object[@"Friend1_Id"]])
-        friendId = object[@"Friend2_Id"];
-    else
-        friendId = object[@"Friend1_Id"];
+    NSString *friendId = object[@"Friend2_Id"];
+
     PFQuery *friendQuery = [PFQuery queryWithClassName:@"_User"];
     
     // Retrieve friend. Upon success, set cell's title as first_name+last_name

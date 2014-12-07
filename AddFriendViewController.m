@@ -16,14 +16,10 @@
 
 -(PFQuery*) queryForTable
 {
-    PFUser *user = [PFUser currentUser];
     PFQuery *friendshipQuery = [PFQuery queryWithClassName:@"Friendship"];
-    
     PFQuery *finalQuery = [PFQuery queryWithClassName:@"_User"];
     [finalQuery whereKey:@"objectId" doesNotMatchKey:@"Friend1_Id" inQuery:friendshipQuery];
-    [finalQuery whereKey:@"objectId" doesNotMatchKey:@"Friend2_Id" inQuery:friendshipQuery];
-    [finalQuery whereKey:@"objectId" notEqualTo:user.objectId];
-
+    [finalQuery whereKey:@"objectId" notEqualTo:[PFUser currentUser].objectId];
     return finalQuery;
 }
 

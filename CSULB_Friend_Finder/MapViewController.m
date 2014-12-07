@@ -13,8 +13,8 @@
 
     self.navigationItem.rightBarButtonItem = nil;
 }
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
     if (self.detailItem) {
         PFUser *user = (PFUser*) self.detailItem;
@@ -50,22 +50,16 @@
             // Success
             for (PFObject *friendship in friendships)
             {
-                NSString *friendId;
-                NSString *currentUserId = [PFUser currentUser].objectId;
-                if ([currentUserId isEqualToString:friendship[@"Friend1_Id"]])
-                    friendId = friendship[@"Friend2_Id"];
-                else
-                    friendId = friendship[@"Friend1_Id"];
+                NSString *friendId = friendship[@"Friend2_Id"];
                 
                 PFQuery *friendQuery = [PFQuery queryWithClassName:@"_User"];
                 [friendQuery whereKey:@"objectId" equalTo:friendId];
-                [friendQuery findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
-                    PFObject *user = users[0];
-                    BOOL isOnPrivacyMode = [user[@"isOnPrivacyMode"] boolValue];
+                [friendQuery getObjectInBackgroundWithId:friendId block:^(PFObject *object, NSError *error) {
+                    BOOL isOnPrivacyMode = [object[@"isOnPrivacyMode"] boolValue];
                     
                     if (!isOnPrivacyMode)
                     {
-                        GeoPointAnnotation *geoPointAnnotation = [[GeoPointAnnotation alloc] initWithObject:user];
+                        GeoPointAnnotation *geoPointAnnotation = [[GeoPointAnnotation alloc] initWithObject:object];
                         [self.mapView addAnnotation:geoPointAnnotation];
                     }
                 }];

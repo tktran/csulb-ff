@@ -96,22 +96,23 @@
     {
         PFQuery *query = [PFQuery queryWithClassName:@"FriendRequest"];
         [query whereKey:@"RequesteeId" equalTo:user.objectId];
-        NSArray *requests = [query findObjects];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            for (PFObject *request in objects)
+            {
+                PFQuery *requesterQuery = [PFUser query];
+                PFObject *requester = [requesterQuery getObjectWithId:request[@"RequesterId"]];
+                
+                self.requesterId = requester.objectId;
+                NSString *requestMessage = [NSString stringWithFormat:@"%@ %@ sent you a friend request!", requester[@"first_name"], requester[@"last_name"]];
+                UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Request" message:requestMessage delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
+                [view addButtonWithTitle:@"Accept"];
+                [view addButtonWithTitle:@"Ignore"];
+                [view show];
+                
+                [request deleteInBackground];
+            }
+        }];
         
-        for (PFObject *request in requests)
-        {
-            PFQuery *requesterQuery = [PFUser query];
-            PFObject *requester = [requesterQuery getObjectWithId:request[@"RequesterId"]];
-            
-            self.requesterId = requester.objectId;
-             NSString *requestMessage = [NSString stringWithFormat:@"%@ %@ sent you a friend request!", requester[@"first_name"], requester[@"last_name"]];
-             UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"Request" message:requestMessage delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
-             [view addButtonWithTitle:@"Accept"];
-             [view addButtonWithTitle:@"Ignore"];
-             [view show];
-            
-            [request deleteInBackground];
-        }
     }
 }
 
@@ -122,6 +123,11 @@
         PFObject *friendship = [PFObject objectWithClassName:@"Friendship"];
         friendship[@"Friend1_Id"] = [PFUser currentUser].objectId;
         friendship[@"Friend2_Id"] = self.requesterId;
+        [friendship saveInBackground];
+        
+        PFObject *friendship2 = [PFObject objectWithClassName:@"Friendship"];
+        friendship2[@"Friend2_Id"] = [PFUser currentUser].objectId;
+        friendship2[@"Friend1_Id"] = self.requesterId;
         [friendship saveInBackground];
     }
     else
