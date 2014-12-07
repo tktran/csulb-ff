@@ -20,7 +20,13 @@
     [self.parentViewController.navigationController setNavigationBarHidden:YES];
     self.navigationItem.leftBarButtonItem.enabled = NO;
     self.navigationItem.rightBarButtonItem.enabled = YES;
+    
+}
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self loadObjects];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -66,12 +72,11 @@
     } else {
         PFQuery *friendsQuery = [PFQuery queryWithClassName:@"Friendship"];
         [friendsQuery whereKey:@"Friend1_Id" equalTo:[[PFUser currentUser] objectId]];
-        [friendsQuery selectKeys:@[@"Friend2_Id"]];
-        if (self.objects.count == 0) {
-            friendsQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
-        }
-
-        return friendsQuery;
+        PFQuery *friendsQuery2 = [PFQuery queryWithClassName:@"Friendship"];
+        [friendsQuery2 whereKey:@"Friend2_Id" equalTo:[[PFUser currentUser] objectId]];
+        PFQuery *finalQuery = [PFQuery orQueryWithSubqueries:@[friendsQuery, friendsQuery2]];
+        
+        return finalQuery;
     }
 }
 
@@ -84,8 +89,12 @@
     // Get a cell
     PFTableViewCell *cell = (PFTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"LocationCell"];
     
-    // Construct query for the friend
-    NSString *friendId = [object objectForKey:@"Friend2_Id"];
+    NSString *friendId;
+    NSString *currentUserId = [PFUser currentUser].objectId;
+    if ([currentUserId isEqualToString:object[@"Friend1_Id"]])
+        friendId = object[@"Friend2_Id"];
+    else
+        friendId = object[@"Friend1_Id"];
     PFQuery *friendQuery = [PFQuery queryWithClassName:@"_User"];
     
     // Retrieve friend. Upon success, set cell's title as first_name+last_name
@@ -111,7 +120,6 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%@",[self.objects objectAtIndex:indexPath.row]);
     
 }
 

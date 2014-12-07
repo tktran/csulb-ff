@@ -16,14 +16,19 @@
 
 -(PFQuery*) queryForTable
 {
-    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
-    return query;
+    PFQuery *friendshipQuery = [PFQuery queryWithClassName:@"Friendship"];
+    
+    PFQuery *finalQuery = [PFQuery queryWithClassName:@"_User"];
+    [finalQuery whereKey:@"objectId" doesNotMatchKey:@"Friend1_Id" inQuery:friendshipQuery];
+    [finalQuery whereKey:@"objectId" doesNotMatchKey:@"Friend2_Id" inQuery:friendshipQuery];
+
+    return finalQuery;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
     UITableViewCell *cell = [[UITableViewCell alloc] init];
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", object[@"first_name"], object[@"last_name"]];
-    cell.imageView.image = [UIImage imageNamed:@"check.png"];
+    cell.imageView.image = [UIImage imageNamed:@"plus.png"];
     return cell;
 }
 
@@ -31,16 +36,17 @@
 {
     PFUser *currentUser = [PFUser currentUser];
     PFObject *userToAdd = [self objectAtIndexPath:indexPath];
+    
     PFObject *friendRequest = [PFObject objectWithClassName:@"FriendRequest"];
     friendRequest[@"RequesterId"] = currentUser.objectId;
     friendRequest[@"RequesteeId"] = userToAdd.objectId;
+    [friendRequest saveInBackground];
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.imageView.image = [UIImage imageNamed:@"plus.png"];
+    cell.imageView.image = [UIImage imageNamed:@"check.png"];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Request sent!" message:@"Your friend request was sent!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     [alert show];
-
 }
 
 
