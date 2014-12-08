@@ -12,8 +12,6 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"geoPointAnnotationUpdated" object:nil];
 }
 
-#pragma mark - UIViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Allows current view controller's nav bar to show
@@ -34,7 +32,10 @@
     return interfaceOrientation == UIInterfaceOrientationPortrait;
 }
 
-
+/*!
+ @function prepareForSegue
+ @abstract When user selects a friend, segue to the NavigationView, passing in the friend to navigate to
+*/
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showProfile"]) {
         NSIndexPath *indexPath =[self.tableView indexPathForSelectedRow];
@@ -71,8 +72,12 @@
 }
 
 
-// Override to customize what kind of query to perform on the class. The default is to query for
-// all objects ordered by createdAt descending.
+/*!
+ @function queryForTable
+ @abstract PFQueryTableView method. Query for all Friendships where current user is in the Friend1_Id field.
+ Recall that every friendship has two rows in the Friendship table, with Friend1_Id and Friend2_Id reversed.
+ This method will get one of those rows.
+*/
 - (PFQuery *)queryForTable {
     if ([[PFUser currentUser] objectId] == nil) {
         NSLog(@"No objectID");
@@ -85,10 +90,11 @@
     }
 }
 
-
-// Override to customize the look of a cell representing an object. The default is to display
-// a UITableViewCellStyleDefault style cell with the label being the textKey in the object,
-// and the imageView being the imageKey in the object.
+/*!
+ @function cellForRowAtIndexPath
+ @abstract Using the Friendship that was retrieved, run another query to get the User in the
+ Friend2_Id field. Display that user's name and location in the cell.
+*/
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
     
     // Get a cell
@@ -124,23 +130,6 @@
     
 }
 
-/*
- // Override if you need to change the ordering of objects in the table.
- - (PFObject *)objectAtIndex:(NSIndexPath *)indexPath {
- return [self.objects objectAtIndex:indexPath.row];
- }
- */
-
-
-#pragma mark - UITableViewDataSource
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- }
- */
-
-//  Override to support conditional rearranging of the table view.
  - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
  return YES;
  }

@@ -15,6 +15,11 @@
 - (IBAction)didFlipSwitch:(id)sender {
 }
 
+/*!
+ @function didSelectRowAtIndexPath
+ @abstract Since there are only four rows of settings, manually do separate actions
+ for each row: set privacy mode, log out, segue.
+*/
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"Section: %ld, Row: %ld",(long)indexPath.section, (long)indexPath.row);
