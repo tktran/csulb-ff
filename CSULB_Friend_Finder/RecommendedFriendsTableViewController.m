@@ -25,6 +25,10 @@
     self.navigationItem.hidesBackButton = YES;
 }
 
+/*!
+ @function viewDidLoad
+ @abstract When view loads, load self.tableView with list of Facebook friends
+*/
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.leftBarButtonItem=nil;
@@ -38,12 +42,12 @@
          {
              if(!error)
              {
-                 NSArray * resultList = [result objectForKey:@"data"];
+                 NSArray *resultList = [result objectForKey:@"data"];
                  NSMutableArray *mutableFriends = [[NSMutableArray alloc] init];
                  for (NSDictionary<FBGraphUser>* result in resultList)
                  {
+                    
                      NSString *realName = result.name;
-                     NSLog(@"%@", realName);
                      [mutableFriends addObject:realName];
                  }
                  friendsList = [NSArray arrayWithArray:mutableFriends];
@@ -64,6 +68,10 @@
     return friendsList.count;
 }
 
+/*!
+ @function didSelectRowAtIndexPath
+ @abstract When a friend is selected, display an alert showing that a friend request was sent. Send the request.
+*/
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // 1. Add this friend to the list of selected friends
@@ -78,15 +86,18 @@
     
     // 3. Display "Friend request sent"
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"The friend request was sent. But not really." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    // Okay, need to actually send a friend request here...
-    
+
+    // Make the friend request
+    PFObject *friendRequest = [PFObject objectWithClassName:@"FriendRequest"];
+    friendRequest[@"RequesterId"] = [PFUser currentUser].objectId;
+    friendRequest[@"RequesteeId"] = 0; // @TODO
+    [friendRequest saveInBackground];
+
     [alert show];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    
-    // Configure the cell...
     cell.textLabel.text = friendsList[indexPath.row];
     
     if ([myCheckedFriends containsObject:[friendsList objectAtIndex:indexPath.row]])

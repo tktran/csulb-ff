@@ -41,6 +41,10 @@
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>App use Locations service mode Always</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

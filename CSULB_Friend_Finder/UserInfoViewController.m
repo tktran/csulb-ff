@@ -12,7 +12,7 @@
 
 /*!
  @function clickedSubmitButton
- @discussion sdflk
+ @discussion When submit button is clicked, check for correct length of text fields, then save to Parse database
 */
 - (IBAction)clickedSubmitButton:(id)sender {
     if (self.firstNameField.text.length == 0 ||
@@ -59,7 +59,6 @@
     [self.lastNameField resignFirstResponder];
 }
 
-// Method to dismiss keyboard when touching screen
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
 }
@@ -82,6 +81,11 @@
     self.navigationItem.hidesBackButton = YES;
 }
 
+/*!
+ @function viewDidLoad
+ @abstract When view loads, if sign up is with Facebook, populate the First Name, Last Name, and Email
+ fields with Facebook info.
+*/
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.leftBarButtonItem=nil;

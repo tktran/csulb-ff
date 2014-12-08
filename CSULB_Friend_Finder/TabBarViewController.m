@@ -10,6 +10,10 @@
 
 @implementation TabBarViewController
 
+/*!
+ @function viewDidAppear
+ @method Choose the Profile tab as the selected tab.
+*/
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
     self.navigationItem.hidesBackButton = YES;

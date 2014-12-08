@@ -22,12 +22,21 @@
     return self;
 }
 
+/*!
+ @function didLogInUser
+ @method Once user logs in, segue to the main iOS application tabs.
+*/
 -(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
 {
     [self performSegueWithIdentifier:@"loginSegue" sender:self];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+/*!
+ @function didSignupUser
+ @method Once user finishes signing up with Parse controller (which asks for username+password, or Facebook login for Facebook logins),
+ go to CSULB FF sign up controller (which asks for First Name, Last Name, and Email).
+*/
 - (void) signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 {
     [self performSegueWithIdentifier:@"signUpSegue" sender:self];
@@ -39,6 +48,10 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+/*!
+ @function viewDidAppear
+ @abstract When view appears, load the PFLoginViewController
+*/
 -(void)viewDidAppear:(BOOL)animated
 {
     NSLog(@"LoginViewController:viewDidAppear()");

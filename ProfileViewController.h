@@ -16,14 +16,40 @@
 */
 @interface ProfileViewController : UIViewController <MKMapViewDelegate>
 
+/*!
+ @property detailItem
+ @abstract User to display, passed in the segue to this VC
+*/
 @property (strong, atomic) PFObject *detailItem;
+
+/*!
+ @property mapView
+ @abstract Map displaying the user as a pin
+*/
 @property (weak, atomic) IBOutlet MKMapView *mapView;
 
+/*!
+ @property pokeButton
+ @abstract Button to send a poke to the user displayed in this profile. Hidden if profile is showing current user.
+*/
 @property (weak, atomic) IBOutlet UIButton *pokeButton;
-@property (weak, atomic) IBOutlet UIButton *findYourFriendButton;
-@property (weak, atomic) IBOutlet UIBarButtonItem *updateButton;
 
+/*!
+ @property findYourFriendButton
+ @abstract Button to navigate to the user displayed in this profile. Hidden if profile is showing current user.
+*/
+@property (weak, atomic) IBOutlet UIButton *findYourFriendButton;
+
+/*!
+ @property statusLabel
+ @abstract Text label showing the user's current status.
+*/
 @property (weak, atomic) IBOutlet UILabel *statusLabel;
+
+/*!
+ @property nameLabel
+ @abstract Text label showing the user's First Name + Last Name
+*/
 @property (weak, atomic) IBOutlet UILabel *nameLabel;
 
 @end

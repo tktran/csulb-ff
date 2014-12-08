@@ -10,11 +10,20 @@
 
 #pragma mark - UIViewController
 
+/*!
+ @function viewDidLoad
+ @method Upon loading, set the mapView's delegate to self, self implementing UIMapViewDelegate for pin adding
+*/
 - (void) viewDidLoad
 {
     [super viewDidLoad];
     self.mapView.delegate = self;
 }
+
+/*!
+ @function viewDidAppear
+ @method Upon appearance of view, hide the navigation bar (to show all of mapView), and call the two main functions of this VC: updateRightButton and updateDisplayInfo
+*/
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -24,6 +33,10 @@
     [self updateDisplayInfo];
 }
 
+/*!
+ @function updateRightButton
+ @method If a user was passed it, it was a friend to display. Otherwise, it is the current user (user of this app). Hide the poke and findYourFriend buttons.
+*/
 - (void) updateRightButton {
     if (self.detailItem) // Friend passed. Display friend's profile
     {
@@ -42,6 +55,10 @@
     }
 }
 
+/*!
+ @function updateDisplayInfo
+ @abstract Update first name, last name, status, and location on map from user's fields
+*/
 - (void) updateDisplayInfo {
     PFUser *user;
     if (self.detailItem)
@@ -60,6 +77,10 @@
     self.statusLabel.text = friendStatus;
 }
 
+/*!
+ @function pressedPokeButton
+ @abstract When poke button is pressed, make the relevent Parse Push query and send it to the user
+*/
 - (IBAction)pressedPokeButton:(id)sender
 {
 //    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
@@ -104,6 +125,10 @@
 
 #pragma mark - MKMapViewDelegate
 
+/*!
+ @function viewForAnnotation
+ @abstract Implementation of MKMapViewDelegate. Initializes an annotationView using the MKAnnotation passed in.
+*/
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     
     MKPinAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Annotation"];
@@ -115,6 +140,10 @@
     return annotationView;
 }
 
+/*!
+ @function prepareForSegue
+ @abstract Upon clicking "Find your friend", pass the PFUser friend to the navigation view controller.
+*/
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"navigateToFriend"] && self.detailItem) {
         PFObject *friend = self.detailItem;

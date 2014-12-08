@@ -8,10 +8,16 @@
 
 #import "AppDelegate.h"
 
+/*!
+ @class AppDelegate
+*/
 @implementation AppDelegate
 @synthesize locationManager = _locationManager;
 
-
+/*!
+ @function didFinishLaunchingWithOptions
+ @abstract Upon app launch, register with Parse and for push notifications if not already.
+*/
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
@@ -35,9 +41,15 @@
         // Register for Push Notifications before iOS 8
         [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |UIRemoteNotificationTypeAlert |UIRemoteNotificationTypeSound)];
     }
+    
     return YES;
 }
 
+/*!
+ @function didRegisterForRemoteNotificationsWithDeviceToken
+ @abstract Upon successful registration for notifications, save the token of this iOS device to Parse servers.
+ Notifications will be targeted to this device based on its token.
+*/
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     // Store the deviceToken in the current installation and save it to Parse.
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
@@ -46,19 +58,26 @@
     [currentInstallation saveInBackground];
 }
 
+/*!
+ @function didReceiveRemoteNotification
+ @abstract When a notification is received, let Parse handle it: literally, [PFPush handlePush]
+*/
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [PFPush handlePush:userInfo];
 }
 
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation {
-    return [FBAppCall handleOpenURL:url
-                  sourceApplication:sourceApplication
-                        withSession:[PFFacebookUtils session]];
+/*!
+ @function openURL
+ @abstract Utility function used to open Facebook login URL
+*/
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication withSession:[PFFacebookUtils session]];
 }
 
+/*!
+ @function locationManager
+ @abstract Get reference to app-wide location manager singleton
+*/
 - (CLLocationManager *)locationManager {
     if (_locationManager != nil) {
         return _locationManager;
@@ -86,6 +105,10 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
+/*!
+ @function applicationDidBecomeActive
+ @abstract Upon loading the app from its icon or opening it back up from the background, activate the current Facebook session, and check for friend requests.
+*/
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
@@ -112,10 +135,14 @@
                 [request deleteInBackground];
             }
         }];
-        
     }
 }
 
+/*!
+ @function clickedButtonAtIndex
+ @abstract Implementation of UIAlertView interface. When a friend request is received, clicking on "Accept" or "Ignore" calls this function.
+ This function then adds the friend if Accept, does nothing if Ignore.
+*/
 -(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex==0)
@@ -123,12 +150,12 @@
         PFObject *friendship = [PFObject objectWithClassName:@"Friendship"];
         friendship[@"Friend1_Id"] = [PFUser currentUser].objectId;
         friendship[@"Friend2_Id"] = self.requesterId;
-        [friendship saveInBackground];
+        [friendship save];
         
         PFObject *friendship2 = [PFObject objectWithClassName:@"Friendship"];
         friendship2[@"Friend2_Id"] = [PFUser currentUser].objectId;
         friendship2[@"Friend1_Id"] = self.requesterId;
-        [friendship saveInBackground];
+        [friendship save];
     }
     else
     {
@@ -136,6 +163,10 @@
     }
 }
 
+/*!
+ @function applicationWillTerminate
+ @abstract Per standard practice, close the current Facebook session when app is explicitly exited.
+*/
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.

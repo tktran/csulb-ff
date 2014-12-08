@@ -14,7 +14,16 @@
 */
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 
+/*!
+ @property detailItem
+ @abstract User to display, passed in the segue to this VC
+ */
 @property (nonatomic, strong) PFObject *detailItem;
+
+/*!
+ @property mapView
+ @abstract Map displaying all friends as pins
+ */
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 
 @end
