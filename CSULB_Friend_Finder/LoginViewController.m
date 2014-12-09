@@ -28,7 +28,14 @@
 */
 -(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
 {
-    [self performSegueWithIdentifier:@"loginSegue" sender:self];
+    if (user.isNew)
+    {
+        [self performSegueWithIdentifier:@"signUpSegue" sender:self];
+    }
+    else
+    {
+        [self performSegueWithIdentifier:@"loginSegue" sender:self];
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

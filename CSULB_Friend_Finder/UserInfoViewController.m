@@ -31,6 +31,8 @@
         user[@"status"] = @"I just joined CSULB FF!";
         user[@"isOnPrivacyMode"] = [NSNumber numberWithBool:NO];
         user[@"location"] = [PFGeoPoint geoPointWithLatitude:37.7873589F longitude:122.408227F];
+        user[@"facebookId"] = @"";
+        
         [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (!error)
             {
@@ -54,6 +56,20 @@
                 [alert show];
             }
         }];
+        
+        if ([PFFacebookUtils session] != nil)
+        {
+            FBRequest *request = [FBRequest requestForMe];
+            [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                if (!error)
+                {
+                    NSDictionary<FBGraphUser> *friend = (NSDictionary<FBGraphUser>*) result;
+                    user[@"facebookId"] = friend.objectID;
+                    [user saveInBackground];
+                }
+            }];
+        }
+
     }
     [self.firstNameField resignFirstResponder];
     [self.lastNameField resignFirstResponder];

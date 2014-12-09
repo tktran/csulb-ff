@@ -14,23 +14,13 @@
 
 @implementation RecommendedFriendsTableViewController
 {
-    NSArray *friendsList;
-    NSMutableArray *myCheckedFriends;
+    NSMutableArray *friendCellList;
+    NSMutableArray *checkedFriends;
 }
 
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationItem.leftBarButtonItem=nil;
-    self.navigationItem.hidesBackButton = YES;
-}
-
-/*!
- @function viewDidLoad
- @abstract When view loads, load self.tableView with list of Facebook friends
-*/
-- (void)viewDidLoad {
-    [super viewDidLoad];
     self.navigationItem.leftBarButtonItem=nil;
     self.navigationItem.hidesBackButton = YES;
     
@@ -42,20 +32,31 @@
          {
              if(!error)
              {
-                 NSArray *resultList = [result objectForKey:@"data"];
-                 NSMutableArray *mutableFriends = [[NSMutableArray alloc] init];
+                 NSArray *resultList = result[@"data"];
+                 friendCellList = [[NSMutableArray alloc] init];
+                 checkedFriends = [[NSMutableArray alloc] init];
                  for (NSDictionary<FBGraphUser>* result in resultList)
                  {
-                    
-                     NSString *realName = result.name;
-                     [mutableFriends addObject:realName];
+                     NSDictionary *friend= @{
+                                             @"name": result.name,
+                                             @"facebookId": result.objectID
+                                             };
+                     [friendCellList addObject:friend];
                  }
-                 friendsList = [NSArray arrayWithArray:mutableFriends];
                  [self.tableView reloadData];
              }
          }];
     }
-    myCheckedFriends = [[NSMutableArray alloc] init];
+}
+
+/*!
+ @function viewDidLoad
+ @abstract When view loads, load self.tableView with list of Facebook friends
+*/
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.navigationItem.leftBarButtonItem=nil;
+    self.navigationItem.hidesBackButton = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,7 +66,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return friendsList.count;
+    return friendCellList.count;
 }
 
 /*!
@@ -74,40 +75,36 @@
 */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // 1. Add this friend to the list of selected friends
-    // (ones that already got a friend request)
-    NSLog(@"Selected row: %lu", indexPath.row); // you can see selected row number in your console;
-    NSString *friend = friendsList[ indexPath.row ];
-    [myCheckedFriends addObject:friend];
-    
-    // 2. Update the image from a + to a check
+    NSDictionary *friend = friendCellList[indexPath.row];
+
+    // Update the image from a + to a check
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.imageView.image = [UIImage imageNamed:@"check.png"];
+    [checkedFriends addObject:[NSNumber numberWithLong:indexPath.row]];
     
-    // 3. Display "Friend request sent"
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"The friend request was sent. But not really." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-
-    // Make the friend request
+    // Make the friend request. Get the objectId of friend that was selected.
     PFObject *friendRequest = [PFObject objectWithClassName:@"FriendRequest"];
-    friendRequest[@"RequesterId"] = [PFUser currentUser].objectId;
-    friendRequest[@"RequesteeId"] = 0; // @TODO
+    [friendRequest setObject:[PFUser currentUser].objectId forKey:@"RequesterId"];
+    
+    PFQuery *parseFriendQuery = [PFQuery queryWithClassName:@"_User"];
+    [parseFriendQuery whereKey:@"facebookId" equalTo: friend[@"facebookId"]];
+    PFObject *parseFriend = [parseFriendQuery getFirstObject];
+    [friendRequest setObject:parseFriend.objectId forKey:@"RequesteeId"];
     [friendRequest saveInBackground];
-
+    
+    // Display "Friend request sent"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"The friend request was sent. But not really." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.textLabel.text = friendsList[indexPath.row];
-    
-    if ([myCheckedFriends containsObject:[friendsList objectAtIndex:indexPath.row]])
-    {
+    NSDictionary *friend = friendCellList[indexPath.row];
+    cell.textLabel.text = friend[@"name"];
+    if ( [checkedFriends containsObject:[NSNumber numberWithLong:indexPath.row]])
         cell.imageView.image = [UIImage imageNamed:@"check.png"];
-    }
     else
-    {
         cell.imageView.image = [UIImage imageNamed:@"plus.png"];
-    }
     return cell;
 }
 @end
