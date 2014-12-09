@@ -65,7 +65,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Recommended Friends" id="mNs-2Y-6zR">
-                        <barButtonItem key="rightBarButtonItem" id="Z17-9S-OPE">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Z17-9S-OPE">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UCG-LI-P9N">
                                 <rect key="frame" x="-23" y="-15" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -418,7 +418,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="SbS-gg-Rkn">
-                        <barButtonItem key="rightBarButtonItem" id="30P-fk-o9q">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="30P-fk-o9q">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xxk-xt-w9m">
                                 <rect key="frame" x="243" y="7" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -733,7 +733,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="HQM-l3-GIO"/>
+        <segue reference="oit-Gu-MAL"/>
         <segue reference="lFy-z9-B2F"/>
         <segue reference="YPy-yt-qHJ"/>
     </inferredMetricsTieBreakers>
