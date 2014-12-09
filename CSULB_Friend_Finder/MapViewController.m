@@ -40,7 +40,7 @@
                 
                 if (!isOnPrivacyMode)
                 {
-                    GeoPointAnnotation *geoPointAnnotation = [[GeoPointAnnotation alloc] initWithObject:object];
+                    GeoPointAnnotation *geoPointAnnotation = [[GeoPointAnnotation alloc] initWithObject:(PFUser*)object];
                     [self.mapView addAnnotation:geoPointAnnotation];
                 }
             }];

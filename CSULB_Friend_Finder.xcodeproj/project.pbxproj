@@ -23,7 +23,6 @@
 		271ED76C1A2BECA500BE64F2 /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271ED76B1A2BECA500BE64F2 /* AddFriendViewController.m */; };
 		273766991A198444001E5741 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 273766981A198444001E5741 /* NavigationViewController.m */; };
 		2740AA1219D273AA00F935FB /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2740AA1119D273AA00F935FB /* UserInfoViewController.m */; };
-		2740AA1319D2748400F935FB /* UserInfoViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 2740AA1019D273AA00F935FB /* UserInfoViewController.h */; };
 		27418E2D1A314F8D00C27D83 /* ChangeEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27418E2C1A314F8D00C27D83 /* ChangeEmailViewController.m */; };
 		274C44B019CCEA9900FBE30F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274C44AF19CCEA9900FBE30F /* LoginViewController.m */; };
 		274C44B519CCF40100FBE30F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C44B419CCF40100FBE30F /* Parse.framework */; };
@@ -493,7 +492,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				27F65BCD1A1BEDEC00D1B0E2 /* LocationTranslation.m in Sources */,
-				2740AA1319D2748400F935FB /* UserInfoViewController.h in Sources */,
 				27F65BC01A1B1CCB00D1B0E2 /* ARRadar.m in Sources */,
 				2740AA1219D273AA00F935FB /* UserInfoViewController.m in Sources */,
 				27F65BC31A1B1CDB00D1B0E2 /* ARController.m in Sources */,
@@ -647,7 +645,6 @@
 					"$(PROJECT_DIR)/FacebookSDK",
 					"$(PROJECT_DIR)/FacebookSDK/FBAudienceNetwork",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Bolts",
 					"$(PROJECT_DIR)/third-party",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -677,7 +674,6 @@
 					"$(PROJECT_DIR)/FacebookSDK",
 					"$(PROJECT_DIR)/FacebookSDK/FBAudienceNetwork",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Bolts",
 					"$(PROJECT_DIR)/third-party",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
