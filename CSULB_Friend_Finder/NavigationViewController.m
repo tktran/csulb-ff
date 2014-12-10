@@ -81,8 +81,7 @@
 {
     CLLocation *location = [locations lastObject];
     CLLocationCoordinate2D currentCoordinates = location.coordinate;
-    if (self.detailItem && !self.didStartAR)
-    {
+
         // Get the destination (the friend)
         PFUser *friend = (PFUser*) self.detailItem;
         PFGeoPoint *geoPoint = friend[@"location"];
@@ -99,7 +98,6 @@
         // Start the AR display with source->destination
         [self.prarManager startARWithData:friendPRARElement forLocation:currentCoordinates];
         self.didStartAR = true;
-    }
 }
 
 /*!
