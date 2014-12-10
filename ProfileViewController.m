@@ -73,23 +73,23 @@
     // status, location, last updated
     NSString *friendStatus = [NSString stringWithFormat:@"Status: %@", user[@"status"]];
     NSString *friendName = [NSString stringWithFormat:@"Name: %@ %@", user[@"first_name"], user[@"last_name"]];
-    NSTimeInterval updatedAt = [user.updatedAt timeIntervalSinceNow];
+    NSTimeInterval updatedAt = -1 * [user.updatedAt timeIntervalSinceNow];
     NSDate *updatedAtDate = [NSDate dateWithTimeIntervalSince1970:updatedAt];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     NSString *dateUnits;
     if (updatedAt <= 60)
     {
-        [formatter setDateFormat:@"ss"];
+        [formatter setDateFormat:@"s"];
         dateUnits = @"seconds ago";
     }
     else if (updatedAt <= 60*60)
     {
-        [formatter setDateFormat:@"mm"];
+        [formatter setDateFormat:@"m"];
         dateUnits = @"minutes ago";
     }
     else if (updatedAt <= 60*60*24)
     {
-        [formatter setDateFormat:@"hh"];
+        [formatter setDateFormat:@"h"];
         dateUnits = @"hours ago";
     }
     else

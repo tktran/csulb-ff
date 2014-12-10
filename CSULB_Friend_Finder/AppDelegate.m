@@ -160,12 +160,12 @@
         PFObject *friendship = [PFObject objectWithClassName:@"Friendship"];
         friendship[@"Friend1_Id"] = [PFUser currentUser].objectId;
         friendship[@"Friend2_Id"] = self.requesterId;
-        [friendship save];
+        [friendship saveInBackground];
         
         PFObject *friendship2 = [PFObject objectWithClassName:@"Friendship"];
         friendship2[@"Friend2_Id"] = [PFUser currentUser].objectId;
         friendship2[@"Friend1_Id"] = self.requesterId;
-        [friendship save];
+        [friendship saveInBackground];
     }
     else
     {
