@@ -43,7 +43,7 @@
         
         PFUser *user = [PFUser currentUser];
         NSString *friendId;
-        if (object[@"Friend1_Id"] == user.objectId)
+        if ([object[@"Friend1_Id"] isEqualToString:user.objectId])
             friendId = object[@"Friend2_Id"];
         else
             friendId = object[@"Friend1_Id"];
