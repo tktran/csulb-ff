@@ -70,11 +70,38 @@
     GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:user];
     [self.mapView addAnnotation:annotation];
     
-    // status, location, contact info
+    // status, location, last updated
     NSString *friendStatus = [NSString stringWithFormat:@"Status: %@", user[@"status"]];
     NSString *friendName = [NSString stringWithFormat:@"Name: %@ %@", user[@"first_name"], user[@"last_name"]];
+    NSTimeInterval updatedAt = [user.updatedAt timeIntervalSinceNow];
+    NSDate *updatedAtDate = [NSDate dateWithTimeIntervalSince1970:updatedAt];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    NSString *dateUnits;
+    if (updatedAt <= 60)
+    {
+        [formatter setDateFormat:@"ss"];
+        dateUnits = @"seconds ago";
+    }
+    else if (updatedAt <= 60*60)
+    {
+        [formatter setDateFormat:@"mm"];
+        dateUnits = @"minutes ago";
+    }
+    else if (updatedAt <= 60*60*24)
+    {
+        [formatter setDateFormat:@"hh"];
+        dateUnits = @"hours ago";
+    }
+    else
+    {
+        [formatter setDateFormat:@"dd"];
+        dateUnits = @"days ago";
+    }
+    NSString *friendUpdatedAt = [NSString stringWithFormat:@"Updated %@ %@", [formatter stringFromDate:updatedAtDate], dateUnits];
+    
     self.nameLabel.text = friendName;
     self.statusLabel.text = friendStatus;
+    self.lastUpdatedLabel.text = friendUpdatedAt;
 }
 
 /*!

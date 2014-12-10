@@ -52,4 +52,6 @@
 */
 @property (weak, atomic) IBOutlet UILabel *nameLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *lastUpdatedLabel;
+
 @end

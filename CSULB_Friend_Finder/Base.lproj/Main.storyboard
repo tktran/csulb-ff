@@ -645,14 +645,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7x5-PF-Ey2">
-                                <rect key="frame" x="25" y="347" width="260" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMl-EJ-vYz">
-                                <rect key="frame" x="9" y="422" width="295" height="30"/>
+                                <rect key="frame" x="9" y="452" width="295" height="30"/>
                                 <color key="backgroundColor" red="0.81536599864130432" green="0.81498731483374987" blue="0.73245486934957627" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Find Your Friend"/>
                                 <connections>
@@ -660,7 +654,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Dv-SG-Ovr">
-                                <rect key="frame" x="25" y="376" width="120" height="30"/>
+                                <rect key="frame" x="25" y="412" width="120" height="30"/>
                                 <state key="normal" title="Poke ">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -674,6 +668,18 @@
                                     <outlet property="delegate" destination="cB3-mi-rCh" id="OUE-yh-Bb3"/>
                                 </connections>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Updated" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76Q-eu-afL">
+                                <rect key="frame" x="25" y="376" width="254" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7x5-PF-Ey2">
+                                <rect key="frame" x="25" y="347" width="260" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -687,6 +693,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="findYourFriendButton" destination="LMl-EJ-vYz" id="Yos-oo-xeK"/>
+                        <outlet property="lastUpdatedLabel" destination="76Q-eu-afL" id="8t3-XJ-8PN"/>
                         <outlet property="mapView" destination="Tti-6o-mWi" id="LHq-Lg-OTr"/>
                         <outlet property="nameLabel" destination="eQw-61-GhJ" id="jlX-Da-Axv"/>
                         <outlet property="pokeButton" destination="8Dv-SG-Ovr" id="Kee-Yd-Jz9"/>

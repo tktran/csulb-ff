@@ -136,6 +136,16 @@
             }
         }];
     }
+    
+    // Update the user's location
+    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
+        if (!error)
+        {
+            PFUser *user = [PFUser currentUser];
+            user[@"location"] = geoPoint;
+            [user saveInBackground];
+        }
+    }];
 }
 
 /*!
