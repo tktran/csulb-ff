@@ -92,8 +92,8 @@
     [friendRequest setObject:parseFriend.objectId forKey:@"RequesteeId"];
     [friendRequest saveInBackground];
     
-    // Display "Friend request sent"
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"The friend request was sent. But not really." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    // Display "Friend request sent"jkmjh
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"The friend request was sent." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
 }
 
