@@ -39,7 +39,16 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showProfile"]) {
         NSIndexPath *indexPath =[self.tableView indexPathForSelectedRow];
-        PFObject *object = [self.objects objectAtIndex:indexPath.row];
+        
+        PFObject *object = [self.objects objectAtIndex:indexPath.row];        
+        NSTimeInterval whenStarted = [[NSDate date] timeIntervalSince1970];
+        NSTimeInterval currentNow = [[NSDate date] timeIntervalSince1970];
+        while (object == nil && currentNow < whenStarted+5)
+        {
+            object = [self.objects objectAtIndex:indexPath.row];
+        }
+        if (object == nil)
+            NSLog(@"error");
         
         PFUser *user = [PFUser currentUser];
         NSString *friendId;
@@ -51,7 +60,10 @@
         PFQuery *userQuery = [PFQuery queryWithClassName:@"_User"];
         
         [userQuery getObjectInBackgroundWithId:friendId block:^(PFObject *object, NSError *error) {
-            [segue.destinationViewController setDetailItem:object];
+            if (!error)
+                [segue.destinationViewController setDetailItem:object];
+            else
+                NSLog(@"FriendsList->MapView segue error: %@", error);
         }];
     }
 }
@@ -115,6 +127,7 @@
         
         BOOL isOnCampus = [LocationTranslation isOnCSULBCampus:geoPoint];
         BOOL isOnPrivacyMode = [object[@"isOnPrivacyMode"] boolValue];
+        
         if (isOnPrivacyMode)
             cell.detailTextLabel.text = @"On privacy mode";
         else if (!isOnCampus)
@@ -133,11 +146,5 @@
  - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
  return YES;
  }
-
-
-#pragma mark - CLLocationManagerDelegate
-
-
-#pragma mark - MasterViewController
 
 @end

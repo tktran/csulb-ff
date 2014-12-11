@@ -8,7 +8,6 @@
 
 #import "LoginViewController.h"
 @interface LoginViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *NameLabel;
 @end
 
 @implementation LoginViewController

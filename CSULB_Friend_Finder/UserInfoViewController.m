@@ -15,6 +15,7 @@
  @discussion When submit button is clicked, check for correct length of text fields, then save to Parse database
 */
 - (IBAction)clickedSubmitButton:(id)sender {
+    // If field(s) incomplete, show alert
     if (self.firstNameField.text.length == 0 ||
         self.lastNameField.text.length == 0 ||
         self.emailField.text.length == 0)
@@ -22,7 +23,7 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Try again" message:@"Please fill in the First Name, Last Name, and Email fields." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
     }
-    else
+    else // Else, save their entered info + default status, privacy, and location fields
     {
         PFUser *user = [PFUser currentUser];
         user[@"first_name"] = self.firstNameField.text;

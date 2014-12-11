@@ -21,12 +21,14 @@
 }
 
 - (IBAction)didSubmitStatus:(id)sender {
+    // alert to show if error; not shown yet
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                     message: @"There was an error updating your status. Please try again later."
                                                    delegate: nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
 
+    // Get the current geoPoint and save it
     PFUser *user = [PFUser currentUser];
     [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error)
     {

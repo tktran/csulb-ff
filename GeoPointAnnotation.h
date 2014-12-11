@@ -25,8 +25,18 @@
 */
 - (id)initWithObject:(PFUser *)aUser;
 
+/*!
+ @property coordinate
+ @abstract Coordinates of the annotation to add to map
+*/
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
+
+/*!
+ @property object
+ @abstract The PFUser used to initialize this GeoPointAnnotation
+*/
 @property (nonatomic, strong) PFObject *object;
+
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;
 

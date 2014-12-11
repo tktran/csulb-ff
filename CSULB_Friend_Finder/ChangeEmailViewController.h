@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "Parse/Parse.h"
 
+/*!
+ @class ChangeEmailViewController
+ @abstract View controller to change one's email
+*/
 @interface ChangeEmailViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *oldEmailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nEmailTextField;

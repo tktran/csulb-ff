@@ -22,10 +22,14 @@
 
 - (IBAction)clickedSubmitButton:(id)sender
 {
+    // If the new password is equal to the confirmation of the new password
     if ([self.nPasswordTextField.text isEqualToString:self.confirmPasswordTextField.text])
     {
         PFUser *user = [PFUser currentUser];
         NSString *oldPassword = self.oldPasswordTextField.text;
+        
+        // We can't do string comparison on the salted old password, so we must check it
+        // by logging in with the password
         [PFUser logInWithUsernameInBackground:user.username password:oldPassword block:^(PFUser *user, NSError *error) {
             if (!error) // correct password
             {

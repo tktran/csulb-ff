@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Parse/Parse.h"
+
+/*!
+ @class ChangeEmailViewController
+ @abstract View controller to change one's email
+ */
 @interface ChangePasswordViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *oldPasswordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nPasswordTextField;

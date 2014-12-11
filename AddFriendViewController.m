@@ -16,6 +16,7 @@
 
 -(PFQuery*) queryForTable
 {
+    // Get all users whose objectId is not in a Friendship with the current user
     PFUser *user = [PFUser currentUser];
     PFQuery *friendshipQuery = [PFQuery queryWithClassName:@"Friendship"];
     [friendshipQuery whereKey:@"Friend1_Id" equalTo:user.objectId];
@@ -23,8 +24,7 @@
     PFQuery *finalQuery = [PFQuery queryWithClassName:@"_User"];
     [finalQuery whereKey:@"objectId" doesNotMatchKey:@"Friend2_Id" inQuery:friendshipQuery];
     [finalQuery whereKey:@"objectId" notEqualTo:[PFUser currentUser].objectId];
-    
-    
+        
     return finalQuery;
 }
 
@@ -32,6 +32,7 @@
     UITableViewCell *cell = [[UITableViewCell alloc] init];
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", object[@"first_name"], object[@"last_name"]];
     
+    // If there is already a friend request in the database, set row image as a check
     PFQuery *queryForExistingFriendRequest = [PFQuery queryWithClassName:@"FriendRequest"];
     [queryForExistingFriendRequest whereKey:@"RequesterId" equalTo:[PFUser currentUser].objectId];
     [queryForExistingFriendRequest whereKey:@"RequesteeId" equalTo:object.objectId];

@@ -211,6 +211,7 @@
 		270041011A1C2B57009029F7 /* Login/registration */ = {
 			isa = PBXGroup;
 			children = (
+				2740AA1119D273AA00F935FB /* UserInfoViewController.m */,
 				2740AA1019D273AA00F935FB /* UserInfoViewController.h */,
 				27BFDD5E19CFBE0C00EF209F /* RecommendedFriendsTableViewController.h */,
 				27BFDD5F19CFBE0C00EF209F /* RecommendedFriendsTableViewController.m */,
@@ -274,7 +275,6 @@
 				27F65BC81A1B1CFA00D1B0E2 /* LocationMath.m */,
 				27F65BC41A1B1CE600D1B0E2 /* ARObject.h */,
 				27F65BC51A1B1CE600D1B0E2 /* ARObject.m */,
-				2740AA1119D273AA00F935FB /* UserInfoViewController.m */,
 				27F65BC11A1B1CDB00D1B0E2 /* ARController.h */,
 				27F65BC21A1B1CDB00D1B0E2 /* ARController.m */,
 				27F65BBE1A1B1CCB00D1B0E2 /* ARRadar.h */,

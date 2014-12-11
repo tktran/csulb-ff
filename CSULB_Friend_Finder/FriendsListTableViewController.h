@@ -12,6 +12,4 @@
 */
 @interface FriendsListTableViewController : PFQueryTableViewController <CLLocationManagerDelegate>
 
-@property (nonatomic, strong) PFQuery *firstQuery;
-
 @end

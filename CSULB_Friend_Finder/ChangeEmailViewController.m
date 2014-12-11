@@ -27,12 +27,22 @@
 {
     PFUser *user = [PFUser currentUser];
     NSString *currentEmail = user[@"email"];
+    // 
     if ([currentEmail isEqualToString:self.oldEmailTextField.text])
     {
         user[@"email"] = self.nEmailTextField.text;
-        [user saveInBackground];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"Your email was changed!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alert show];
+        [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error && succeeded)
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"Your email was changed!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [alert show];
+            }
+                else
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure" message:@"There was an error. Please try again later." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [alert show];
+            }
+        }];
     }
     else
     {

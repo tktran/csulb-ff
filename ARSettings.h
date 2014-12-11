@@ -39,7 +39,7 @@
 
 // -- Accelerometer -- //
 
-#define kFilteringFactor        0.05    // Filtering of noise for the accelerometer
+#define kFilteringFactor        0.001    // Filtering of noise for the accelerometer
 
 
 // -- Overlays & Container View -- //
@@ -64,8 +64,8 @@
  */
 #define OVERLAY_VIEW_WIDTH      350*HORIZ_SENS
 
-#define X_CENTER                160     // Vertical center value to use to position the overlays
-#define Y_CENTER                170     // Horizontal center value to use to position the overlays
+#define X_CENTER                160     // Horizontal center value to use to position the overlays
+#define Y_CENTER                170     // Vertical center value to use to position the overlays
 
 #define DEF_SCREEN_WIDTH        320.0
 #define DEF_SCREEN_HEIGHT       460.0

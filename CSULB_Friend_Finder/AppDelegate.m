@@ -111,9 +111,9 @@
 */
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
     
+    // Check for friend requests upon starting up
     PFUser *user = [PFUser currentUser];
     if (user != nil)
     {
@@ -160,12 +160,18 @@
         PFObject *friendship = [PFObject objectWithClassName:@"Friendship"];
         friendship[@"Friend1_Id"] = [PFUser currentUser].objectId;
         friendship[@"Friend2_Id"] = self.requesterId;
-        [friendship saveInBackground];
+        [friendship saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (error)
+                NSLog(@"Friendship1 error: %@", error);
+        }];
         
         PFObject *friendship2 = [PFObject objectWithClassName:@"Friendship"];
         friendship2[@"Friend2_Id"] = [PFUser currentUser].objectId;
         friendship2[@"Friend1_Id"] = self.requesterId;
-        [friendship saveInBackground];
+        [friendship2 saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (error)
+                NSLog(@"Friendship2 error: %@", error);
+        }];
     }
     else
     {

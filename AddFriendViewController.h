@@ -8,6 +8,10 @@
 
 #import <Parse/Parse.h>
 
+/*!
+ @class AddFriendViewController
+ @abstract View controller to add a friend
+*/
 @interface AddFriendViewController : PFQueryTableViewController <UITableViewDelegate>
 
 @end

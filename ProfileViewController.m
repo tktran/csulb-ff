@@ -21,6 +21,15 @@
 }
 
 /*!
+ @function viewWillAppear
+ @method Clears map pins before view has a chance to appear
+*/
+-(void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.mapView removeAnnotations:self.mapView.annotations];
+}
+/*!
  @function viewDidAppear
  @method Upon appearance of view, hide the navigation bar (to show all of mapView), and call the two main functions of this VC: updateRightButton and updateDisplayInfo
 */
@@ -35,7 +44,7 @@
 
 /*!
  @function updateRightButton
- @method If a user was passed it, it was a friend to display. Otherwise, it is the current user (user of this app). Hide the poke and findYourFriend buttons.
+ @method If a user was passed, it was a friend to display. Otherwise, it is the current user (user of this app). Hide the poke and findYourFriend buttons.
 */
 - (void) updateRightButton {
     if (self.detailItem) // Friend passed. Display friend's profile
@@ -66,10 +75,15 @@
     else
         user = [PFUser currentUser];
     
-    self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(33.7830f, -118.1151f), MKCoordinateSpanMake(0.01f, 0.01f));
-    GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:user];
-    [self.mapView addAnnotation:annotation];
+    self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(33.7830f, -118.1151f), MKCoordinateSpanMake(0.015f, 0.015f));
     
+    BOOL isOnPrivacyMode = [user[@"isOnPrivacyMode"] boolValue];
+    if (!isOnPrivacyMode)
+    {
+        GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:user];
+        [self.mapView addAnnotation:annotation];
+    }
+
     // status, location, last updated
     NSString *friendStatus = [NSString stringWithFormat:@"Status: %@", user[@"status"]];
     NSString *friendName = [NSString stringWithFormat:@"Name: %@ %@", user[@"first_name"], user[@"last_name"]];
@@ -110,12 +124,6 @@
 */
 - (IBAction)pressedPokeButton:(id)sender
 {
-//    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-//    currentInstallation[@"deviceToken"] = @"41283ead3a67860f516dae1006fa903524e424a0337d296b901e4805012a46b3";
-//    currentInstallation[@"user"] = [PFUser currentUser].objectId;
-//    [currentInstallation save];
-
-    
     PFUser *friend = (PFUser*) self.detailItem;
     
     // only return Installations that belong to the user to poke
@@ -123,7 +131,7 @@
     PFQuery *pokeQuery = [PFInstallation query];
     [pokeQuery whereKey:@"user" equalTo:friendId];
 
-    // Create the push using the pokeQuery
+    // Create the push targetting the correct user to poke using the pokeQuery
     PFPush *push = [[PFPush alloc] init];
     [push setQuery:pokeQuery];
     PFUser *currentUser = [PFUser currentUser];

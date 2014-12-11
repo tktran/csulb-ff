@@ -36,12 +36,19 @@
             PFQuery *friendQuery = [PFQuery queryWithClassName:@"_User"];
             [friendQuery whereKey:@"objectId" equalTo:friendId];
             [friendQuery getObjectInBackgroundWithId:friendId block:^(PFObject *object, NSError *error) {
-                BOOL isOnPrivacyMode = [object[@"isOnPrivacyMode"] boolValue];
-                
-                if (!isOnPrivacyMode)
+                if (!error)
                 {
-                    GeoPointAnnotation *geoPointAnnotation = [[GeoPointAnnotation alloc] initWithObject:(PFUser*)object];
-                    [self.mapView addAnnotation:geoPointAnnotation];
+                    BOOL isOnPrivacyMode = [object[@"isOnPrivacyMode"] boolValue];
+                    
+                    if (!isOnPrivacyMode)
+                    {
+                        GeoPointAnnotation *geoPointAnnotation = [[GeoPointAnnotation alloc] initWithObject:(PFUser*)object];
+                        [self.mapView addAnnotation:geoPointAnnotation];
+                    }
+                }
+                else
+                {
+                    NSLog(@"MapView loading error: %@", error);
                 }
             }];
         }

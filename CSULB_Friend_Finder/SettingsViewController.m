@@ -22,9 +22,10 @@
 */
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Section: %ld, Row: %ld",(long)indexPath.section, (long)indexPath.row);
+    // When a row is selected, do the appropriate action (check manually)
+    NSLog(@"Section selected: %ld, Row: %ld",(long)indexPath.section, (long)indexPath.row);
     if (indexPath.section == 0){
-        if (indexPath.row == 0)
+        if (indexPath.row == 0) // Switch privacy mode
         {
             PFUser *user = [PFUser currentUser];
             if ([user[@"isOnPrivacyMode"] boolValue])
@@ -39,7 +40,7 @@
             }
             [user save];
         }
-        else
+        else // Log out
         {
             [PFUser logOut];
             [self performSegueWithIdentifier:@"logoutSegue" sender:self];
@@ -56,11 +57,11 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self.parentViewController.navigationController setNavigationBarHidden:YES];
 }
 
 -(void) viewWillAppear:(BOOL)animated
 {
+    // Upon loading, set privacy switch to correct position
     PFUser *user = [PFUser currentUser];
     
     if ([user[@"isOnPrivacyMode"] boolValue])

@@ -45,6 +45,8 @@
                  }
                  [self.tableView reloadData];
              }
+             else
+                 NSLog(@"Recommended friends loading error: %@", error);
          }];
     }
 }
@@ -86,18 +88,20 @@
     PFObject *friendRequest = [PFObject objectWithClassName:@"FriendRequest"];
     [friendRequest setObject:[PFUser currentUser].objectId forKey:@"RequesterId"];
     
+    // Get the parse friend that corresponds to the cell's Facebook ID
     PFQuery *parseFriendQuery = [PFQuery queryWithClassName:@"_User"];
     [parseFriendQuery whereKey:@"facebookId" equalTo: friend[@"facebookId"]];
     PFObject *parseFriend = [parseFriendQuery getFirstObject];
     [friendRequest setObject:parseFriend.objectId forKey:@"RequesteeId"];
     [friendRequest saveInBackground];
     
-    // Display "Friend request sent"jkmjh
+    // Display "Friend request sent"
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"The friend request was sent." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Load the cell with check/plus
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     NSDictionary *friend = friendCellList[indexPath.row];
     cell.textLabel.text = friend[@"name"];
