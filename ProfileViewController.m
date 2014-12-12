@@ -171,7 +171,7 @@
     annotationView.canShowCallout = YES;
     annotationView.animatesDrop = YES;
     
-    NSLog(@"Hello?");
+    NSLog(@"Annotation initialization.");
     return annotationView;
 }
 
